@@ -136,9 +136,16 @@ weight ramp, but the project must provide the `@font-face` files.
   back to the nearest loaded weight, so the CSS looks correct while the type is
   wrong (e.g. 300 rendering as 400, or an unset heading rendering as the heaviest
   loaded face).
-- **If a weight's face is missing,** either add the `@font-face` for it, or map
-  that role to the nearest loaded weight and **note the substitution** in your
-  apply summary. Do not leave a weight token pointing at a face that can't render.
+- **If a weight's face is missing, try to add it before downgrading.** A
+  missing weight is often a vendoring gap, not a hard limit — the licensed font
+  may already be available to you (installed on the machine, e.g. under
+  `/Library/Fonts` or an org font manager; in a private package; or alongside
+  the weights the project already ships). If you can confirm a licensed copy,
+  vendor that face into the project and declare its `@font-face`. Do **not**
+  fetch a licensed font from the open internet.
+- **Only if no licensed face is obtainable,** map that role to the nearest loaded
+  weight and **note the substitution** in your apply summary. Never leave a
+  weight token pointing at a face that can't render.
 
 ---
 

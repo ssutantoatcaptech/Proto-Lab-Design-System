@@ -39,7 +39,10 @@ Additive and backward compatible — re-applying is recommended but not required
 - **`APPLY.md` §5.1 — Fonts (weight coverage).** Notes that the system ships no
   font binaries, that browsers don't synthesize missing weights, and that a
   missing face silently falls back — so agents must confirm a face exists per
-  weight or note the substitution.
+  weight. Directs agents to treat a missing weight as a vendoring gap first
+  (vendor an already-licensed copy if obtainable — e.g. an installed/org-managed
+  font) and only substitute the nearest loaded weight as a last resort, never
+  fetching a licensed font from the open internet.
 - **`APPLY.md` §6 — verification check** that type renders at the intended
   weights and that every `--font-weight-*` used resolves to a loaded face.
 
