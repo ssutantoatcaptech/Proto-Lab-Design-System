@@ -21,6 +21,28 @@ what a project last applied.
 
 _Nothing yet._
 
+## [1.1.0] — 2026-06-15
+
+Procedure guidance for typography. A prior application mapped only the font
+*family* and left headings without an explicit weight, so they inherited the
+browser's `bold` default and rendered far heavier than the tokens intend. The
+tokens were already correct; the procedure didn't tell agents to apply weights
+or to confirm a font face exists for each weight. This release closes that gap.
+Additive and backward compatible — re-applying is recommended but not required.
+
+### Added
+- **`APPLY.md` §4 — typography mapping step.** Migration now explicitly calls
+  for mapping type **weight** (and size), not just family, with a warning that an
+  unset heading weight snaps to the heaviest *loaded* font face.
+- **`APPLY.md` §4 role list — type sizes and weights** added as first-class
+  mapping targets alongside colors, surfaces, radii, and shadows.
+- **`APPLY.md` §5.1 — Fonts (weight coverage).** Notes that the system ships no
+  font binaries, that browsers don't synthesize missing weights, and that a
+  missing face silently falls back — so agents must confirm a face exists per
+  weight or note the substitution.
+- **`APPLY.md` §6 — verification check** that type renders at the intended
+  weights and that every `--font-weight-*` used resolves to a loaded face.
+
 ## [1.0.0] — 2026-06-15
 
 First versioned release of the adoption workflow. The token and icon content
@@ -55,5 +77,6 @@ any project in a repeatable, tool-agnostic way.
   `inverse/`) are largely placeholder stubs; only the flat duotone marks are
   complete. Run `scripts/export-icons.js` to populate the remaining variants.
 
-[Unreleased]: https://github.com/ssutantoatcaptech/Claude-Exploration/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/ssutantoatcaptech/Claude-Exploration/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/ssutantoatcaptech/Claude-Exploration/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/ssutantoatcaptech/Claude-Exploration/releases/tag/v1.0.0

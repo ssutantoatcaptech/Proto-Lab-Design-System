@@ -4,10 +4,10 @@ This file is the procedure an AI agent (or a developer) follows to apply this
 design system to a project. It is versioned with the tokens, so it always
 matches the current system. Read it top to bottom before changing any code.
 
-**Procedure version:** `1.0.0` (2026-06-15). See [`CHANGELOG.md`](CHANGELOG.md)
+**Procedure version:** `1.1.0` (2026-06-15). See [`CHANGELOG.md`](CHANGELOG.md)
 for what changed between revisions. When you apply this system to a project,
 record this version in the project (for example, the agent can note
-"Proto-Lab design system, APPLY procedure v1.0.0" in its summary or the
+"Proto-Lab design system, APPLY procedure v1.1.0" in its summary or the
 project's `AGENTS.md`) so future updates are diffable.
 
 > **You are an agent reading this because a project's `AGENTS.md` pointed you
@@ -85,14 +85,25 @@ Work in this order. Commit nothing until the project's build passes (section 6).
    - shadows → `--shadow-2` (rest) / `--shadow-8` (hover) / `--shadow-28` (floating)
    - radii → `--radius-medium/large/x-large` (4/6/8px)
    - status/score colors → `--status-{danger,warning,success}-foreground`
+   - type sizes → `--font-size-*` / `--line-height-*`
+   - type **weights** → `--font-weight-book/regular/medium/semibold/bold`
+     (map by role and set one explicitly on every heading — see step 4)
 
 3. **Swap ad-hoc values in components.** Find hardcoded hex colors, raw shadows,
    and pixel radii in component files and replace them with token references.
    Leave the alias names in place; just make sure nothing bypasses the tokens.
 
-4. **Icons (see section 5).**
+4. **Map typography — family, size, AND weight.** Do not stop at
+   `--font-family`. Set an explicit `font-weight` token on every heading and
+   text role per [`tokens/typography.json`](tokens/typography.json) (e.g. the
+   title styles are weight `book`/300, not bold). A heading with *no* weight
+   rule inherits the browser default (`bold`) and snaps to the heaviest *loaded*
+   font face — so it renders too heavy even though the family is correct. Then
+   confirm the weights you used can actually render (see section 5.1 on fonts).
 
-5. **Run the project's build + typecheck and fix what breaks** (section 6).
+5. **Icons (see section 5).**
+
+6. **Run the project's build + typecheck and fix what breaks** (section 6).
 
 ---
 
@@ -113,6 +124,22 @@ They render at a fixed two-color fill and **cannot inherit `currentColor`**.
   `greyscale/`, `inverse/`) may be incomplete in a given checkout, so prefer the
   flat duotone files unless you've confirmed a variant exists.
 
+### 5.1 Fonts — weight coverage
+
+A weight token only renders if a matching font face is actually loaded. **This
+design system ships no font binaries** — it specifies the family (Gibson) and a
+weight ramp, but the project must provide the `@font-face` files.
+
+- **Confirm a face exists for every weight you use.** Before relying on
+  `--font-weight-book` (300), check the project loads a Gibson Book/Light face.
+  Browsers do **not** synthesize a lighter weight: a missing face silently falls
+  back to the nearest loaded weight, so the CSS looks correct while the type is
+  wrong (e.g. 300 rendering as 400, or an unset heading rendering as the heaviest
+  loaded face).
+- **If a weight's face is missing,** either add the `@font-face` for it, or map
+  that role to the nearest loaded weight and **note the substitution** in your
+  apply summary. Do not leave a weight token pointing at a face that can't render.
+
 ---
 
 ## 6. Verification — done when
@@ -122,6 +149,10 @@ They render at a fixed two-color fill and **cannot inherit `currentColor`**.
 - No hardcoded off-palette colors remain in component files (grep for stray
   `#` hex values and confirm they're intentional exceptions).
 - The UI renders on the tokens (spot-check one or two screens).
+- **Type renders at the intended weights**, not just the right family and size.
+  Every `--font-weight-*` you used resolves to a loaded `@font-face`; spot-check
+  that headings aren't defaulting to bold or the heaviest loaded face (section
+  5.1). Note any weight you had to substitute.
 - Report what changed, what was aliased, and any exceptions you kept.
 
 ---
