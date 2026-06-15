@@ -4,6 +4,79 @@ Design tokens and component registry extracted from the [Proto-Lab Design System
 
 **Foundation:** CapTech Brand identity layered on Microsoft Fluent 2 Web, with light and dark mode support.
 
+## Applying this design system to a project
+
+The goal: any project at CapTech (greenfield or fully built, any IDE, any AI
+coding agent) can adopt this system the same way. The pattern is **a pointer in
+your project, the procedure in this repo** — so when the design system updates,
+every project picks up the new procedure on its next pull instead of going
+stale.
+
+### 1. Add this repo to your project
+
+Vendor it at `design-system/` in your project root, using whichever you prefer:
+
+```bash
+# Git submodule (recommended — tracks the upstream repo, easy to update)
+git submodule add https://github.com/ssutantoatcaptech/Claude-Exploration design-system
+
+# …or a plain clone
+git clone https://github.com/ssutantoatcaptech/Claude-Exploration design-system
+
+# …or just copy the folder in
+```
+
+### 2. Wire it into your AI agent
+
+Run the bootstrap script from your **project root**. It points your agent
+config at [`APPLY.md`](APPLY.md) (the versioned application procedure) and is
+safe to re-run:
+
+```bash
+node design-system/scripts/bootstrap.js
+```
+
+This creates or updates, without clobbering your existing content:
+
+| File | For |
+|---|---|
+| `AGENTS.md` | The cross-tool standard (Codex, Cursor, Aider, Zed, Factory, …) |
+| `CLAUDE.md` | Claude Code (imports `AGENTS.md`) |
+| `.github/copilot-instructions.md` | GitHub Copilot |
+
+> **Prefer not to run a script?** Add this to your project's `AGENTS.md`
+> (create the file if it doesn't exist), and you're done:
+>
+> ```markdown
+> ## Design system
+> This project uses the CapTech Proto-Lab design system in `design-system/`.
+> Before any UI or styling work, read and follow `design-system/APPLY.md`.
+> ```
+>
+> If you use Claude Code, also add a `CLAUDE.md` containing `See @AGENTS.md`.
+> If you use Copilot, mirror the block into `.github/copilot-instructions.md`.
+
+### 3. Tell your agent to apply it
+
+> **"Apply the design system to this project."**
+
+Your agent reads [`APPLY.md`](APPLY.md) and follows it. `APPLY.md` already
+decides the conflict policy (this system is **authoritative** — it replaces a
+project's conflicting tokens, while aliasing existing variable names so nothing
+breaks) and the per-scenario behavior, so the agent doesn't have to ask and the
+result is the same across projects.
+
+The deterministic setup (steps 1–2) is scripted; the judgment work (mapping a
+built app's existing styles onto the tokens, swapping components, placing icons)
+is what the agent does in step 3.
+
+### Versioning
+
+`APPLY.md` carries a procedure version, and [`CHANGELOG.md`](CHANGELOG.md)
+records what changes between revisions. To update an already-adopted project,
+pull the latest design system and tell your agent to re-apply it; check the
+changelog for whether anything since your recorded version needs re-review.
+
 ## Structure
 
 ```
