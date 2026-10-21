@@ -158,9 +158,9 @@
         "$description": "Link text"
       },
       "sidebar": {
-        "$value": "{color.semantic.neutral.background-2}",
+        "$value": "{color.semantic.neutral.background-surface}",
         "$type": "color",
-        "$description": "Sidebar surface"
+        "$description": "Sidebar surface: white in light mode, the deepest blue grey in dark"
       },
       "sidebar-foreground": {
         "$value": "{color.semantic.neutral.foreground-1}",

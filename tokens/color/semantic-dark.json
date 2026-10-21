@@ -10,7 +10,7 @@
         "background-disabled": { "$value": "#465663", "$type": "color", "$description": "Disabled element background (dark)" },
         "background-overlay": { "$value": "rgba(15, 18, 21, 0.6)", "$type": "color", "$description": "Modal/drawer overlay (dark)" },
         "background-canvas": { "$value": "{color.primitive.brand.dark-grey}", "$type": "color", "$description": "Page background (dark): CapTech Dark Grey" },
-        "background-surface": { "$value": "{color.semantic.neutral.background-2}", "$type": "color", "$description": "Cards, popovers and panels that sit on the canvas (dark)" },
+        "background-surface": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "Cards, popovers, panels and the sidebar on the canvas (dark): the deepest CapTech blue grey, the same value as foreground-on-brand" },
         "foreground-1": { "$value": "{color.primitive.neutral.white}", "$type": "color", "$description": "Primary text (dark)" },
         "foreground-2": { "$value": "#c3cdd5", "$type": "color", "$description": "Secondary text (dark), from the Dark Grey hue" },
         "foreground-3": { "$value": "#99aab7", "$type": "color", "$description": "Tertiary text and placeholders (dark)" },

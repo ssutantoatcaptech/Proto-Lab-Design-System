@@ -18,7 +18,7 @@
   --neutral-background-disabled: #465663;
   --neutral-background-overlay: rgba(15, 18, 21, 0.6);
   --neutral-background-canvas: var(--color-dark-grey);
-  --neutral-background-surface: var(--neutral-background-2);
+  --neutral-background-surface: var(--color-grey-20);
   --neutral-foreground-1: var(--color-white);
   --neutral-foreground-2: #c3cdd5;
   --neutral-foreground-3: #99aab7;
@@ -110,7 +110,7 @@
   --ring: var(--neutral-stroke-focus);
   --overlay: var(--neutral-background-overlay);
   --link: var(--brand-foreground-link);
-  --sidebar: var(--neutral-background-2);
+  --sidebar: var(--neutral-background-surface);
   --sidebar-foreground: var(--neutral-foreground-1);
   --sidebar-primary: var(--brand-background-1);
   --sidebar-primary-foreground: var(--neutral-foreground-on-brand);

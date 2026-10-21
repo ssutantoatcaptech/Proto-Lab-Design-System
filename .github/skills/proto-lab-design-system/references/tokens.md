@@ -86,7 +86,7 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 | `--neutral-background-disabled` | #ebebea | #465663 |
 | `--neutral-background-overlay` | rgba(0, 0, 0, 0.5) | rgba(15, 18, 21, 0.6) |
 | `--neutral-background-canvas` | #f5f5f4 | #333f48 |
-| `--neutral-background-surface` | #ffffff | #3c4a55 |
+| `--neutral-background-surface` | #ffffff | #1a2730 |
 | `--neutral-foreground-1` | #333f48 | #ffffff |
 | `--neutral-foreground-2` | #888b8d | #c3cdd5 |
 | `--neutral-foreground-3` | #c1c1c0 | #99aab7 |
@@ -275,9 +275,9 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 |---|---|---|
 | `--background` | #f5f5f4 | #333f48 |
 | `--foreground` | #333f48 | #ffffff |
-| `--card` | #ffffff | #3c4a55 |
+| `--card` | #ffffff | #1a2730 |
 | `--card-foreground` | #333f48 | #ffffff |
-| `--popover` | #ffffff | #3c4a55 |
+| `--popover` | #ffffff | #1a2730 |
 | `--popover-foreground` | #333f48 | #ffffff |
 | `--primary` | #005eb8 | #77b7f7 |
 | `--primary-foreground` | #ffffff | #1a2730 |
@@ -304,7 +304,7 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 | `--ring` | #333f48 | #ffffff |
 | `--overlay` | rgba(0, 0, 0, 0.5) | rgba(15, 18, 21, 0.6) |
 | `--link` | #005eb8 | #96c6fa |
-| `--sidebar` | #f5f5f4 | #3c4a55 |
+| `--sidebar` | #ffffff | #1a2730 |
 | `--sidebar-foreground` | #333f48 | #ffffff |
 | `--sidebar-primary` | #005eb8 | #77b7f7 |
 | `--sidebar-primary-foreground` | #ffffff | #1a2730 |

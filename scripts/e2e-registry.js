@@ -113,7 +113,7 @@ async function main() {
   check(out.card.bg === WHITE, 'card is a white surface on the canvas', out.card.bg);
   check(out.darkButton.bg === 'rgb(119, 183, 247)', 'dark button fill is light CapTech blue (brand 120)', out.darkButton.bg);
   check(out.darkButton.color === 'rgb(26, 39, 48)', 'dark button text is dark', out.darkButton.color);
-  check(out.darkCard.bg === 'rgb(60, 74, 85)', 'dark card is raised above the Dark Grey canvas', out.darkCard.bg);
+  check(out.darkCard.bg === 'rgb(26, 39, 48)', 'dark card is the deepest blue grey on the Dark Grey canvas', out.darkCard.bg);
   check(out.darkCard.color === WHITE, 'dark card text is white', out.darkCard.color);
   check(out.icon === 'rgb(0, 94, 184)', 'CapTech icon uses CapTech Blue', out.icon);
   check(out.darkIcon === 'rgb(119, 183, 247)', 'CapTech icon lightens in dark mode (brand 120)', out.darkIcon);

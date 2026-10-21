@@ -124,6 +124,11 @@ what a project last applied.
   adopted.
 
 ### Changed
+- **Dark surfaces use the deepest blue grey.** In dark mode
+  `neutral.background-surface` (cards, popovers, header, panels) is
+  grey-20 `#1a2730`, the same value as `foreground-on-brand`, on the Dark
+  Grey page. The shadcn `--sidebar` maps to the surface in both modes
+  (white in light, `#1a2730` in dark).
 - **Dark mode is built on CapTech Dark Grey `#333f48`.** The page is Dark
   Grey; surfaces step lighter in the same blue grey hue (`#3c4a55`,
   `#465663`); strokes and secondary text come from the same hue. Primary
