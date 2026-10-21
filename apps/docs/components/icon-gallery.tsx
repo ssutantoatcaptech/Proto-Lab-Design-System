@@ -116,7 +116,7 @@ function Gallery() {
             aria-checked={category === c.slug}
             onClick={() => update({ category: c.slug === "all" ? null : c.slug })}
           >
-            {c.title} <span className="opacity-70">{count(c.slug)}</span>
+            {c.title} <span className="font-normal">{count(c.slug)}</span>
           </Button>
         ))}
       </div>

@@ -22,7 +22,7 @@ export default defineConfig({
     remarkNpmOptions: false,
     remarkCodeTabOptions: false,
     rehypeCodeOptions: {
-      themes: { light: "github-light", dark: "github-dark" },
+      themes: { light: "github-light", dark: "github-dark-high-contrast" },
     },
     // Each h2 section becomes its own card (see mdx-components "section").
     rehypePlugins: (v) => [...v, rehypeSections],

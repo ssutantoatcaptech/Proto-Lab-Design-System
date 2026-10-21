@@ -55,7 +55,7 @@
         "warning-on-fill": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "Text on a warning fill (dark)" }
       },
       "chart": {
-        "1": { "$value": "{color.primitive.brand-ramp.100}", "$type": "color", "$description": "Chart series 1 (dark)" },
+        "1": { "$value": "{color.primitive.brand-ramp.120}", "$type": "color", "$description": "Chart series 1 (dark): light brand blue, readable under labels in the page color" },
         "2": { "$value": "{color.primitive.tertiary.sky-blue}", "$type": "color", "$description": "Chart series 2 (dark)" },
         "3": { "$value": "{color.primitive.tertiary.light-teal}", "$type": "color", "$description": "Chart series 3 (dark)" },
         "4": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Chart series 4 (dark)" },

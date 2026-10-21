@@ -11,6 +11,6 @@ export async function ComponentPreview({ name, align = "center" }: { name: strin
   const source = await fs.readFile(path.join(process.cwd(), "registry/proto-lab/examples", `${name}.tsx`), "utf8")
   // Show the import path a consuming project uses.
   const code = source.replaceAll("@/registry/proto-lab/ui/", "@/components/ui/").trim()
-  const highlighted = await highlight(code, { lang: "tsx", themes: { light: "github-light", dark: "github-dark" } })
+  const highlighted = await highlight(code, { lang: "tsx", themes: { light: "github-light", dark: "github-dark-high-contrast" } })
   return <ComponentPreviewTabs preview={<Example />} code={highlighted} raw={code} align={align} />
 }

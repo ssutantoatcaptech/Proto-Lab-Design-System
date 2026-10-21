@@ -35,6 +35,12 @@
 .recharts-cartesian-axis-tick-value {
   fill: var(--muted-foreground);
 }
+.recharts-polar-angle-axis-tick-value, .recharts-polar-radius-axis-tick-value {
+  fill: var(--muted-foreground);
+}
+[data-slot="trace-line"][data-status="pending"] {
+  opacity: 0.85;
+}
 .recharts-cartesian-grid line[stroke='#ccc'] {
   stroke: var(--border);
 }

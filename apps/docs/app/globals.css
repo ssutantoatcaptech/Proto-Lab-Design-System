@@ -344,7 +344,7 @@
     --border: #4e616e;
     --input: #5f7686;
     --ring: #ffffff;
-    --chart-1: #479ef5;
+    --chart-1: #77b7f7;
     --chart-2: #00a5df;
     --chart-3: #68d2df;
     --chart-4: #fdda24;
@@ -453,4 +453,10 @@
 }
   .recharts-cartesian-grid line[stroke='#ccc'] {
     stroke: var(--border);
+}
+  .recharts-polar-angle-axis-tick-value, .recharts-polar-radius-axis-tick-value {
+    fill: var(--muted-foreground);
+}
+  [data-slot="trace-line"][data-status="pending"] {
+    opacity: 0.85;
 }

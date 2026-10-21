@@ -165,7 +165,7 @@ export function ContrastTable() {
           <td className="px-3 py-2 font-mono text-caption-1">{c.ratio.toFixed(2)}:1</td>
           <td className="px-3 py-2 font-mono text-caption-1 text-muted-foreground">{c.min}:1 {c.level === "warn" ? "(UI)" : "(text)"}</td>
           <td className="px-3 py-2">
-            <Badge variant={c.pass ? "secondary" : c.level === "error" ? "destructive" : "outline"} className={cn(c.pass && "text-success")}>
+            <Badge variant="outline" className={cn(c.pass ? "text-success" : c.level === "error" ? "text-destructive" : "text-foreground")}>
               {c.pass ? "Pass" : c.level === "error" ? "Fails AA" : "Below 3:1"}
             </Badge>
           </td>

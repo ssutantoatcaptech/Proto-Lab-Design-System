@@ -61,7 +61,7 @@
   --status-success-on-fill: var(--color-grey-20);
 
   /* ─── Semantic: Chart ─── */
-  --chart-1: var(--color-brand-100);
+  --chart-1: var(--color-brand-120);
   --chart-3: var(--color-light-teal);
   --chart-4: var(--color-accent-yellow);
   --chart-5: var(--color-blue-200);

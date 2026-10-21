@@ -24,5 +24,5 @@ export async function chartCode(name: string) {
   const raw = fs.readFileSync(path.join(DIR, `${name}.tsx`), "utf8")
     .replace(/^\/\/ Ported from shadcn\/ui[^\n]*\n/, "")
     .replaceAll("@/registry/proto-lab/ui/", "@/components/ui/")
-  return { raw, code: await highlight(raw, { lang: "tsx", themes: { light: "github-light", dark: "github-dark" } }) }
+  return { raw, code: await highlight(raw, { lang: "tsx", themes: { light: "github-light", dark: "github-dark-high-contrast" } }) }
 }

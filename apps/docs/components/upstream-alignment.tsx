@@ -56,7 +56,7 @@ export function UpstreamAlignment() {
                     {url ? <Link href={url} className="font-semibold text-link underline underline-offset-4">{title(c.name)}</Link> : title(c.name)}
                   </td>
                   <td className="px-3 py-2">
-                    {c.status === "matches" && <Badge variant="secondary" className="text-success">Matches upstream</Badge>}
+                    {c.status === "matches" && <Badge variant="outline" className="text-success">Matches upstream</Badge>}
                     {c.status === "differs" && <Badge variant="outline">Differs: +{c.added} / −{c.removed} lines</Badge>}
                     {c.status === "proto-lab-only" && <Badge variant="outline">Proto-Lab only</Badge>}
                   </td>

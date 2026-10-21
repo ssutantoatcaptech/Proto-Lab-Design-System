@@ -86,6 +86,22 @@ what a project last applied.
   overview page lists them all, like ui.shadcn.com/docs/components. The
   examples index is generated from the example files. Every adopted component
   matches upstream exactly.
+- **Showcase** (`/showcase`): Proto-Lab on realistic CapTech screens, built
+  only from the system's components. 01 Engagement workspace (overview,
+  KPIs, hours chart, milestones, team, findings, idea parking lot with a
+  CapTech illustration, activity, time logging, workshop calendar; the cards
+  share state) and 02 Settings (profile, notifications, security with two
+  step verification, team roles, working hours, integrations, invites,
+  density, shortcuts, danger zone). Every control works; the 01/02 switch is
+  in the URL. Replaces shadcn Create's galleries, which aren't installable.
+- **Dark mode legibility audit.** Every text element on all 117 docs, chart,
+  block and showcase pages was measured against its real background in dark
+  mode. Fixes: code uses GitHub's high contrast dark theme; polar chart
+  labels get `--muted-foreground` (same Recharts rename as the axis labels);
+  trace's pending steps are dimmed to 85% instead of 60%; dark `chart-1` is
+  brand 120 so labels inside bars stay readable; tab counts and status badges
+  no longer sit at reduced opacity or on muted fills. All text now meets
+  WCAG AA in dark mode.
 - **Blocks** (`/blocks`): the 27 upstream blocks (dashboard, 16 sidebars,
   5 logins, 5 signups) installed per block by `scripts/sync-blocks.js` into
   `registry/proto-lab/blocks/<name>/`. Each renders full page through a bare

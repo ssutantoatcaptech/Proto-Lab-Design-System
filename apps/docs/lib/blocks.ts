@@ -52,6 +52,6 @@ export async function blockFiles(name: string, category: Category) {
     const raw = toConsumer(fs.readFileSync(path.join(DIR, name, file), "utf8"))
     const display = file === "page.tsx" || file.endsWith(".json") ? `${ROUTE[category]}/${file}` : file
     const lang = file.endsWith(".json") ? "json" : "tsx"
-    return { path: display, raw, code: await highlight(raw, { lang, themes: { light: "github-light", dark: "github-dark" } }) }
+    return { path: display, raw, code: await highlight(raw, { lang, themes: { light: "github-light", dark: "github-dark-high-contrast" } }) }
   }))
 }

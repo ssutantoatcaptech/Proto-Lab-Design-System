@@ -137,7 +137,7 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### Semantic: Chart
 | Variable | Light | Dark |
 |---|---|---|
-| `--chart-1` | #005eb8 | #479ef5 |
+| `--chart-1` | #005eb8 | #77b7f7 |
 | `--chart-2` | #00a5df | same |
 | `--chart-3` | #003865 | #68d2df |
 | `--chart-4` | #68d2df | #fdda24 |

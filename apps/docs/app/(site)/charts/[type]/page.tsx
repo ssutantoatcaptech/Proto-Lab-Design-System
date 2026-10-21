@@ -39,7 +39,7 @@ export default async function ChartsPage({ params }: Props) {
                 active && "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
               )}
             >
-              {t.title} <span className="font-normal opacity-70">{count}</span>
+              {t.title} <span className="font-normal">{count}</span>
             </Link>
           )
         })}

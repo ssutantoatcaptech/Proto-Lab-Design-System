@@ -8,5 +8,6 @@ export const site = {
     { title: "Components", href: "/docs/components", match: (p: string) => p.startsWith("/docs/components") },
     { title: "Charts", href: "/charts", match: (p: string) => p.startsWith("/charts") },
     { title: "Blocks", href: "/blocks", match: (p: string) => p.startsWith("/blocks") },
+    { title: "Showcase", href: "/showcase", match: (p: string) => p.startsWith("/showcase") },
   ],
 }

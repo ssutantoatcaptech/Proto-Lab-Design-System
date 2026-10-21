@@ -38,7 +38,7 @@ export default async function BlocksPage({ params }: Props) {
                 active && "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
               )}
             >
-              {c.title} <span className="font-normal opacity-70">{count}</span>
+              {c.title} <span className="font-normal">{count}</span>
             </Link>
           )
         })}

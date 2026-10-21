@@ -226,9 +226,14 @@ ${themeBlock(true)}
 // ([&_.recharts-cartesian-axis-tick_text]) no longer matches and labels keep
 // Recharts' #666, unreadable in dark mode. These unlayered rules fix every
 // chart without editing the upstream component, and give the grid full
-// border strength so it stays visible on Dark Grey.
+// border strength so it stays visible on Dark Grey. Polar (radar, radial)
+// labels had the same rename.
 const chartCss = {
   '.recharts-cartesian-axis-tick-value': { fill: 'var(--muted-foreground)' },
+  '.recharts-polar-angle-axis-tick-value, .recharts-polar-radius-axis-tick-value': { fill: 'var(--muted-foreground)' },
+  // shadcn's trace dims pending steps to 60%, which drops secondary text below
+  // 4.5:1. 85% still reads as pending and stays legible.
+  '[data-slot="trace-line"][data-status="pending"]': { opacity: '0.85' },
   ".recharts-cartesian-grid line[stroke='#ccc']": { stroke: 'var(--border)' },
 };
 
