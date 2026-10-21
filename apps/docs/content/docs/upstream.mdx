@@ -1,0 +1,26 @@
+---
+title: Upstream alignment
+description: How Proto-Lab stays in step with shadcn/ui, and where it stands today.
+---
+
+Proto-Lab components come from [shadcn/ui](https://github.com/shadcn-ui/ui). Proto-Lab changes their look, never their behavior, so upstream fixes and new components should keep flowing in. This page shows where each component stands against upstream.
+
+<UpstreamAlignment />
+
+## How alignment works
+
+1. **A snapshot of upstream.** `npm run upstream:sync` installs every upstream component (Base UI, nova style) with the pinned shadcn CLI into a scratch app, exactly as a CapTech project would receive them. The result is committed in `tooling/shadcn-sync/vendor/ui/`.
+2. **A weekly pull request.** Every Monday a GitHub Action takes a fresh snapshot. If shadcn changed anything, it opens a pull request, so the change is reviewed like any other code.
+3. **A comparison.** `npm run upstream:compare` checks each Proto-Lab component against the snapshot and writes the report this page shows. CI fails if the report is out of date.
+4. **Dependency updates.** Dependabot proposes new versions of the shadcn CLI, Base UI and the rest each week.
+
+## Adopting an upstream change
+
+```bash
+cd apps/docs
+npx shadcn add dialog --overwrite   # take the new upstream version
+cd ../..
+npm run upstream:compare            # report shows it matches again
+```
+
+Today every adopted component matches upstream exactly. When Proto-Lab starts restyling components for Fluent geometry, those components will show as "Differs", and the difference will come only from Proto-Lab's own rules, applied on top of the upstream snapshot.

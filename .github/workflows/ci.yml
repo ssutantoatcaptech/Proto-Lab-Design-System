@@ -19,6 +19,8 @@ jobs:
         run: npm run test:bootstrap
       - name: Generated tokens are current, superset of v1, contrast checked
         run: npm run tokens:check
+      - name: Upstream alignment report is current
+        run: npm run upstream:check
 
   registry:
     runs-on: ubuntu-latest

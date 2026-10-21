@@ -74,6 +74,18 @@ what a project last applied.
 - **Icon gallery** on the Iconography page: search, category filters with
   counts, size preview, click to copy the import, and filters kept in the URL.
 
+- **Upstream alignment with shadcn/ui** (`scripts/sync-upstream.js`).
+  `npm run upstream:sync` installs every upstream Base UI nova component with
+  the pinned CLI, exactly as a Proto-Lab project receives them, into a
+  committed snapshot (`tooling/shadcn-sync/vendor/ui/`).
+  `npm run upstream:compare` reports which Proto-Lab components match, differ
+  or aren't adopted yet (`tooling/shadcn-sync/alignment.json`); CI fails if
+  the report is stale. A weekly workflow (`.github/workflows/upstream.yml`)
+  opens a pull request when upstream changes, and Dependabot proposes CLI and
+  dependency updates. The docs site has an Upstream alignment page. Today all
+  19 adopted components match upstream exactly; 45 are available but not
+  adopted.
+
 ### Changed
 - **Primary font is Gibson** (Canada Type) via Adobe Fonts, CSS family
   `canada-type-gibson`, falling back to the system sans serif. This reverses

@@ -1,0 +1,41 @@
+name: Upstream shadcn/ui
+
+# Re-installs every upstream shadcn/ui component (Base UI, nova style) with the
+# pinned CLI and opens a pull request when anything changed, so upstream fixes
+# and new components arrive as a reviewable diff. Scheduled runs use the
+# default branch's copy of this file.
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays, 13:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npm ci
+      - name: Snapshot upstream and compare
+        run: npm run upstream:sync
+      - name: Open or update the sync pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: upstream/shadcn-sync
+          commit-message: "Sync shadcn/ui upstream snapshot"
+          title: "Sync shadcn/ui upstream snapshot"
+          body: |
+            Weekly snapshot of upstream shadcn/ui components (Base UI, nova style), installed with the pinned CLI exactly as a Proto-Lab project receives them.
+
+            - `tooling/shadcn-sync/vendor/ui/` shows what changed upstream.
+            - `tooling/shadcn-sync/alignment.json` shows which Proto-Lab components now differ.
+
+            To adopt a change, reinstall the component in `apps/docs` (`npx shadcn add <name> --overwrite`) and run `npm run upstream:compare`.
+          labels: upstream

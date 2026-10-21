@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # Keeps the pinned shadcn CLI, Base UI, Next.js and Tailwind current.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      shadcn-and-base-ui:
+        patterns: ["shadcn", "@base-ui/*", "cn", "class-variance-authority", "lucide-react", "tw-animate-css"]
+      framework:
+        patterns: ["next", "react", "react-dom", "tailwindcss", "@tailwindcss/*", "fumadocs-*", "typescript", "@types/*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
