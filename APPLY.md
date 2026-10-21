@@ -26,7 +26,7 @@ project's `AGENTS.md`) so future updates are diffable.
 | `icons/` | 162 CapTech brand SVG icons (`<category>/<mode>/<slug>.svg`). 48px, duotone by default. |
 
 **Foundation:** CapTech Brand layered on Microsoft Fluent 2 Web. Primary font
-Inter, brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`.
+Gibson (Adobe Fonts, `canada-type-gibson`), brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`.
 
 ---
 

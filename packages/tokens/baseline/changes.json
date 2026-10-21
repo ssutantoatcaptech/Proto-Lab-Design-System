@@ -1,0 +1,9 @@
+{
+  "$comment": "Deliberate changes to variables in baseline/variables-light.v1.css. check.js accepts a changed value only if it is listed here with the same new value.",
+  "changes": {
+    "--font-family": {
+      "value": "canada-type-gibson, ui-sans-serif, system-ui, sans-serif",
+      "reason": "Primary font is Gibson via Adobe Fonts (canada-type-gibson), per the design system owner, 2026-10-21."
+    }
+  }
+}

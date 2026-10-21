@@ -24,7 +24,7 @@ export default function App() {
       darkButton: probe("#dark-btn"),
       darkCard: probe("#dark-card"),
       body: probe("body"),
-      interLoaded: document.fonts.check("14px 'Inter Variable'"),
+      gibsonLoaded: [...document.fonts].some((f) => f.family.replace(/"/g, "") === "canada-type-gibson"),
       icon: getComputedStyle(document.querySelector("#icon path") as Element).fill,
       darkIcon: getComputedStyle(document.querySelector("#dark-icon path") as Element).fill,
     })))

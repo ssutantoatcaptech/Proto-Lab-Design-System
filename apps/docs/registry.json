@@ -7,7 +7,7 @@
       "name": "base",
       "type": "registry:base",
       "title": "Proto-Lab",
-      "description": "CapTech Proto-Lab design system for a new shadcn/ui project: Base UI, Lucide, Inter, and the Proto-Lab theme with the Tailwind palette removed.",
+      "description": "CapTech Proto-Lab design system for a new shadcn/ui project: Base UI, Lucide, Gibson, and the Proto-Lab theme with the Tailwind palette removed. Load Gibson with an Adobe Fonts web project kit.",
       "config": {
         "style": "base-nova",
         "iconLibrary": "lucide",
@@ -17,9 +17,6 @@
       },
       "dependencies": [
         "tw-animate-css"
-      ],
-      "registryDependencies": [
-        "font-inter"
       ],
       "cssVars": {
         "theme": {
@@ -118,7 +115,7 @@
           "color-status-success-on-fill": "var(--status-success-on-fill)",
           "color-status-warning-on-fill": "var(--status-warning-on-fill)",
           "font-*": "initial",
-          "font-sans": "'Inter Variable', Inter, sans-serif",
+          "font-sans": "canada-type-gibson, ui-sans-serif, system-ui, sans-serif",
           "font-heading": "var(--font-sans)",
           "font-mono": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
           "text-*": "initial",
@@ -450,9 +447,6 @@
       "type": "registry:theme",
       "title": "Proto-Lab theme",
       "description": "Applies Proto-Lab colors, type ramp, weights, radii and elevation to an existing shadcn/ui project.",
-      "registryDependencies": [
-        "font-inter"
-      ],
       "cssVars": {
         "theme": {
           "color-background": "var(--background)",
@@ -546,7 +540,7 @@
           "color-status-danger-on-fill": "var(--status-danger-on-fill)",
           "color-status-success-on-fill": "var(--status-success-on-fill)",
           "color-status-warning-on-fill": "var(--status-warning-on-fill)",
-          "font-sans": "'Inter Variable', Inter, sans-serif",
+          "font-sans": "canada-type-gibson, ui-sans-serif, system-ui, sans-serif",
           "font-heading": "var(--font-sans)",
           "font-mono": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
           "text-xs": "12px",

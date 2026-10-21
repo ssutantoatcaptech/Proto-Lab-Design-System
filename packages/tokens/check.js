@@ -51,16 +51,19 @@ const normalize = (v) => v.toLowerCase().replace(/\s+/g, ' ').replace(/\s*,\s*/g
 {
   const baseline = resolveAll(parseVars(path.join(__dirname, 'baseline', 'variables-light.v1.css')));
   const current  = resolveAll(parseVars(path.join(TOKENS_DIR, 'css', 'variables-light.css')));
-  let missing = 0, changed = 0;
+  const intended = require('./baseline/changes.json').changes;
+  let missing = 0, changed = 0, accepted = 0;
   for (const [name, value] of baseline) {
     if (!current.has(name)) { fail(`baseline variable ${name} is missing`); missing++; continue; }
-    if (normalize(current.get(name)) !== normalize(value)) {
-      fail(`${name} changed: ${value} → ${current.get(name)}`);
-      changed++;
-    }
+    if (normalize(current.get(name)) === normalize(value)) continue;
+    if (intended[name] && normalize(intended[name].value) === normalize(current.get(name))) { accepted++; continue; }
+    fail(`${name} changed: ${value} → ${current.get(name)} (list it in baseline/changes.json if intended)`);
+    changed++;
   }
   const added = [...current.keys()].filter((n) => !baseline.has(n)).length;
-  if (!missing && !changed) console.log(`  ✓ superset of v1 baseline (${baseline.size} kept, ${added} added)`);
+  if (!missing && !changed) {
+    console.log(`  ✓ superset of v1 baseline (${baseline.size - accepted} kept, ${accepted} intentionally changed, ${added} added)`);
+  }
 }
 
 // ─── 2. Light/dark parity ────────────────────────────────────────────────────

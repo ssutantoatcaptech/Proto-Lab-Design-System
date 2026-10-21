@@ -4,6 +4,7 @@ out/
 .DS_Store
 *.log
 .env*
+!.env.example
 # Built registry JSON is generated at deploy time
 apps/docs/public/r/
 .source/

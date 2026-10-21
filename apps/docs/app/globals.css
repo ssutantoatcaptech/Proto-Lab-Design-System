@@ -100,7 +100,7 @@
     --color-status-success-on-fill: var(--status-success-on-fill);
     --color-status-warning-on-fill: var(--status-warning-on-fill);
     --font-*: initial;
-    --font-sans: var(--font-sans);
+    --font-sans: canada-type-gibson, ui-sans-serif, system-ui, sans-serif;
     --font-heading: var(--font-sans);
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     --text-*: initial;

@@ -10,6 +10,7 @@ import {
 } from "@/components/token-tables"
 import { HeuristicBadges, HeuristicIndex } from "@/components/heuristics"
 import { IconGallery } from "@/components/icon-gallery"
+import { FontStatus } from "@/components/font-status"
 
 const heading = (Tag: "h2" | "h3" | "h4", cls: string) =>
   function Heading({ className, ...props }: React.ComponentProps<"h2">) {
@@ -59,4 +60,5 @@ export const mdxComponents: MDXComponents = {
   HeuristicBadges,
   HeuristicIndex,
   IconGallery,
+  FontStatus,
 }

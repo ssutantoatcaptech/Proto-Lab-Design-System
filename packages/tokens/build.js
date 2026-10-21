@@ -152,9 +152,9 @@ const THEME = [
     ...colorAliases.map((v) => entry(`color-${v.name.slice(2)}`, `var(${v.name})`, v.name, true)),
     ...fluentColors.map((v) => entry(`color-${v.name.slice(2)}`, `var(${v.name})`, v.name, true)),
   ]),
-  // 'Inter Variable' is the family name @fontsource-variable/inter registers.
+  // Gibson loads from an Adobe Fonts kit as canada-type-gibson.
   group('Font family', 'font', [
-    entry('font-sans', `'Inter Variable', ${lit('light', '--font-family')}`, '--font-family'),
+    entry('font-sans', lit('light', '--font-family'), '--font-family'),
     entry('font-heading', 'var(--font-sans)'),
     entry('font-mono', lit('light', '--font-family-mono'), '--font-family-mono'),
   ]),
@@ -387,10 +387,9 @@ const registryJson = JSON.stringify({
       name: 'base',
       type: 'registry:base',
       title: 'Proto-Lab',
-      description: 'CapTech Proto-Lab design system for a new shadcn/ui project: Base UI, Lucide, Inter, and the Proto-Lab theme with the Tailwind palette removed.',
+      description: 'CapTech Proto-Lab design system for a new shadcn/ui project: Base UI, Lucide, Gibson, and the Proto-Lab theme with the Tailwind palette removed. Load Gibson with an Adobe Fonts web project kit.',
       config: { style: 'base-nova', iconLibrary: 'lucide', tailwind: { baseColor: 'neutral' } },
       dependencies: ['tw-animate-css'],
-      registryDependencies: ['font-inter'],
       cssVars: cssVarsFor(true),
       css: registryCss,
     },
@@ -399,7 +398,6 @@ const registryJson = JSON.stringify({
       type: 'registry:theme',
       title: 'Proto-Lab theme',
       description: 'Applies Proto-Lab colors, type ramp, weights, radii and elevation to an existing shadcn/ui project.',
-      registryDependencies: ['font-inter'],
       cssVars: cssVarsFor(false),
       css: registryCss,
     },

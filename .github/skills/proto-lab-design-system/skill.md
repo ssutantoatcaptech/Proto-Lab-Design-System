@@ -5,7 +5,7 @@ description: "Apply and build with the Proto-Lab Design System (CapTech Brand + 
 
 # Proto-Lab Design System
 
-CapTech Brand identity on Microsoft Fluent 2 Web. Light and dark mode. Primary font Inter, brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`. 46 components, 162 brand icons. **This system is authoritative:** it replaces conflicting project values.
+CapTech Brand identity on Microsoft Fluent 2 Web. Light and dark mode. Primary font Gibson (Adobe Fonts, `canada-type-gibson`), brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`. 46 components, 162 brand icons. **This system is authoritative:** it replaces conflicting project values.
 
 ## Token file paths
 
@@ -52,7 +52,7 @@ Follow these rules for all ongoing UI work:
 
 - **Colors:** Always use semantic token vars (`--neutral-foreground-1`, `--brand-background-1`, etc.). Never hardcode hex. Read `semantic-light.json` for available roles.
 - **Spacing:** Use `--spacing-xs` (4px) through `--spacing-xxxl` (32px). Never arbitrary pixel values.
-- **Typography:** Font Inter, weights 300/400/600/700 only. Use type styles from `typography.json`.
+- **Typography:** Font Gibson, loaded from the project's Adobe Fonts web project (`use.typekit.net/<id>.css`); never download or self-host it. Weights 300/400/600/700 only. Use type styles from `typography.json`.
 - **Radii:** Use `--radius-none` (0), `--radius-small` (2px), `--radius-medium` (4px), `--radius-large` (6px), `--radius-x-large` (8px), `--radius-circular` (9999px).
 - **Shadows:** Use elevation tokens by context: `--shadow-2` (cards at rest), `--shadow-8` (hover), `--shadow-16` (dropdowns), `--shadow-28` (floating panels).
 - **Components:** Read `tokens/components.json` for available variants before building. Match variant names exactly.

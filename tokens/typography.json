@@ -1,7 +1,7 @@
 {
   "typography": {
     "font-family": {
-      "primary": { "$value": "Inter, sans-serif", "$type": "fontFamily", "$description": "Primary typeface from Proto-Lab typography tokens in Figma" },
+      "primary": { "$value": "canada-type-gibson, ui-sans-serif, system-ui, sans-serif", "$type": "fontFamily", "$description": "Gibson (Canada Type), served by Adobe Fonts as canada-type-gibson. Projects load it with an Adobe Fonts web project kit; without one, text falls back to the system sans serif." },
       "mono": { "$value": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", "$type": "fontFamily", "$description": "System monospace stack for code" }
     },
     "font-weight": {

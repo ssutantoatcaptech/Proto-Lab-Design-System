@@ -134,7 +134,7 @@
   --shadow-key: rgba(0, 0, 0, 0.14);
 
   /* ─── Typography ─── */
-  --font-family: Inter, sans-serif;
+  --font-family: canada-type-gibson, ui-sans-serif, system-ui, sans-serif;
   --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --font-weight-light: 300;
   --font-weight-regular: 400;

@@ -1,9 +1,23 @@
 ---
 title: Typography
-description: The Fluent 2 type ramp set in Inter.
+description: The Fluent 2 type ramp set in Gibson.
 ---
 
-Proto-Lab uses Inter with the Fluent 2 ramp. Titles are light (300). Subtitles and controls are semibold (600). Body text is regular (400).
+Proto-Lab uses [Gibson](https://fonts.adobe.com/fonts/gibson) by Canada Type with the Fluent 2 ramp. Titles are light (300). Subtitles and controls are semibold (600). Body text is regular (400).
+
+<FontStatus />
+
+## Loading Gibson
+
+Gibson is licensed through Adobe Fonts, so each project loads it from an Adobe Fonts web project. Create one in Adobe Fonts, add Gibson Light, Regular, SemiBold and Bold, then add its stylesheet to your page.
+
+```html title="index.html"
+<link rel="stylesheet" href="https://use.typekit.net/<project-id>.css" />
+```
+
+The CSS family name is `canada-type-gibson`, and the Proto-Lab theme already uses it. Gibson has both Light and Book at weight 300; a web project can serve only one, so pick Light. Without the stylesheet, text falls back to the system sans serif.
+
+Don't download Gibson from anywhere else. Adobe's license covers serving it through Adobe Fonts.
 
 ## Type ramp
 

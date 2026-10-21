@@ -43,14 +43,14 @@ what a project last applied.
   WCAG AA.
 
 - **shadcn/ui registry** (`apps/docs/registry.json`, generated). Two items:
-  `base` (a `registry:base` for `shadcn init`: Base UI, Lucide, Inter, strict
+  `base` (a `registry:base` for `shadcn init`: Base UI, Lucide, strict
   theme with the Tailwind palette removed) and `theme` (for existing shadcn
   projects; overrides values in place). `npm run registry:build` writes
   `apps/docs/public/r/`.
 - **`scripts/e2e-registry.js`** (`npm run test:registry`, also in CI): installs
   `base` into `fixtures/vite-consumer`, adds upstream button, input and card,
   builds, and checks computed styles in headless Chrome (32px controls,
-  Inter, weight 600, CapTech Blue, dark mode on a nested `.dark` wrapper).
+  Gibson font stack, weight 600, CapTech Blue, dark mode on a nested `.dark` wrapper).
 
 - **Docs site** (`apps/docs`, `npm run docs:dev`). Next.js and Fumadocs,
   laid out like ui.shadcn.com: header with search (⌘K or /), theme menu and
@@ -75,6 +75,15 @@ what a project last applied.
   counts, size preview, click to copy the import, and filters kept in the URL.
 
 ### Changed
+- **Primary font is Gibson** (Canada Type) via Adobe Fonts, CSS family
+  `canada-type-gibson`, falling back to the system sans serif. This reverses
+  the switch to Inter in `20588e0`; the Figma file still says Inter and needs
+  the same change, or the next Figma sync will undo this. Projects load Gibson
+  with their Adobe Fonts web project stylesheet
+  (`use.typekit.net/<id>.css`); the registry no longer installs a font. The
+  docs site reads the project ID from `ADOBE_FONTS_KIT` and the Typography
+  page shows whether Gibson loaded. Recorded as an intentional change in
+  `packages/tokens/baseline/changes.json`.
 - `tokens/css/variables-light.css` is now generated. Every variable it had is
   kept with the same value; new variables are added.
 - Dark `brand.background-1` now points at brand-ramp 70 (Fluent's dark brand

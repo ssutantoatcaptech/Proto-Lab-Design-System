@@ -7,6 +7,7 @@
  * `shadcn init <apps/docs/public/r/base.json>`, adds upstream components,
  * builds, serves the app, and reads computed styles from headless Chrome.
  *
+ * Set ADOBE_FONTS_KIT to also check that Gibson loads from Adobe Fonts.
  * Needs network (npm, the shadcn registry) and Chrome. Set CHROME_PATH if
  * Chrome is not in a standard location. Pass --keep to leave the temp app.
  *
@@ -24,6 +25,7 @@ const ROOT     = path.resolve(__dirname, '..');
 const DOCS     = path.join(ROOT, 'apps', 'docs');
 const SHADCN   = `shadcn@${require(path.join(DOCS, 'package.json')).devDependencies.shadcn}`;
 const keep     = process.argv.includes('--keep');
+const KIT      = process.env.ADOBE_FONTS_KIT;
 const app      = fs.mkdtempSync(path.join(os.tmpdir(), 'proto-lab-e2e-'));
 let failed = false;
 
@@ -64,6 +66,10 @@ async function main() {
   step(`Scaffold consumer in ${app}`);
   fs.cpSync(path.join(ROOT, 'fixtures', 'vite-consumer'), app, { recursive: true });
   run('npm', ['install', '--no-audit', '--no-fund'], app);
+  if (KIT) {
+    const html = path.join(app, 'index.html');
+    fs.writeFileSync(html, fs.readFileSync(html, 'utf8').replace('</head>', `  <link rel="stylesheet" href="https://use.typekit.net/${KIT}.css" />\n  </head>`));
+  }
 
   step('shadcn init from @proto-lab/base, add button input card and practice area icons');
   run('npx', ['-y', SHADCN, 'init', path.join(DOCS, 'public', 'r', 'base.json'), '-y'], app);
@@ -92,8 +98,9 @@ async function main() {
   step('Assertions');
   const WHITE = 'rgb(255, 255, 255)';
   check(!/\.(bg|text|border)-(red|blue|green|zinc|neutral|slate|gray)-\d{2,3}\b/.test(css), 'Tailwind palette utilities are absent');
-  check(out.interLoaded, 'Inter is loaded', out.interLoaded);
-  check(out.body.font.includes('Inter'), 'body font is Inter', out.body.font);
+  check(out.body.font.startsWith('canada-type-gibson'), 'body font is Gibson (canada-type-gibson)', out.body.font);
+  if (KIT) check(out.gibsonLoaded, 'Gibson loads from the Adobe Fonts kit', out.gibsonLoaded);
+  else console.log('  · Gibson load not checked: set ADOBE_FONTS_KIT to test the Adobe Fonts kit');
   check(out.body.size === '14px' && out.body.lineHeight === '20px', 'body text is body-1 (14/20)', [out.body.size, out.body.lineHeight]);
   check(out.button.height === '32px', 'button is 32px tall', out.button.height);
   check(out.button.weight === '600', 'button label is semibold (600)', out.button.weight);

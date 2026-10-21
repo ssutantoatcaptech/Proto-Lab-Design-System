@@ -197,7 +197,7 @@ rendered result in headless Chrome.
 
 | Decision | Detail |
 |---|---|
-| **Primary font** | Inter (falls back to the system sans serif) |
+| **Primary font** | Gibson by Canada Type, via Adobe Fonts (`canada-type-gibson`). Falls back to the system sans serif |
 | **Brand color** | CapTech Blue `#005eb8` (Brand-80 in ramp) |
 | **Brand accent** | Yellow `#fdda24` (same in light & dark) |
 | **Spacing scale** | Fluent 2 — 0, 2, 4, 6, 8, 10, 12, 16, 20, 24, 32 |

@@ -162,7 +162,7 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### Typography
 | Variable | Light | Dark |
 |---|---|---|
-| `--font-family` | Inter, sans-serif | same |
+| `--font-family` | canada-type-gibson, ui-sans-serif, system-ui, sans-serif | same |
 | `--font-family-mono` | ui-monospace, SFMono-Regular, Menlo, Consolas, monospace | same |
 | `--font-weight-light` | 300 | same |
 | `--font-weight-regular` | 400 | same |
