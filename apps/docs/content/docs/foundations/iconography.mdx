@@ -1,0 +1,32 @@
+---
+title: Iconography
+description: Lucide for interface icons. CapTech icons for illustration only.
+---
+
+Proto-Lab uses two icon sets with different jobs. Mixing them up is the most common mistake.
+
+## Interface icons: Lucide
+
+Use [Lucide](https://lucide.dev) for anything functional: buttons, menus, inputs, status, navigation. Lucide icons inherit the text color and size with the text.
+
+```tsx
+import { PlusIcon } from "lucide-react"
+
+<Button><PlusIcon /> New project</Button>
+```
+
+| Size | Use |
+|---|---|
+| 16px | Inside buttons, inputs and menus (the default) |
+| 20px | Standalone icon buttons and toolbars |
+| 24px | Navigation and empty states |
+
+## Illustrative icons: CapTech
+
+The 162 CapTech icons are two color illustrations at 48px. Use them for empty states, section headers and callouts about practices, values and ERGs.
+
+<Callout variant="warning" title="Never use CapTech icons as interface icons">
+They can't inherit color, don't scale below 32px, and read as decoration. Never put them in buttons, inputs, menus, tabs, badges or navigation.
+</Callout>
+
+A searchable gallery and an installable `@proto-lab/captech-icons` item ship in a later release.

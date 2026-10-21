@@ -52,12 +52,26 @@ what a project last applied.
   builds, and checks computed styles in headless Chrome (32px controls,
   Inter, weight 600, CapTech Blue, dark mode on a nested `.dark` wrapper).
 
+- **Docs site** (`apps/docs`, `npm run docs:dev`). Next.js and Fumadocs,
+  laid out like ui.shadcn.com: header with search (⌘K or /), theme menu and
+  GitHub; grouped sidebar; Copy Page with Open in Claude or ChatGPT;
+  previous and next; On This Page. Get Started, nine Foundations pages
+  (including Nielsen and Norman's 10 heuristics) and twelve component pages.
+  The site is installed from the Proto-Lab base and built from the registry
+  components. Previews and code come from the same example file; token tables
+  read `tokens/dist/tokens.json`.
+
 ### Changed
 - `tokens/css/variables-light.css` is now generated. Every variable it had is
   kept with the same value; new variables are added.
 - Dark `brand.background-1` now points at brand-ramp 70 (Fluent's dark brand
   background). White text on the old value was 2.8:1. No dark CSS had shipped
   before, so no consumer is affected.
+
+### Fixed
+- `font-heading` now reads `var(--font-sans)`. It named `'Inter Variable'`,
+  which only exists when Inter loads through fontsource, so Next.js projects
+  using `next/font` fell back to the default face.
 
 ### Known issues
 - Four text pairs fail WCAG AA and cannot be fixed with the current palette:

@@ -1,0 +1,43 @@
+---
+title: Checkbox
+description: Turns an option on or off, often as one of several.
+heuristics: [3, 6]
+base: https://base-ui.com/react/components/checkbox
+---
+
+<ComponentPreview name="checkbox-demo" />
+
+## Installation
+
+<InstallCommand args="add checkbox" />
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox"
+```
+
+```tsx
+<Checkbox id="notify" defaultChecked />
+```
+
+
+## Guidance
+
+**Do**
+
+- Write labels as positive statements.
+- Use for choices that take effect when the form is submitted.
+
+**Don't**
+
+- Use a checkbox for something that applies immediately. Use a switch.
+- Use a single checkbox to choose between two named options. Use a radio group.
+
+## Accessibility
+
+Click the label to toggle. Connect it with `htmlFor` and an `id`.
+
+## API
+
+Accepts every Base UI Checkbox prop, including `checked`, `defaultChecked`, `onCheckedChange` and `indeterminate`. See the [Base UI reference](https://base-ui.com/react/components/checkbox).

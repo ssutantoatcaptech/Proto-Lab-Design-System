@@ -1,0 +1,51 @@
+---
+title: Select
+description: Picks one option from a list.
+heuristics: [5, 6]
+base: https://base-ui.com/react/components/select
+---
+
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+<InstallCommand args="add select" />
+
+## Usage
+
+```tsx
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+```
+
+```tsx
+<Select items={practices} defaultValue="cx">
+  <SelectTrigger><SelectValue /></SelectTrigger>
+  <SelectContent>
+    {practices.map((p) => (
+      <SelectItem key={p.value} value={p.value}>{p.label}</SelectItem>
+    ))}
+  </SelectContent>
+</Select>
+```
+
+Pass `items` to `Select` so the trigger shows the label of the chosen value, not the value itself.
+
+## Guidance
+
+**Do**
+
+- Use for five to fifteen options.
+- Pick a sensible default when there is one.
+
+**Don't**
+
+- Use a select for two or three options. Show them as radio buttons.
+- Use it for long lists people need to search. Use a combobox.
+
+## Accessibility
+
+Opens with Enter, Space or the arrow keys. Typing jumps to matching options.
+
+## API
+
+Accepts every Base UI Select prop. `items` maps values to labels for `SelectValue`. See the [Base UI reference](https://base-ui.com/react/components/select).

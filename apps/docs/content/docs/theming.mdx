@@ -1,0 +1,44 @@
+---
+title: Theming
+description: How Proto-Lab tokens map onto shadcn/ui variables and Tailwind classes.
+---
+
+shadcn/ui components read a small set of CSS variables like `--primary` and `--muted-foreground`. Proto-Lab points each one at a Fluent semantic token. Components stay untouched. The values change.
+
+## The token layers
+
+1. **Primitives** are raw brand colors such as `--color-captech-blue`. Never use them in components.
+2. **Semantic tokens** describe a role, such as `--brand-background-1` or `--neutral-foreground-2`. They change between light and dark.
+3. **shadcn aliases** such as `--primary` point at semantic tokens, so shadcn components pick up Proto-Lab automatically.
+
+## shadcn variables
+
+<AliasTable />
+
+## Tailwind classes
+
+The Tailwind theme is remapped so the classes inside shadcn components land on Proto-Lab values.
+
+| Class | Proto-Lab value |
+|---|---|
+| `text-xs` | caption 1, 12/16 |
+| `text-sm` | body 1, 14/20 |
+| `text-base` | body 2, 16/22 |
+| `font-medium` | 600 |
+| `rounded-md` | 4px |
+| `rounded-xl` | 8px |
+| `shadow-xs` | elevation 2 |
+| `shadow-lg` | elevation 16 |
+
+Fluent names work too: `text-title-1`, `text-caption-1`, `rounded-medium`, `shadow-elevation-8`, `bg-neutral-background-2`.
+
+## Changing a value
+
+Edit the JSON in `tokens/`, then rebuild.
+
+```bash
+npm run tokens:build   # regenerates CSS, Tailwind theme, registry, docs data
+npm run tokens:check   # contrast, light and dark parity, no broken variables
+```
+
+Never edit the generated CSS. The check fails if you do.

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "rtl": false,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/registry/proto-lab/lib/utils",
+    "ui": "@/registry/proto-lab/ui",
+    "lib": "@/registry/proto-lab/lib",
+    "hooks": "@/registry/proto-lab/hooks"
+  },
+  "registries": {}
+}

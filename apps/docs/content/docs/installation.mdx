@@ -1,0 +1,60 @@
+---
+title: Installation
+description: Add Proto-Lab to a new project, an existing shadcn/ui project, or anything else.
+---
+
+Pick the path that matches your starting point.
+
+## New project
+
+Create a Vite or Next.js app with Tailwind v4, then initialize shadcn from the Proto-Lab base. It sets up Base UI, Lucide icons, Inter and the strict Proto-Lab theme.
+
+<InstallCommand args="init https://<registry-host>/r/base.json" />
+
+Then add components:
+
+<InstallCommand args="add button input card" />
+
+<Callout title="The registry isn't hosted yet">
+Build it locally with `npm run registry:build` in the Proto-Lab repo and pass the file path instead of a URL, for example `apps/docs/public/r/base.json`. Proto-Lab component items publish with the next release. Until then `add button` installs the upstream component, and the theme styles it.
+</Callout>
+
+## Existing shadcn project
+
+Apply the theme on top of what you have. It replaces shadcn's colors, type ramp, weights, radii and shadows in your global stylesheet.
+
+<InstallCommand args="add https://<registry-host>/r/theme.json" />
+
+The theme overrides values in place. It can't remove the Tailwind color palette from an existing project, so classes like `bg-blue-500` still work. Start from the base if you want them gone.
+
+## Any other project
+
+No Tailwind or shadcn? Import the CSS variables and use them directly.
+
+```css title="global.css"
+@import "design-system/tokens/css/variables-light.css";
+@import "design-system/tokens/css/variables-dark.css";
+
+.button-primary {
+  background: var(--brand-background-1);
+  color: var(--neutral-foreground-on-brand);
+  border-radius: var(--radius-medium);
+}
+```
+
+## With an AI agent
+
+Vendor the repo and run the bootstrap script. It points Claude, Copilot and Codex at the procedure in `APPLY.md`.
+
+```bash
+git submodule add https://github.com/ssutantoatcaptech/Proto-Lab-Design-System design-system
+node design-system/scripts/bootstrap.js
+```
+
+Then tell your agent: "Apply the design system to this project." See [Registry and agents](/docs/registry) for details.
+
+## Check your setup
+
+- Body text is Inter at 14px with a 20px line height.
+- A default button is 32px tall with a CapTech Blue fill.
+- `bg-blue-500` produces no style (new projects only).

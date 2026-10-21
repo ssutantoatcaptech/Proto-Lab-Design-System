@@ -1,0 +1,14 @@
+---
+title: Spacing
+description: A 4px grid. Fluent's spacing steps are Tailwind's numeric scale.
+---
+
+Tailwind's spacing scale already sits on Fluent's 4px grid, so use the numeric classes. `p-2` is Fluent `s` (8px). `gap-4` is `l` (16px).
+
+<SpacingScale />
+
+## Guidelines
+
+- Stick to the steps above. Values like `p-[7px]` break the rhythm and the lint rule.
+- Use `gap` for space between siblings, padding for space inside a container.
+- Group related items tightly (4 to 8px) and separate groups generously (24 to 32px).

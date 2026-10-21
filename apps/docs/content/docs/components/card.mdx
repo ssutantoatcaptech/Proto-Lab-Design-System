@@ -1,0 +1,49 @@
+---
+title: Card
+description: Groups related content and actions on a surface.
+heuristics: [8]
+---
+
+<ComponentPreview name="card-demo" />
+
+## Installation
+
+<InstallCommand args="add card" />
+
+## Usage
+
+```tsx
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Discovery workshop</CardTitle>
+    <CardDescription>Two days with the client team.</CardDescription>
+  </CardHeader>
+  <CardContent>…</CardContent>
+  <CardFooter>…</CardFooter>
+</Card>
+```
+
+
+## Guidance
+
+**Do**
+
+- Keep one idea per card.
+- Put the primary action in the footer.
+
+**Don't**
+
+- Nest cards inside cards.
+- Make the whole card clickable and also put buttons inside it.
+
+## Accessibility
+
+Use a real heading level for the title if the card starts a section.
+
+## API
+
+`Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardAction`, `CardContent` and `CardFooter` are styled `div` elements.

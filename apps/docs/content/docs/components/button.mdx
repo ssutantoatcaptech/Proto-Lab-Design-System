@@ -1,0 +1,61 @@
+---
+title: Button
+description: Triggers an action. One primary button per view.
+heuristics: [1, 4, 5]
+base: https://base-ui.com/react/components/button
+---
+
+<ComponentPreview name="button-demo" />
+
+## Installation
+
+<InstallCommand args="add button" />
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+<Button>Save changes</Button>
+```
+
+## Variants
+
+<ComponentPreview name="button-variants" />
+
+| Variant | Use |
+|---|---|
+| `default` | The main action on the view. Use one. |
+| `secondary` | Supporting actions next to the primary one. |
+| `outline` | Neutral actions, such as Cancel or Continue. |
+| `ghost` | Low emphasis actions in toolbars and dense layouts. |
+| `destructive` | Actions that delete or can't be undone. Confirm them. |
+| `link` | Navigation that looks like a link but acts like a button. |
+
+## Sizes
+
+<ComponentPreview name="button-sizes" />
+
+The default is 32px, Fluent's medium control height. Use `sm` and `xs` in dense tables and toolbars.
+
+## Guidance
+
+**Do**
+
+- Lead labels with a verb: "Save changes", "Invite people".
+- Disable the button until the form is valid, and say why nearby.
+
+**Don't**
+
+- Put two primary buttons side by side.
+- Use a button for navigation to another page. Use a link.
+
+## Accessibility
+
+Icon only buttons need an `aria-label`. Disabled buttons can't receive focus, so explain the reason in visible text.
+
+## API
+
+Accepts every Base UI Button prop, plus `variant` and `size`. Use `render` to render a link or another element. See the [Base UI reference](https://base-ui.com/react/components/button).

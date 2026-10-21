@@ -26,7 +26,7 @@
   /* Font family */
   --font-*: initial;
   --font-sans: 'Inter Variable', Inter, sans-serif;
-  --font-heading: 'Inter Variable', Inter, sans-serif;
+  --font-heading: var(--font-sans);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Type ramp: Tailwind sizes remapped to Fluent, plus Fluent names */

@@ -1,0 +1,43 @@
+---
+title: Input
+description: A single line text field. Always pair it with a label.
+heuristics: [5, 6, 9]
+base: https://base-ui.com/react/components/input
+---
+
+<ComponentPreview name="input-demo" />
+
+## Installation
+
+<InstallCommand args="add input" />
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input"
+```
+
+```tsx
+<Input type="email" placeholder="name@captechconsulting.com" />
+```
+
+
+## Guidance
+
+**Do**
+
+- Use the right `type` so phones show the right keyboard.
+- Put helper text under the field, and keep it visible.
+
+**Don't**
+
+- Use the placeholder as the label. It disappears as people type.
+- Clear the field after a validation error.
+
+## Accessibility
+
+Connect a `Label` with `htmlFor`. Set `aria-invalid` when the value is wrong so the field shows the danger state, and describe the error in text.
+
+## API
+
+Accepts every native input prop. Styles invalid, disabled and focus states automatically. See the [Base UI reference](https://base-ui.com/react/components/input).

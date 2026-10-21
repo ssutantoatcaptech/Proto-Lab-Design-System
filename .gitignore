@@ -6,3 +6,6 @@ out/
 .env*
 # Built registry JSON is generated at deploy time
 apps/docs/public/r/
+.source/
+next-env.d.ts
+*.tsbuildinfo

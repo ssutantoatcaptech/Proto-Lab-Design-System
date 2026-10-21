@@ -1,0 +1,55 @@
+---
+title: Dialog
+description: Interrupts the task for a decision or a short focused task.
+heuristics: [3, 5]
+base: https://base-ui.com/react/components/dialog
+---
+
+<ComponentPreview name="dialog-demo" />
+
+## Installation
+
+<InstallCommand args="add dialog" />
+
+## Usage
+
+```tsx
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger render={<Button variant="outline" />}>Archive project</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Archive this project?</DialogTitle>
+      <DialogDescription>You can restore it for 30 days.</DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose render={<Button variant="outline" />}>Cancel</DialogClose>
+      <DialogClose render={<Button />}>Archive</DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+
+## Guidance
+
+**Do**
+
+- Title the dialog with the question, and label buttons with the outcome.
+- Say whether the action can be undone.
+
+**Don't**
+
+- Open a dialog on page load.
+- Use a dialog for content people need to read alongside the page. Use a sheet.
+
+## Accessibility
+
+Focus moves into the dialog and returns to the trigger on close. Escape, the close button and a click outside all close it.
+
+## API
+
+Accepts every Base UI Dialog prop. `DialogContent` takes `showCloseButton`. See the [Base UI reference](https://base-ui.com/react/components/dialog).

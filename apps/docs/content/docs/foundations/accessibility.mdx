@@ -1,0 +1,23 @@
+---
+title: Accessibility
+description: Contrast is checked on every build. Here is where the system stands.
+---
+
+Every build checks color pairs against WCAG 2 contrast in light and dark. Text needs 4.5:1. Interface marks like borders and focus rings need 3:1.
+
+<Callout variant="warning" title="Known gaps">
+Four text pairs fail across three colors and need a decision: light secondary text, light warning text and dark error text. They are tracked in `packages/tokens/contrast-pairs.json`. Avoid secondary text for anything people must read until this is resolved.
+</Callout>
+
+<ContrastTable />
+
+## What components handle for you
+
+- **Keyboard and focus.** Base UI manages focus, arrow keys, Escape and focus return for dialogs, menus, selects and tabs.
+- **Roles and labels.** Components ship with the right ARIA roles. You still provide labels for icon buttons and form fields.
+
+## What you still own
+
+- A visible label for every input. Placeholders aren't labels.
+- Text alternatives for meaningful images and icons.
+- Error messages that say what went wrong and how to fix it, in text, not color alone.

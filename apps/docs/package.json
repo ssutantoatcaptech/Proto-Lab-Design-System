@@ -4,9 +4,35 @@
   "private": true,
   "description": "Proto-Lab docs site and shadcn registry. The registry is served from /r/{name}.json.",
   "scripts": {
+    "dev": "next dev -p 5191",
+    "build": "next build",
+    "start": "next start -p 5191",
+    "typecheck": "fumadocs-mdx && tsc --noEmit",
     "registry:build": "shadcn build"
   },
   "devDependencies": {
-    "shadcn": "4.22.1"
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/mdx": "2.0.14",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "shadcn": "4.22.1",
+    "tailwindcss": "4.3.3",
+    "tw-animate-css": "1.4.0",
+    "typescript": "6.0.3"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.9.0",
+    "class-variance-authority": "0.7.1",
+    "cmdk": "1.1.1",
+    "cn": "0.4.0",
+    "fumadocs-core": "16.17.7",
+    "fumadocs-mdx": "15.4.9",
+    "lucide-react": "1.61.0",
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "shiki": "4.5.0",
+    "zod": "4.6.7"
   }
 }

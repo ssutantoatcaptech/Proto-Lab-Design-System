@@ -1,0 +1,45 @@
+---
+title: Registry and agents
+description: Install Proto-Lab with the shadcn CLI, or let an AI agent apply it.
+---
+
+## The registry
+
+Proto-Lab is a [shadcn registry](https://ui.shadcn.com/docs/registry). Two items exist today.
+
+| Item | Use it for | What it does |
+|---|---|---|
+| `base` | New projects, with `shadcn init` | Base UI, Lucide, Inter and the strict theme. Removes the Tailwind palette. |
+| `theme` | Existing shadcn projects, with `shadcn add` | Overrides colors, type, weights, radii and shadows in place. |
+
+Component items (`@proto-lab/button` and the rest) publish with the next release.
+
+## Use the namespace
+
+Once the registry is hosted, register it once in `components.json`.
+
+```json title="components.json"
+{
+  "registries": {
+    "@proto-lab": "https://<registry-host>/r/{name}.json"
+  }
+}
+```
+
+Then install by name.
+
+<InstallCommand args="add @proto-lab/theme" />
+
+## Build it yourself
+
+```bash
+npm install
+npm run registry:build    # writes apps/docs/public/r/*.json
+npm run test:registry     # installs into a fresh Vite app and checks it in Chrome
+```
+
+## AI agents
+
+`scripts/bootstrap.js` wires the system into a project so any agent finds it. It writes a pointer into `AGENTS.md`, shims for Claude Code and GitHub Copilot, and copies the Proto-Lab skill into `.github/skills/`. Run it again after updating the design system. It only changes what changed.
+
+The agent then follows `APPLY.md`: map existing styles onto tokens, keep the project's variable names as aliases, swap hardcoded values, and verify the build.

@@ -155,7 +155,7 @@ const THEME = [
   // 'Inter Variable' is the family name @fontsource-variable/inter registers.
   group('Font family', 'font', [
     entry('font-sans', `'Inter Variable', ${lit('light', '--font-family')}`, '--font-family'),
-    entry('font-heading', `'Inter Variable', ${lit('light', '--font-family')}`),
+    entry('font-heading', 'var(--font-sans)'),
     entry('font-mono', lit('light', '--font-family-mono'), '--font-family-mono'),
   ]),
   group('Type ramp: Tailwind sizes remapped to Fluent, plus Fluent names', 'text', [

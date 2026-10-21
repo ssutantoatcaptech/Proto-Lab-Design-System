@@ -1,0 +1,42 @@
+---
+title: Badge
+description: A short label for status or category.
+heuristics: [1, 6]
+---
+
+<ComponentPreview name="badge-demo" />
+
+## Installation
+
+<InstallCommand args="add badge" />
+
+## Usage
+
+```tsx
+import { Badge } from "@/components/ui/badge"
+```
+
+```tsx
+<Badge variant="secondary">Draft</Badge>
+```
+
+
+## Guidance
+
+**Do**
+
+- Keep it to one or two words.
+- Use the same badge for the same status everywhere.
+
+**Don't**
+
+- Rely on badge color alone. The word carries the meaning.
+- Make badges look like buttons.
+
+## Accessibility
+
+Badges are plain text to assistive technology. If one is interactive, render it as a link with `render`.
+
+## API
+
+`variant`: `default`, `secondary`, `outline`, `destructive`, `ghost`, `link`.

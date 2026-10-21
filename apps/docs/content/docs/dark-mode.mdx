@@ -1,0 +1,37 @@
+---
+title: Dark mode
+description: Switch any part of the page to dark with one class.
+---
+
+Every semantic token has a dark value. Add the `dark` class to any element and everything inside it switches, including components that use shadcn variables.
+
+```html
+<html class="dark">
+```
+
+It also works on a single region. That is how the previews on this site can stay light inside a dark page and the other way around.
+
+```html
+<section class="dark bg-background">…</section>
+```
+
+## Plain CSS projects
+
+Projects that import `variables-dark.css` can also use `data-theme="dark"`.
+
+```html
+<body data-theme="dark">
+```
+
+## A theme switcher
+
+The switcher in this site's header offers three choices: Light, Dark and System. Offer all three. People who set a system preference expect it to be honored.
+
+Apply the saved choice with a small script in `<head>`, before the page paints, so it never flashes the wrong theme.
+
+## What changes in dark
+
+- Surfaces move to the CapTech blue grey `#1a2730` and its steps.
+- The primary fill moves to brand 70 so white text stays above 4.5:1.
+- Shadows get stronger, because dark surfaces hide them.
+- Charts and illustrations switch to lighter blues that read on dark.

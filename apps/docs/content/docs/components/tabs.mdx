@@ -1,0 +1,50 @@
+---
+title: Tabs
+description: Switches between related views in the same place.
+heuristics: [6, 8]
+base: https://base-ui.com/react/components/tabs
+---
+
+<ComponentPreview name="tabs-demo" />
+
+## Installation
+
+<InstallCommand args="add tabs" />
+
+## Usage
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+```
+
+```tsx
+<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="findings">Findings</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">…</TabsContent>
+  <TabsContent value="findings">…</TabsContent>
+</Tabs>
+```
+
+
+## Guidance
+
+**Do**
+
+- Use short, parallel labels.
+- Keep the selected tab in the URL when people might share or return to it.
+
+**Don't**
+
+- Use tabs for steps in a sequence. Use a stepper.
+- Hide content people need to compare side by side.
+
+## Accessibility
+
+Arrow keys move between tabs. The selected tab is announced. Base UI handles the roles.
+
+## API
+
+Accepts every Base UI Tabs prop. `TabsList` also takes `variant`: `default` or `line`. See the [Base UI reference](https://base-ui.com/react/components/tabs).

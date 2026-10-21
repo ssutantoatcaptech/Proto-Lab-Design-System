@@ -1,0 +1,38 @@
+---
+title: Typography
+description: The Fluent 2 type ramp set in Inter.
+---
+
+Proto-Lab uses Inter with the Fluent 2 ramp. Titles are light (300). Subtitles and controls are semibold (600). Body text is regular (400).
+
+## Type ramp
+
+<TypeRamp />
+
+## Using the ramp
+
+Fluent names set size, line height and weight together.
+
+```tsx
+<h1 className="text-title-1">Engagement overview</h1>
+<p className="text-body-1">Body copy at 14 on 20.</p>
+<span className="text-caption-1 text-muted-foreground">Updated today</span>
+```
+
+Tailwind's own sizes map onto the ramp too, which is how shadcn components pick it up. `text-sm` is body 1 and `text-xs` is caption 1.
+
+## Weights
+
+| Class | Weight | Use |
+|---|---|---|
+| `font-light` | 300 | Display and titles |
+| `font-normal` | 400 | Body text |
+| `font-medium` | 600 | Controls and labels. Fluent uses semibold where shadcn uses medium |
+| `font-semibold` | 600 | Subtitles and emphasis |
+| `font-bold` | 700 | Rare. Strong emphasis in dense text |
+
+## Guidelines
+
+- One `title-1` per page. Use subtitles for sections.
+- Keep body text at body 1 or body 2. Don't go below caption 1 for anything people need to read.
+- Set a weight on every heading. Without one, headings inherit bold and render too heavy.

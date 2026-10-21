@@ -1,0 +1,15 @@
+{
+  "title": "Docs",
+  "pages": [
+    "---Get Started---",
+    "index",
+    "installation",
+    "theming",
+    "dark-mode",
+    "registry",
+    "---Foundations---",
+    "...foundations",
+    "---Components---",
+    "...components"
+  ]
+}

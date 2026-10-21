@@ -30,5 +30,7 @@ jobs:
       - run: npm ci
       - name: Build registry and verify generated files are committed
         run: npm run registry:build && git diff --exit-code
+      - name: Docs site typechecks and builds
+        run: npm run docs:build
       - name: Install into a fresh Vite app and measure in Chrome
         run: npm run test:registry

@@ -1,0 +1,16 @@
+/*
+ * Docs-only styles. Shiki renders both themes into CSS variables; this picks
+ * one by the site theme. Everything else is Tailwind utilities on tokens.
+ */
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+  background-color: transparent !important;
+}
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+.shiki .line {
+  display: inline;
+}

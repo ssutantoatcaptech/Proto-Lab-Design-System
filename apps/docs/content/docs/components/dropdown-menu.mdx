@@ -1,0 +1,49 @@
+---
+title: Dropdown Menu
+description: A list of actions that opens from a button.
+heuristics: [6, 7]
+base: https://base-ui.com/react/components/menu
+---
+
+<ComponentPreview name="dropdown-menu-demo" />
+
+## Installation
+
+<InstallCommand args="add dropdown-menu" />
+
+## Usage
+
+```tsx
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger render={<Button variant="outline" />}>Actions</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Rename</DropdownMenuItem>
+    <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+
+## Guidance
+
+**Do**
+
+- Group related items and separate destructive ones at the end.
+- Show keyboard shortcuts next to the items that have them.
+
+**Don't**
+
+- Hide the most common action in a menu. Make it a button.
+- Nest more than one level of submenus.
+
+## Accessibility
+
+Opens with Enter, Space or arrow keys. Arrow keys move between items. Escape closes and returns focus to the trigger.
+
+## API
+
+Accepts every Base UI Menu prop. `DropdownMenuItem` takes `variant`: `default` or `destructive`. See the [Base UI reference](https://base-ui.com/react/components/menu).

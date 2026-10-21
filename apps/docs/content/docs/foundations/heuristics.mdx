@@ -1,0 +1,123 @@
+---
+title: Heuristics
+description: Nielsen and Norman's 10 usability heuristics, and how Proto-Lab helps you meet them.
+---
+
+Jakob Nielsen's ten heuristics, published by the [Nielsen Norman Group](https://www.nngroup.com/articles/ten-usability-heuristics/), are broad rules of thumb for usable interfaces. Proto-Lab uses them two ways: components are built to support them, and every component page lists the heuristics it helps with.
+
+The summaries below are paraphrased. Read the original for the full reasoning.
+
+## Visibility of system status
+
+Keep people informed about what is happening, with timely and appropriate feedback.
+
+- **In Proto-Lab:** distinct hover, focus, selected and disabled states on every control. A Fluent focus ring that is always visible on keyboard focus. Alerts and badges for state that persists.
+- **Do:** confirm every action, such as "Copied" or "Saved". Show progress for anything over a second.
+- **Don't:** change data silently, or leave a button looking clickable while a request is in flight.
+
+<HeuristicIndex id={1} />
+
+## Match between system and the real world
+
+Speak the user's language. Use words, concepts and conventions they already know, not internal terms.
+
+- **In Proto-Lab:** semantic token names describe roles people recognize, like danger, success and link. Icons come from Lucide's familiar set.
+- **Do:** write labels in the client's vocabulary. "Submit timesheet", not "POST entry".
+- **Don't:** expose database fields, error codes or internal project names in the interface.
+
+<HeuristicIndex id={2} />
+
+## User control and freedom
+
+People make mistakes. Give them a clearly marked way out: cancel, undo, back and close.
+
+- **In Proto-Lab:** dialogs, sheets and menus close with Escape, a close button and a click outside. Focus returns to where it came from.
+- **Do:** offer undo after destructive actions where you can, instead of only confirming before.
+- **Don't:** trap people in a flow with no way back.
+
+<HeuristicIndex id={3} />
+
+## Consistency and standards
+
+The same action should look and behave the same everywhere, and follow platform conventions.
+
+- **In Proto-Lab:** one set of components, variants and tokens across every CapTech project. shadcn's patterns match what people know from the wider web.
+- **Do:** use the same variant for the same intent on every screen. One primary button per view.
+- **Don't:** restyle a component for one screen. Change the token or add a variant to the system.
+
+<HeuristicIndex id={4} />
+
+## Error prevention
+
+Better than a good error message is a design that stops the error from happening.
+
+- **In Proto-Lab:** disabled states, constrained inputs like select and checkbox, and confirmation dialogs for destructive actions.
+- **Do:** disable actions until their preconditions are met, and validate as people type.
+- **Don't:** accept free text where a choice from a list would do.
+
+<HeuristicIndex id={5} />
+
+## Recognition rather than recall
+
+Make options, actions and information visible, so people don't have to remember them.
+
+- **In Proto-Lab:** selects, menus and tabs show the available choices. Menus show keyboard shortcuts next to the action.
+- **Do:** keep selections visible as chips or labels. Show recent items.
+- **Don't:** require people to remember a code or a value from a previous screen.
+
+<HeuristicIndex id={6} />
+
+## Flexibility and efficiency of use
+
+Shortcuts, hidden from novices, can speed up experts. Let people tailor frequent actions.
+
+- **In Proto-Lab:** every component is keyboard operable. Command palettes and menu shortcuts are first class patterns.
+- **Do:** support keyboard shortcuts for frequent actions, and show them where the action lives.
+- **Don't:** make the shortcut the only way to do something.
+
+<HeuristicIndex id={7} />
+
+## Aesthetic and minimalist design
+
+Interfaces shouldn't contain information that is irrelevant or rarely needed. Every extra element competes with what matters.
+
+- **In Proto-Lab:** a restrained palette with no decorative colors, a strict type ramp, and progressive disclosure through tabs, dialogs and menus.
+- **Do:** show only what is needed for the current step. Put the rest one click away.
+- **Don't:** add color, borders or shadows for decoration.
+
+<HeuristicIndex id={8} />
+
+## Help users recognize, diagnose, and recover from errors
+
+Error messages should use plain language, say exactly what went wrong, and suggest a fix.
+
+- **In Proto-Lab:** destructive alerts, invalid field states and status colors that always pair with text and an icon.
+- **Do:** write errors as "what happened" plus "what to do next". Keep the person's input.
+- **Don't:** show raw error codes, or clear the form after a failed submit.
+
+<HeuristicIndex id={9} />
+
+## Help and documentation
+
+The best interfaces need no explanation, but some tasks need help. Make it easy to find and focused on the task.
+
+- **In Proto-Lab:** tooltips for icon buttons, helper text under inputs, and placeholders that show a valid example.
+- **Do:** put help next to the step that needs it.
+- **Don't:** rely on a separate manual for things the interface could explain.
+
+<HeuristicIndex id={10} />
+
+## How this site follows them
+
+| Heuristic | On this site |
+|---|---|
+| Visibility of system status | The current page is highlighted in the sidebar and header. Copy buttons confirm with "Copied". "On This Page" tracks your position. |
+| Match between system and the real world | Fluent token names sit next to shadcn names and Tailwind classes, so each audience finds its own term. |
+| User control and freedom | Search and menus close with Escape. Previous and next links on every page. Theme choice is reversible and remembered. |
+| Consistency and standards | Every component page follows the same order: preview, installation, usage, guidance, accessibility. |
+| Error prevention | Install commands come from one component, so they can't be mistyped. Token values come from the build, not copied by hand. |
+| Recognition rather than recall | Swatches and samples sit next to every token. Your package manager choice is remembered across pages. |
+| Flexibility and efficiency of use | Press ⌘K or / to search. Copy Page sends any page to Claude or ChatGPT. |
+| Aesthetic and minimalist design | One content column. Previews come first. The palette is the system's own. |
+| Help users recognize, diagnose, and recover from errors | The 404 page offers search and a way back. Search explains what to try when nothing matches. |
+| Help and documentation | This site, plus the agent skill that carries the same guidance into your editor. |

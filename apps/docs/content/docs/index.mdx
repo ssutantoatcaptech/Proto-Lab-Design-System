@@ -1,0 +1,33 @@
+---
+title: Introduction
+description: CapTech's design system for prototypes and products. shadcn/ui components, Proto-Lab foundations.
+---
+
+Proto-Lab is how CapTech teams build interfaces that look like CapTech and behave like they should. It pairs [shadcn/ui](https://ui.shadcn.com) components with the CapTech brand on Microsoft's Fluent 2 foundations.
+
+## What you get
+
+- **Components from shadcn/ui.** Accessible behavior from [Base UI](https://base-ui.com), copied into your project so you own the code.
+- **Foundations from Proto-Lab.** Every color, type size, weight, radius and shadow. The Tailwind palette is removed, so off-brand values can't creep in.
+- **One source of truth.** Tokens live as JSON. CSS, the Tailwind theme, these docs and the agent skill are all generated from it.
+- **Ready for agents.** Claude, Copilot and Codex can apply the system to a project with one instruction.
+
+## What Proto-Lab adds to shadcn/ui
+
+| | shadcn/ui | Proto-Lab |
+|---|---|---|
+| Color | Neutral greys | CapTech Blue, Fluent semantic roles, success and warning |
+| Type | Tailwind defaults | Fluent ramp in Inter. `text-sm` is body 1 (14/20) |
+| Weight | `font-medium` is 500 | `font-medium` is 600, the Fluent control weight |
+| Radius | 10px base | Fluent: 4px controls, 8px containers |
+| Shadow | Tailwind defaults | Fluent elevation 2 to 64 |
+| Dark mode | `.dark` class | Same, plus `data-theme="dark"` for plain CSS |
+
+## How it fits together
+
+1. **Tokens** in `tokens/*.json` (DTCG format) define every value.
+2. **The generator** in `packages/tokens` writes CSS variables, the Tailwind theme and the shadcn registry.
+3. **The registry** installs the theme and components with the shadcn CLI.
+4. **These docs** read the same files, so they can't drift from what ships.
+
+Start with [Installation](/docs/installation).

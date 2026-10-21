@@ -1,0 +1,47 @@
+---
+title: Tooltip
+description: A short label that appears on hover or focus.
+heuristics: [6, 10]
+base: https://base-ui.com/react/components/tooltip
+---
+
+<ComponentPreview name="tooltip-demo" />
+
+## Installation
+
+<InstallCommand args="add tooltip" />
+
+## Usage
+
+```tsx
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+```
+
+```tsx
+<Tooltip>
+  <TooltipTrigger render={<Button variant="outline" size="icon" aria-label="Copy link" />}>
+    <CopyIcon />
+  </TooltipTrigger>
+  <TooltipContent>Copy link</TooltipContent>
+</Tooltip>
+```
+
+
+## Guidance
+
+**Do**
+
+- Name icon only buttons.
+- Keep it to a few words.
+
+**Don't**
+
+- Put essential information or links in a tooltip. Touch devices can't hover.
+
+## Accessibility
+
+Tooltips appear on keyboard focus as well as hover. The trigger still needs its own `aria-label`.
+
+## API
+
+Accepts every Base UI Tooltip prop. Wrap the app in `TooltipProvider` to share delays. See the [Base UI reference](https://base-ui.com/react/components/tooltip).
