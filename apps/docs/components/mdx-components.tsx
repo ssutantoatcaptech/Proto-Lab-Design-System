@@ -9,6 +9,7 @@ import {
   AliasTable, ColorTokens, ContrastTable, ElevationScale, MotionTokens, RadiusScale, SpacingScale, TypeRamp,
 } from "@/components/token-tables"
 import { HeuristicBadges, HeuristicIndex } from "@/components/heuristics"
+import { IconGallery } from "@/components/icon-gallery"
 
 const heading = (Tag: "h2" | "h3" | "h4", cls: string) =>
   function Heading({ className, ...props }: React.ComponentProps<"h2">) {
@@ -57,4 +58,5 @@ export const mdxComponents: MDXComponents = {
   TypeRamp,
   HeuristicBadges,
   HeuristicIndex,
+  IconGallery,
 }

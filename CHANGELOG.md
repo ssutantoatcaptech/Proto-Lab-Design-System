@@ -61,6 +61,19 @@ what a project last applied.
   components. Previews and code come from the same example file; token tables
   read `tokens/dist/tokens.json`.
 
+- **CapTech icons as React components** (`npm run icons:build`,
+  `scripts/build-icons.js`). All 162 SVGs become named exports such as
+  `RocketLaunchIllustration`, with `size` (32 to 96) and an optional `title`
+  for an accessible name. Colors read `--illustration-primary` and
+  `--illustration-accent` (with brand hex fallbacks), so icons follow dark
+  mode. The build fails on any color other than CapTech Blue and Yellow.
+  Verified pixel identical to the source SVGs.
+- **Registry items** `captech-icons` and one per category
+  (`captech-icons-general`, `-practice-areas`, `-core-values`,
+  `-core-competencies`, `-ergs`), installed to `components/captech-icons/`.
+- **Icon gallery** on the Iconography page: search, category filters with
+  counts, size preview, click to copy the import, and filters kept in the URL.
+
 ### Changed
 - `tokens/css/variables-light.css` is now generated. Every variable it had is
   kept with the same value; new variables are added.

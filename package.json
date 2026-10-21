@@ -13,10 +13,12 @@
     "tooling/*"
   ],
   "scripts": {
+    "icons:build": "node scripts/build-icons.js",
+    "icons:check": "node scripts/build-icons.js --check",
     "tokens:build": "node packages/tokens/build.js",
-    "tokens:check": "node packages/tokens/build.js --check && node packages/tokens/check.js",
-    "registry:build": "npm run tokens:build && npm run registry:build -w @proto-lab/docs",
-    "check:scripts": "node --check scripts/bootstrap.js && node --check scripts/export-icons.js && node --check scripts/e2e-registry.js",
+    "tokens:check": "node scripts/build-icons.js --check && node packages/tokens/build.js --check && node packages/tokens/check.js",
+    "registry:build": "npm run icons:build && npm run tokens:build && npm run registry:build -w @proto-lab/docs",
+    "check:scripts": "node --check scripts/bootstrap.js && node --check scripts/export-icons.js && node --check scripts/e2e-registry.js && node --check scripts/build-icons.js",
     "test:bootstrap": "node scripts/test-bootstrap.js",
     "test:registry": "node scripts/e2e-registry.js",
     "docs:dev": "npm run dev -w @proto-lab/docs",

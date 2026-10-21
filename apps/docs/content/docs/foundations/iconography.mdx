@@ -29,4 +29,38 @@ The 162 CapTech icons are two color illustrations at 48px. Use them for empty st
 They can't inherit color, don't scale below 32px, and read as decoration. Never put them in buttons, inputs, menus, tabs, badges or navigation.
 </Callout>
 
-A searchable gallery and an installable `@proto-lab/captech-icons` item ship in a later release.
+### Gallery
+
+<IconGallery />
+
+### Install
+
+Install every icon, or just one category.
+
+<InstallCommand args="add @proto-lab/captech-icons" />
+
+<InstallCommand args="add @proto-lab/captech-icons-practice-areas" />
+
+Categories: `general`, `practice-areas`, `core-values`, `core-competencies`, `ergs`. Files land in `components/captech-icons/`.
+
+### Use
+
+```tsx
+import { RocketLaunchIllustration } from "@/components/captech-icons/general"
+
+<RocketLaunchIllustration size={64} />
+<RocketLaunchIllustration size={64} title="Launch readiness" />
+```
+
+| Prop | Default | Notes |
+|---|---|---|
+| `size` | `48` | `32`, `40`, `48`, `64` or `96`. Never smaller than 32. |
+| `title` | none | Gives the icon an accessible name. Leave it out when the icon is decoration next to text that says the same thing. |
+
+Every icon name ends in `Illustration`, so it reads as one in code review.
+
+### Color and dark mode
+
+Icons use `--illustration-primary` (CapTech Blue) and `--illustration-accent` (Yellow). In dark mode the blue lightens so it reads on dark surfaces. Without the Proto-Lab theme, icons fall back to the brand hex values.
+
+The SVGs in `icons/` stay the source. `npm run icons:build` regenerates the components, and fails if an SVG uses any color other than CapTech Blue or Yellow.

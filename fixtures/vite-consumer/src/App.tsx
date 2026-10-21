@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CxCustomerExperienceIllustration } from "@/components/captech-icons/practice-areas"
 
 const probe = (sel: string) => {
   const s = getComputedStyle(document.querySelector(sel) as HTMLElement)
@@ -24,11 +25,14 @@ export default function App() {
       darkCard: probe("#dark-card"),
       body: probe("body"),
       interLoaded: document.fonts.check("14px 'Inter Variable'"),
+      icon: getComputedStyle(document.querySelector("#icon path") as Element).fill,
+      darkIcon: getComputedStyle(document.querySelector("#dark-icon path") as Element).fill,
     })))
   }, [])
   return (
     <div className="flex max-w-md flex-col gap-4 p-6">
       <Button id="btn">Save</Button>
+      <CxCustomerExperienceIllustration id="icon" title="Customer Experience" />
       <Input id="input" placeholder="name@captechconsulting.com" />
       <Card id="card">
         <CardHeader>
@@ -40,6 +44,7 @@ export default function App() {
       <div className="dark bg-background p-4">
         <Button id="dark-btn">Dark</Button>
         <Card id="dark-card"><CardContent>Dark card</CardContent></Card>
+        <CxCustomerExperienceIllustration id="dark-icon" />
       </div>
       <pre id="out">{out}</pre>
     </div>

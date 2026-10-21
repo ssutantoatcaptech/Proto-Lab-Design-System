@@ -1,0 +1,130 @@
+[
+  {
+    "name": "captech-icons",
+    "type": "registry:component",
+    "title": "CapTech icons",
+    "description": "All 162 CapTech illustrative icons. Illustrations only, never interface icons.",
+    "files": [
+      {
+        "path": "registry/proto-lab/icons/illustration.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/illustration.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/general.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/general.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/practice-areas.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/practice-areas.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/core-values.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/core-values.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/core-competencies.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/core-competencies.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/ergs.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/ergs.tsx"
+      }
+    ]
+  },
+  {
+    "name": "captech-icons-general",
+    "type": "registry:component",
+    "title": "CapTech icons: General",
+    "description": "140 CapTech illustrative icons (General). Illustrations only, never interface icons.",
+    "files": [
+      {
+        "path": "registry/proto-lab/icons/illustration.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/illustration.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/general.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/general.tsx"
+      }
+    ]
+  },
+  {
+    "name": "captech-icons-practice-areas",
+    "type": "registry:component",
+    "title": "CapTech icons: Practice areas",
+    "description": "4 CapTech illustrative icons (Practice areas). Illustrations only, never interface icons.",
+    "files": [
+      {
+        "path": "registry/proto-lab/icons/illustration.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/illustration.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/practice-areas.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/practice-areas.tsx"
+      }
+    ]
+  },
+  {
+    "name": "captech-icons-core-values",
+    "type": "registry:component",
+    "title": "CapTech icons: Core values",
+    "description": "6 CapTech illustrative icons (Core values). Illustrations only, never interface icons.",
+    "files": [
+      {
+        "path": "registry/proto-lab/icons/illustration.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/illustration.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/core-values.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/core-values.tsx"
+      }
+    ]
+  },
+  {
+    "name": "captech-icons-core-competencies",
+    "type": "registry:component",
+    "title": "CapTech icons: Core competencies",
+    "description": "5 CapTech illustrative icons (Core competencies). Illustrations only, never interface icons.",
+    "files": [
+      {
+        "path": "registry/proto-lab/icons/illustration.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/illustration.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/core-competencies.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/core-competencies.tsx"
+      }
+    ]
+  },
+  {
+    "name": "captech-icons-ergs",
+    "type": "registry:component",
+    "title": "CapTech icons: ERGs",
+    "description": "7 CapTech illustrative icons (ERGs). Illustrations only, never interface icons.",
+    "files": [
+      {
+        "path": "registry/proto-lab/icons/illustration.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/illustration.tsx"
+      },
+      {
+        "path": "registry/proto-lab/icons/ergs.tsx",
+        "type": "registry:component",
+        "target": "components/captech-icons/ergs.tsx"
+      }
+    ]
+  }
+]

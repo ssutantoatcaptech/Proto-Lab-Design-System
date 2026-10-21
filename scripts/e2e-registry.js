@@ -65,9 +65,9 @@ async function main() {
   fs.cpSync(path.join(ROOT, 'fixtures', 'vite-consumer'), app, { recursive: true });
   run('npm', ['install', '--no-audit', '--no-fund'], app);
 
-  step('shadcn init from @proto-lab/base, add button input card');
+  step('shadcn init from @proto-lab/base, add button input card and practice area icons');
   run('npx', ['-y', SHADCN, 'init', path.join(DOCS, 'public', 'r', 'base.json'), '-y'], app);
-  run('npx', ['-y', SHADCN, 'add', 'button', 'input', 'card', '-y'], app);
+  run('npx', ['-y', SHADCN, 'add', 'button', 'input', 'card', path.join(DOCS, 'public', 'r', 'captech-icons-practice-areas.json'), '-y'], app);
 
   step('Typecheck and build');
   run('npm', ['run', 'build'], app);
@@ -105,6 +105,8 @@ async function main() {
   check(out.darkButton.color === WHITE, 'dark button text is white', out.darkButton.color);
   check(out.darkCard.bg === 'rgb(26, 39, 48)', 'dark card surface is grey 20', out.darkCard.bg);
   check(out.darkCard.color === WHITE, 'dark card text is white', out.darkCard.color);
+  check(out.icon === 'rgb(0, 94, 184)', 'CapTech icon uses CapTech Blue', out.icon);
+  check(out.darkIcon === 'rgb(71, 158, 245)', 'CapTech icon lightens in dark mode', out.darkIcon);
   console.log(`\n  radii (codemod target, not asserted yet): button ${out.button.radius}, input ${out.input.radius}, card ${out.card.radius}`);
 }
 
