@@ -21,6 +21,37 @@ what a project last applied.
 
 _Nothing yet._
 
+## [1.0.1] — 2026-10-21
+
+Fixes and tooling only. No change to tokens, icons, or how the system is applied.
+
+### Fixed
+- **`scripts/bootstrap.js` crashed in ESM projects.** A consuming project with
+  `"type": "module"` (the Vite default) made Node load the vendored script as
+  ESM, so `require` failed. A root `package.json` now declares the repo's
+  scripts CommonJS.
+- **Font name.** `README.md` and `APPLY.md` still said Gibson after the tokens
+  moved to Inter (`20588e0`). Both now say Inter.
+- **Repo URL.** Install commands and changelog links pointed at
+  `Claude-Exploration`; they now point at `Proto-Lab-Design-System`.
+
+### Added
+- **`bootstrap.js` copies the whole agent skill**
+  (`.github/skills/proto-lab-design-system/`, including `references/tokens.md`)
+  into the consuming project, rewriting token and icon paths. Re-running
+  reports each file as created, updated, or up to date.
+- **The agent skill is now tracked** in `.github/skills/proto-lab-design-system/`.
+- **`scripts/test-bootstrap.js`** runs bootstrap twice in a throwaway ESM project
+  and checks the skill tree is copied and the second run is a no-op.
+- **CI** (`.github/workflows/ci.yml`) syntax-checks the scripts and runs the
+  bootstrap test on every push and pull request.
+- Root `package.json` (npm workspaces, private), `.nvmrc`, `.gitignore`, ready
+  for the token build and docs site.
+
+### Notes
+- `tokens/components.json` is the Figma component inventory. It is unrelated to
+  the `components.json` file at the root of a shadcn project.
+
 ## [1.0.0] — 2026-06-15
 
 First versioned release of the adoption workflow. The token and icon content
@@ -55,5 +86,6 @@ any project in a repeatable, tool-agnostic way.
   `inverse/`) are largely placeholder stubs; only the flat duotone marks are
   complete. Run `scripts/export-icons.js` to populate the remaining variants.
 
-[Unreleased]: https://github.com/ssutantoatcaptech/Claude-Exploration/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/ssutantoatcaptech/Claude-Exploration/releases/tag/v1.0.0
+[Unreleased]: https://github.com/ssutantoatcaptech/Proto-Lab-Design-System/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/ssutantoatcaptech/Proto-Lab-Design-System/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/ssutantoatcaptech/Proto-Lab-Design-System/releases/tag/v1.0.0

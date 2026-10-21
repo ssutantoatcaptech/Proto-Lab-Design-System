@@ -1,0 +1,19 @@
+{
+  "name": "proto-lab-design-system",
+  "version": "1.0.1",
+  "private": true,
+  "description": "CapTech Proto-Lab design system: tokens, icons, and adoption tooling.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "tooling/*"
+  ],
+  "scripts": {
+    "check:scripts": "node --check scripts/bootstrap.js && node --check scripts/export-icons.js",
+    "test:bootstrap": "node scripts/test-bootstrap.js"
+  }
+}

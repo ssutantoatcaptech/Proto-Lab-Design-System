@@ -12,6 +12,8 @@
  *        - .github/copilot-instructions.md   (GitHub Copilot)
  *      Each shim just imports/points at AGENTS.md, so there is one source of
  *      truth.
+ *   3. Copies the agent skill (.github/skills/proto-lab-design-system/, with
+ *      its references/) into the project, rewriting token/icon paths.
  *
  * The judgment half (mapping existing styles onto tokens, swapping components,
  * placing icons) is then performed by an agent following APPLY.md.
@@ -67,6 +69,17 @@ function pointerBlock(dsPath) {
 // Read a file or return null if it doesn't exist.
 function readOrNull(p) {
   try { return fs.readFileSync(p, 'utf8'); } catch { return null; }
+}
+
+// List files under a directory, recursively, as paths relative to it. Returns
+// [] if the directory doesn't exist.
+function listFiles(dir, prefix = '') {
+  let entries;
+  try { entries = fs.readdirSync(path.join(dir, prefix), { withFileTypes: true }); } catch { return []; }
+  return entries.flatMap((e) => {
+    const rel = path.join(prefix, e.name);
+    return e.isDirectory() ? listFiles(dir, rel) : [rel];
+  }).sort();
 }
 
 // Upsert our marker block into existing content. Returns { content, action }.
@@ -162,6 +175,27 @@ function main() {
     ].join('\n');
     const { content, action } = upsertBlock(existing, shim);
     targets.push({ label: '.github/copilot-instructions.md', p, content, action });
+  }
+
+  // 4) Copilot Cowork skill — GitHub Copilot reads .github/skills/<name>/skill.md.
+  //    Copy the whole skill tree (skill.md plus references/) so links inside
+  //    the skill resolve in the consuming project.
+  {
+    const skillRel = path.join('.github', 'skills', 'proto-lab-design-system');
+    for (const rel of listFiles(path.join(dsAbs, skillRel))) {
+      const content = readOrNull(path.join(dsAbs, skillRel, rel));
+      if (content == null) continue;
+      // Rewrite relative token/icon paths to include the DS path in the consuming project.
+      const rewritten = content.replace(
+        /`(tokens\/|icons\/)/g,
+        `\`${dsPath}/$1`
+      );
+      const p = path.join(projectRoot, skillRel, rel);
+      const existing = readOrNull(p);
+      const action = existing == null ? 'created' : existing === rewritten ? 'up to date' : 'updated';
+      const label = path.join(skillRel, rel).split(path.sep).join('/');
+      targets.push({ label, p, content: rewritten, action });
+    }
   }
 
   // ─── Apply ──────────────────────────────────────────────────────────────

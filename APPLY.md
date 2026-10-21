@@ -22,11 +22,11 @@ project's `AGENTS.md`) so future updates are diffable.
 |---|---|
 | `tokens/css/variables-light.css` | **The integration surface.** Ready-to-use CSS custom properties. This is what you wire into a project. |
 | `tokens/color/`, `typography.json`, `layout.json` | Source-of-truth token values (Design Tokens Community Group format). |
-| `tokens/components.json` | Registry of 46 components with variants. Reference for component structure, not runnable code. |
+| `tokens/components.json` | Registry of 46 components with variants. Reference for component structure, not runnable code. Unrelated to a shadcn project's root `components.json`. |
 | `icons/` | 162 CapTech brand SVG icons (`<category>/<mode>/<slug>.svg`). 48px, duotone by default. |
 
 **Foundation:** CapTech Brand layered on Microsoft Fluent 2 Web. Primary font
-Gibson, brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`.
+Inter, brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`.
 
 ---
 

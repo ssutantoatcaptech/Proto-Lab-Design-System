@@ -18,10 +18,10 @@ Vendor it at `design-system/` in your project root, using whichever you prefer:
 
 ```bash
 # Git submodule (recommended — tracks the upstream repo, easy to update)
-git submodule add https://github.com/ssutantoatcaptech/Claude-Exploration design-system
+git submodule add https://github.com/ssutantoatcaptech/Proto-Lab-Design-System design-system
 
 # …or a plain clone
-git clone https://github.com/ssutantoatcaptech/Claude-Exploration design-system
+git clone https://github.com/ssutantoatcaptech/Proto-Lab-Design-System design-system
 
 # …or just copy the folder in
 ```
@@ -87,7 +87,7 @@ tokens/
 │   └── semantic-dark.json    # Dark mode semantic tokens
 ├── typography.json            # Font family, weights, and type scale
 ├── layout.json                # Spacing, corner radius, stroke width, shadows
-├── components.json            # Full component registry with variants and Figma node IDs
+├── components.json            # Full component registry with variants and Figma node IDs (not shadcn's components.json)
 ├── iconography.json           # 162 CapTech brand icons with node IDs and color modes
 └── css/
     └── variables-light.css   # Ready-to-use CSS custom properties (light mode)
@@ -154,7 +154,7 @@ Then use variables in your styles:
 
 | Decision | Detail |
 |---|---|
-| **Primary font** | Gibson (falls back to Source Sans Pro) |
+| **Primary font** | Inter (falls back to the system sans serif) |
 | **Brand color** | CapTech Blue `#005eb8` (Brand-80 in ramp) |
 | **Brand accent** | Yellow `#fdda24` (same in light & dark) |
 | **Spacing scale** | Fluent 2 — 0, 2, 4, 6, 8, 10, 12, 16, 20, 24, 32 |

@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+.env*
+# Built registry JSON is generated at deploy time
+apps/docs/public/r/
