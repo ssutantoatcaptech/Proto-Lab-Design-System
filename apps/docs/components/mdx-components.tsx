@@ -47,6 +47,9 @@ export const mdxComponents: MDXComponents = {
     <code className={cn("font-mono [:not(pre)>&]:rounded-sm [:not(pre)>&]:bg-muted [:not(pre)>&]:px-1 [:not(pre)>&]:py-0.5 [:not(pre)>&]:text-sm", className)} {...props} />
   ),
   pre: (props) => <CodeBlock {...props} />,
+  section: ({ className, ...props }) => (
+    <section className={cn("rounded-xl border bg-card px-4 py-6 shadow-xs md:px-8 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0", className)} {...props} />
+  ),
   Callout,
   ComponentPreview,
   InstallCommand,

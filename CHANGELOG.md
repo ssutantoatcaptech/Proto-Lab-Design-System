@@ -74,6 +74,10 @@ what a project last applied.
 - **Icon gallery** on the Iconography page: search, category filters with
   counts, size preview, click to copy the import, and filters kept in the URL.
 
+- **Docs layout: white sidebar and section cards.** The sidebar sits on the
+  white surface; the page title and each `##` section render as their own
+  card on the grey canvas (a small rehype plugin wraps sections). Scrollbars
+  are thin and border colored until hovered.
 - **Upstream alignment with shadcn/ui** (`scripts/sync-upstream.js`).
   `npm run upstream:sync` installs every upstream Base UI nova component with
   the pinned CLI, exactly as a Proto-Lab project receives them, into a

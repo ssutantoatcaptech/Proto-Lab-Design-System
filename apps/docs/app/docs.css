@@ -14,3 +14,28 @@
 .shiki .line {
   display: inline;
 }
+
+/* Quiet scrollbars: thin, and the same tone as borders until hovered. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*:hover {
+  scrollbar-color: color-mix(in oklab, var(--muted-foreground) 50%, transparent) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+:hover::-webkit-scrollbar-thumb {
+  background-color: color-mix(in oklab, var(--muted-foreground) 50%, transparent);
+}

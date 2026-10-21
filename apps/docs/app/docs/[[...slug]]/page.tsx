@@ -24,9 +24,9 @@ export default async function DocPage({ params }: Props) {
   }))
 
   return (
-    <div className="flex min-w-0 flex-1 gap-10 py-8 md:pl-10 xl:gap-16">
-      <main id="content" className="mx-auto w-full min-w-0 max-w-3xl flex-1">
-        <div className="flex flex-col gap-2 pb-8">
+    <div className="flex gap-6 p-3 md:p-6 xl:gap-10">
+      <main id="content" className="mx-auto flex w-full min-w-0 max-w-3xl flex-1 flex-col gap-4">
+        <header className="flex flex-col gap-2 rounded-xl border bg-card px-4 py-6 shadow-xs md:px-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
             <h1 className="text-title-1">{page.data.title}</h1>
             <PageActions
@@ -46,13 +46,13 @@ export default async function DocPage({ params }: Props) {
               )}
             </div>
           )}
-        </div>
-        <article className="docs-prose">
+        </header>
+        <article className="docs-prose flex flex-col gap-4">
           <MDX components={mdxComponents} />
         </article>
         <PageFooterNav previous={previous} next={next} />
       </main>
-      <aside className="sticky top-14 hidden h-[calc(100svh-3.5rem)] w-52 shrink-0 overflow-y-auto pt-2 xl:block">
+      <aside className="sticky top-20 hidden max-h-[calc(100svh-6rem)] w-52 shrink-0 self-start overflow-y-auto pt-6 xl:block">
         <DocsToc items={toc} />
       </aside>
     </div>
@@ -62,7 +62,7 @@ export default async function DocPage({ params }: Props) {
 function PageFooterNav({ previous, next }: { previous?: { name: React.ReactNode; url: string }; next?: { name: React.ReactNode; url: string } }) {
   if (!previous && !next) return null
   return (
-    <nav aria-label="Pagination" className="mt-16 flex justify-between gap-4 border-t pt-6">
+    <nav aria-label="Pagination" className="flex justify-between gap-4 rounded-xl border bg-card p-3 shadow-xs">
       {previous ? (
         <a href={previous.url} className="focus-ring flex flex-col gap-1 rounded-md p-2 hover:bg-accent">
           <span className="text-caption-1 text-muted-foreground">Previous</span>

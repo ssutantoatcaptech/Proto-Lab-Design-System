@@ -1,5 +1,6 @@
 import { defineConfig, defineDocs, frontmatterSchema } from "fumadocs-mdx/config"
 import { z } from "zod"
+import { rehypeSections } from "./lib/rehype-sections"
 
 export const docs = defineDocs({
   dir: "content/docs",
@@ -23,5 +24,7 @@ export default defineConfig({
     rehypeCodeOptions: {
       themes: { light: "github-light", dark: "github-dark" },
     },
+    // Each h2 section becomes its own card (see mdx-components "section").
+    rehypePlugins: (v) => [...v, rehypeSections],
   },
 })

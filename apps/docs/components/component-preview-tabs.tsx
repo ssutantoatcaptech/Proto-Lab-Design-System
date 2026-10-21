@@ -34,7 +34,7 @@ export function ComponentPreviewTabs({ preview, code, raw, align }: {
         <div
           role="tabpanel"
           className={cn(
-            "flex min-h-72 w-full flex-wrap gap-4 rounded-lg border p-10",
+            "flex min-h-72 w-full flex-wrap gap-4 rounded-lg border bg-background p-10",
             align === "center" ? "items-center justify-center" : "items-start"
           )}
         >
