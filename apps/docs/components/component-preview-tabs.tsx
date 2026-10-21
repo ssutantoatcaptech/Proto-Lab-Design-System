@@ -41,7 +41,7 @@ export function ComponentPreviewTabs({ preview, code, raw, align }: {
           {preview}
         </div>
       ) : (
-        <div role="tabpanel" className="relative max-h-112 overflow-auto rounded-lg border bg-muted">
+        <div role="tabpanel" className="relative max-h-112 overflow-auto rounded-lg border bg-background">
           <div className="px-4 py-3 font-mono text-sm [&_pre]:bg-transparent!">{code}</div>
           <CopyButton value={raw} label="Copy code" className="absolute right-2 top-2" />
         </div>

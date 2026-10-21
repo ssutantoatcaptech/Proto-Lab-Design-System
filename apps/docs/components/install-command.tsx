@@ -36,7 +36,7 @@ export function InstallCommand({ args }: { args: string }) {
   const command = `${RUNNER[pm]} shadcn@latest ${args}`
 
   return (
-    <div className="my-6 overflow-hidden rounded-lg border bg-muted">
+    <div className="my-6 overflow-hidden rounded-lg border bg-background">
       <div className="flex h-10 items-center gap-1 border-b px-2" role="tablist" aria-label="Package manager">
         <TerminalIcon aria-hidden="true" className="mx-1 size-4 text-muted-foreground" />
         {MANAGERS.map((m) => (
@@ -48,7 +48,7 @@ export function InstallCommand({ args }: { args: string }) {
             onClick={() => choose(m)}
             className={cn(
               "focus-ring rounded-md px-2 py-0.5 font-mono text-caption-1 text-muted-foreground transition-colors hover:text-foreground",
-              pm === m && "bg-background text-foreground shadow-xs"
+              pm === m && "bg-card text-foreground shadow-xs"
             )}
           >
             {m}
