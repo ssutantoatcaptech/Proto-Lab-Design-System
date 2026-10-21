@@ -18,14 +18,18 @@
  */
 
 @theme {
+  /* Color: only Proto-Lab names exist; the Tailwind palette is removed */
   --color-*: initial;
   --color-white: #ffffff;
   --color-black: #000000;
 
+  /* Font family */
   --font-*: initial;
-  --font-sans: Inter, sans-serif;
+  --font-sans: 'Inter Variable', Inter, sans-serif;
+  --font-heading: 'Inter Variable', Inter, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
+  /* Type ramp: Tailwind sizes remapped to Fluent, plus Fluent names */
   --text-*: initial;
   --text-xs: 12px;
   --text-xs--line-height: 16px;
@@ -91,6 +95,7 @@
   --text-caption-2-strong--line-height: 14px;
   --text-caption-2-strong--font-weight: 600;
 
+  /* Font weight: medium is 600, Fluent controls are semibold */
   --font-weight-*: initial;
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -99,6 +104,7 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /* Radius */
   --radius-*: initial;
   --radius-xs: 2px;
   --radius-sm: 2px;
@@ -115,7 +121,10 @@
   --radius-x-large: 8px;
   --radius-circular: 9999px;
 
+  /* Shadow: Fluent elevation */
   --shadow-*: initial;
+
+  /* Easing: Fluent curves alongside Tailwind defaults */
   --ease-accelerate-max: cubic-bezier(0.9, 0.1, 1, 0.2);
   --ease-accelerate-mid: cubic-bezier(1, 0, 1, 1);
   --ease-accelerate-min: cubic-bezier(0.8, 0, 0.78, 1);
@@ -127,6 +136,7 @@
 }
 
 @theme inline {
+  /* Color: only Proto-Lab names exist; the Tailwind palette is removed */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -173,7 +183,6 @@
   --color-chart-5: var(--chart-5);
   --color-illustration-primary: var(--illustration-primary);
   --color-illustration-accent: var(--illustration-accent);
-
   --color-neutral-background-1: var(--neutral-background-1);
   --color-neutral-background-2: var(--neutral-background-2);
   --color-neutral-background-3: var(--neutral-background-3);
@@ -220,6 +229,7 @@
   --color-status-success-on-fill: var(--status-success-on-fill);
   --color-status-warning-on-fill: var(--status-warning-on-fill);
 
+  /* Shadow: Fluent elevation */
   --shadow-xs: var(--shadow-2);
   --shadow-sm: var(--shadow-4);
   --shadow-md: var(--shadow-8);

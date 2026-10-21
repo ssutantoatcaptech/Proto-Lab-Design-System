@@ -159,6 +159,40 @@ Then use variables in your styles:
 }
 ```
 
+## Quick Start — shadcn/ui
+
+Proto-Lab ships a [shadcn/ui](https://ui.shadcn.com) registry. Components come
+from shadcn (Base UI, Lucide icons); every color, type size, weight, radius and
+shadow comes from Proto-Lab.
+
+Until the docs site hosts the registry, build it locally:
+
+```bash
+npm install
+npm run registry:build        # writes apps/docs/public/r/*.json
+```
+
+**New project.** Start from the Proto-Lab base. It removes the Tailwind color
+palette and default type sizes, so only Proto-Lab values can be used:
+
+```bash
+npx shadcn@latest init <path-or-url>/r/base.json
+npx shadcn@latest add button input card
+```
+
+**Existing shadcn project.** Apply the theme. It overrides values in place and
+leaves Tailwind defaults it doesn't name (including the palette) available:
+
+```bash
+npx shadcn@latest add <path-or-url>/r/theme.json
+```
+
+Dark mode is `class="dark"` on any element. Without Tailwind, import
+`tokens/css/variables-light.css` and `variables-dark.css` instead.
+
+`npm run test:registry` installs the base into a fresh Vite app and checks the
+rendered result in headless Chrome.
+
 ## Key Design Decisions
 
 | Decision | Detail |

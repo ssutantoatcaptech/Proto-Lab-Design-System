@@ -1,0 +1,12 @@
+{
+  "name": "@proto-lab/docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Proto-Lab docs site and shadcn registry. The registry is served from /r/{name}.json.",
+  "scripts": {
+    "registry:build": "shadcn build"
+  },
+  "devDependencies": {
+    "shadcn": "4.22.1"
+  }
+}

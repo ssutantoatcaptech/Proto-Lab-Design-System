@@ -1,0 +1,118 @@
+#!/usr/bin/env node
+/**
+ * e2e-registry.js
+ *
+ * End-to-end check of the shadcn registry, the way a CapTech team would use
+ * it. Copies fixtures/vite-consumer to a temp dir, runs
+ * `shadcn init <apps/docs/public/r/base.json>`, adds upstream components,
+ * builds, serves the app, and reads computed styles from headless Chrome.
+ *
+ * Needs network (npm, the shadcn registry) and Chrome. Set CHROME_PATH if
+ * Chrome is not in a standard location. Pass --keep to leave the temp app.
+ *
+ * Usage: node scripts/e2e-registry.js
+ */
+
+'use strict';
+
+const fs   = require('fs');
+const os   = require('os');
+const path = require('path');
+const { execFileSync, spawn } = require('child_process');
+
+const ROOT     = path.resolve(__dirname, '..');
+const DOCS     = path.join(ROOT, 'apps', 'docs');
+const SHADCN   = `shadcn@${require(path.join(DOCS, 'package.json')).devDependencies.shadcn}`;
+const keep     = process.argv.includes('--keep');
+const app      = fs.mkdtempSync(path.join(os.tmpdir(), 'proto-lab-e2e-'));
+let failed = false;
+
+const run = (cmd, args, cwd) => execFileSync(cmd, args, {
+  cwd, stdio: ['ignore', 'pipe', 'inherit'], encoding: 'utf8', env: { ...process.env, CI: '1' },
+});
+const step = (msg) => console.log(`\n  → ${msg}`);
+function check(ok, msg, actual) {
+  console.log(`  ${ok ? '✓' : '✗'} ${msg}${ok ? '' : `  (got ${JSON.stringify(actual)})`}`);
+  if (!ok) failed = true;
+}
+
+function findChrome() {
+  const candidates = [
+    process.env.CHROME_PATH,
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    '/usr/bin/google-chrome', '/usr/bin/google-chrome-stable', '/usr/bin/chromium', '/usr/bin/chromium-browser',
+  ];
+  const found = candidates.find((c) => c && fs.existsSync(c));
+  if (!found) throw new Error('Chrome not found. Set CHROME_PATH.');
+  return found;
+}
+
+async function waitFor(url, ms = 20000) {
+  const end = Date.now() + ms;
+  while (Date.now() < end) {
+    try { if ((await fetch(url)).ok) return; } catch {}
+    await new Promise((r) => setTimeout(r, 250));
+  }
+  throw new Error(`Timed out waiting for ${url}`);
+}
+
+async function main() {
+  step('Build tokens and registry');
+  run(process.execPath, [path.join(ROOT, 'packages', 'tokens', 'build.js')], ROOT);
+  run('npx', ['-y', SHADCN, 'build'], DOCS);
+
+  step(`Scaffold consumer in ${app}`);
+  fs.cpSync(path.join(ROOT, 'fixtures', 'vite-consumer'), app, { recursive: true });
+  run('npm', ['install', '--no-audit', '--no-fund'], app);
+
+  step('shadcn init from @proto-lab/base, add button input card');
+  run('npx', ['-y', SHADCN, 'init', path.join(DOCS, 'public', 'r', 'base.json'), '-y'], app);
+  run('npx', ['-y', SHADCN, 'add', 'button', 'input', 'card', '-y'], app);
+
+  step('Typecheck and build');
+  run('npm', ['run', 'build'], app);
+  const css = fs.readdirSync(path.join(app, 'dist', 'assets')).filter((f) => f.endsWith('.css'))
+    .map((f) => fs.readFileSync(path.join(app, 'dist', 'assets', f), 'utf8')).join('\n');
+
+  step('Measure in headless Chrome');
+  const port = 4400 + Math.floor(Math.random() * 500);
+  const server = spawn('npx', ['vite', 'preview', '--port', String(port), '--strictPort'], { cwd: app, stdio: 'ignore' });
+  let dom;
+  try {
+    await waitFor(`http://localhost:${port}`);
+    dom = execFileSync(findChrome(),
+      ['--headless=new', '--disable-gpu', '--no-sandbox', '--virtual-time-budget=8000', '--dump-dom', `http://localhost:${port}`],
+      { stdio: ['ignore', 'pipe', 'ignore'], encoding: 'utf8' });
+  } finally {
+    server.kill();
+  }
+  const m = dom.match(/<pre id="out">([\s\S]*?)<\/pre>/);
+  const out = JSON.parse(m[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+
+  step('Assertions');
+  const WHITE = 'rgb(255, 255, 255)';
+  check(!/\.(bg|text|border)-(red|blue|green|zinc|neutral|slate|gray)-\d{2,3}\b/.test(css), 'Tailwind palette utilities are absent');
+  check(out.interLoaded, 'Inter is loaded', out.interLoaded);
+  check(out.body.font.includes('Inter'), 'body font is Inter', out.body.font);
+  check(out.body.size === '14px' && out.body.lineHeight === '20px', 'body text is body-1 (14/20)', [out.body.size, out.body.lineHeight]);
+  check(out.button.height === '32px', 'button is 32px tall', out.button.height);
+  check(out.button.weight === '600', 'button label is semibold (600)', out.button.weight);
+  check(out.button.bg === 'rgb(0, 94, 184)', 'button fill is CapTech Blue', out.button.bg);
+  check(out.button.color === WHITE, 'button text is white', out.button.color);
+  check(out.input.height === '32px', 'input is 32px tall', out.input.height);
+  check(out.card.bg === WHITE, 'card surface is neutral background 1', out.card.bg);
+  check(out.darkButton.bg === 'rgb(17, 94, 163)', 'dark button fill is brand 70', out.darkButton.bg);
+  check(out.darkButton.color === WHITE, 'dark button text is white', out.darkButton.color);
+  check(out.darkCard.bg === 'rgb(26, 39, 48)', 'dark card surface is grey 20', out.darkCard.bg);
+  check(out.darkCard.color === WHITE, 'dark card text is white', out.darkCard.color);
+  console.log(`\n  radii (codemod target, not asserted yet): button ${out.button.radius}, input ${out.input.radius}, card ${out.card.radius}`);
+}
+
+main()
+  .catch((e) => { console.error(`\n  ✗ ${e.message}`); failed = true; })
+  .finally(() => {
+    if (keep) console.log(`\n  kept ${app}`);
+    else fs.rmSync(app, { recursive: true, force: true });
+    if (failed) process.exit(1);
+    console.log('\n  registry e2e OK\n');
+  });

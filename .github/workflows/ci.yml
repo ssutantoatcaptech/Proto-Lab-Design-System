@@ -19,3 +19,16 @@ jobs:
         run: npm run test:bootstrap
       - name: Generated tokens are current, superset of v1, contrast checked
         run: npm run tokens:check
+
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npm ci
+      - name: Build registry and verify generated files are committed
+        run: npm run registry:build && git diff --exit-code
+      - name: Install into a fresh Vite app and measure in Chrome
+        run: npm run test:registry

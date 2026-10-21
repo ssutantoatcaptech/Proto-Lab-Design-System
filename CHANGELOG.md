@@ -42,6 +42,16 @@ what a project last applied.
   a semantic color lacks a light or dark value, or if a text pair falls below
   WCAG AA.
 
+- **shadcn/ui registry** (`apps/docs/registry.json`, generated). Two items:
+  `base` (a `registry:base` for `shadcn init`: Base UI, Lucide, Inter, strict
+  theme with the Tailwind palette removed) and `theme` (for existing shadcn
+  projects; overrides values in place). `npm run registry:build` writes
+  `apps/docs/public/r/`.
+- **`scripts/e2e-registry.js`** (`npm run test:registry`, also in CI): installs
+  `base` into `fixtures/vite-consumer`, adds upstream button, input and card,
+  builds, and checks computed styles in headless Chrome (32px controls,
+  Inter, weight 600, CapTech Blue, dark mode on a nested `.dark` wrapper).
+
 ### Changed
 - `tokens/css/variables-light.css` is now generated. Every variable it had is
   kept with the same value; new variables are added.

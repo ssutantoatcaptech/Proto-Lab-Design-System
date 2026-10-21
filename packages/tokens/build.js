@@ -106,7 +106,12 @@ const darkCss = HEADER('CSS custom properties (dark)') +
   '\n/* Apply with class="dark" (shadcn) or data-theme="dark" on any element. */\n' +
   block('.dark,\n[data-theme="dark"]', darkChanged);
 
-// ─── tailwind-theme.css ──────────────────────────────────────────────────────
+// ─── Tailwind theme model ────────────────────────────────────────────────────
+//
+// One ordered list of theme entries renders both tailwind-theme.css and the
+// registry items, so the two can't disagree. `static` entries are literal
+// values; `inline` entries reference a variable that changes with the mode,
+// so the utility reads it at the element and a .dark wrapper works.
 
 const typeStyles = [...sets.light.values()].filter((t) => t.type === 'typography');
 const styleName = (t) => t.path.split('.').pop();
@@ -125,9 +130,13 @@ const WEIGHTS = { light: 'light', normal: 'regular', regular: 'regular', medium:
 
 // Tailwind theme keys → the CSS variable each one is backed by (for docs).
 const twIndex = {};
-const tw = (key, value, backing) => {
+
+// Each group: { title, reset, entries: [{ key, value, inline, backing }] }.
+// `reset` clears the Tailwind namespace first (strict theme only).
+const group = (title, reset, entries) => ({ title, reset, entries });
+const entry = (key, value, backing, inline = false) => {
   if (backing) (twIndex[backing] ||= []).push(key);
-  return `  --${key}: ${value};`;
+  return { key, value, backing, inline };
 };
 
 const colorAliases = vars.light.filter((v) => (v.path.startsWith('alias.') || /^color\.semantic\.(chart|illustration)\./.test(v.path)) && v.type === 'color');
@@ -135,6 +144,62 @@ const fluentColors = vars.light.filter((v) => /^color\.semantic\.(neutral|brand|
 const radii = vars.light.filter((v) => v.path.startsWith('corner-radius.'));
 const elevations = vars.light.filter((v) => /^shadow\.\d+$/.test(v.path));
 const easings = vars.light.filter((v) => v.path.startsWith('motion.easing.') && !v.path.endsWith('.linear'));
+
+const THEME = [
+  group('Color: only Proto-Lab names exist; the Tailwind palette is removed', 'color', [
+    entry('color-white', lit('light', '--color-white')),
+    entry('color-black', lit('light', '--color-black')),
+    ...colorAliases.map((v) => entry(`color-${v.name.slice(2)}`, `var(${v.name})`, v.name, true)),
+    ...fluentColors.map((v) => entry(`color-${v.name.slice(2)}`, `var(${v.name})`, v.name, true)),
+  ]),
+  // 'Inter Variable' is the family name @fontsource-variable/inter registers.
+  group('Font family', 'font', [
+    entry('font-sans', `'Inter Variable', ${lit('light', '--font-family')}`, '--font-family'),
+    entry('font-heading', `'Inter Variable', ${lit('light', '--font-family')}`),
+    entry('font-mono', lit('light', '--font-family-mono'), '--font-family-mono'),
+  ]),
+  group('Type ramp: Tailwind sizes remapped to Fluent, plus Fluent names', 'text', [
+    ...Object.entries(TEXT_REMAP).flatMap(([k, s]) => [
+      entry(`text-${k}`, lit('light', `--font-size-${s}`), `--font-size-${s}`),
+      entry(`text-${k}--line-height`, lit('light', `--line-height-${s}`)),
+    ]),
+    ...typeStyles.flatMap((t) => {
+      const s = styleName(t);
+      return [
+        entry(`text-${s}`, lit('light', `--font-size-${s}`), `--font-size-${s}`),
+        entry(`text-${s}--line-height`, lit('light', `--line-height-${s}`)),
+        entry(`text-${s}--font-weight`, lit('light', `--font-weight-${s}`)),
+      ];
+    }),
+  ]),
+  group('Font weight: medium is 600, Fluent controls are semibold', 'font-weight',
+    Object.entries(WEIGHTS).map(([k, w]) => entry(`font-weight-${k}`, lit('light', `--font-weight-${w}`), `--font-weight-${w}`))),
+  group('Radius', 'radius', [
+    ...Object.entries(RADIUS_REMAP).map(([k, r]) => entry(`radius-${k}`, lit('light', `--radius-${r}`), `--radius-${r}`)),
+    ...radii.map((v) => entry(v.name.slice(2), v.literal, v.name)),
+  ]),
+  group('Shadow: Fluent elevation', 'shadow', [
+    ...Object.entries(SHADOW_REMAP).map(([k, n]) => entry(`shadow-${k}`, `var(--shadow-${n})`, `--shadow-${n}`, true)),
+    ...elevations.map((v) => entry(`shadow-elevation-${v.name.replace('--shadow-', '')}`, `var(${v.name})`, v.name, true)),
+  ]),
+  group('Easing: Fluent curves alongside Tailwind defaults', null,
+    easings.map((v) => entry(`ease-${v.name.replace('--easing-', '')}`, v.literal, v.name))),
+];
+
+// ─── tailwind-theme.css ──────────────────────────────────────────────────────
+
+function themeBlock(inline) {
+  const lines = [];
+  for (const g of THEME) {
+    const items = g.entries.filter((e) => e.inline === inline);
+    if (!items.length && !(g.reset && !inline)) continue;
+    if (lines.length) lines.push('');
+    lines.push(`  /* ${g.title} */`);
+    if (g.reset && !inline) lines.push(`  --${g.reset}-*: initial;`);
+    for (const e of items) lines.push(`  --${e.key}: ${e.value};`);
+  }
+  return lines.join('\n');
+}
 
 const themeCss = HEADER('Tailwind v4 theme') + `
 /*
@@ -149,46 +214,11 @@ const themeCss = HEADER('Tailwind v4 theme') + `
  */
 
 @theme {
-  --color-*: initial;
-${tw('color-white', lit('light', '--color-white'))}
-${tw('color-black', lit('light', '--color-black'))}
-
-  --font-*: initial;
-${tw('font-sans', lit('light', '--font-family'), '--font-family')}
-${tw('font-mono', lit('light', '--font-family-mono'), '--font-family-mono')}
-
-  --text-*: initial;
-${Object.entries(TEXT_REMAP).map(([k, s]) => [
-    tw(`text-${k}`, lit('light', `--font-size-${s}`), `--font-size-${s}`),
-    tw(`text-${k}--line-height`, lit('light', `--line-height-${s}`)),
-  ].join('\n')).join('\n')}
-${typeStyles.map((t) => {
-    const s = styleName(t);
-    return [
-      tw(`text-${s}`, lit('light', `--font-size-${s}`), `--font-size-${s}`),
-      tw(`text-${s}--line-height`, lit('light', `--line-height-${s}`)),
-      tw(`text-${s}--font-weight`, lit('light', `--font-weight-${s}`)),
-    ].join('\n');
-  }).join('\n')}
-
-  --font-weight-*: initial;
-${Object.entries(WEIGHTS).map(([k, w]) => tw(`font-weight-${k}`, lit('light', `--font-weight-${w}`), `--font-weight-${w}`)).join('\n')}
-
-  --radius-*: initial;
-${Object.entries(RADIUS_REMAP).map(([k, r]) => tw(`radius-${k}`, lit('light', `--radius-${r}`), `--radius-${r}`)).join('\n')}
-${radii.map((v) => tw(v.name.slice(2), v.literal, v.name)).join('\n')}
-
-  --shadow-*: initial;
-${easings.map((v) => tw(`ease-${v.name.replace('--easing-', '')}`, v.literal, v.name)).join('\n')}
+${themeBlock(false)}
 }
 
 @theme inline {
-${colorAliases.map((v) => tw(`color-${v.name.slice(2)}`, `var(${v.name})`, v.name)).join('\n')}
-
-${fluentColors.map((v) => tw(`color-${v.name.slice(2)}`, `var(${v.name})`, v.name)).join('\n')}
-
-${Object.entries(SHADOW_REMAP).map(([k, n]) => tw(`shadow-${k}`, `var(--shadow-${n})`, `--shadow-${n}`)).join('\n')}
-${elevations.map((v) => tw(`shadow-elevation-${v.name.replace('--shadow-', '')}`, `var(${v.name})`, v.name)).join('\n')}
+${themeBlock(true)}
 }
 `;
 
@@ -294,6 +324,88 @@ function skillRef(current) {
   return current.slice(0, start) + skillSection() + '\n\n' + current.slice(end);
 }
 
+// ─── shadcn registry (apps/docs/registry.json) ──────────────────────────────
+//
+// Two ways in:
+//   base   a registry:base for new projects (`shadcn init @proto-lab/base`).
+//          Writes the strict theme in order, palette and default sizes removed.
+//   theme  for an existing shadcn project (`shadcn add @proto-lab/theme`).
+//          The CLI merges keys in place and appends new ones, so namespace
+//          resets would land after shadcn's own mappings and wipe them. This
+//          item only overrides values; Tailwind defaults it doesn't name remain.
+//
+// Mode values are literals: the CLI writes cssVars into :root and .dark as-is,
+// and var() values would make it add self-referencing theme entries. Dark
+// carries every value, not just the ones that change: a shadcn init writes
+// its own .dark block, and any key we leave out keeps shadcn's value.
+// Dark mode in the registry path is class="dark" (the shadcn convention).
+
+const REGISTRY_VARS = vars.light.filter((v) =>
+  v.type === 'color' && /^(alias\.|color\.semantic\.(neutral|brand|status|chart|illustration)\.)/.test(v.path) ||
+  /^shadow\.\d+$/.test(v.path) ||
+  v.path === 'alias.shadcn.radius');
+
+const modeVars = (mode) => Object.fromEntries(REGISTRY_VARS
+  .map((v) => [v.name.slice(2), byName[mode].get(v.name).literal]));
+
+function registryTheme(strict) {
+  const theme = {};
+  for (const g of THEME) {
+    if (strict && g.reset) theme[`${g.reset}-*`] = 'initial';
+    for (const e of g.entries) {
+      if (!strict && (e.key === 'color-white' || e.key === 'color-black')) continue;
+      theme[e.key] = e.value;
+    }
+  }
+  return theme;
+}
+
+const registryCss = {
+  '@utility focus-ring': {
+    '&:focus-visible': {
+      outline: `${lit('light', '--stroke-thick')} solid var(--ring)`,
+      'outline-offset': lit('light', '--stroke-thin'),
+    },
+  },
+  '@layer base': {
+    body: { 'font-size': 'var(--text-sm)', 'line-height': 'var(--text-sm--line-height)' },
+  },
+};
+
+const cssVarsFor = (strict) => ({
+  theme: registryTheme(strict),
+  light: modeVars('light'),
+  dark: modeVars('dark'),
+});
+
+const registryJson = JSON.stringify({
+  $schema: 'https://ui.shadcn.com/schema/registry.json',
+  name: 'proto-lab',
+  homepage: 'https://github.com/ssutantoatcaptech/Proto-Lab-Design-System',
+  items: [
+    {
+      name: 'base',
+      type: 'registry:base',
+      title: 'Proto-Lab',
+      description: 'CapTech Proto-Lab design system for a new shadcn/ui project: Base UI, Lucide, Inter, and the Proto-Lab theme with the Tailwind palette removed.',
+      config: { style: 'base-nova', iconLibrary: 'lucide', tailwind: { baseColor: 'neutral' } },
+      dependencies: ['tw-animate-css'],
+      registryDependencies: ['font-inter'],
+      cssVars: cssVarsFor(true),
+      css: registryCss,
+    },
+    {
+      name: 'theme',
+      type: 'registry:theme',
+      title: 'Proto-Lab theme',
+      description: 'Applies Proto-Lab colors, type ramp, weights, radii and elevation to an existing shadcn/ui project.',
+      registryDependencies: ['font-inter'],
+      cssVars: cssVarsFor(false),
+      css: registryCss,
+    },
+  ],
+}, null, 2) + '\n';
+
 // ─── Write or check ──────────────────────────────────────────────────────────
 
 const outputs = [
@@ -303,6 +415,7 @@ const outputs = [
   ['tokens/css/proto-lab.css', entryCss],
   ['tokens/dist/tokens.json', tokensJson],
   [path.relative(ROOT, SKILL_REF), skillRef(fs.readFileSync(SKILL_REF, 'utf8'))],
+  ['apps/docs/registry.json', registryJson],
 ];
 
 const check = process.argv.includes('--check');
