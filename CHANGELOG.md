@@ -98,6 +98,16 @@ what a project last applied.
   adopted.
 
 ### Changed
+- **Dark mode is built on CapTech Dark Grey `#333f48`.** The page is Dark
+  Grey; surfaces step lighter in the same blue grey hue (`#3c4a55`,
+  `#465663`); strokes and secondary text come from the same hue. Primary
+  fills switch to light CapTech blue (brand ramp 120) with dark text, links
+  to ramp 130, and danger, success and warning text and tints are lightened
+  to stay above 4.5:1. Shadows use a deep tone of the hue at 0.32/0.40
+  instead of black. Dark error text no longer fails contrast.
+- **Components are grouped** in the sidebar and the overview: Actions,
+  Forms, Data display, Feedback, Overlays, Navigation, Layout and
+  Conversation. Groups live in `content/docs/components/meta.json`.
 - **Light grey page background.** New role tokens
   `neutral.background-canvas` (page: grey-2 in light, grey-20 in dark) and
   `neutral.background-surface` (cards, popovers: white in light, one step
@@ -127,9 +137,9 @@ what a project last applied.
   using `next/font` fell back to the default face.
 
 ### Known issues
-- Four text pairs fail WCAG AA and cannot be fixed with the current palette:
-  light secondary text (`neutral.foreground-2`, 3.4:1 on white), light warning
-  text (3.1:1), and dark error text (4.37:1). Listed in
+- Three text pairs fail WCAG AA in light mode and cannot be fixed with the
+  current palette: secondary text (`neutral.foreground-2`, 3.4:1 on white and
+  3.1:1 on muted) and warning text (3.1:1). Listed in
   `packages/tokens/contrast-pairs.json` until a color decision is made.
 
 ## [1.0.1] — 2026-10-21

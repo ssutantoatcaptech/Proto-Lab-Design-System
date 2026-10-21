@@ -78,57 +78,57 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### Semantic: Neutral
 | Variable | Light | Dark |
 |---|---|---|
-| `--neutral-background-1` | #ffffff | #1a2730 |
-| `--neutral-background-2` | #f5f5f4 | #1f2d36 |
-| `--neutral-background-3` | #ebebea | #243640 |
-| `--neutral-background-subtle` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.04) |
+| `--neutral-background-1` | #ffffff | #333f48 |
+| `--neutral-background-2` | #f5f5f4 | #3c4a55 |
+| `--neutral-background-3` | #ebebea | #465663 |
+| `--neutral-background-subtle` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.06) |
 | `--neutral-background-inverted` | #333f48 | #ffffff |
-| `--neutral-background-disabled` | #ebebea | #243640 |
-| `--neutral-background-overlay` | rgba(0, 0, 0, 0.5) | rgba(0, 0, 0, 0.6) |
-| `--neutral-background-canvas` | #f5f5f4 | #1a2730 |
-| `--neutral-background-surface` | #ffffff | #1f2d36 |
+| `--neutral-background-disabled` | #ebebea | #465663 |
+| `--neutral-background-overlay` | rgba(0, 0, 0, 0.5) | rgba(15, 18, 21, 0.6) |
+| `--neutral-background-canvas` | #f5f5f4 | #333f48 |
+| `--neutral-background-surface` | #ffffff | #3c4a55 |
 | `--neutral-foreground-1` | #333f48 | #ffffff |
-| `--neutral-foreground-2` | #888b8d | #adadad |
-| `--neutral-foreground-3` | #c1c1c0 | #8a8a8a |
-| `--neutral-foreground-disabled` | #d6d6d5 | #5c5c5c |
+| `--neutral-foreground-2` | #888b8d | #c3cdd5 |
+| `--neutral-foreground-3` | #c1c1c0 | #99aab7 |
+| `--neutral-foreground-disabled` | #d6d6d5 | #708899 |
 | `--neutral-foreground-inverted` | #ffffff | #333f48 |
-| `--neutral-foreground-on-brand` | #ffffff | same |
-| `--neutral-foreground-link` | #005eb8 | #479ef5 |
-| `--neutral-stroke-1` | #e0e0df | #3d3d3d |
-| `--neutral-stroke-2` | #ebebea | #2e2e2e |
-| `--neutral-stroke-accessible` | #333f48 | #adadad |
+| `--neutral-foreground-on-brand` | #ffffff | #1a2730 |
+| `--neutral-foreground-link` | #005eb8 | #96c6fa |
+| `--neutral-stroke-1` | #e0e0df | #5f7686 |
+| `--neutral-stroke-2` | #ebebea | #4e616e |
+| `--neutral-stroke-accessible` | #333f48 | #c3cdd5 |
 | `--neutral-stroke-focus` | #333f48 | #ffffff |
-| `--neutral-stroke-disabled` | #e0e0df | #3d3d3d |
+| `--neutral-stroke-disabled` | #e0e0df | #4e616e |
 
 ### Semantic: Brand
 | Variable | Light | Dark |
 |---|---|---|
-| `--brand-background-1` | #005eb8 | #115ea3 |
-| `--brand-background-2` | #115ea3 | #2886de |
+| `--brand-background-1` | #005eb8 | #77b7f7 |
+| `--brand-background-2` | #115ea3 | #62abf5 |
 | `--brand-background-inverted` | #dbeeff | #0a2e4a |
 | `--brand-background-compound` | #dbeeff | #0a2e4a |
-| `--brand-foreground-1` | #005eb8 | #479ef5 |
-| `--brand-foreground-2` | #115ea3 | #62abf5 |
-| `--brand-foreground-link` | #005eb8 | #479ef5 |
+| `--brand-foreground-1` | #005eb8 | #96c6fa |
+| `--brand-foreground-2` | #115ea3 | #b4d6fa |
+| `--brand-foreground-link` | #005eb8 | #96c6fa |
 | `--brand-foreground-inverted` | #ffffff | #333f48 |
-| `--brand-foreground-compound` | #005eb8 | #479ef5 |
-| `--brand-stroke-1` | #005eb8 | #479ef5 |
-| `--brand-stroke-2` | #2886de | same |
-| `--brand-stroke-compound` | #005eb8 | #479ef5 |
+| `--brand-foreground-compound` | #005eb8 | #96c6fa |
+| `--brand-stroke-1` | #005eb8 | #77b7f7 |
+| `--brand-stroke-2` | #2886de | #62abf5 |
+| `--brand-stroke-compound` | #005eb8 | #77b7f7 |
 
 ### Semantic: Status
 | Variable | Light | Dark |
 |---|---|---|
-| `--status-danger-background` | #fdf3f4 | #3b1117 |
-| `--status-danger-foreground` | #c4314b | #dc626d |
-| `--status-danger-stroke` | #c4314b | #dc626d |
-| `--status-success-background` | #f1faf1 | #052505 |
-| `--status-success-foreground` | #0e7a0b | #54b054 |
-| `--status-success-stroke` | #0e7a0b | #54b054 |
-| `--status-warning-background` | #fff9f5 | #3d1a00 |
-| `--status-warning-foreground` | #f7630c | #f98845 |
-| `--status-warning-stroke` | #f7630c | #f98845 |
-| `--status-severe-foreground` | #da3b01 | #e8420c |
+| `--status-danger-background` | #fdf3f4 | #4c3c43 |
+| `--status-danger-foreground` | #c4314b | #eba7ad |
+| `--status-danger-stroke` | #c4314b | #eba7ad |
+| `--status-success-background` | #f1faf1 | #314b3e |
+| `--status-success-foreground` | #0e7a0b | #88c888 |
+| `--status-success-stroke` | #0e7a0b | #88c888 |
+| `--status-warning-background` | #fff9f5 | #52433b |
+| `--status-warning-foreground` | #f7630c | #faa471 |
+| `--status-warning-stroke` | #f7630c | #faa471 |
+| `--status-severe-foreground` | #da3b01 | #f9a387 |
 | `--status-accent` | #fdda24 | same |
 | `--status-danger-on-fill` | #ffffff | #000000 |
 | `--status-success-on-fill` | #ffffff | #1a2730 |
@@ -152,14 +152,14 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### Shadow
 | Variable | Light | Dark |
 |---|---|---|
-| `--shadow-2` | 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14) | 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.28) |
-| `--shadow-4` | 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.28) |
-| `--shadow-8` | 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(0, 0, 0, 0.24), 0 4px 8px rgba(0, 0, 0, 0.28) |
-| `--shadow-16` | 0 0 2px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(0, 0, 0, 0.24), 0 8px 16px rgba(0, 0, 0, 0.28) |
-| `--shadow-28` | 0 0 8px rgba(0, 0, 0, 0.12), 0 14px 28px rgba(0, 0, 0, 0.14) | 0 0 8px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.28) |
-| `--shadow-64` | 0 0 8px rgba(0, 0, 0, 0.12), 0 32px 64px rgba(0, 0, 0, 0.14) | 0 0 8px rgba(0, 0, 0, 0.24), 0 32px 64px rgba(0, 0, 0, 0.28) |
-| `--shadow-ambient` | rgba(0, 0, 0, 0.12) | rgba(0, 0, 0, 0.24) |
-| `--shadow-key` | rgba(0, 0, 0, 0.14) | rgba(0, 0, 0, 0.28) |
+| `--shadow-2` | 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14) | 0 1px 2px rgba(15, 18, 21, 0.32), 0 1px 2px rgba(15, 18, 21, 0.40) |
+| `--shadow-4` | 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(15, 18, 21, 0.32), 0 2px 4px rgba(15, 18, 21, 0.40) |
+| `--shadow-8` | 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(15, 18, 21, 0.32), 0 4px 8px rgba(15, 18, 21, 0.40) |
+| `--shadow-16` | 0 0 2px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(15, 18, 21, 0.32), 0 8px 16px rgba(15, 18, 21, 0.40) |
+| `--shadow-28` | 0 0 8px rgba(0, 0, 0, 0.12), 0 14px 28px rgba(0, 0, 0, 0.14) | 0 0 8px rgba(15, 18, 21, 0.32), 0 14px 28px rgba(15, 18, 21, 0.40) |
+| `--shadow-64` | 0 0 8px rgba(0, 0, 0, 0.12), 0 32px 64px rgba(0, 0, 0, 0.14) | 0 0 8px rgba(15, 18, 21, 0.32), 0 32px 64px rgba(15, 18, 21, 0.40) |
+| `--shadow-ambient` | rgba(0, 0, 0, 0.12) | rgba(15, 18, 21, 0.32) |
+| `--shadow-key` | rgba(0, 0, 0, 0.14) | rgba(15, 18, 21, 0.40) |
 
 ### Typography
 | Variable | Light | Dark |
@@ -273,44 +273,44 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### shadcn Aliases
 | Variable | Light | Dark |
 |---|---|---|
-| `--background` | #f5f5f4 | #1a2730 |
+| `--background` | #f5f5f4 | #333f48 |
 | `--foreground` | #333f48 | #ffffff |
-| `--card` | #ffffff | #1f2d36 |
+| `--card` | #ffffff | #3c4a55 |
 | `--card-foreground` | #333f48 | #ffffff |
-| `--popover` | #ffffff | #1f2d36 |
+| `--popover` | #ffffff | #3c4a55 |
 | `--popover-foreground` | #333f48 | #ffffff |
-| `--primary` | #005eb8 | #115ea3 |
-| `--primary-foreground` | #ffffff | same |
-| `--secondary` | #ebebea | #243640 |
+| `--primary` | #005eb8 | #77b7f7 |
+| `--primary-foreground` | #ffffff | #1a2730 |
+| `--secondary` | #ebebea | #465663 |
 | `--secondary-foreground` | #333f48 | #ffffff |
-| `--muted` | #ebebea | #243640 |
-| `--muted-foreground` | #888b8d | #adadad |
-| `--accent` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.04) |
+| `--muted` | #ebebea | #465663 |
+| `--muted-foreground` | #888b8d | #c3cdd5 |
+| `--accent` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.06) |
 | `--accent-foreground` | #333f48 | #ffffff |
-| `--destructive` | #c4314b | #dc626d |
+| `--destructive` | #c4314b | #eba7ad |
 | `--destructive-foreground` | #ffffff | #000000 |
-| `--destructive-subtle` | #fdf3f4 | #3b1117 |
-| `--destructive-stroke` | #c4314b | #dc626d |
-| `--success` | #0e7a0b | #54b054 |
+| `--destructive-subtle` | #fdf3f4 | #4c3c43 |
+| `--destructive-stroke` | #c4314b | #eba7ad |
+| `--success` | #0e7a0b | #88c888 |
 | `--success-foreground` | #ffffff | #1a2730 |
-| `--success-subtle` | #f1faf1 | #052505 |
-| `--success-stroke` | #0e7a0b | #54b054 |
-| `--warning` | #f7630c | #f98845 |
+| `--success-subtle` | #f1faf1 | #314b3e |
+| `--success-stroke` | #0e7a0b | #88c888 |
+| `--warning` | #f7630c | #faa471 |
 | `--warning-foreground` | #1a2730 | same |
-| `--warning-subtle` | #fff9f5 | #3d1a00 |
-| `--warning-stroke` | #f7630c | #f98845 |
-| `--border` | #ebebea | #2e2e2e |
-| `--input` | #e0e0df | #3d3d3d |
+| `--warning-subtle` | #fff9f5 | #52433b |
+| `--warning-stroke` | #f7630c | #faa471 |
+| `--border` | #ebebea | #4e616e |
+| `--input` | #e0e0df | #5f7686 |
 | `--ring` | #333f48 | #ffffff |
-| `--overlay` | rgba(0, 0, 0, 0.5) | rgba(0, 0, 0, 0.6) |
-| `--link` | #005eb8 | #479ef5 |
-| `--sidebar` | #f5f5f4 | #1f2d36 |
+| `--overlay` | rgba(0, 0, 0, 0.5) | rgba(15, 18, 21, 0.6) |
+| `--link` | #005eb8 | #96c6fa |
+| `--sidebar` | #f5f5f4 | #3c4a55 |
 | `--sidebar-foreground` | #333f48 | #ffffff |
-| `--sidebar-primary` | #005eb8 | #115ea3 |
-| `--sidebar-primary-foreground` | #ffffff | same |
-| `--sidebar-accent` | #ebebea | #243640 |
+| `--sidebar-primary` | #005eb8 | #77b7f7 |
+| `--sidebar-primary-foreground` | #ffffff | #1a2730 |
+| `--sidebar-accent` | #ebebea | #465663 |
 | `--sidebar-accent-foreground` | #333f48 | #ffffff |
-| `--sidebar-border` | #ebebea | #2e2e2e |
+| `--sidebar-border` | #ebebea | #4e616e |
 | `--sidebar-ring` | #333f48 | #ffffff |
 | `--radius` | 4px | same |
 <!-- generated:css-variables:end -->

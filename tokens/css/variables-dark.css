@@ -10,51 +10,53 @@
 .dark,
 [data-theme="dark"] {
   /* ─── Semantic: Neutral ─── */
-  --neutral-background-1: var(--color-grey-20);
-  --neutral-background-2: #1f2d36;
-  --neutral-background-3: #243640;
-  --neutral-background-subtle: rgba(255, 255, 255, 0.04);
+  --neutral-background-1: var(--color-dark-grey);
+  --neutral-background-2: #3c4a55;
+  --neutral-background-3: #465663;
+  --neutral-background-subtle: rgba(255, 255, 255, 0.06);
   --neutral-background-inverted: var(--color-white);
-  --neutral-background-disabled: #243640;
-  --neutral-background-overlay: rgba(0, 0, 0, 0.6);
-  --neutral-background-canvas: var(--color-grey-20);
+  --neutral-background-disabled: #465663;
+  --neutral-background-overlay: rgba(15, 18, 21, 0.6);
+  --neutral-background-canvas: var(--color-dark-grey);
   --neutral-background-surface: var(--neutral-background-2);
   --neutral-foreground-1: var(--color-white);
-  --neutral-foreground-2: #adadad;
-  --neutral-foreground-3: #8a8a8a;
-  --neutral-foreground-disabled: #5c5c5c;
+  --neutral-foreground-2: #c3cdd5;
+  --neutral-foreground-3: #99aab7;
+  --neutral-foreground-disabled: #708899;
   --neutral-foreground-inverted: var(--color-dark-grey);
-  --neutral-foreground-link: var(--color-brand-100);
-  --neutral-stroke-1: #3d3d3d;
-  --neutral-stroke-2: #2e2e2e;
-  --neutral-stroke-accessible: #adadad;
+  --neutral-foreground-on-brand: var(--color-grey-20);
+  --neutral-foreground-link: var(--color-brand-130);
+  --neutral-stroke-1: #5f7686;
+  --neutral-stroke-2: #4e616e;
+  --neutral-stroke-accessible: #c3cdd5;
   --neutral-stroke-focus: var(--color-white);
-  --neutral-stroke-disabled: #3d3d3d;
+  --neutral-stroke-disabled: #4e616e;
 
   /* ─── Semantic: Brand ─── */
-  --brand-background-1: var(--color-brand-70);
-  --brand-background-2: var(--color-brand-90);
+  --brand-background-1: var(--color-brand-120);
+  --brand-background-2: var(--color-brand-110);
   --brand-background-inverted: var(--color-brand-30);
   --brand-background-compound: var(--color-brand-30);
-  --brand-foreground-1: var(--color-brand-100);
-  --brand-foreground-2: var(--color-brand-110);
-  --brand-foreground-link: var(--color-brand-100);
+  --brand-foreground-1: var(--color-brand-130);
+  --brand-foreground-2: var(--color-brand-140);
+  --brand-foreground-link: var(--color-brand-130);
   --brand-foreground-inverted: var(--color-dark-grey);
-  --brand-foreground-compound: var(--color-brand-100);
-  --brand-stroke-1: var(--color-brand-100);
-  --brand-stroke-compound: var(--color-brand-100);
+  --brand-foreground-compound: var(--color-brand-130);
+  --brand-stroke-1: var(--color-brand-120);
+  --brand-stroke-2: var(--color-brand-110);
+  --brand-stroke-compound: var(--color-brand-120);
 
   /* ─── Semantic: Status ─── */
-  --status-danger-background: #3b1117;
-  --status-danger-foreground: #dc626d;
-  --status-danger-stroke: #dc626d;
-  --status-success-background: #052505;
-  --status-success-foreground: #54b054;
-  --status-success-stroke: #54b054;
-  --status-warning-background: #3d1a00;
-  --status-warning-foreground: #f98845;
-  --status-warning-stroke: #f98845;
-  --status-severe-foreground: #e8420c;
+  --status-danger-background: #4c3c43;
+  --status-danger-foreground: #eba7ad;
+  --status-danger-stroke: #eba7ad;
+  --status-success-background: #314b3e;
+  --status-success-foreground: #88c888;
+  --status-success-stroke: #88c888;
+  --status-warning-background: #52433b;
+  --status-warning-foreground: #faa471;
+  --status-warning-stroke: #faa471;
+  --status-severe-foreground: #f9a387;
   --status-danger-on-fill: var(--color-black);
   --status-success-on-fill: var(--color-grey-20);
 
@@ -74,8 +76,8 @@
   --shadow-16: 0 0 2px var(--shadow-ambient), 0 8px 16px var(--shadow-key);
   --shadow-28: 0 0 8px var(--shadow-ambient), 0 14px 28px var(--shadow-key);
   --shadow-64: 0 0 8px var(--shadow-ambient), 0 32px 64px var(--shadow-key);
-  --shadow-ambient: rgba(0, 0, 0, 0.24);
-  --shadow-key: rgba(0, 0, 0, 0.28);
+  --shadow-ambient: rgba(15, 18, 21, 0.32);
+  --shadow-key: rgba(15, 18, 21, 0.40);
 
   /* ─── shadcn Aliases ─── */
   --background: var(--neutral-background-canvas);
@@ -85,6 +87,7 @@
   --popover: var(--neutral-background-surface);
   --popover-foreground: var(--neutral-foreground-1);
   --primary: var(--brand-background-1);
+  --primary-foreground: var(--neutral-foreground-on-brand);
   --secondary: var(--neutral-background-3);
   --secondary-foreground: var(--neutral-foreground-1);
   --muted: var(--neutral-background-3);
@@ -110,6 +113,7 @@
   --sidebar: var(--neutral-background-2);
   --sidebar-foreground: var(--neutral-foreground-1);
   --sidebar-primary: var(--brand-background-1);
+  --sidebar-primary-foreground: var(--neutral-foreground-on-brand);
   --sidebar-accent: var(--neutral-background-3);
   --sidebar-accent-foreground: var(--neutral-foreground-1);
   --sidebar-border: var(--neutral-stroke-2);

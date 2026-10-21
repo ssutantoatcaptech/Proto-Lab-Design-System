@@ -182,12 +182,6 @@
       "fg": "--warning",
       "bg": "--background",
       "reason": "No existing palette color passes. Needs a new color value; awaiting a decision from the design system owner."
-    },
-    {
-      "mode": "dark",
-      "fg": "--destructive",
-      "bg": "--background",
-      "reason": "No existing palette color passes. Needs a new color value; awaiting a decision from the design system owner. Current ratio is close (4.37:1)."
     }
   ]
 }
