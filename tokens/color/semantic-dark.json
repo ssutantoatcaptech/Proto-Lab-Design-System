@@ -23,7 +23,7 @@
         "stroke-disabled": { "$value": "#3d3d3d", "$type": "color", "$description": "Disabled border (dark)" }
       },
       "brand": {
-        "background-1": { "$value": "{color.primitive.brand-ramp.100}", "$type": "color", "$description": "Primary brand background (dark)" },
+        "background-1": { "$value": "{color.primitive.brand-ramp.70}", "$type": "color", "$description": "Primary brand background (dark)" },
         "background-2": { "$value": "{color.primitive.brand-ramp.90}", "$type": "color", "$description": "Secondary brand background (dark)" },
         "background-inverted": { "$value": "{color.primitive.brand-ramp.30}", "$type": "color", "$description": "Inverted brand background (dark)" },
         "background-compound": { "$value": "{color.primitive.brand-ramp.30}", "$type": "color", "$description": "Compound brand background (dark)" },
@@ -47,7 +47,21 @@
         "warning-foreground": { "$value": "#f98845", "$type": "color", "$description": "Warning text (dark)" },
         "warning-stroke": { "$value": "#f98845", "$type": "color", "$description": "Warning border (dark)" },
         "severe-foreground": { "$value": "#e8420c", "$type": "color", "$description": "Severe/critical text (dark)" },
-        "accent": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Brand accent (Yellow) — same in both modes" }
+        "accent": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Brand accent (Yellow) — same in both modes" },
+        "danger-on-fill": { "$value": "{color.primitive.neutral.black}", "$type": "color", "$description": "Text on a danger fill (dark)" },
+        "success-on-fill": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "Text on a success fill (dark)" },
+        "warning-on-fill": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "Text on a warning fill (dark)" }
+      },
+      "chart": {
+        "1": { "$value": "{color.primitive.brand-ramp.100}", "$type": "color", "$description": "Chart series 1 (dark)" },
+        "2": { "$value": "{color.primitive.tertiary.sky-blue}", "$type": "color", "$description": "Chart series 2 (dark)" },
+        "3": { "$value": "{color.primitive.tertiary.light-teal}", "$type": "color", "$description": "Chart series 3 (dark)" },
+        "4": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Chart series 4 (dark)" },
+        "5": { "$value": "{color.primitive.blue-scale.200}", "$type": "color", "$description": "Chart series 5 (dark)" }
+      },
+      "illustration": {
+        "primary": { "$value": "{color.primitive.brand-ramp.100}", "$type": "color", "$description": "Primary fill of CapTech illustrative icons (dark)" },
+        "accent": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Accent fill of CapTech illustrative icons (dark)" }
       },
       "shadow": {
         "ambient": { "$value": "rgba(0, 0, 0, 0.24)", "$type": "color", "$description": "Ambient shadow color (dark)" },

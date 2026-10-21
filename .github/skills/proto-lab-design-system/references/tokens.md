@@ -2,157 +2,316 @@
 
 Complete vocabulary of available CSS custom properties and component variants.
 
-## CSS Custom Properties (variables-light.css)
+<!-- generated:css-variables:begin -->
+## CSS Custom Properties
 
-### Brand Colors
-| Variable | Value |
-|----------|-------|
-| `--color-captech-blue` | #005eb8 |
-| `--color-dark-grey` | #333f48 |
-| `--color-medium-grey` | #888b8d |
-| `--color-light-grey` | #d9d9d6 |
-| `--color-accent-yellow` | #fdda24 |
-| `--color-dark-blue` | #003865 |
-| `--color-light-teal` | #68d2df |
-| `--color-sky-blue` | #00a5df |
+Generated from `tokens/*.json`. Light values live in `tokens/css/variables-light.css`;
+dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
+`data-theme="dark"`). Tailwind projects import `tokens/css/proto-lab.css`.
 
-### Brand Ramp
-`--color-brand-10` through `--color-brand-160` (16 steps from #061724 to #ebf3fc). Primary brand: `--color-brand-80` = #005eb8.
+### Primitive: Brand
+| Variable | Light | Dark |
+|---|---|---|
+| `--color-captech-blue` | #005eb8 | same |
+| `--color-dark-grey` | #333f48 | same |
+| `--color-medium-grey` | #888b8d | same |
+| `--color-light-grey` | #d9d9d6 | same |
+| `--color-white` | #ffffff | same |
 
-### Neutrals
-| Variable | Value |
-|----------|-------|
-| `--color-black` | #000000 |
-| `--color-white` | #ffffff |
-| `--color-grey-2` | #f5f5f4 |
-| `--color-grey-4` | #ebebea |
-| `--color-grey-6` | #e0e0df |
-| `--color-grey-8` | #d6d6d5 |
-| `--color-grey-12` | #c1c1c0 |
-| `--color-grey-20` | #1a2730 |
+### Primitive: Accent & Tertiary
+| Variable | Light | Dark |
+|---|---|---|
+| `--color-accent-yellow` | #fdda24 | same |
+| `--color-dark-blue` | #003865 | same |
+| `--color-light-teal` | #68d2df | same |
+| `--color-sky-blue` | #00a5df | same |
+
+### Primitive: Brand Ramp
+| Variable | Light | Dark |
+|---|---|---|
+| `--color-brand-10` | #061724 | same |
+| `--color-brand-20` | #082338 | same |
+| `--color-brand-30` | #0a2e4a | same |
+| `--color-brand-40` | #0c3b5e | same |
+| `--color-brand-50` | #0e4775 | same |
+| `--color-brand-60` | #0f548c | same |
+| `--color-brand-70` | #115ea3 | same |
+| `--color-brand-80` | #005eb8 | same |
+| `--color-brand-90` | #2886de | same |
+| `--color-brand-100` | #479ef5 | same |
+| `--color-brand-110` | #62abf5 | same |
+| `--color-brand-120` | #77b7f7 | same |
+| `--color-brand-130` | #96c6fa | same |
+| `--color-brand-140` | #b4d6fa | same |
+| `--color-brand-150` | #cfe4fa | same |
+| `--color-brand-160` | #ebf3fc | same |
+
+### Primitive: Blue Scale
+| Variable | Light | Dark |
+|---|---|---|
+| `--color-blue-100` | #dbeeff | same |
+| `--color-blue-200` | #a5cfff | same |
+| `--color-blue-300` | #5598dd | same |
+| `--color-blue-400` | #176ebf | same |
+| `--color-blue-500` | #005eb8 | same |
+| `--color-blue-700` | #004994 | same |
+
+### Primitive: Neutral
+| Variable | Light | Dark |
+|---|---|---|
+| `--color-black` | #000000 | same |
+| `--color-grey-2` | #f5f5f4 | same |
+| `--color-grey-4` | #ebebea | same |
+| `--color-grey-6` | #e0e0df | same |
+| `--color-grey-8` | #d6d6d5 | same |
+| `--color-grey-12` | #c1c1c0 | same |
+| `--color-grey-20` | #1a2730 | same |
+
+### Primitive: Opacity
+| Variable | Light | Dark |
+|---|---|---|
+| `--color-dark-grey-5` | rgba(51, 63, 72, 0.05) | same |
+| `--color-captech-blue-30` | rgba(0, 94, 184, 0.3) | same |
+| `--color-dark-grey-30` | rgba(51, 63, 72, 0.3) | same |
+| `--color-white-50` | rgba(255, 255, 255, 0.5) | same |
 
 ### Semantic: Neutral
-| Variable | Resolves to |
-|----------|-------------|
-| `--neutral-background-1` | white (card surface) |
-| `--neutral-background-2` | grey-2 (page background) |
-| `--neutral-background-3` | grey-4 (subtle surface) |
-| `--neutral-background-subtle` | rgba(51,63,72,0.05) |
-| `--neutral-background-inverted` | dark-grey |
-| `--neutral-background-disabled` | grey-4 |
-| `--neutral-background-overlay` | rgba(0,0,0,0.5) |
-| `--neutral-foreground-1` | dark-grey (primary text) |
-| `--neutral-foreground-2` | medium-grey (secondary text) |
-| `--neutral-foreground-3` | grey-12 (tertiary/placeholder) |
-| `--neutral-foreground-disabled` | grey-8 |
-| `--neutral-foreground-inverted` | white |
-| `--neutral-foreground-on-brand` | white |
-| `--neutral-foreground-link` | captech-blue |
-| `--neutral-stroke-1` | grey-6 (borders) |
-| `--neutral-stroke-2` | grey-4 (subtle borders) |
-| `--neutral-stroke-accessible` | dark-grey |
-| `--neutral-stroke-focus` | dark-grey |
-| `--neutral-stroke-disabled` | grey-6 |
+| Variable | Light | Dark |
+|---|---|---|
+| `--neutral-background-1` | #ffffff | #1a2730 |
+| `--neutral-background-2` | #f5f5f4 | #1f2d36 |
+| `--neutral-background-3` | #ebebea | #243640 |
+| `--neutral-background-subtle` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.04) |
+| `--neutral-background-inverted` | #333f48 | #ffffff |
+| `--neutral-background-disabled` | #ebebea | #243640 |
+| `--neutral-background-overlay` | rgba(0, 0, 0, 0.5) | rgba(0, 0, 0, 0.6) |
+| `--neutral-foreground-1` | #333f48 | #ffffff |
+| `--neutral-foreground-2` | #888b8d | #adadad |
+| `--neutral-foreground-3` | #c1c1c0 | #8a8a8a |
+| `--neutral-foreground-disabled` | #d6d6d5 | #5c5c5c |
+| `--neutral-foreground-inverted` | #ffffff | #333f48 |
+| `--neutral-foreground-on-brand` | #ffffff | same |
+| `--neutral-foreground-link` | #005eb8 | #479ef5 |
+| `--neutral-stroke-1` | #e0e0df | #3d3d3d |
+| `--neutral-stroke-2` | #ebebea | #2e2e2e |
+| `--neutral-stroke-accessible` | #333f48 | #adadad |
+| `--neutral-stroke-focus` | #333f48 | #ffffff |
+| `--neutral-stroke-disabled` | #e0e0df | #3d3d3d |
 
 ### Semantic: Brand
-| Variable | Resolves to |
-|----------|-------------|
-| `--brand-background-1` | captech-blue (primary CTA) |
-| `--brand-background-2` | brand-70 |
-| `--brand-background-inverted` | blue-100 |
-| `--brand-background-compound` | blue-100 |
-| `--brand-foreground-1` | captech-blue |
-| `--brand-foreground-2` | brand-70 |
-| `--brand-foreground-link` | captech-blue |
-| `--brand-foreground-inverted` | white |
-| `--brand-foreground-compound` | captech-blue |
-| `--brand-stroke-1` | captech-blue |
-| `--brand-stroke-2` | brand-90 |
-| `--brand-stroke-compound` | captech-blue |
+| Variable | Light | Dark |
+|---|---|---|
+| `--brand-background-1` | #005eb8 | #115ea3 |
+| `--brand-background-2` | #115ea3 | #2886de |
+| `--brand-background-inverted` | #dbeeff | #0a2e4a |
+| `--brand-background-compound` | #dbeeff | #0a2e4a |
+| `--brand-foreground-1` | #005eb8 | #479ef5 |
+| `--brand-foreground-2` | #115ea3 | #62abf5 |
+| `--brand-foreground-link` | #005eb8 | #479ef5 |
+| `--brand-foreground-inverted` | #ffffff | #333f48 |
+| `--brand-foreground-compound` | #005eb8 | #479ef5 |
+| `--brand-stroke-1` | #005eb8 | #479ef5 |
+| `--brand-stroke-2` | #2886de | same |
+| `--brand-stroke-compound` | #005eb8 | #479ef5 |
 
 ### Semantic: Status
-| Variable | Value |
-|----------|-------|
-| `--status-danger-background` | #fdf3f4 |
-| `--status-danger-foreground` | #c4314b |
-| `--status-danger-stroke` | #c4314b |
-| `--status-success-background` | #f1faf1 |
-| `--status-success-foreground` | #0e7a0b |
-| `--status-success-stroke` | #0e7a0b |
-| `--status-warning-background` | #fff9f5 |
-| `--status-warning-foreground` | #f7630c |
-| `--status-warning-stroke` | #f7630c |
-| `--status-severe-foreground` | #da3b01 |
+| Variable | Light | Dark |
+|---|---|---|
+| `--status-danger-background` | #fdf3f4 | #3b1117 |
+| `--status-danger-foreground` | #c4314b | #dc626d |
+| `--status-danger-stroke` | #c4314b | #dc626d |
+| `--status-success-background` | #f1faf1 | #052505 |
+| `--status-success-foreground` | #0e7a0b | #54b054 |
+| `--status-success-stroke` | #0e7a0b | #54b054 |
+| `--status-warning-background` | #fff9f5 | #3d1a00 |
+| `--status-warning-foreground` | #f7630c | #f98845 |
+| `--status-warning-stroke` | #f7630c | #f98845 |
+| `--status-severe-foreground` | #da3b01 | #e8420c |
+| `--status-accent` | #fdda24 | same |
+| `--status-danger-on-fill` | #ffffff | #000000 |
+| `--status-success-on-fill` | #ffffff | #1a2730 |
+| `--status-warning-on-fill` | #1a2730 | same |
 
-### Shadows
-| Variable | Use for |
-|----------|---------|
-| `--shadow-2` | Cards, buttons at rest |
-| `--shadow-4` | Dropdowns, popovers |
-| `--shadow-8` | Flyouts, hover states |
-| `--shadow-16` | Dialogs, drawers |
-| `--shadow-28` | Modals, command bars |
-| `--shadow-64` | Top-level surfaces |
+### Semantic: Chart
+| Variable | Light | Dark |
+|---|---|---|
+| `--chart-1` | #005eb8 | #479ef5 |
+| `--chart-2` | #00a5df | same |
+| `--chart-3` | #003865 | #68d2df |
+| `--chart-4` | #68d2df | #fdda24 |
+| `--chart-5` | #fdda24 | #a5cfff |
+
+### Semantic: Illustration
+| Variable | Light | Dark |
+|---|---|---|
+| `--illustration-primary` | #005eb8 | #479ef5 |
+| `--illustration-accent` | #fdda24 | same |
+
+### Shadow
+| Variable | Light | Dark |
+|---|---|---|
+| `--shadow-2` | 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14) | 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.28) |
+| `--shadow-4` | 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.28) |
+| `--shadow-8` | 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(0, 0, 0, 0.24), 0 4px 8px rgba(0, 0, 0, 0.28) |
+| `--shadow-16` | 0 0 2px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.14) | 0 0 2px rgba(0, 0, 0, 0.24), 0 8px 16px rgba(0, 0, 0, 0.28) |
+| `--shadow-28` | 0 0 8px rgba(0, 0, 0, 0.12), 0 14px 28px rgba(0, 0, 0, 0.14) | 0 0 8px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.28) |
+| `--shadow-64` | 0 0 8px rgba(0, 0, 0, 0.12), 0 32px 64px rgba(0, 0, 0, 0.14) | 0 0 8px rgba(0, 0, 0, 0.24), 0 32px 64px rgba(0, 0, 0, 0.28) |
+| `--shadow-ambient` | rgba(0, 0, 0, 0.12) | rgba(0, 0, 0, 0.24) |
+| `--shadow-key` | rgba(0, 0, 0, 0.14) | rgba(0, 0, 0, 0.28) |
 
 ### Typography
-| Variable | Value |
-|----------|-------|
-| `--font-family` | Inter, sans-serif |
-| `--font-weight-light` | 300 |
-| `--font-weight-regular` | 400 |
-| `--font-weight-semibold` | 600 |
-| `--font-weight-bold` | 700 |
-
-| Style | Size / Line-height | Weight |
-|-------|-------------------|--------|
-| Display | 68px / 92px | light |
-| Large Title | 40px / 56px | light |
-| Title 1 | 32px / 40px | light |
-| Title 2 | 28px / 36px | light |
-| Title 3 | 24px / 32px | regular |
-| Subtitle 1 | 20px / 28px | semibold |
-| Subtitle 2 | 16px / 22px | semibold |
-| Body 1 | 14px / 20px | regular |
-| Body 1 Stronger | 14px / 20px | bold |
-| Body 2 | 16px / 22px | regular |
-| Caption 1 | 12px / 16px | regular |
-| Caption 1 Strong | 12px / 16px | semibold |
-| Caption 2 | 10px / 14px | regular |
+| Variable | Light | Dark |
+|---|---|---|
+| `--font-family` | Inter, sans-serif | same |
+| `--font-family-mono` | ui-monospace, SFMono-Regular, Menlo, Consolas, monospace | same |
+| `--font-weight-light` | 300 | same |
+| `--font-weight-regular` | 400 | same |
+| `--font-weight-semibold` | 600 | same |
+| `--font-weight-bold` | 700 | same |
+| `--font-size-display` | 68px | same |
+| `--line-height-display` | 92px | same |
+| `--font-weight-display` | 300 | same |
+| `--font-size-large-title` | 40px | same |
+| `--line-height-large-title` | 56px | same |
+| `--font-weight-large-title` | 300 | same |
+| `--font-size-title-1` | 32px | same |
+| `--line-height-title-1` | 40px | same |
+| `--font-weight-title-1` | 300 | same |
+| `--font-size-title-2` | 28px | same |
+| `--line-height-title-2` | 36px | same |
+| `--font-weight-title-2` | 300 | same |
+| `--font-size-title-3` | 24px | same |
+| `--line-height-title-3` | 32px | same |
+| `--font-weight-title-3` | 400 | same |
+| `--font-size-subtitle-1` | 20px | same |
+| `--line-height-subtitle-1` | 28px | same |
+| `--font-weight-subtitle-1` | 600 | same |
+| `--font-size-subtitle-2` | 16px | same |
+| `--line-height-subtitle-2` | 22px | same |
+| `--font-weight-subtitle-2` | 600 | same |
+| `--font-size-body-1` | 14px | same |
+| `--line-height-body-1` | 20px | same |
+| `--font-weight-body-1` | 400 | same |
+| `--font-size-body-1-stronger` | 14px | same |
+| `--line-height-body-1-stronger` | 20px | same |
+| `--font-weight-body-1-stronger` | 700 | same |
+| `--font-size-body-2` | 16px | same |
+| `--line-height-body-2` | 22px | same |
+| `--font-weight-body-2` | 400 | same |
+| `--font-size-caption-1` | 12px | same |
+| `--line-height-caption-1` | 16px | same |
+| `--font-weight-caption-1` | 400 | same |
+| `--font-size-caption-1-strong` | 12px | same |
+| `--line-height-caption-1-strong` | 16px | same |
+| `--font-weight-caption-1-strong` | 600 | same |
+| `--font-size-caption-1-stronger` | 12px | same |
+| `--line-height-caption-1-stronger` | 16px | same |
+| `--font-weight-caption-1-stronger` | 700 | same |
+| `--font-size-caption-2` | 10px | same |
+| `--line-height-caption-2` | 14px | same |
+| `--font-weight-caption-2` | 400 | same |
+| `--font-size-caption-2-strong` | 10px | same |
+| `--line-height-caption-2-strong` | 14px | same |
+| `--font-weight-caption-2-strong` | 600 | same |
 
 ### Spacing
-| Variable | Value |
-|----------|-------|
-| `--spacing-none` | 0px |
-| `--spacing-xxs` | 2px |
-| `--spacing-xs` | 4px |
-| `--spacing-s-nudge` | 6px |
-| `--spacing-s` | 8px |
-| `--spacing-m-nudge` | 10px |
-| `--spacing-m` | 12px |
-| `--spacing-l` | 16px |
-| `--spacing-xl` | 20px |
-| `--spacing-xxl` | 24px |
-| `--spacing-xxxl` | 32px |
+| Variable | Light | Dark |
+|---|---|---|
+| `--spacing-none` | 0px | same |
+| `--spacing-xxs` | 2px | same |
+| `--spacing-xs` | 4px | same |
+| `--spacing-s-nudge` | 6px | same |
+| `--spacing-s` | 8px | same |
+| `--spacing-m-nudge` | 10px | same |
+| `--spacing-m` | 12px | same |
+| `--spacing-l` | 16px | same |
+| `--spacing-xl` | 20px | same |
+| `--spacing-xxl` | 24px | same |
+| `--spacing-xxxl` | 32px | same |
 
 ### Corner Radius
-| Variable | Value |
-|----------|-------|
-| `--radius-none` | 0px |
-| `--radius-small` | 2px |
-| `--radius-medium` | 4px |
-| `--radius-large` | 6px |
-| `--radius-x-large` | 8px |
-| `--radius-circular` | 9999px |
+| Variable | Light | Dark |
+|---|---|---|
+| `--radius-none` | 0px | same |
+| `--radius-small` | 2px | same |
+| `--radius-medium` | 4px | same |
+| `--radius-large` | 6px | same |
+| `--radius-x-large` | 8px | same |
+| `--radius-circular` | 9999px | same |
 
 ### Stroke Width
-| Variable | Value |
-|----------|-------|
-| `--stroke-thin` | 1px |
-| `--stroke-thick` | 2px |
-| `--stroke-thicker` | 3px |
-| `--stroke-thickest` | 4px |
+| Variable | Light | Dark |
+|---|---|---|
+| `--stroke-thin` | 1px | same |
+| `--stroke-thick` | 2px | same |
+| `--stroke-thicker` | 3px | same |
+| `--stroke-thickest` | 4px | same |
 
----
+### Motion
+| Variable | Light | Dark |
+|---|---|---|
+| `--duration-ultra-fast` | 50ms | same |
+| `--duration-faster` | 100ms | same |
+| `--duration-fast` | 150ms | same |
+| `--duration-normal` | 200ms | same |
+| `--duration-gentle` | 250ms | same |
+| `--duration-slow` | 300ms | same |
+| `--duration-slower` | 400ms | same |
+| `--duration-ultra-slow` | 500ms | same |
+| `--easing-accelerate-max` | cubic-bezier(0.9, 0.1, 1, 0.2) | same |
+| `--easing-accelerate-mid` | cubic-bezier(1, 0, 1, 1) | same |
+| `--easing-accelerate-min` | cubic-bezier(0.8, 0, 0.78, 1) | same |
+| `--easing-decelerate-max` | cubic-bezier(0.1, 0.9, 0.2, 1) | same |
+| `--easing-decelerate-mid` | cubic-bezier(0, 0, 0, 1) | same |
+| `--easing-decelerate-min` | cubic-bezier(0.33, 0, 0.1, 1) | same |
+| `--easing-easy-ease-max` | cubic-bezier(0.8, 0, 0.2, 1) | same |
+| `--easing-easy-ease` | cubic-bezier(0.33, 0, 0.67, 1) | same |
+| `--easing-linear` | cubic-bezier(0, 0, 1, 1) | same |
+
+### shadcn Aliases
+| Variable | Light | Dark |
+|---|---|---|
+| `--background` | #ffffff | #1a2730 |
+| `--foreground` | #333f48 | #ffffff |
+| `--card` | #ffffff | #1a2730 |
+| `--card-foreground` | #333f48 | #ffffff |
+| `--popover` | #ffffff | #1a2730 |
+| `--popover-foreground` | #333f48 | #ffffff |
+| `--primary` | #005eb8 | #115ea3 |
+| `--primary-foreground` | #ffffff | same |
+| `--secondary` | #ebebea | #243640 |
+| `--secondary-foreground` | #333f48 | #ffffff |
+| `--muted` | #f5f5f4 | #1f2d36 |
+| `--muted-foreground` | #888b8d | #adadad |
+| `--accent` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.04) |
+| `--accent-foreground` | #333f48 | #ffffff |
+| `--destructive` | #c4314b | #dc626d |
+| `--destructive-foreground` | #ffffff | #000000 |
+| `--destructive-subtle` | #fdf3f4 | #3b1117 |
+| `--destructive-stroke` | #c4314b | #dc626d |
+| `--success` | #0e7a0b | #54b054 |
+| `--success-foreground` | #ffffff | #1a2730 |
+| `--success-subtle` | #f1faf1 | #052505 |
+| `--success-stroke` | #0e7a0b | #54b054 |
+| `--warning` | #f7630c | #f98845 |
+| `--warning-foreground` | #1a2730 | same |
+| `--warning-subtle` | #fff9f5 | #3d1a00 |
+| `--warning-stroke` | #f7630c | #f98845 |
+| `--border` | #ebebea | #2e2e2e |
+| `--input` | #e0e0df | #3d3d3d |
+| `--ring` | #333f48 | #ffffff |
+| `--overlay` | rgba(0, 0, 0, 0.5) | rgba(0, 0, 0, 0.6) |
+| `--link` | #005eb8 | #479ef5 |
+| `--sidebar` | #f5f5f4 | #1f2d36 |
+| `--sidebar-foreground` | #333f48 | #ffffff |
+| `--sidebar-primary` | #005eb8 | #115ea3 |
+| `--sidebar-primary-foreground` | #ffffff | same |
+| `--sidebar-accent` | #ebebea | #243640 |
+| `--sidebar-accent-foreground` | #333f48 | #ffffff |
+| `--sidebar-border` | #ebebea | #2e2e2e |
+| `--sidebar-ring` | #333f48 | #ffffff |
+| `--radius` | 4px | same |
+<!-- generated:css-variables:end -->
 
 ## Component Registry (46 components)
 

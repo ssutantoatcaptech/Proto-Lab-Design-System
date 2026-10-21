@@ -1,0 +1,122 @@
+{
+  "motion": {
+    "$description": "Fluent 2 motion tokens",
+    "duration": {
+      "ultra-fast": {
+        "$value": "50ms",
+        "$type": "duration"
+      },
+      "faster": {
+        "$value": "100ms",
+        "$type": "duration"
+      },
+      "fast": {
+        "$value": "150ms",
+        "$type": "duration"
+      },
+      "normal": {
+        "$value": "200ms",
+        "$type": "duration"
+      },
+      "gentle": {
+        "$value": "250ms",
+        "$type": "duration"
+      },
+      "slow": {
+        "$value": "300ms",
+        "$type": "duration"
+      },
+      "slower": {
+        "$value": "400ms",
+        "$type": "duration"
+      },
+      "ultra-slow": {
+        "$value": "500ms",
+        "$type": "duration"
+      }
+    },
+    "easing": {
+      "accelerate-max": {
+        "$value": [
+          0.9,
+          0.1,
+          1,
+          0.2
+        ],
+        "$type": "cubicBezier"
+      },
+      "accelerate-mid": {
+        "$value": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "$type": "cubicBezier"
+      },
+      "accelerate-min": {
+        "$value": [
+          0.8,
+          0,
+          0.78,
+          1
+        ],
+        "$type": "cubicBezier"
+      },
+      "decelerate-max": {
+        "$value": [
+          0.1,
+          0.9,
+          0.2,
+          1
+        ],
+        "$type": "cubicBezier"
+      },
+      "decelerate-mid": {
+        "$value": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "$type": "cubicBezier"
+      },
+      "decelerate-min": {
+        "$value": [
+          0.33,
+          0,
+          0.1,
+          1
+        ],
+        "$type": "cubicBezier"
+      },
+      "easy-ease-max": {
+        "$value": [
+          0.8,
+          0,
+          0.2,
+          1
+        ],
+        "$type": "cubicBezier"
+      },
+      "easy-ease": {
+        "$value": [
+          0.33,
+          0,
+          0.67,
+          1
+        ],
+        "$type": "cubicBezier"
+      },
+      "linear": {
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "$type": "cubicBezier"
+      }
+    }
+  }
+}

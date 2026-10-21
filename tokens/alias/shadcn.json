@@ -1,0 +1,207 @@
+{
+  "$description": "Maps shadcn/ui variable names onto Proto-Lab semantic tokens. Mode-agnostic: each entry resolves through the light or dark semantic set. chart-1..5 are not aliased; color.semantic.chart.N already emits --chart-N.",
+  "alias": {
+    "shadcn": {
+      "background": {
+        "$value": "{color.semantic.neutral.background-1}",
+        "$type": "color",
+        "$description": "Page and default surface"
+      },
+      "foreground": {
+        "$value": "{color.semantic.neutral.foreground-1}",
+        "$type": "color",
+        "$description": "Default text"
+      },
+      "card": {
+        "$value": "{color.semantic.neutral.background-1}",
+        "$type": "color",
+        "$description": "Card surface; separation comes from border and shadow"
+      },
+      "card-foreground": {
+        "$value": "{color.semantic.neutral.foreground-1}",
+        "$type": "color",
+        "$description": "Text on cards"
+      },
+      "popover": {
+        "$value": "{color.semantic.neutral.background-1}",
+        "$type": "color",
+        "$description": "Popover, menu and dropdown surface"
+      },
+      "popover-foreground": {
+        "$value": "{color.semantic.neutral.foreground-1}",
+        "$type": "color",
+        "$description": "Text in popovers"
+      },
+      "primary": {
+        "$value": "{color.semantic.brand.background-1}",
+        "$type": "color",
+        "$description": "Primary action fill"
+      },
+      "primary-foreground": {
+        "$value": "{color.semantic.neutral.foreground-on-brand}",
+        "$type": "color",
+        "$description": "Text on primary"
+      },
+      "secondary": {
+        "$value": "{color.semantic.neutral.background-3}",
+        "$type": "color",
+        "$description": "Secondary action fill"
+      },
+      "secondary-foreground": {
+        "$value": "{color.semantic.neutral.foreground-1}",
+        "$type": "color",
+        "$description": "Text on secondary"
+      },
+      "muted": {
+        "$value": "{color.semantic.neutral.background-2}",
+        "$type": "color",
+        "$description": "Muted surface"
+      },
+      "muted-foreground": {
+        "$value": "{color.semantic.neutral.foreground-2}",
+        "$type": "color",
+        "$description": "Secondary text, descriptions, placeholders"
+      },
+      "accent": {
+        "$value": "{color.semantic.neutral.background-subtle}",
+        "$type": "color",
+        "$description": "Hover and selected surface. Not CapTech Yellow"
+      },
+      "accent-foreground": {
+        "$value": "{color.semantic.neutral.foreground-1}",
+        "$type": "color",
+        "$description": "Text on accent"
+      },
+      "destructive": {
+        "$value": "{color.semantic.status.danger-foreground}",
+        "$type": "color",
+        "$description": "Destructive action fill and error text"
+      },
+      "destructive-foreground": {
+        "$value": "{color.semantic.status.danger-on-fill}",
+        "$type": "color",
+        "$description": "Text on destructive"
+      },
+      "destructive-subtle": {
+        "$value": "{color.semantic.status.danger-background}",
+        "$type": "color",
+        "$description": "Error surface"
+      },
+      "destructive-stroke": {
+        "$value": "{color.semantic.status.danger-stroke}",
+        "$type": "color",
+        "$description": "Error border"
+      },
+      "success": {
+        "$value": "{color.semantic.status.success-foreground}",
+        "$type": "color",
+        "$description": "Success fill and text"
+      },
+      "success-foreground": {
+        "$value": "{color.semantic.status.success-on-fill}",
+        "$type": "color",
+        "$description": "Text on success"
+      },
+      "success-subtle": {
+        "$value": "{color.semantic.status.success-background}",
+        "$type": "color",
+        "$description": "Success surface"
+      },
+      "success-stroke": {
+        "$value": "{color.semantic.status.success-stroke}",
+        "$type": "color",
+        "$description": "Success border"
+      },
+      "warning": {
+        "$value": "{color.semantic.status.warning-foreground}",
+        "$type": "color",
+        "$description": "Warning fill and text"
+      },
+      "warning-foreground": {
+        "$value": "{color.semantic.status.warning-on-fill}",
+        "$type": "color",
+        "$description": "Text on warning"
+      },
+      "warning-subtle": {
+        "$value": "{color.semantic.status.warning-background}",
+        "$type": "color",
+        "$description": "Warning surface"
+      },
+      "warning-stroke": {
+        "$value": "{color.semantic.status.warning-stroke}",
+        "$type": "color",
+        "$description": "Warning border"
+      },
+      "border": {
+        "$value": "{color.semantic.neutral.stroke-2}",
+        "$type": "color",
+        "$description": "Dividers and container edges"
+      },
+      "input": {
+        "$value": "{color.semantic.neutral.stroke-1}",
+        "$type": "color",
+        "$description": "Form control borders"
+      },
+      "ring": {
+        "$value": "{color.semantic.neutral.stroke-focus}",
+        "$type": "color",
+        "$description": "Focus indicator"
+      },
+      "overlay": {
+        "$value": "{color.semantic.neutral.background-overlay}",
+        "$type": "color",
+        "$description": "Scrim behind dialogs and sheets"
+      },
+      "link": {
+        "$value": "{color.semantic.brand.foreground-link}",
+        "$type": "color",
+        "$description": "Link text"
+      },
+      "sidebar": {
+        "$value": "{color.semantic.neutral.background-2}",
+        "$type": "color",
+        "$description": "Sidebar surface"
+      },
+      "sidebar-foreground": {
+        "$value": "{color.semantic.neutral.foreground-1}",
+        "$type": "color",
+        "$description": "Sidebar text"
+      },
+      "sidebar-primary": {
+        "$value": "{color.semantic.brand.background-1}",
+        "$type": "color",
+        "$description": "Active sidebar item fill"
+      },
+      "sidebar-primary-foreground": {
+        "$value": "{color.semantic.neutral.foreground-on-brand}",
+        "$type": "color",
+        "$description": "Text on active sidebar item"
+      },
+      "sidebar-accent": {
+        "$value": "{color.semantic.neutral.background-3}",
+        "$type": "color",
+        "$description": "Sidebar hover surface"
+      },
+      "sidebar-accent-foreground": {
+        "$value": "{color.semantic.neutral.foreground-1}",
+        "$type": "color",
+        "$description": "Text on sidebar hover"
+      },
+      "sidebar-border": {
+        "$value": "{color.semantic.neutral.stroke-2}",
+        "$type": "color",
+        "$description": "Sidebar edge"
+      },
+      "sidebar-ring": {
+        "$value": "{color.semantic.neutral.stroke-focus}",
+        "$type": "color",
+        "$description": "Sidebar focus indicator"
+      },
+      "radius": {
+        "$value": "{corner-radius.medium}",
+        "$type": "dimension",
+        "$description": "shadcn base radius"
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+/*
+ * Proto-Lab Design System — CSS Custom Properties (Light Mode)
+ * Source: Figma file ADyu4GaQPThxZXCkuABH98
+ * Foundation: CapTech Brand + Fluent 2 Web
+ */
+
+:root {
+  /* ─── Primitive: Brand ─── */
+  --color-captech-blue: #005eb8;
+  --color-dark-grey: #333f48;
+  --color-medium-grey: #888b8d;
+  --color-light-grey: #d9d9d6;
+
+  /* ─── Primitive: Accent & Tertiary ─── */
+  --color-accent-yellow: #fdda24;
+  --color-dark-blue: #003865;
+  --color-light-teal: #68d2df;
+  --color-sky-blue: #00a5df;
+
+  /* ─── Primitive: Brand Ramp ─── */
+  --color-brand-10: #061724;
+  --color-brand-20: #082338;
+  --color-brand-30: #0a2e4a;
+  --color-brand-40: #0c3b5e;
+  --color-brand-50: #0e4775;
+  --color-brand-60: #0f548c;
+  --color-brand-70: #115ea3;
+  --color-brand-80: #005eb8;
+  --color-brand-90: #2886de;
+  --color-brand-100: #479ef5;
+  --color-brand-110: #62abf5;
+  --color-brand-120: #77b7f7;
+  --color-brand-130: #96c6fa;
+  --color-brand-140: #b4d6fa;
+  --color-brand-150: #cfe4fa;
+  --color-brand-160: #ebf3fc;
+
+  /* ─── Primitive: Blue Scale ─── */
+  --color-blue-100: #dbeeff;
+  --color-blue-200: #a5cfff;
+  --color-blue-300: #5598dd;
+  --color-blue-400: #176ebf;
+  --color-blue-500: #005eb8;
+  --color-blue-700: #004994;
+
+  /* ─── Primitive: Neutral ─── */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-grey-2: #f5f5f4;
+  --color-grey-4: #ebebea;
+  --color-grey-6: #e0e0df;
+  --color-grey-8: #d6d6d5;
+  --color-grey-12: #c1c1c0;
+  --color-grey-20: #1a2730;
+
+  /* ─── Semantic: Neutral ─── */
+  --neutral-background-1: var(--color-white);
+  --neutral-background-2: var(--color-grey-2);
+  --neutral-background-3: var(--color-grey-4);
+  --neutral-background-subtle: rgba(51, 63, 72, 0.05);
+  --neutral-background-inverted: var(--color-dark-grey);
+  --neutral-background-disabled: var(--color-grey-4);
+  --neutral-background-overlay: rgba(0, 0, 0, 0.5);
+  --neutral-foreground-1: var(--color-dark-grey);
+  --neutral-foreground-2: var(--color-medium-grey);
+  --neutral-foreground-3: var(--color-grey-12);
+  --neutral-foreground-disabled: var(--color-grey-8);
+  --neutral-foreground-inverted: var(--color-white);
+  --neutral-foreground-on-brand: var(--color-white);
+  --neutral-foreground-link: var(--color-captech-blue);
+  --neutral-stroke-1: var(--color-grey-6);
+  --neutral-stroke-2: var(--color-grey-4);
+  --neutral-stroke-accessible: var(--color-dark-grey);
+  --neutral-stroke-focus: var(--color-dark-grey);
+  --neutral-stroke-disabled: var(--color-grey-6);
+
+  /* ─── Semantic: Brand ─── */
+  --brand-background-1: var(--color-captech-blue);
+  --brand-background-2: var(--color-brand-70);
+  --brand-background-inverted: var(--color-blue-100);
+  --brand-background-compound: var(--color-blue-100);
+  --brand-foreground-1: var(--color-captech-blue);
+  --brand-foreground-2: var(--color-brand-70);
+  --brand-foreground-link: var(--color-captech-blue);
+  --brand-foreground-inverted: var(--color-white);
+  --brand-foreground-compound: var(--color-captech-blue);
+  --brand-stroke-1: var(--color-captech-blue);
+  --brand-stroke-2: var(--color-brand-90);
+  --brand-stroke-compound: var(--color-captech-blue);
+
+  /* ─── Semantic: Status ─── */
+  --status-danger-background: #fdf3f4;
+  --status-danger-foreground: #c4314b;
+  --status-danger-stroke: #c4314b;
+  --status-success-background: #f1faf1;
+  --status-success-foreground: #0e7a0b;
+  --status-success-stroke: #0e7a0b;
+  --status-warning-background: #fff9f5;
+  --status-warning-foreground: #f7630c;
+  --status-warning-stroke: #f7630c;
+  --status-severe-foreground: #da3b01;
+
+  /* ─── Shadow ─── */
+  --shadow-ambient: rgba(0, 0, 0, 0.12);
+  --shadow-key: rgba(0, 0, 0, 0.14);
+  --shadow-2: 0 1px 2px var(--shadow-ambient), 0 1px 2px var(--shadow-key);
+  --shadow-4: 0 0 2px var(--shadow-ambient), 0 2px 4px var(--shadow-key);
+  --shadow-8: 0 0 2px var(--shadow-ambient), 0 4px 8px var(--shadow-key);
+  --shadow-16: 0 0 2px var(--shadow-ambient), 0 8px 16px var(--shadow-key);
+  --shadow-28: 0 0 8px var(--shadow-ambient), 0 14px 28px var(--shadow-key);
+  --shadow-64: 0 0 8px var(--shadow-ambient), 0 32px 64px var(--shadow-key);
+
+  /* ─── Typography ─── */
+  --font-family: Inter, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-display: 68px;
+  --line-height-display: 92px;
+  --font-size-large-title: 40px;
+  --line-height-large-title: 56px;
+  --font-size-title-1: 32px;
+  --line-height-title-1: 40px;
+  --font-size-title-2: 28px;
+  --line-height-title-2: 36px;
+  --font-size-title-3: 24px;
+  --line-height-title-3: 32px;
+  --font-size-subtitle-1: 20px;
+  --line-height-subtitle-1: 28px;
+  --font-size-subtitle-2: 16px;
+  --line-height-subtitle-2: 22px;
+  --font-size-body-1: 14px;
+  --line-height-body-1: 20px;
+  --font-size-body-2: 16px;
+  --line-height-body-2: 22px;
+  --font-size-caption-1: 12px;
+  --line-height-caption-1: 16px;
+  --font-size-caption-2: 10px;
+  --line-height-caption-2: 14px;
+
+  /* ─── Spacing ─── */
+  --spacing-none: 0px;
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-s-nudge: 6px;
+  --spacing-s: 8px;
+  --spacing-m-nudge: 10px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 24px;
+  --spacing-xxxl: 32px;
+
+  /* ─── Corner Radius ─── */
+  --radius-none: 0px;
+  --radius-small: 2px;
+  --radius-medium: 4px;
+  --radius-large: 6px;
+  --radius-x-large: 8px;
+  --radius-circular: 9999px;
+
+  /* ─── Stroke Width ─── */
+  --stroke-thin: 1px;
+  --stroke-thick: 2px;
+  --stroke-thicker: 3px;
+  --stroke-thickest: 4px;
+}

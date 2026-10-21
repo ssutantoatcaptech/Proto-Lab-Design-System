@@ -1,0 +1,193 @@
+{
+  "$comment": "Color pairs checked for WCAG 2.x contrast in both modes. 'error' pairs are text (4.5:1) and fail the build; 'warn' pairs are non-text UI (3:1) and are reported. Translucent backgrounds are composited on --background.",
+  "pairs": [
+    {
+      "fg": "--foreground",
+      "bg": "--background",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--card-foreground",
+      "bg": "--card",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--popover-foreground",
+      "bg": "--popover",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--primary-foreground",
+      "bg": "--primary",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--secondary-foreground",
+      "bg": "--secondary",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--muted-foreground",
+      "bg": "--background",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--muted-foreground",
+      "bg": "--muted",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--accent-foreground",
+      "bg": "--accent",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--destructive-foreground",
+      "bg": "--destructive",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--destructive",
+      "bg": "--background",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--success-foreground",
+      "bg": "--success",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--success",
+      "bg": "--background",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--warning-foreground",
+      "bg": "--warning",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--warning",
+      "bg": "--background",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--link",
+      "bg": "--background",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--sidebar-foreground",
+      "bg": "--sidebar",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--sidebar-primary-foreground",
+      "bg": "--sidebar-primary",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--sidebar-accent-foreground",
+      "bg": "--sidebar-accent",
+      "min": 4.5,
+      "level": "error"
+    },
+    {
+      "fg": "--ring",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--input",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--primary",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--neutral-foreground-3",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--chart-1",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--chart-2",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--chart-3",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--chart-4",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    },
+    {
+      "fg": "--chart-5",
+      "bg": "--background",
+      "min": 3,
+      "level": "warn"
+    }
+  ],
+  "knownFailures": [
+    {
+      "mode": "light",
+      "fg": "--muted-foreground",
+      "bg": "--background",
+      "reason": "No existing palette color passes. Needs a new color value; awaiting a decision from the design system owner."
+    },
+    {
+      "mode": "light",
+      "fg": "--muted-foreground",
+      "bg": "--muted",
+      "reason": "No existing palette color passes. Needs a new color value; awaiting a decision from the design system owner."
+    },
+    {
+      "mode": "light",
+      "fg": "--warning",
+      "bg": "--background",
+      "reason": "No existing palette color passes. Needs a new color value; awaiting a decision from the design system owner."
+    },
+    {
+      "mode": "dark",
+      "fg": "--destructive",
+      "bg": "--background",
+      "reason": "No existing palette color passes. Needs a new color value; awaiting a decision from the design system owner. Current ratio is close (4.37:1)."
+    }
+  ]
+}

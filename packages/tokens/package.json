@@ -1,0 +1,11 @@
+{
+  "name": "@proto-lab/tokens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generates CSS, Tailwind theme and docs data from the DTCG token JSON in tokens/.",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node build.js",
+    "check": "node build.js --check && node check.js"
+  }
+}

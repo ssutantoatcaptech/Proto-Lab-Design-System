@@ -47,7 +47,21 @@
         "warning-foreground": { "$value": "#f7630c", "$type": "color", "$description": "Warning text (Orange)" },
         "warning-stroke": { "$value": "#f7630c", "$type": "color", "$description": "Warning border" },
         "severe-foreground": { "$value": "#da3b01", "$type": "color", "$description": "Severe/critical text (Dark Orange)" },
-        "accent": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Brand accent (Yellow)" }
+        "accent": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Brand accent (Yellow)" },
+        "danger-on-fill": { "$value": "{color.primitive.neutral.white}", "$type": "color", "$description": "Text on a danger fill" },
+        "success-on-fill": { "$value": "{color.primitive.neutral.white}", "$type": "color", "$description": "Text on a success fill" },
+        "warning-on-fill": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "Text on a warning fill" }
+      },
+      "chart": {
+        "1": { "$value": "{color.primitive.brand.captech-blue}", "$type": "color", "$description": "Chart series 1" },
+        "2": { "$value": "{color.primitive.tertiary.sky-blue}", "$type": "color", "$description": "Chart series 2" },
+        "3": { "$value": "{color.primitive.tertiary.dark-blue}", "$type": "color", "$description": "Chart series 3" },
+        "4": { "$value": "{color.primitive.tertiary.light-teal}", "$type": "color", "$description": "Chart series 4" },
+        "5": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Chart series 5" }
+      },
+      "illustration": {
+        "primary": { "$value": "{color.primitive.brand.captech-blue}", "$type": "color", "$description": "Primary fill of CapTech illustrative icons" },
+        "accent": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Accent fill of CapTech illustrative icons" }
       },
       "shadow": {
         "ambient": { "$value": "rgba(0, 0, 0, 0.12)", "$type": "color", "$description": "Ambient shadow color" },

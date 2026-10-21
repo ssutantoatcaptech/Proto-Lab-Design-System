@@ -17,3 +17,5 @@ jobs:
         run: npm run check:scripts
       - name: Bootstrap regression test
         run: npm run test:bootstrap
+      - name: Generated tokens are current, superset of v1, contrast checked
+        run: npm run tokens:check

@@ -19,7 +19,41 @@ what a project last applied.
 
 ## [Unreleased]
 
-_Nothing yet._
+### Added
+- **Generated token pipeline** (`packages/tokens/`). `npm run tokens:build`
+  writes every CSS file and `tokens/dist/tokens.json` from the DTCG JSON, and
+  regenerates the CSS variable section of the skill's `references/tokens.md`.
+  The JSON is now the only source of truth.
+- **`tokens/css/variables-dark.css`**, the first shipped dark mode CSS. Apply
+  with `class="dark"` or `data-theme="dark"` on any element, including a
+  wrapper inside a light page.
+- **`tokens/css/tailwind-theme.css` and `proto-lab.css`** for Tailwind v4 and
+  shadcn/ui projects. Tailwind's color palette is removed; type sizes, weights,
+  radii and shadows map onto the Fluent ramp (`text-sm` = body-1,
+  `font-medium` = 600, `rounded-md` = 4px, `shadow-xs` = elevation 2).
+- **shadcn alias layer** (`tokens/alias/shadcn.json`): `--background`,
+  `--primary`, `--muted-foreground` and the rest, plus `--success`,
+  `--warning`, `--destructive-foreground`, `--overlay` and `--link`.
+- **New tokens built from existing colors only:** `chart.1`–`5`,
+  `illustration.primary`/`accent`, `status.{danger,success,warning}-on-fill`,
+  a mono font stack, and Fluent 2 motion durations and easing.
+- **`npm run tokens:check`** (also in CI): fails if generated files are stale,
+  if any variable from the original hand-written CSS is missing or changed, if
+  a semantic color lacks a light or dark value, or if a text pair falls below
+  WCAG AA.
+
+### Changed
+- `tokens/css/variables-light.css` is now generated. Every variable it had is
+  kept with the same value; new variables are added.
+- Dark `brand.background-1` now points at brand-ramp 70 (Fluent's dark brand
+  background). White text on the old value was 2.8:1. No dark CSS had shipped
+  before, so no consumer is affected.
+
+### Known issues
+- Four text pairs fail WCAG AA and cannot be fixed with the current palette:
+  light secondary text (`neutral.foreground-2`, 3.4:1 on white), light warning
+  text (3.1:1), and dark error text (4.37:1). Listed in
+  `packages/tokens/contrast-pairs.json` until a color decision is made.
 
 ## [1.0.1] — 2026-10-21
 

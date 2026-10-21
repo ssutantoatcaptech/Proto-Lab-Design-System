@@ -13,6 +13,8 @@
     "tooling/*"
   ],
   "scripts": {
+    "tokens:build": "node packages/tokens/build.js",
+    "tokens:check": "node packages/tokens/build.js --check && node packages/tokens/check.js",
     "check:scripts": "node --check scripts/bootstrap.js && node --check scripts/export-icons.js",
     "test:bootstrap": "node scripts/test-bootstrap.js"
   }
