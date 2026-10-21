@@ -1,0 +1,53 @@
+---
+title: Sheet
+description: Slides a panel in from the edge of the screen for a task that relates to the page.
+heuristics: [3, 6]
+base: https://base-ui.com/react/components/dialog
+---
+
+<ComponentPreview name="sheet-demo" />
+
+## Installation
+
+<InstallCommand args="add sheet" />
+
+## Usage
+
+```tsx
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger render={<Button variant="outline" />}>Edit engagement</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Edit engagement</SheetTitle>
+      <SheetDescription>Changes apply to the whole team.</SheetDescription>
+    </SheetHeader>
+    <SheetFooter>
+      <SheetClose render={<Button />}>Save changes</SheetClose>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```
+
+## Guidance
+
+**Do**
+
+- Use it for editing details or showing a record while the page stays in view.
+- Put the primary action in `SheetFooter`, and always include a way to cancel.
+
+**Don't**
+
+- Use a sheet for a short yes or no decision. Use a dialog.
+- Stack sheets on top of each other. Replace the content instead.
+
+## Accessibility
+
+The sheet is a modal dialog. Focus moves into it and returns to the trigger on close, and Escape, the close button and a click outside all close it. Always include `SheetTitle`.
+
+## API
+
+Built on Base UI Dialog. `SheetContent` takes `side` (`top`, `right`, `bottom`, `left`) and `showCloseButton`. Use `render` on `SheetTrigger` and `SheetClose` to render a Button. See the [Base UI reference](https://base-ui.com/react/components/dialog).

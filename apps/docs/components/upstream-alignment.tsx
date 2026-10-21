@@ -70,7 +70,7 @@ export function UpstreamAlignment() {
         </table>
       </div>
 
-      <div className="flex flex-col gap-2">
+      {notAdopted.length > 0 && <div className="flex flex-col gap-2">
         <h3 className="text-subtitle-2">Available upstream, not adopted yet ({notAdopted.length})</h3>
         <p className="text-muted-foreground">These work with the Proto-Lab theme today through <code className="font-mono text-sm">npx shadcn add &lt;name&gt;</code>. They get Proto-Lab docs as they are adopted.</p>
         <ul className="flex flex-wrap gap-1.5">
@@ -80,7 +80,7 @@ export function UpstreamAlignment() {
             </li>
           ))}
         </ul>
-      </div>
+      </div>}
     </div>
   )
 }

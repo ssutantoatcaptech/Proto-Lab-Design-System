@@ -1,0 +1,42 @@
+---
+title: Label
+description: Names a form control so people know what to enter.
+heuristics: [6, 10]
+---
+
+<ComponentPreview name="label-demo" />
+
+## Installation
+
+<InstallCommand args="add label" />
+
+## Usage
+
+```tsx
+import { Label } from "@/components/ui/label"
+```
+
+```tsx
+<Label htmlFor="engagement-name">Engagement name</Label>
+<Input id="engagement-name" />
+```
+
+## Guidance
+
+**Do**
+
+- Keep labels short nouns, such as "Engagement name".
+- Place the label above the control.
+
+**Don't**
+
+- Rely on a placeholder in place of a label.
+- Build a full field from labels and loose text. Use field, which adds help text and errors.
+
+## Accessibility
+
+Label renders a native `label`. Connect it to the control with `htmlFor` and a matching `id` so clicking the label focuses the control and screen readers announce its name.
+
+## API
+
+Accepts every native `label` prop. It dims inside a field marked `data-disabled`.

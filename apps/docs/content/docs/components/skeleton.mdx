@@ -1,0 +1,41 @@
+---
+title: Skeleton
+description: Holds the place of content while it loads.
+heuristics: [1]
+---
+
+<ComponentPreview name="skeleton-demo" />
+
+## Installation
+
+<InstallCommand args="add skeleton" />
+
+## Usage
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton"
+```
+
+```tsx
+<Skeleton className="h-4 w-48" />
+```
+
+## Guidance
+
+**Do**
+
+- Match the size and layout of the content that will replace it, so the page doesn't shift.
+- Mark the loading region with `aria-busy`.
+
+**Don't**
+
+- Show skeletons for more than a few seconds. Say what is happening or show an error.
+- Use a skeleton for an action in progress, such as saving. Use a spinner on the button.
+
+## Accessibility
+
+Skeletons are decorative and have no role. Set `aria-busy="true"` and a label on the loading region so screen readers know content is on the way.
+
+## API
+
+`Skeleton` is a `div` that accepts every div prop. Set its size and shape with `className`.

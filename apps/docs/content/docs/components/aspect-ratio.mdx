@@ -1,0 +1,42 @@
+---
+title: Aspect Ratio
+description: Keeps media at a fixed width to height ratio as its container resizes.
+heuristics: [8]
+---
+
+<ComponentPreview name="aspect-ratio-demo" />
+
+## Installation
+
+<InstallCommand args="add aspect-ratio" />
+
+## Usage
+
+```tsx
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+```
+
+```tsx
+<AspectRatio ratio={16 / 9}>
+  <img src="/workshop.jpg" alt="Journey mapping workshop" className="size-full rounded-md object-cover" />
+</AspectRatio>
+```
+
+## Guidance
+
+**Do**
+
+- Use it for images, video and embeds whose size is unknown before they load.
+- Pick one ratio per content type and reuse it across the page.
+
+**Don't**
+
+- Wrap text content in it. Let text set its own height.
+
+## Accessibility
+
+The component is a plain container with no semantics. Give images `alt` text and give embedded video captions.
+
+## API
+
+Takes a required `ratio` number, such as `16 / 9`, and every `div` prop.

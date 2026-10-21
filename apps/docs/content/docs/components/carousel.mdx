@@ -1,0 +1,48 @@
+---
+title: Carousel
+description: Shows a set of items one at a time with controls to move between them.
+heuristics: [3, 8]
+---
+
+<ComponentPreview name="carousel-demo" />
+
+## Installation
+
+<InstallCommand args="add carousel" />
+
+## Usage
+
+```tsx
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+```
+
+```tsx
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>Finding 1</CarouselItem>
+    <CarouselItem>Finding 2</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+## Guidance
+
+**Do**
+
+- Keep slides parallel in length and structure.
+- Show how many slides there are, or let the next slide peek in.
+
+**Don't**
+
+- Put critical content after the first slide. Many people never advance.
+- Auto advance slides. Let people move at their own pace.
+
+## Accessibility
+
+The carousel is a region with `aria-roledescription="carousel"`, and each item is a slide. Left and Right arrow keys move between slides, and the buttons have screen reader labels.
+
+## API
+
+Built on Embla Carousel. `Carousel` takes `opts`, `plugins`, `orientation` and `setApi` to control it from outside. Size slides with a `basis` class on `CarouselItem`.

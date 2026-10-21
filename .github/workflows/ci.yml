@@ -21,6 +21,8 @@ jobs:
         run: npm run tokens:check
       - name: Upstream alignment report is current
         run: npm run upstream:check
+      - name: Docs examples index is current
+        run: node apps/docs/scripts/examples-index.mjs --check
 
   registry:
     runs-on: ubuntu-latest

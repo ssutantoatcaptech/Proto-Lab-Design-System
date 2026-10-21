@@ -1,0 +1,47 @@
+---
+title: Context Menu
+description: Opens a menu of actions for an item on right click or long press.
+heuristics: [7]
+base: https://base-ui.com/react/components/context-menu
+---
+
+<ComponentPreview name="context-menu-demo" />
+
+## Installation
+
+<InstallCommand args="add context-menu" />
+
+## Usage
+
+```tsx
+import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/components/ui/context-menu"
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger>Discovery readout</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Open</ContextMenuItem>
+    <ContextMenuItem variant="destructive">Delete</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+
+## Guidance
+
+**Do**
+
+- Use it as a shortcut for actions that are also available elsewhere.
+- Match the order and labels of the item's visible menu.
+
+**Don't**
+
+- Put the only path to an action here. People rarely discover it. Add a dropdown menu too.
+
+## Accessibility
+
+Arrow keys move between items, Enter runs one, and Escape closes the menu. Because touch and keyboard users may not find it, every action must also be reachable another way.
+
+## API
+
+Accepts every Base UI Context Menu prop. `ContextMenuItem` takes `variant` (`default` or `destructive`) and `inset`. Checkbox, radio and submenu parts are included. See the [Base UI reference](https://base-ui.com/react/components/context-menu).

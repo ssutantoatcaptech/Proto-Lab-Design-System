@@ -1,0 +1,62 @@
+---
+title: Sidebar
+description: Provides the main navigation for an app in a panel that can collapse to icons.
+heuristics: [4, 6]
+---
+
+<ComponentPreview name="sidebar-demo" />
+
+## Installation
+
+<InstallCommand args="add sidebar" />
+
+## Usage
+
+```tsx
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarInset, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+```
+
+```tsx
+<SidebarProvider>
+  <Sidebar collapsible="icon">
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Proto-Lab</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton isActive tooltip="Overview">
+                <LayoutDashboardIcon />
+                <span>Overview</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset>
+    <SidebarTrigger />
+  </SidebarInset>
+</SidebarProvider>
+```
+
+## Guidance
+
+**Do**
+
+- Mark the current page with `isActive`, and pass `tooltip` so labels stay available when the sidebar collapses to icons.
+- Group links under short labels that match how people think about the app.
+
+**Don't**
+
+- Nest navigation more than two levels deep. Move deeper levels into the page.
+- Put page actions in the sidebar. Put them in the page header.
+
+## Accessibility
+
+`SidebarTrigger` and `SidebarRail` toggle the sidebar, and Ctrl+B or Cmd+B toggles it from anywhere on the page. Below 768px it opens as a sheet with focus management. Give every icon a visible text label or a tooltip.
+
+## API
+
+`SidebarProvider` takes `defaultOpen`, `open` and `onOpenChange`. `Sidebar` takes `side`, `variant` (`sidebar`, `floating`, `inset`) and `collapsible` (`offcanvas`, `icon`, `none`). The sidebar is fixed to the viewport. To place it inside a container, as in the preview, give the container `relative`, pass `className="absolute h-full"` to `Sidebar` and `className="min-h-0 h-full"` to `SidebarProvider`.

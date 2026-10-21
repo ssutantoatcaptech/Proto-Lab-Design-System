@@ -1,0 +1,43 @@
+---
+title: Marker
+description: A small inline note that marks an event or a break in a feed, such as a date or a status change.
+heuristics: [1, 8]
+---
+
+<ComponentPreview name="marker-demo" />
+
+## Installation
+
+<InstallCommand args="add marker" />
+
+## Usage
+
+```tsx
+import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
+```
+
+```tsx
+<Marker variant="separator">
+  <MarkerContent>Monday, October 20</MarkerContent>
+</Marker>
+```
+
+## Guidance
+
+**Do**
+
+- Use it for date breaks and system events in a message thread or activity feed.
+- Keep the text to one short line.
+
+**Don't**
+
+- Use it for errors or warnings people must act on. Use an alert.
+- Use it to separate unrelated sections of a page. Use a separator.
+
+## Accessibility
+
+Marker is plain text. `MarkerIcon` is hidden from assistive technology, so the text in `MarkerContent` must carry the full meaning.
+
+## API
+
+`Marker` takes `variant`: `default`, `separator` for lines on both sides, or `border` for a bottom rule. Use `render` to output a different element.

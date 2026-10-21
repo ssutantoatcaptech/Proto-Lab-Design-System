@@ -1,0 +1,45 @@
+---
+title: Hover Card
+description: Previews more detail about a link or name when people hover or focus it.
+heuristics: [6, 7]
+base: https://base-ui.com/react/components/preview-card
+---
+
+<ComponentPreview name="hover-card-demo" />
+
+## Installation
+
+<InstallCommand args="add hover-card" />
+
+## Usage
+
+```tsx
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger render={<Button variant="link" />}>Priya Natarajan</HoverCardTrigger>
+  <HoverCardContent>Engagement lead, Data & Analytics.</HoverCardContent>
+</HoverCard>
+```
+
+## Guidance
+
+**Do**
+
+- Use it to preview a person, project or link before people open it.
+- Keep the same detail reachable by clicking through.
+
+**Don't**
+
+- Put actions or form fields inside. Use a popover.
+- Use it for a short label. Use a tooltip.
+
+## Accessibility
+
+The card opens on hover and on keyboard focus, and closes on Escape. Touch screens can't hover, so never put information only in the card.
+
+## API
+
+Accepts every Base UI Preview Card prop. `HoverCardContent` takes `side`, `sideOffset`, `align` and `alignOffset`. See the [Base UI reference](https://base-ui.com/react/components/preview-card).

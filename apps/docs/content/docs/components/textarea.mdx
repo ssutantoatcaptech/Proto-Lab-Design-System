@@ -1,0 +1,41 @@
+---
+title: Textarea
+description: A multi line text field that grows with its content.
+heuristics: [5, 10]
+---
+
+<ComponentPreview name="textarea-demo" />
+
+## Installation
+
+<InstallCommand args="add textarea" />
+
+## Usage
+
+```tsx
+import { Textarea } from "@/components/ui/textarea"
+```
+
+```tsx
+<Textarea placeholder="Summarize what you heard in the workshop." />
+```
+
+## Guidance
+
+**Do**
+
+- Use it for answers longer than one sentence, such as notes or feedback.
+- Show a character limit before people reach it, not after.
+
+**Don't**
+
+- Use it for short, single line values. Use an input.
+- Rely on the placeholder as the label. Add a visible label.
+
+## Accessibility
+
+Pair the textarea with a `Label` through `htmlFor` and `id`. Set `aria-invalid` and link the error text with `aria-describedby` when validation fails.
+
+## API
+
+Accepts every native `textarea` prop. It sizes to its content with `field-sizing`, starting from a minimum height.

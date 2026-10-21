@@ -1,0 +1,43 @@
+---
+title: Separator
+description: Divides content into groups with a thin line.
+heuristics: [8]
+base: https://base-ui.com/react/components/separator
+---
+
+<ComponentPreview name="separator-demo" />
+
+## Installation
+
+<InstallCommand args="add separator" />
+
+## Usage
+
+```tsx
+import { Separator } from "@/components/ui/separator"
+```
+
+```tsx
+<Separator />
+<Separator orientation="vertical" />
+```
+
+## Guidance
+
+**Do**
+
+- Use it to separate groups that spacing alone can't distinguish.
+- Give a vertical separator a parent with a set height.
+
+**Don't**
+
+- Add a separator between every item. Use spacing first.
+- Use a separator as a section heading. Use a heading.
+
+## Accessibility
+
+It renders with the separator role and its orientation. Purely decorative lines can stay as they are, since the role adds no focus stop.
+
+## API
+
+`Separator` takes `orientation` (`horizontal` or `vertical`) and every Base UI Separator prop. See the [Base UI reference](https://base-ui.com/react/components/separator).

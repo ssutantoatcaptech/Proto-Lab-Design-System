@@ -1,0 +1,49 @@
+---
+title: Attachment
+description: Shows a file someone added, with its upload state and actions.
+heuristics: [1, 3, 9]
+---
+
+<ComponentPreview name="attachment-demo" />
+
+## Installation
+
+<InstallCommand args="add attachment" />
+
+## Usage
+
+```tsx
+import { Attachment, AttachmentAction, AttachmentActions, AttachmentContent, AttachmentDescription, AttachmentMedia, AttachmentTitle } from "@/components/ui/attachment"
+```
+
+```tsx
+<Attachment>
+  <AttachmentMedia><FileTextIcon /></AttachmentMedia>
+  <AttachmentContent>
+    <AttachmentTitle>Discovery findings.pdf</AttachmentTitle>
+    <AttachmentDescription>2.4 MB</AttachmentDescription>
+  </AttachmentContent>
+  <AttachmentActions>
+    <AttachmentAction aria-label="Remove file"><XIcon /></AttachmentAction>
+  </AttachmentActions>
+</Attachment>
+```
+
+## Guidance
+
+**Do**
+
+- Set `state` to match the upload, and show progress in the description.
+- Explain failures in the description, such as "File is over 10 MB".
+
+**Don't**
+
+- Show a long list of files in a row. Use a table for more than a handful.
+
+## Accessibility
+
+Icon actions need an `aria-label` that names the file. State is shown visually, so also put it in text, such as "Uploading, 64%".
+
+## API
+
+`Attachment` takes `state` (`idle`, `uploading`, `processing`, `error`, `done`), `size` (`default`, `sm`, `xs`) and `orientation`. `AttachmentMedia` takes `variant` (`icon` or `image`), and `AttachmentTrigger` makes the whole card clickable.

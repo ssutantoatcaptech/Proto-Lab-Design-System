@@ -1,0 +1,50 @@
+---
+title: Trace
+description: Lists the steps an agent or process took, with status and expandable detail.
+heuristics: [1, 6]
+---
+
+<ComponentPreview name="trace-demo" />
+
+## Installation
+
+<InstallCommand args="add trace" />
+
+## Usage
+
+```tsx
+import { Trace, TraceCollapsible, TraceCollapsibleContent, TraceCollapsibleTrigger, TraceDescription, TraceIcon, TraceLine, TraceTitle } from "@/components/ui/trace"
+```
+
+```tsx
+<Trace>
+  <TraceLine>
+    <TraceIcon><CheckIcon /></TraceIcon>
+    <TraceTitle>Read 14 interview transcripts</TraceTitle>
+    <TraceDescription>8s</TraceDescription>
+  </TraceLine>
+  <TraceLine status="running">
+    <TraceTitle>Drafting the readout deck</TraceTitle>
+  </TraceLine>
+</Trace>
+```
+
+## Guidance
+
+**Do**
+
+- Title each step with what was done, in plain words, and show duration or counts in `TraceDescription`.
+- Put raw detail, such as sources or tool output, in a `TraceCollapsible`.
+
+**Don't**
+
+- Use a trace as the main answer. Show the result first and the trace beside or below it.
+- Show every internal step. Group them into steps people care about.
+
+## Accessibility
+
+Lines are plain text, and `TraceCollapsibleTrigger` is a button that reports its expanded state. Icons are hidden from screen readers, so put the status in words when it matters, such as "Failed to read file".
+
+## API
+
+`TraceLine` takes `status` (`running`, `error`, `pending`) to style the step. `TraceCollapsible` wraps the Collapsible component and takes `open` and `onOpenChange`. Wrap a `TraceLine` in a link or button to make it clickable.

@@ -1,0 +1,45 @@
+---
+title: Field
+description: Groups a label, control, help text and error message into one form field.
+heuristics: [5, 9, 10]
+---
+
+<ComponentPreview name="field-demo" />
+
+## Installation
+
+<InstallCommand args="add field" />
+
+## Usage
+
+```tsx
+import { Field, FieldDescription, FieldError, FieldLabel } from "@/components/ui/field"
+```
+
+```tsx
+<Field>
+  <FieldLabel htmlFor="project-code">Project code</FieldLabel>
+  <Input id="project-code" placeholder="CX-2041" />
+  <FieldDescription>Find it on the engagement overview.</FieldDescription>
+</Field>
+```
+
+## Guidance
+
+**Do**
+
+- Put help text under the control, and say how to fix an error, not only what failed.
+- Group related fields in a `FieldSet` with a `FieldLegend`.
+
+**Don't**
+
+- Use the placeholder as the label. Use `FieldLabel`.
+- Show errors before people finish typing. Validate on blur or submit.
+
+## Accessibility
+
+`Field` renders a group and `FieldError` renders with `role="alert"`, so errors are announced. Link each `FieldLabel` to its control with `htmlFor`, and set `aria-invalid` on the control when it has an error.
+
+## API
+
+`Field` takes `orientation`: `vertical`, `horizontal` or `responsive`. Set `data-invalid` on it to style the field as an error. `FieldError` shows its children or the messages in `errors`.

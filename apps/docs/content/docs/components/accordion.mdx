@@ -1,0 +1,47 @@
+---
+title: Accordion
+description: Stacks sections of related content that open one at a time or together.
+heuristics: [6, 8]
+base: https://base-ui.com/react/components/accordion
+---
+
+<ComponentPreview name="accordion-demo" />
+
+## Installation
+
+<InstallCommand args="add accordion" />
+
+## Usage
+
+```tsx
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+```
+
+```tsx
+<Accordion defaultValue={["scope"]}>
+  <AccordionItem value="scope">
+    <AccordionTrigger>What does discovery include?</AccordionTrigger>
+    <AccordionContent>Stakeholder interviews and a journey map.</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Guidance
+
+**Do**
+
+- Write each trigger as the question or topic people scan for.
+- Open the most useful section by default.
+
+**Don't**
+
+- Hide content people need to complete the task. Show it on the page.
+- Nest accordions inside accordions. Use separate pages or tabs.
+
+## Accessibility
+
+Triggers are buttons with `aria-expanded`, and each panel is linked to its trigger. Enter and Space toggle a section, and arrow keys move between triggers.
+
+## API
+
+Accepts every Base UI Accordion prop. `defaultValue` and `value` take an array of open item values, and `multiple` lets more than one section stay open. See the [Base UI reference](https://base-ui.com/react/components/accordion).

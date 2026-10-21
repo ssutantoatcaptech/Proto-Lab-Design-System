@@ -1,0 +1,44 @@
+---
+title: Avatar
+description: Represents a person with a photo or their initials.
+heuristics: [2, 6]
+base: https://base-ui.com/react/components/avatar
+---
+
+<ComponentPreview name="avatar-demo" />
+
+## Installation
+
+<InstallCommand args="add avatar" />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="/people/jordan.jpg" alt="Jordan Miles" />
+  <AvatarFallback>JM</AvatarFallback>
+</Avatar>
+```
+
+## Guidance
+
+**Do**
+
+- Always include a fallback with initials for missing or slow images.
+- Show the person's name next to the avatar where space allows.
+
+**Don't**
+
+- Use avatars for companies or projects. Use an icon or logo.
+
+## Accessibility
+
+Give `AvatarImage` an `alt` with the person's name. When an avatar stands alone, add the name with a tooltip or `title`, and label badges and group counts in text.
+
+## API
+
+Accepts every Base UI Avatar prop. `Avatar` takes `size` (`sm`, `default`, `lg`). `AvatarBadge`, `AvatarGroup` and `AvatarGroupCount` add status dots and stacks. See the [Base UI reference](https://base-ui.com/react/components/avatar).

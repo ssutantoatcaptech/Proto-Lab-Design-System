@@ -1,0 +1,49 @@
+---
+title: Pagination
+description: Moves through a long list one page at a time.
+heuristics: [1, 3, 7]
+---
+
+<ComponentPreview name="pagination-demo" />
+
+## Installation
+
+<InstallCommand args="add pagination" />
+
+## Usage
+
+```tsx
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination"
+```
+
+```tsx
+<Pagination>
+  <PaginationContent>
+    <PaginationItem><PaginationPrevious href="?page=1" /></PaginationItem>
+    <PaginationItem><PaginationLink href="?page=1">1</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationLink href="?page=2" isActive>2</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationEllipsis /></PaginationItem>
+    <PaginationItem><PaginationNext href="?page=3" /></PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+## Guidance
+
+**Do**
+
+- Show the range and total, such as "Findings 11 to 20 of 100".
+- Put the page in the URL so people can share and reload it.
+
+**Don't**
+
+- Paginate a feed people scan from top to bottom. Use infinite scroll or a load more button.
+- Show every page number. Show the first, last and pages around the current one.
+
+## Accessibility
+
+Pagination renders a `nav` labelled "pagination", and the active link gets `aria-current="page"`. Previous and Next have labels, so their text can hide on small screens.
+
+## API
+
+`PaginationLink` takes `isActive` and `size`, plus every `a` prop. `PaginationPrevious` and `PaginationNext` take `text` to change their label.

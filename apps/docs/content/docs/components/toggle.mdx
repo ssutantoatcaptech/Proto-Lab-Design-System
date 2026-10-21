@@ -1,0 +1,44 @@
+---
+title: Toggle
+description: A button that turns a single option on or off.
+heuristics: [1, 4]
+base: https://base-ui.com/react/components/toggle
+---
+
+<ComponentPreview name="toggle-demo" />
+
+## Installation
+
+<InstallCommand args="add toggle" />
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle"
+```
+
+```tsx
+<Toggle aria-label="Follow engagement">
+  <BookmarkIcon />
+</Toggle>
+```
+
+## Guidance
+
+**Do**
+
+- Use it for an option that takes effect right away, such as following a project or bold text.
+- Keep the label the same in both states. The pressed style shows the state.
+
+**Don't**
+
+- Change the label to describe the next state. People can't tell which state is current.
+- Use a toggle for a setting in a form. Use a switch or a checkbox.
+
+## Accessibility
+
+The toggle exposes its state with `aria-pressed`, and Space or Enter changes it. Icon only toggles need an `aria-label`.
+
+## API
+
+Accepts every Base UI Toggle prop, such as `pressed`, `defaultPressed` and `onPressedChange`, plus `variant` (`default`, `outline`) and `size` (`sm`, `default`, `lg`). See the [Base UI reference](https://base-ui.com/react/components/toggle).

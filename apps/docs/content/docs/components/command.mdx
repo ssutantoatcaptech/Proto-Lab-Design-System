@@ -1,0 +1,48 @@
+---
+title: Command
+description: A searchable list of commands and destinations, often opened as a palette.
+heuristics: [6, 7]
+---
+
+<ComponentPreview name="command-demo" />
+
+## Installation
+
+<InstallCommand args="add command" />
+
+## Usage
+
+```tsx
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
+```
+
+```tsx
+<Command>
+  <CommandInput placeholder="Search projects and actions" />
+  <CommandList>
+    <CommandEmpty>No results.</CommandEmpty>
+    <CommandGroup heading="Projects">
+      <CommandItem>Member portal redesign</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+## Guidance
+
+**Do**
+
+- Group results by type and show keyboard shortcuts next to actions.
+- Open it from a visible button as well as a shortcut, such as ⌘K.
+
+**Don't**
+
+- Use it as the main navigation. Use a sidebar or navigation menu.
+
+## Accessibility
+
+Typing filters the list, arrow keys move the selection, and Enter runs the item. `CommandDialog` adds a hidden title and description for screen readers. Override them to describe your palette.
+
+## API
+
+Built on cmdk. `Command` takes `filter`, `value` and `onValueChange`. `CommandItem` takes `onSelect`, `keywords` and `disabled`. `CommandDialog` takes `title`, `description` and every Dialog prop.

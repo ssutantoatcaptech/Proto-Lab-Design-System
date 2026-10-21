@@ -1,0 +1,50 @@
+---
+title: Combobox
+description: An input that filters a list of options as people type.
+heuristics: [5, 6, 7]
+base: https://base-ui.com/react/components/combobox
+---
+
+<ComponentPreview name="combobox-demo" />
+
+## Installation
+
+<InstallCommand args="add combobox" />
+
+## Usage
+
+```tsx
+import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "@/components/ui/combobox"
+```
+
+```tsx
+<Combobox items={engagements}>
+  <ComboboxInput placeholder="Search engagements" />
+  <ComboboxContent>
+    <ComboboxEmpty>No engagements match.</ComboboxEmpty>
+    <ComboboxList>
+      {(item) => <ComboboxItem key={item} value={item}>{item}</ComboboxItem>}
+    </ComboboxList>
+  </ComboboxContent>
+</Combobox>
+```
+
+## Guidance
+
+**Do**
+
+- Use it when the list is long enough that scanning is slow.
+- Write an empty message that suggests what to try next.
+
+**Don't**
+
+- Use it for five options or fewer. Use a select or radio group.
+- Allow free text unless the value can be anything. Restrict to listed items.
+
+## Accessibility
+
+The input has the combobox role and controls the list. Arrow keys move through options, Enter selects, and Escape closes. Give the input a visible label or an `aria-label`.
+
+## API
+
+Accepts every Base UI Combobox prop. Pass options with `items`, and render them with a function child of `ComboboxList`. `ComboboxInput` takes `showTrigger` and `showClear`, and `ComboboxChips` supports `multiple`. See the [Base UI reference](https://base-ui.com/react/components/combobox).

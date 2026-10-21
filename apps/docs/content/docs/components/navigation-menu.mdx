@@ -1,0 +1,51 @@
+---
+title: Navigation Menu
+description: Site navigation with links and panels that open to show related pages.
+heuristics: [4, 6]
+base: https://base-ui.com/react/components/navigation-menu
+---
+
+<ComponentPreview name="navigation-menu-demo" />
+
+## Installation
+
+<InstallCommand args="add navigation-menu" />
+
+## Usage
+
+```tsx
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu"
+```
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Practices</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/practices/cx">Customer Experience</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+## Guidance
+
+**Do**
+
+- Describe each link in a short line so people can choose without opening it.
+- Keep top level labels to one or two words.
+
+**Don't**
+
+- Put actions such as Save or Delete in it. Use a menubar or a dropdown menu.
+- Nest panels more than one level deep.
+
+## Accessibility
+
+Arrow keys move between triggers, Enter and Space open a panel, and Escape closes it. Mark the current page with `active` on its link.
+
+## API
+
+Accepts every Base UI Navigation Menu prop, plus `align` for the panel position. Use `navigationMenuTriggerStyle()` to style a plain link like a trigger. See the [Base UI reference](https://base-ui.com/react/components/navigation-menu).

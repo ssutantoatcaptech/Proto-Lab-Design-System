@@ -1,0 +1,44 @@
+---
+title: Kbd
+description: Shows a key or key combination people can press.
+heuristics: [7, 10]
+---
+
+<ComponentPreview name="kbd-demo" />
+
+## Installation
+
+<InstallCommand args="add kbd" />
+
+## Usage
+
+```tsx
+import { Kbd, KbdGroup } from "@/components/ui/kbd"
+```
+
+```tsx
+<KbdGroup>
+  <Kbd>⌘</Kbd>
+  <Kbd>K</Kbd>
+</KbdGroup>
+```
+
+## Guidance
+
+**Do**
+
+- Show shortcuts next to the action they trigger, in menus and tooltips.
+- Match the platform: ⌘ on Mac, Ctrl on Windows.
+
+**Don't**
+
+- Make a shortcut the only way to do something. Keep a visible control.
+- Style regular text or tags with it. Use a badge.
+
+## Accessibility
+
+Kbd renders the native `kbd` element. Screen readers read symbols such as ⌘ inconsistently, so spell out the key in nearby text or an `aria-label` when it matters.
+
+## API
+
+`Kbd` and `KbdGroup` accept regular `kbd` props. Wrap a combination in `KbdGroup` to space the keys.

@@ -4,18 +4,17 @@
   "style": "base-nova",
   "cli": "shadcn@4.22.1",
   "summary": {
-    "not-adopted": 45,
-    "matches": 19
+    "matches": 64
   },
   "components": [
     {
       "name": "accordion",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/accordion"
     },
     {
       "name": "alert-dialog",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/alert-dialog"
     },
     {
@@ -25,17 +24,17 @@
     },
     {
       "name": "aspect-ratio",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/aspect-ratio"
     },
     {
       "name": "attachment",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/attachment"
     },
     {
       "name": "avatar",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/avatar"
     },
     {
@@ -45,17 +44,17 @@
     },
     {
       "name": "breadcrumb",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/breadcrumb"
     },
     {
       "name": "bubble",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/bubble"
     },
     {
       "name": "button-group",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/button-group"
     },
     {
@@ -65,7 +64,7 @@
     },
     {
       "name": "calendar",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/calendar"
     },
     {
@@ -75,12 +74,12 @@
     },
     {
       "name": "carousel",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/carousel"
     },
     {
       "name": "chart",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/chart"
     },
     {
@@ -90,17 +89,17 @@
     },
     {
       "name": "code-block",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/code-block"
     },
     {
       "name": "collapsible",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/collapsible"
     },
     {
       "name": "combobox",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/combobox"
     },
     {
@@ -110,7 +109,7 @@
     },
     {
       "name": "context-menu",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/context-menu"
     },
     {
@@ -120,12 +119,12 @@
     },
     {
       "name": "direction",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/direction"
     },
     {
       "name": "drawer",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/drawer"
     },
     {
@@ -135,17 +134,17 @@
     },
     {
       "name": "empty",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/empty"
     },
     {
       "name": "field",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/field"
     },
     {
       "name": "hover-card",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/hover-card"
     },
     {
@@ -155,7 +154,7 @@
     },
     {
       "name": "input-otp",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/input-otp"
     },
     {
@@ -165,12 +164,12 @@
     },
     {
       "name": "item",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/item"
     },
     {
       "name": "kbd",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/kbd"
     },
     {
@@ -180,62 +179,62 @@
     },
     {
       "name": "marker",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/marker"
     },
     {
       "name": "menubar",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/menubar"
     },
     {
       "name": "message-scroller",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/message-scroller"
     },
     {
       "name": "message",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/message"
     },
     {
       "name": "native-select",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/native-select"
     },
     {
       "name": "navigation-menu",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/navigation-menu"
     },
     {
       "name": "pagination",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/pagination"
     },
     {
       "name": "popover",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/popover"
     },
     {
       "name": "progress",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/progress"
     },
     {
       "name": "questionnaire",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/questionnaire"
     },
     {
       "name": "radio-group",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/radio-group"
     },
     {
       "name": "resizable",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/resizable"
     },
     {
@@ -260,27 +259,27 @@
     },
     {
       "name": "sidebar",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/sidebar"
     },
     {
       "name": "skeleton",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/skeleton"
     },
     {
       "name": "slider",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/slider"
     },
     {
       "name": "sonner",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/sonner"
     },
     {
       "name": "spinner",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/spinner"
     },
     {
@@ -290,7 +289,7 @@
     },
     {
       "name": "table",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/table"
     },
     {
@@ -305,17 +304,17 @@
     },
     {
       "name": "toast",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/toast"
     },
     {
       "name": "toggle-group",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/toggle-group"
     },
     {
       "name": "toggle",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/toggle"
     },
     {
@@ -325,7 +324,7 @@
     },
     {
       "name": "trace",
-      "status": "not-adopted",
+      "status": "matches",
       "docs": "https://ui.shadcn.com/docs/components/trace"
     }
   ]

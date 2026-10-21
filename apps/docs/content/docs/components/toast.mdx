@@ -1,0 +1,46 @@
+---
+title: Toast
+description: Shows brief notifications that confirm an action, with an optional action and close button.
+heuristics: [1, 3]
+base: https://base-ui.com/react/components/toast
+---
+
+<ComponentPreview name="toast-demo" />
+
+## Installation
+
+<InstallCommand args="add toast" />
+
+## Usage
+
+```tsx
+import { Toaster, toast } from "@/components/ui/toast"
+```
+
+```tsx
+<Toaster>
+  <App />
+</Toaster>
+
+toast.add({ type: "success", title: "Findings shared" })
+```
+
+## Guidance
+
+**Do**
+
+- Wrap the app in one `Toaster`, and call `toast.add()` from anywhere.
+- Pass `actionProps` to offer Undo for actions people might regret.
+
+**Don't**
+
+- Put information people must act on in a toast. Use an alert or a dialog.
+- Mix this with Sonner in one app. Pick one toast system.
+
+## Accessibility
+
+Toasts render in a labelled region and are announced to screen readers. They pause on hover and focus, and F6 moves focus to the toast region. Make any toast action reachable some other way too.
+
+## API
+
+`toast.add()` takes `title`, `description`, `type` (`success`, `info`, `warning`, `error`, `loading`), `timeout` and `actionProps`. `toast` also has `close`, `update` and `promise`. `Toaster` takes a custom `toastManager`, `limit` and `timeout`. See the [Base UI reference](https://base-ui.com/react/components/toast).

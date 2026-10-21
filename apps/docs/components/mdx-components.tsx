@@ -12,6 +12,7 @@ import { HeuristicBadges, HeuristicIndex } from "@/components/heuristics"
 import { IconGallery } from "@/components/icon-gallery"
 import { FontStatus } from "@/components/font-status"
 import { UpstreamAlignment } from "@/components/upstream-alignment"
+import { ComponentsIndex } from "@/components/components-index"
 
 const heading = (Tag: "h2" | "h3" | "h4", cls: string) =>
   function Heading({ className, ...props }: React.ComponentProps<"h2">) {
@@ -66,4 +67,5 @@ export const mdxComponents: MDXComponents = {
   IconGallery,
   FontStatus,
   UpstreamAlignment,
+  ComponentsIndex,
 }

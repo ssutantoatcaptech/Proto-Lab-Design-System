@@ -1,0 +1,44 @@
+---
+title: Scroll Area
+description: Adds a styled scrollbar to a region with a fixed size.
+heuristics: [8]
+base: https://base-ui.com/react/components/scroll-area
+---
+
+<ComponentPreview name="scroll-area-demo" />
+
+## Installation
+
+<InstallCommand args="add scroll-area" />
+
+## Usage
+
+```tsx
+import { ScrollArea } from "@/components/ui/scroll-area"
+```
+
+```tsx
+<ScrollArea className="h-56 w-72 rounded-md border">
+  <div className="p-4">{findings}</div>
+</ScrollArea>
+```
+
+## Guidance
+
+**Do**
+
+- Give the area a fixed height, and make it obvious there is more to scroll, such as a cut off last row.
+- Use it for lists inside panels, menus and cards.
+
+**Don't**
+
+- Wrap the whole page in a scroll area. Let the page scroll.
+- Nest scroll areas that scroll the same direction.
+
+## Accessibility
+
+The viewport is focusable and scrolls with the keyboard. It keeps native scrolling, so assistive tech and touch work as usual.
+
+## API
+
+`ScrollArea` accepts every Base UI ScrollArea root prop and renders a vertical scrollbar. Add `<ScrollBar orientation="horizontal" />` inside for sideways scrolling. See the [Base UI reference](https://base-ui.com/react/components/scroll-area).

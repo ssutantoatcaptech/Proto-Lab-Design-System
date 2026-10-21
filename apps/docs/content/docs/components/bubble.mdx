@@ -1,0 +1,47 @@
+---
+title: Bubble
+description: Displays a single message in a conversation, aligned by sender.
+heuristics: [2, 4]
+---
+
+<ComponentPreview name="bubble-demo" />
+
+## Installation
+
+<InstallCommand args="add bubble" />
+
+## Usage
+
+```tsx
+import { Bubble, BubbleContent, BubbleGroup } from "@/components/ui/bubble"
+```
+
+```tsx
+<BubbleGroup>
+  <Bubble variant="muted">
+    <BubbleContent>Can you share the readout deck?</BubbleContent>
+  </Bubble>
+  <Bubble align="end">
+    <BubbleContent>Yes, by end of day.</BubbleContent>
+  </Bubble>
+</BubbleGroup>
+```
+
+## Guidance
+
+**Do**
+
+- Align the current user's messages to the end and others to the start.
+- Use one variant per sender so people can tell speakers apart.
+
+**Don't**
+
+- Use bubbles for notifications or system status. Use an alert or toast.
+
+## Accessibility
+
+Bubbles have no built in roles. Wrap the conversation in a list or log region, and give each message the sender's name in text, not only by position or color.
+
+## API
+
+`Bubble` takes `variant` (`default`, `secondary`, `muted`, `tinted`, `outline`, `ghost`, `destructive`) and `align` (`start` or `end`). `BubbleContent` takes `render` to become a button or link, and `BubbleReactions` pins reactions to a corner.

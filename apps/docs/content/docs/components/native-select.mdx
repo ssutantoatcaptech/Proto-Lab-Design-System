@@ -1,0 +1,44 @@
+---
+title: Native Select
+description: A styled browser select for picking one option from a short list.
+heuristics: [4, 5, 6]
+---
+
+<ComponentPreview name="native-select-demo" />
+
+## Installation
+
+<InstallCommand args="add native-select" />
+
+## Usage
+
+```tsx
+import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select"
+```
+
+```tsx
+<NativeSelect>
+  <NativeSelectOption value="cx">Customer Experience</NativeSelectOption>
+  <NativeSelectOption value="da">Data & Analytics</NativeSelectOption>
+</NativeSelect>
+```
+
+## Guidance
+
+**Do**
+
+- Use it on mobile and in plain forms, where the platform picker works best.
+- Start with a disabled prompt option when there is no sensible default.
+
+**Don't**
+
+- Use it for long lists people need to search. Use a combobox.
+- Use it when options need icons or descriptions. Use a select.
+
+## Accessibility
+
+It is a native `select`, so keyboard, screen reader and mobile pickers work out of the box. Give it a label with `htmlFor` and set `aria-invalid` when it has an error.
+
+## API
+
+Accepts every native `select` prop, plus `size`: `default` or `sm`. Group options with `NativeSelectOptGroup`.

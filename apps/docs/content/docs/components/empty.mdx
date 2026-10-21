@@ -1,0 +1,50 @@
+---
+title: Empty
+description: Explains why a view has no content and what to do next.
+heuristics: [1, 9, 10]
+---
+
+<ComponentPreview name="empty-demo" />
+
+## Installation
+
+<InstallCommand args="add empty" />
+
+## Usage
+
+```tsx
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty"
+```
+
+```tsx
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia variant="icon"><FolderOpenIcon /></EmptyMedia>
+    <EmptyTitle>No engagements yet</EmptyTitle>
+    <EmptyDescription>Create an engagement to track your work.</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent>
+    <Button>Create engagement</Button>
+  </EmptyContent>
+</Empty>
+```
+
+## Guidance
+
+**Do**
+
+- Say what is missing and offer the one action that fills it.
+- Write a different message for "nothing yet" and "no results for this filter".
+
+**Don't**
+
+- Show a blank area or a bare "No data".
+- Use it for errors. Use an alert that explains how to recover.
+
+## Accessibility
+
+Empty is plain markup with no roles. Mark decorative icons with `aria-hidden`, and make sure the title and action make sense when read alone.
+
+## API
+
+`EmptyMedia` takes `variant`: `default` for an illustration or `icon` for a small icon tile. Every part accepts regular `div` props.

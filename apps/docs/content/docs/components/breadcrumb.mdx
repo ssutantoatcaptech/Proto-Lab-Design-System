@@ -1,0 +1,51 @@
+---
+title: Breadcrumb
+description: Shows where the current page sits in the hierarchy and links back up.
+heuristics: [1, 3, 6]
+---
+
+<ComponentPreview name="breadcrumb-demo" />
+
+## Installation
+
+<InstallCommand args="add breadcrumb" />
+
+## Usage
+
+```tsx
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+```
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/engagements">Engagements</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Member portal redesign</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Guidance
+
+**Do**
+
+- Mirror the real page hierarchy, not the path someone took.
+- Collapse middle levels with `BreadcrumbEllipsis` when the trail is long.
+
+**Don't**
+
+- Use it on top level pages. The navigation already shows the location.
+- Link the current page. Use `BreadcrumbPage`.
+
+## Accessibility
+
+The trail renders as a `nav` with an ordered list, and the current page carries `aria-current="page"`. Separators are hidden from screen readers.
+
+## API
+
+`BreadcrumbLink` renders an anchor and takes `render` to use your router's link. `BreadcrumbSeparator` takes children to replace the default chevron.

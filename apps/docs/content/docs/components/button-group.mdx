@@ -1,0 +1,45 @@
+---
+title: Button Group
+description: Joins related buttons into a single connected control.
+heuristics: [4, 7]
+---
+
+<ComponentPreview name="button-group-demo" />
+
+## Installation
+
+<InstallCommand args="add button-group" />
+
+## Usage
+
+```tsx
+import { ButtonGroup } from "@/components/ui/button-group"
+```
+
+```tsx
+<ButtonGroup aria-label="Timesheet view">
+  <Button variant="outline">Day</Button>
+  <Button variant="outline">Week</Button>
+  <Button variant="outline">Month</Button>
+</ButtonGroup>
+```
+
+## Guidance
+
+**Do**
+
+- Group actions that work on the same object, such as a split button.
+- Keep every button in a group the same variant and size.
+
+**Don't**
+
+- Use it for a single choice between options. Use a toggle group.
+- Group unrelated actions. Space them apart.
+
+## Accessibility
+
+The group renders with `role="group"`. Add an `aria-label` that names what the buttons control, and label icon only buttons.
+
+## API
+
+`ButtonGroup` takes `orientation` (`horizontal` or `vertical`). `ButtonGroupText` adds a static label and `ButtonGroupSeparator` adds a divider between buttons.

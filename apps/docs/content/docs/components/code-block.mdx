@@ -1,0 +1,48 @@
+---
+title: Code Block
+description: Displays code or command output with optional line numbers and a copy button.
+heuristics: [1, 7]
+---
+
+<ComponentPreview name="code-block-demo" />
+
+## Installation
+
+<InstallCommand args="add code-block" />
+
+## Usage
+
+```tsx
+import { CodeBlock, CodeBlockActions, CodeBlockContent, CodeBlockCopyButton, CodeBlockHeader, CodeBlockTitle } from "@/components/ui/code-block"
+```
+
+```tsx
+<CodeBlock>
+  <CodeBlockHeader>
+    <CodeBlockTitle>billable-hours.sql</CodeBlockTitle>
+    <CodeBlockActions>
+      <CodeBlockCopyButton value={code} />
+    </CodeBlockActions>
+  </CodeBlockHeader>
+  <CodeBlockContent lineNumbers>{code}</CodeBlockContent>
+</CodeBlock>
+```
+
+## Guidance
+
+**Do**
+
+- Name the file or language in the title.
+- Add a copy button for anything people will paste.
+
+**Don't**
+
+- Use it for short inline references. Use inline `code`.
+
+## Accessibility
+
+The content area is focusable so keyboard users can scroll long lines. The copy button has a label and announces "Copied" through a live region.
+
+## API
+
+`CodeBlock` takes `variant` (`default` or `destructive`) and `size` (`default` or `sm`). `CodeBlockContent` takes `lineNumbers`, `wrap` and `startLine`. Use `CodeBlockLine` with `variant` (`added`, `removed`, `highlighted`) for diffs.

@@ -1,0 +1,43 @@
+---
+title: Calendar
+description: Lets people pick a date or a range of dates from a month grid.
+heuristics: [2, 5, 6]
+---
+
+<ComponentPreview name="calendar-demo" />
+
+## Installation
+
+<InstallCommand args="add calendar" />
+
+## Usage
+
+```tsx
+import { Calendar } from "@/components/ui/calendar"
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+<Calendar mode="single" selected={date} onSelect={setDate} />
+```
+
+## Guidance
+
+**Do**
+
+- Disable dates that can't be chosen, such as weekends or past dates, with `disabled`.
+- Confirm the picked date in text near the calendar.
+
+**Don't**
+
+- Use it for dates far in the past, like a birth date. Use a date input.
+- Show it inline when space is tight. Put it in a popover.
+
+## Accessibility
+
+Arrow keys move between days, Page Up and Page Down change months, and Enter selects. Selected and today's dates are announced. Label the field that the calendar fills.
+
+## API
+
+Built on react-day-picker and accepts every `DayPicker` prop, including `mode` (`single`, `multiple`, `range`), `selected`, `onSelect` and `disabled`. Adds `buttonVariant` for the navigation buttons.

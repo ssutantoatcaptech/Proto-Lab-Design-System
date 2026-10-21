@@ -1,0 +1,55 @@
+---
+title: Table
+description: Shows structured data in rows and columns for scanning and comparison.
+heuristics: [6, 8]
+---
+
+<ComponentPreview name="table-demo" />
+
+## Installation
+
+<InstallCommand args="add table" />
+
+## Usage
+
+```tsx
+import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+```
+
+```tsx
+<Table>
+  <TableCaption>Timesheet for the week of Oct 19.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Project</TableHead>
+      <TableHead className="text-right">Hours</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Retail checkout redesign</TableCell>
+      <TableCell className="text-right">16</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+## Guidance
+
+**Do**
+
+- Right align numbers and use tabular figures so columns line up.
+- Add a caption that says what the table shows.
+
+**Don't**
+
+- Use a table for layout. Use grid or flex.
+- Put long text in cells. Show a summary and link to the detail.
+
+## Accessibility
+
+It renders native table elements, so screen readers announce rows, columns and headers. Use `TableHead` for every column header and `TableCaption` to name the table.
+
+## API
+
+Each part is a styled native element and accepts its usual props. `Table` wraps the table in a container that scrolls sideways when the columns don't fit.

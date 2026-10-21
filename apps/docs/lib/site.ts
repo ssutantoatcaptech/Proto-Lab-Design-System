@@ -5,6 +5,6 @@ export const site = {
   nav: [
     { title: "Docs", href: "/docs", match: (p: string) => p === "/docs" || /^\/docs\/(installation|theming|dark-mode|registry|upstream)/.test(p) },
     { title: "Foundations", href: "/docs/foundations/color", match: (p: string) => p.startsWith("/docs/foundations") },
-    { title: "Components", href: "/docs/components/button", match: (p: string) => p.startsWith("/docs/components") },
+    { title: "Components", href: "/docs/components", match: (p: string) => p.startsWith("/docs/components") },
   ],
 }

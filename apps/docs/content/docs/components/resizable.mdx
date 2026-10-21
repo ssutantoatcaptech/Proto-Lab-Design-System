@@ -1,0 +1,45 @@
+---
+title: Resizable
+description: Splits an area into panels that people can resize by dragging the divider.
+heuristics: [3, 7]
+---
+
+<ComponentPreview name="resizable-demo" />
+
+## Installation
+
+<InstallCommand args="add resizable" />
+
+## Usage
+
+```tsx
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable"
+```
+
+```tsx
+<ResizablePanelGroup orientation="horizontal">
+  <ResizablePanel defaultSize="35%" minSize="20%">Findings</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel defaultSize="65%">Detail</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+## Guidance
+
+**Do**
+
+- Set a `minSize` on each panel so no panel can shrink until its content breaks.
+- Use it for list and detail layouts where people compare content side by side.
+
+**Don't**
+
+- Make every layout resizable. Fixed layouts are simpler to scan.
+- Pass bare numbers to `defaultSize` expecting percents. Numbers mean pixels. Use strings like `"35%"`.
+
+## Accessibility
+
+The handle is a focusable separator, and arrow keys resize the panels. Give each panel content a heading so people know what they are resizing.
+
+## API
+
+Built on `react-resizable-panels` v4. `ResizablePanelGroup` takes `orientation`, and `ResizablePanel` takes `defaultSize`, `minSize`, `maxSize` and `collapsible`. Add `withHandle` to `ResizableHandle` to show a grip.

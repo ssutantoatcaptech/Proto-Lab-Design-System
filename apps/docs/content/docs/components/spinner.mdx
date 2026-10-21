@@ -1,0 +1,41 @@
+---
+title: Spinner
+description: Shows that something is loading when progress can't be measured.
+heuristics: [1]
+---
+
+<ComponentPreview name="spinner-demo" />
+
+## Installation
+
+<InstallCommand args="add spinner" />
+
+## Usage
+
+```tsx
+import { Spinner } from "@/components/ui/spinner"
+```
+
+```tsx
+<Spinner />
+```
+
+## Guidance
+
+**Do**
+
+- Pair the spinner with text that says what is loading.
+- Put it inside the button that started the action, and disable the button.
+
+**Don't**
+
+- Use a spinner when you know how far along a task is. Use progress.
+- Show a spinner for a whole page of content. Use skeletons.
+
+## Accessibility
+
+The spinner has the status role and the label "Loading". Override `aria-label` with what is actually loading.
+
+## API
+
+`Spinner` is an SVG icon and accepts every SVG prop. Change its size with `className`, such as `size-6`.

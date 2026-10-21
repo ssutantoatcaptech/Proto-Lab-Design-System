@@ -1,0 +1,42 @@
+---
+title: Slider
+description: Lets people pick a value or a range by dragging along a track.
+heuristics: [5, 7]
+base: https://base-ui.com/react/components/slider
+---
+
+<ComponentPreview name="slider-demo" />
+
+## Installation
+
+<InstallCommand args="add slider" />
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/ui/slider"
+```
+
+```tsx
+<Slider defaultValue={[32]} max={40} step={4} aria-label="Weekly allocation" />
+```
+
+## Guidance
+
+**Do**
+
+- Show the current value as text next to the slider.
+- Set `step` to the smallest change that matters, such as 4 hours.
+
+**Don't**
+
+- Use a slider when people need an exact value. Use a number input.
+- Use a slider for a wide range like 0 to 10,000. Use an input.
+
+## Accessibility
+
+Each thumb is focusable, and arrow keys, Page Up, Page Down, Home and End change the value. Name the slider with `aria-label` or `aria-labelledby`.
+
+## API
+
+`Slider` takes `value`, `defaultValue`, `min`, `max`, `step` and `onValueChange`. Pass an array with two values to get a range with two thumbs. See the [Base UI reference](https://base-ui.com/react/components/slider).

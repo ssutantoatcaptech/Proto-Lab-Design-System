@@ -4,10 +4,12 @@
   "private": true,
   "description": "Proto-Lab docs site and shadcn registry. The registry is served from /r/{name}.json.",
   "scripts": {
+    "predev": "node scripts/examples-index.mjs",
     "dev": "next dev -p 5191",
+    "prebuild": "node scripts/examples-index.mjs",
     "build": "next build",
     "start": "next start -p 5191",
-    "typecheck": "fumadocs-mdx && tsc --noEmit",
+    "typecheck": "node scripts/examples-index.mjs && fumadocs-mdx && tsc --noEmit",
     "registry:build": "shadcn build && shadcn add ./public/r/theme.json -y --overwrite"
   },
   "devDependencies": {
@@ -24,16 +26,26 @@
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",
+    "@shadcn/react": "0.3.1",
     "class-variance-authority": "0.7.1",
     "cmdk": "1.1.1",
     "cn": "0.4.0",
+    "date-fns": "4.4.0",
+    "embla-carousel-react": "8.6.0",
     "fumadocs-core": "16.17.7",
     "fumadocs-mdx": "15.4.9",
+    "input-otp": "1.5.0",
     "lucide-react": "1.61.0",
     "next": "16.4.2",
+    "next-themes": "0.4.6",
     "react": "19.3.1",
+    "react-day-picker": "10.0.2",
     "react-dom": "19.3.1",
+    "react-is": "19.3.1",
+    "react-resizable-panels": "4.14.8",
+    "recharts": "3.8.0",
     "shiki": "4.5.0",
+    "sonner": "2.0.8",
     "zod": "4.6.7"
   }
 }

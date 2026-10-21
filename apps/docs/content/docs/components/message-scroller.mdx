@@ -1,0 +1,52 @@
+---
+title: Message Scroller
+description: A scrolling chat thread that opens at the latest message and offers a jump back to it.
+heuristics: [1, 3, 7]
+---
+
+<ComponentPreview name="message-scroller-demo" />
+
+## Installation
+
+<InstallCommand args="add message-scroller" />
+
+## Usage
+
+```tsx
+import { MessageScroller, MessageScrollerButton, MessageScrollerContent, MessageScrollerItem, MessageScrollerProvider, MessageScrollerViewport } from "@/components/ui/message-scroller"
+```
+
+```tsx
+<MessageScrollerProvider>
+  <MessageScroller className="h-72">
+    <MessageScrollerViewport>
+      <MessageScrollerContent>
+        {messages.map((m) => (
+          <MessageScrollerItem key={m.id} messageId={m.id}>{m.text}</MessageScrollerItem>
+        ))}
+      </MessageScrollerContent>
+    </MessageScrollerViewport>
+    <MessageScrollerButton />
+  </MessageScroller>
+</MessageScrollerProvider>
+```
+
+## Guidance
+
+**Do**
+
+- Give the scroller a fixed height so the thread scrolls inside it.
+- Set `autoScroll` on the provider when replies stream in.
+
+**Don't**
+
+- Pull people to the bottom while they read older messages. Leave `autoScroll` off for slow threads.
+- Use it for long documents. Use a scroll area.
+
+## Accessibility
+
+The viewport is a focusable region and the content has `role="log"`, so new messages are announced and arrow keys scroll. The scroll button has a screen reader label. Label the viewport with `aria-label` when there are several threads.
+
+## API
+
+`MessageScrollerProvider` takes `autoScroll`, `defaultScrollPosition` (`end`, `start`, `last-anchor`) and `scrollMargin`. Give each `MessageScrollerItem` a `messageId`. `useMessageScroller()` returns `scrollToEnd`, `scrollToStart` and `scrollToMessage`.

@@ -1,0 +1,46 @@
+---
+title: Sonner
+description: Shows brief, stacked notifications that confirm an action or report a result.
+heuristics: [1, 3]
+---
+
+<ComponentPreview name="sonner-demo" />
+
+## Installation
+
+<InstallCommand args="add sonner" />
+
+## Usage
+
+```tsx
+import { toast } from "sonner"
+import { Toaster } from "@/components/ui/sonner"
+```
+
+```tsx
+<Toaster />
+
+<Button onClick={() => toast.success("Timesheet submitted")}>
+  Submit timesheet
+</Button>
+```
+
+## Guidance
+
+**Do**
+
+- Render one `Toaster` near the root of the app, and call `toast()` from anywhere.
+- Offer an Undo action for anything people might regret.
+
+**Don't**
+
+- Put information people must act on in a toast. Use an alert or a dialog.
+- Toast every success. Confirm only actions with no other visible result.
+
+## Accessibility
+
+Toasts are announced through a polite live region and pause while hovered or focused. Keep the message short and make any action reachable some other way, since toasts disappear.
+
+## API
+
+`Toaster` accepts every Sonner `Toaster` prop, such as `position` and `richColors`. Call `toast`, `toast.success`, `toast.error` or `toast.promise` with a message and options like `description` and `action`. It reads the theme from `next-themes` and falls back to the system theme when no provider is present.

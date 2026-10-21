@@ -1,0 +1,53 @@
+---
+title: Drawer
+description: A panel that slides in from an edge of the screen for a short task or extra detail.
+heuristics: [3, 6]
+base: https://base-ui.com/react/components/drawer
+---
+
+<ComponentPreview name="drawer-demo" />
+
+## Installation
+
+<InstallCommand args="add drawer" />
+
+## Usage
+
+```tsx
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer"
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger render={<Button variant="outline" />}>Review timesheet</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Week of October 13</DrawerTitle>
+      <DrawerDescription>Submit your hours by Friday at 5 PM.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <DrawerClose render={<Button />}>Submit hours</DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+## Guidance
+
+**Do**
+
+- Use it on touch screens, where swiping it away feels natural.
+- Keep the primary action in the footer, within thumb reach.
+
+**Don't**
+
+- Fill it with a long form. Use a page or a dialog.
+- Use it on wide screens for side detail. Use a sheet.
+
+## Accessibility
+
+Focus moves into the drawer and returns to the trigger on close. Escape, a click outside and a swipe toward the edge all close it. Give every drawer a `DrawerTitle`.
+
+## API
+
+`Drawer` accepts every Base UI Drawer prop. Set the edge with `swipeDirection` (`down` by default), add `snapPoints` for partial heights, and set `showSwipeHandle` to draw a grab handle. See the [Base UI reference](https://base-ui.com/react/components/drawer).

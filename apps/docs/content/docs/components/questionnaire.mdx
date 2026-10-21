@@ -1,0 +1,57 @@
+---
+title: Questionnaire
+description: Asks a set of questions one at a time, with progress, validation and keyboard shortcuts.
+heuristics: [1, 5, 9]
+---
+
+<ComponentPreview name="questionnaire-demo" />
+
+## Installation
+
+<InstallCommand args="add questionnaire" />
+
+## Usage
+
+```tsx
+import { Questionnaire, QuestionnaireActions, QuestionnaireChoice, QuestionnaireChoices, QuestionnaireError, QuestionnaireItem, QuestionnaireNext, QuestionnairePrevious, QuestionnaireProgress, QuestionnaireSkip, QuestionnaireSubmit, QuestionnaireTitle } from "@/components/ui/questionnaire"
+```
+
+```tsx
+<Questionnaire shortcuts="letters" onSubmit={handleSubmit}>
+  <QuestionnaireProgress />
+  <QuestionnaireItem name="useful" required>
+    <QuestionnaireTitle>How useful was the workshop?</QuestionnaireTitle>
+    <QuestionnaireChoices>
+      <QuestionnaireChoice value="very">Very useful</QuestionnaireChoice>
+      <QuestionnaireChoice value="not">Not useful</QuestionnaireChoice>
+    </QuestionnaireChoices>
+    <QuestionnaireError />
+  </QuestionnaireItem>
+  <QuestionnaireActions>
+    <QuestionnairePrevious />
+    <QuestionnaireSkip />
+    <QuestionnaireNext />
+    <QuestionnaireSubmit />
+  </QuestionnaireActions>
+</Questionnaire>
+```
+
+## Guidance
+
+**Do**
+
+- Ask one thing per item, and mark items `required` only when you can't proceed without the answer.
+- Always render all four action buttons. Each one shows itself only when it applies.
+
+**Don't**
+
+- Use it for a dense form people need to scan and edit at once. Use fields on a page.
+- Hide the progress line. People need to know how many questions remain.
+
+## Accessibility
+
+Each item is a fieldset with a legend, and only the active item is visible and focusable. Arrow keys move between choices and items, Enter advances, and letter or number shortcuts pick a choice when `shortcuts` is set. `QuestionnaireError` is announced when a required item is left empty.
+
+## API
+
+`Questionnaire` renders a form and takes `onSubmit`, `shortcuts` (`"letters"` or `"numbers"`), `defaultItem`, `item` and `onItemChange`. `QuestionnaireItem` takes `name`, `required` and `multiple`, which switches its choices from radios to checkboxes. Use `QuestionnaireInput` for a free text answer.

@@ -1,0 +1,50 @@
+---
+title: Popover
+description: Shows a small panel of related content or controls next to its trigger.
+heuristics: [6, 8]
+base: https://base-ui.com/react/components/popover
+---
+
+<ComponentPreview name="popover-demo" />
+
+## Installation
+
+<InstallCommand args="add popover" />
+
+## Usage
+
+```tsx
+import { Popover, PopoverContent, PopoverDescription, PopoverHeader, PopoverTitle, PopoverTrigger } from "@/components/ui/popover"
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger render={<Button variant="outline" />}>Set workshop time</PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader>
+      <PopoverTitle>Discovery workshop</PopoverTitle>
+      <PopoverDescription>Customer Experience kickoff.</PopoverDescription>
+    </PopoverHeader>
+  </PopoverContent>
+</Popover>
+```
+
+## Guidance
+
+**Do**
+
+- Use it for quick edits and details that belong to one control, such as a date or a filter.
+- Keep the content short enough to read without scrolling.
+
+**Don't**
+
+- Put a whole form or a multi step task in a popover. Use a sheet or a dialog.
+- Use a popover for a plain text hint on hover. Use a tooltip.
+
+## Accessibility
+
+Focus moves into the popover when it opens and returns to the trigger when it closes. Escape and a click outside close it. Give the trigger a visible label that says what opens.
+
+## API
+
+`PopoverContent` takes `side`, `align`, `sideOffset` and `alignOffset` for placement. Use `render` on `PopoverTrigger` to render a Button. See the [Base UI reference](https://base-ui.com/react/components/popover).

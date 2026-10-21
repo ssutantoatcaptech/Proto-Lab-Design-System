@@ -1,0 +1,48 @@
+---
+title: Item
+description: A row with media, a title, a description and actions, for lists of things.
+heuristics: [4, 6, 8]
+---
+
+<ComponentPreview name="item-demo" />
+
+## Installation
+
+<InstallCommand args="add item" />
+
+## Usage
+
+```tsx
+import { Item, ItemActions, ItemContent, ItemDescription, ItemMedia, ItemTitle } from "@/components/ui/item"
+```
+
+```tsx
+<Item variant="outline">
+  <ItemMedia variant="icon"><FileTextIcon /></ItemMedia>
+  <ItemContent>
+    <ItemTitle>Discovery findings</ItemTitle>
+    <ItemDescription>12 findings ready for client review.</ItemDescription>
+  </ItemContent>
+  <ItemActions><Button size="sm" variant="outline">Review</Button></ItemActions>
+</Item>
+```
+
+## Guidance
+
+**Do**
+
+- Keep the title short and put the detail in the description.
+- Use `render` to make the whole item a link when it opens something.
+
+**Don't**
+
+- Put more than two actions in a row. Move the rest into a dropdown menu.
+- Use it for tabular data people compare across rows. Use a table.
+
+## Accessibility
+
+`ItemGroup` has `role="list"`, so give each item `role="listitem"`. Icon only actions need an `aria-label`.
+
+## API
+
+`Item` takes `variant` (`default`, `outline`, `muted`), `size` (`default`, `sm`, `xs`) and `render`. `ItemMedia` takes `variant`: `default`, `icon` or `image`.

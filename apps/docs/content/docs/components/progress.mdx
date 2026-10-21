@@ -1,0 +1,45 @@
+---
+title: Progress
+description: Shows how far a task has advanced toward completion.
+heuristics: [1]
+base: https://base-ui.com/react/components/progress
+---
+
+<ComponentPreview name="progress-demo" />
+
+## Installation
+
+<InstallCommand args="add progress" />
+
+## Usage
+
+```tsx
+import { Progress, ProgressLabel, ProgressValue } from "@/components/ui/progress"
+```
+
+```tsx
+<Progress value={68}>
+  <ProgressLabel>Discovery interviews</ProgressLabel>
+  <ProgressValue />
+</Progress>
+```
+
+## Guidance
+
+**Do**
+
+- Label what is progressing, and show the value as a number next to the bar.
+- Pass `value={null}` when you can't measure progress yet.
+
+**Don't**
+
+- Use progress for a short wait under a second or two. Use a spinner.
+- Use a progress bar to show a score or a rating. Use a meter or plain text.
+
+## Accessibility
+
+The root has the progressbar role with the current value. `ProgressLabel` names the bar for screen readers, so always include one or pass `aria-label`.
+
+## API
+
+`Progress` takes `value`, `min`, `max` and `format`, and renders its own track and indicator. Children render above the track, so place `ProgressLabel` and `ProgressValue` there. See the [Base UI reference](https://base-ui.com/react/components/progress).

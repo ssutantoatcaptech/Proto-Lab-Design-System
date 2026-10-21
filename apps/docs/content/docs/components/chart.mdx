@@ -1,0 +1,52 @@
+---
+title: Chart
+description: Wraps Recharts with theme colors, tooltips and legends that match the system.
+heuristics: [1, 4, 8]
+---
+
+<ComponentPreview name="chart-demo" />
+
+## Installation
+
+<InstallCommand args="add chart" />
+
+## Usage
+
+```tsx
+import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
+import { Bar, BarChart, XAxis } from "recharts"
+```
+
+```tsx
+const chartConfig = {
+  billable: { label: "Billable hours", color: "var(--chart-1)" },
+} satisfies ChartConfig
+
+<ChartContainer config={chartConfig} className="h-64 w-full">
+  <BarChart data={data}>
+    <XAxis dataKey="month" />
+    <ChartTooltip content={<ChartTooltipContent />} />
+    <Bar dataKey="billable" fill="var(--color-billable)" />
+  </BarChart>
+</ChartContainer>
+```
+
+## Guidance
+
+**Do**
+
+- Use the `--chart-1` to `--chart-5` tokens in the config, in order.
+- Label series in the config with the words people use, such as "Billable hours".
+
+**Don't**
+
+- Plot more than five series. Split the chart or use a table.
+- Rely on color alone. Add a legend or direct labels.
+
+## Accessibility
+
+Add `accessibilityLayer` to the Recharts chart for keyboard focus and screen reader support. Give every chart a visible title and a text summary or table of the key numbers.
+
+## API
+
+`ChartContainer` takes a required `config` that maps each data key to a `label`, `color` or per theme colors, and exposes them as `--color-<key>`. `ChartTooltipContent` and `ChartLegendContent` read labels from that config.

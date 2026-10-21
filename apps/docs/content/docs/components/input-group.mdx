@@ -1,0 +1,44 @@
+---
+title: Input Group
+description: Adds icons, text or buttons inside the edges of an input.
+heuristics: [5, 6, 8]
+---
+
+<ComponentPreview name="input-group-demo" />
+
+## Installation
+
+<InstallCommand args="add input-group" />
+
+## Usage
+
+```tsx
+import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from "@/components/ui/input-group"
+```
+
+```tsx
+<InputGroup>
+  <InputGroupInput placeholder="Search engagements" />
+  <InputGroupAddon><SearchIcon /></InputGroupAddon>
+</InputGroup>
+```
+
+## Guidance
+
+**Do**
+
+- Use addons for units and prefixes, such as "$" or "per hour", so people enter the right format.
+- Use `InputGroupButton` for actions tied to the value, such as copy or clear.
+
+**Don't**
+
+- Put the field label in an addon. Use a label above the input.
+- Stack more than one addon on each side.
+
+## Accessibility
+
+Addons are not read as part of the input value. Give the input a label, and give icon only buttons an `aria-label`.
+
+## API
+
+`InputGroupAddon` takes `align`: `inline-start`, `inline-end`, `block-start` or `block-end`. Clicking an addon focuses the input. Use `InputGroupTextarea` for multi line input.

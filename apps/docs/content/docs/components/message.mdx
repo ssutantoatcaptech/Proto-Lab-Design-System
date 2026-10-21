@@ -1,0 +1,47 @@
+---
+title: Message
+description: Lays out one chat message with an avatar, a sender name and content.
+heuristics: [1, 2, 4]
+---
+
+<ComponentPreview name="message-demo" />
+
+## Installation
+
+<InstallCommand args="add message" />
+
+## Usage
+
+```tsx
+import { Message, MessageAvatar, MessageContent, MessageHeader } from "@/components/ui/message"
+```
+
+```tsx
+<Message align="end">
+  <MessageContent>
+    <Bubble>
+      <BubbleContent>The synthesis deck goes out tomorrow.</BubbleContent>
+    </Bubble>
+  </MessageContent>
+</Message>
+```
+
+## Guidance
+
+**Do**
+
+- Align the current person's messages to the end and everyone else's to the start.
+- Group consecutive messages from the same sender and show the name once.
+
+**Don't**
+
+- Rely on side and color alone to show the sender. Show a name or avatar.
+- Use it for notifications. Use a toast or an alert.
+
+## Accessibility
+
+Message is layout only. Put the thread in a container with `role="log"`, such as message scroller, so new messages are announced. Give avatars a text alternative.
+
+## API
+
+`Message` takes `align`: `start` or `end`. `MessageHeader` and `MessageFooter` hold the name, time and status.

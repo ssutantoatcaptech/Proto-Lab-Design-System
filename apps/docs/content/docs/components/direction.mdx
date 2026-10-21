@@ -1,0 +1,46 @@
+---
+title: Direction
+description: Tells Base UI components whether the layout reads left to right or right to left.
+heuristics: [2, 4]
+base: https://base-ui.com/react/utils/direction-provider
+---
+
+<ComponentPreview name="direction-demo" />
+
+## Installation
+
+<InstallCommand args="add direction" />
+
+## Usage
+
+```tsx
+import { DirectionProvider } from "@/components/ui/direction"
+```
+
+```tsx
+<html dir="rtl">
+  <body>
+    <DirectionProvider direction="rtl">{children}</DirectionProvider>
+  </body>
+</html>
+```
+
+## Guidance
+
+**Do**
+
+- Set `dir` on the page and `direction` on the provider to the same value.
+- Wrap the whole app once, near the root.
+
+**Don't**
+
+- Use it to mirror a single widget for visual effect. Change the layout with CSS instead.
+- Rely on it alone. It does not set the `dir` attribute, so text and CSS still read left to right.
+
+## Accessibility
+
+The provider makes sliders, menus and other Base UI components flip arrow key behavior and placement for right to left reading. Set `dir` and `lang` on the document so assistive technology reads the text correctly.
+
+## API
+
+`DirectionProvider` takes `direction`, either `"ltr"` or `"rtl"`. Read the current value in your own components with `useDirection()`. See the [Base UI reference](https://base-ui.com/react/utils/direction-provider).

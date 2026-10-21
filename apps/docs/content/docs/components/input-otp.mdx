@@ -1,0 +1,53 @@
+---
+title: Input OTP
+description: Collects a short one time code, one character per slot.
+heuristics: [5, 7]
+---
+
+<ComponentPreview name="input-otp-demo" />
+
+## Installation
+
+<InstallCommand args="add input-otp" />
+
+## Usage
+
+```tsx
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp"
+```
+
+```tsx
+<InputOTP maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>
+```
+
+## Guidance
+
+**Do**
+
+- Say where the code was sent and how to get a new one.
+- Restrict the input with `pattern` when the code is digits only.
+
+**Don't**
+
+- Use it for passwords or long codes. Use an input.
+- Submit on the last digit without showing what happens next.
+
+## Accessibility
+
+A single hidden input holds the value, so paste, autofill and screen readers work as they do in a normal input. Give it a visible label.
+
+## API
+
+`InputOTP` wraps the `input-otp` library and takes `maxLength`, `value`, `onChange`, `pattern` and `onComplete`. Render one `InputOTPSlot` per character with its `index`.

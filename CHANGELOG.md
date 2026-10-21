@@ -74,6 +74,12 @@ what a project last applied.
 - **Icon gallery** on the Iconography page: search, category filters with
   counts, size preview, click to copy the import, and filters kept in the URL.
 
+- **All 64 shadcn/ui components** are in the registry and documented, each
+  with a CapTech demo, installation, usage, Do/Don't guidance, accessibility
+  notes, heuristic tags and a Base UI link where it applies. A Components
+  overview page lists them all, like ui.shadcn.com/docs/components. The
+  examples index is generated from the example files. Every adopted component
+  matches upstream exactly.
 - **Docs layout: white sidebar and section cards.** The sidebar sits on the
   white surface; the page title and each `##` section render as their own
   flat card (4px corners, no border or shadow) on the grey canvas (a small

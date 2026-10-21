@@ -1,0 +1,54 @@
+---
+title: Alert Dialog
+description: Asks people to confirm an action that is destructive or can't be undone.
+heuristics: [3, 5]
+base: https://base-ui.com/react/components/alert-dialog
+---
+
+<ComponentPreview name="alert-dialog-demo" />
+
+## Installation
+
+<InstallCommand args="add alert-dialog" />
+
+## Usage
+
+```tsx
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
+```
+
+```tsx
+<AlertDialog open={open} onOpenChange={setOpen}>
+  <AlertDialogTrigger render={<Button variant="destructive" />}>Delete timesheet</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Delete this timesheet?</AlertDialogTitle>
+      <AlertDialogDescription>This can't be undone.</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Keep timesheet</AlertDialogCancel>
+      <AlertDialogAction variant="destructive" onClick={deleteTimesheet}>Delete</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+## Guidance
+
+**Do**
+
+- State what will be lost, with specifics such as counts or names.
+- Label the confirm button with the action, not "OK".
+
+**Don't**
+
+- Confirm routine actions that are easy to reverse. Offer undo in a toast.
+- Use it for forms or extra content. Use a dialog.
+
+## Accessibility
+
+Focus moves into the dialog and returns to the trigger on close. Unlike a dialog, a click outside does not close it, so people must choose. Escape cancels.
+
+## API
+
+Accepts every Base UI Alert Dialog prop. `AlertDialogContent` takes `size` (`default` or `sm`), and `AlertDialogAction` takes every Button prop. It does not close the dialog on its own, so close it in your handler. See the [Base UI reference](https://base-ui.com/react/components/alert-dialog).

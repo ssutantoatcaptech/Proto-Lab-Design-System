@@ -1,0 +1,50 @@
+---
+title: Menubar
+description: A row of menus that stays visible, like the menu bar in a desktop app.
+heuristics: [4, 6, 7]
+base: https://base-ui.com/react/components/menubar
+---
+
+<ComponentPreview name="menubar-demo" />
+
+## Installation
+
+<InstallCommand args="add menubar" />
+
+## Usage
+
+```tsx
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarShortcut, MenubarTrigger } from "@/components/ui/menubar"
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>Engagement</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>New workshop <MenubarShortcut>⌘N</MenubarShortcut></MenubarItem>
+      <MenubarItem>Export report</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```
+
+## Guidance
+
+**Do**
+
+- Use it in tools with many commands, such as editors and builders.
+- Show shortcuts next to items so people learn them.
+
+**Don't**
+
+- Use it for site navigation. Use a navigation menu.
+- Use it for one or two menus. Use a dropdown menu.
+
+## Accessibility
+
+Arrow keys move between menus and items, and Escape closes the open menu. Checkbox and radio items announce their checked state.
+
+## API
+
+`Menubar` accepts every Base UI Menubar prop. Each `MenubarMenu` is a Base UI Menu, and `MenubarItem` takes `variant` and `inset`. See the [Base UI reference](https://base-ui.com/react/components/menubar).

@@ -1,0 +1,44 @@
+---
+title: Collapsible
+description: Shows and hides a single section of content behind a trigger.
+heuristics: [3, 8]
+base: https://base-ui.com/react/components/collapsible
+---
+
+<ComponentPreview name="collapsible-demo" />
+
+## Installation
+
+<InstallCommand args="add collapsible" />
+
+## Usage
+
+```tsx
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+```
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger>Show all findings</CollapsibleTrigger>
+  <CollapsibleContent>Upload fails silently over 10 MB.</CollapsibleContent>
+</Collapsible>
+```
+
+## Guidance
+
+**Do**
+
+- Keep a preview visible so people know what is hidden.
+- Update the trigger label or icon to match the open state.
+
+**Don't**
+
+- Stack several collapsibles for related sections. Use an accordion.
+
+## Accessibility
+
+The trigger is a button with `aria-expanded` linked to the panel. Icon only triggers need an `aria-label`.
+
+## API
+
+Accepts every Base UI Collapsible prop, including `open`, `defaultOpen` and `onOpenChange`. The component adds no styles. See the [Base UI reference](https://base-ui.com/react/components/collapsible).

@@ -1,0 +1,51 @@
+---
+title: Radio Group
+description: Lets people pick exactly one option from a short, visible list.
+heuristics: [5, 6]
+base: https://base-ui.com/react/components/radio-group
+---
+
+<ComponentPreview name="radio-group-demo" />
+
+## Installation
+
+<InstallCommand args="add radio-group" />
+
+## Usage
+
+```tsx
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+```
+
+```tsx
+<RadioGroup defaultValue="cx" aria-label="Lead practice">
+  <div className="flex items-center gap-3">
+    <RadioGroupItem value="cx" id="practice-cx" />
+    <Label htmlFor="practice-cx">Customer Experience</Label>
+  </div>
+  <div className="flex items-center gap-3">
+    <RadioGroupItem value="da" id="practice-da" />
+    <Label htmlFor="practice-da">Data & Analytics</Label>
+  </div>
+</RadioGroup>
+```
+
+## Guidance
+
+**Do**
+
+- Preselect the most common or safest option.
+- Keep the list to about five options so all of them stay visible.
+
+**Don't**
+
+- Use radios for more than seven options. Use a select.
+- Use radios for an on or off setting. Use a switch or a checkbox.
+
+## Accessibility
+
+Arrow keys move the selection within the group, and Tab moves in and out of it. Label every item with a `Label` tied by `htmlFor`, and name the group with `aria-label` or a visible heading.
+
+## API
+
+`RadioGroup` takes `value`, `defaultValue`, `onValueChange` and `disabled`. Each `RadioGroupItem` needs a unique `value`. See the [Base UI reference](https://base-ui.com/react/components/radio-group).
