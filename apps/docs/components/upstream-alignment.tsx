@@ -28,7 +28,7 @@ export function UpstreamAlignment() {
     <div className="not-prose my-6 flex flex-col gap-6">
       <dl className="grid grid-cols-3 gap-3">
         {stats.map((s) => (
-          <div key={s.label} className="rounded-lg border p-4">
+          <div key={s.label} className="rounded-lg border bg-card p-4">
             <dt className="text-caption-1 text-muted-foreground">{s.label}</dt>
             <dd className="text-title-2">{s.value}</dd>
           </div>
@@ -38,7 +38,7 @@ export function UpstreamAlignment() {
         Compared against <a className="underline underline-offset-4" href={a.upstream} target="_blank" rel="noreferrer">shadcn/ui</a>, {a.style} style, installed with {a.cli}.
       </p>
 
-      <div className="overflow-x-auto rounded-lg border">
+      <div className="overflow-x-auto rounded-lg border bg-card">
         <table className="w-full text-left text-sm">
           <thead className="bg-muted text-caption-1 text-muted-foreground">
             <tr>

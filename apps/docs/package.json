@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start -p 5191",
     "typecheck": "fumadocs-mdx && tsc --noEmit",
-    "registry:build": "shadcn build"
+    "registry:build": "shadcn build && shadcn add ./public/r/theme.json -y --overwrite"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",

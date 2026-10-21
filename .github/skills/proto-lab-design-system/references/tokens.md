@@ -85,6 +85,8 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 | `--neutral-background-inverted` | #333f48 | #ffffff |
 | `--neutral-background-disabled` | #ebebea | #243640 |
 | `--neutral-background-overlay` | rgba(0, 0, 0, 0.5) | rgba(0, 0, 0, 0.6) |
+| `--neutral-background-canvas` | #f5f5f4 | #1a2730 |
+| `--neutral-background-surface` | #ffffff | #1f2d36 |
 | `--neutral-foreground-1` | #333f48 | #ffffff |
 | `--neutral-foreground-2` | #888b8d | #adadad |
 | `--neutral-foreground-3` | #c1c1c0 | #8a8a8a |
@@ -271,17 +273,17 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### shadcn Aliases
 | Variable | Light | Dark |
 |---|---|---|
-| `--background` | #ffffff | #1a2730 |
+| `--background` | #f5f5f4 | #1a2730 |
 | `--foreground` | #333f48 | #ffffff |
-| `--card` | #ffffff | #1a2730 |
+| `--card` | #ffffff | #1f2d36 |
 | `--card-foreground` | #333f48 | #ffffff |
-| `--popover` | #ffffff | #1a2730 |
+| `--popover` | #ffffff | #1f2d36 |
 | `--popover-foreground` | #333f48 | #ffffff |
 | `--primary` | #005eb8 | #115ea3 |
 | `--primary-foreground` | #ffffff | same |
 | `--secondary` | #ebebea | #243640 |
 | `--secondary-foreground` | #333f48 | #ffffff |
-| `--muted` | #f5f5f4 | #1f2d36 |
+| `--muted` | #ebebea | #243640 |
 | `--muted-foreground` | #888b8d | #adadad |
 | `--accent` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.04) |
 | `--accent-foreground` | #333f48 | #ffffff |

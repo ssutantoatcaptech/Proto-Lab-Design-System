@@ -69,6 +69,8 @@
   --neutral-background-inverted: var(--color-dark-grey);
   --neutral-background-disabled: var(--color-grey-4);
   --neutral-background-overlay: rgba(0, 0, 0, 0.5);
+  --neutral-background-canvas: var(--color-grey-2);
+  --neutral-background-surface: var(--color-white);
   --neutral-foreground-1: var(--color-dark-grey);
   --neutral-foreground-2: var(--color-medium-grey);
   --neutral-foreground-3: var(--color-grey-12);
@@ -233,17 +235,17 @@
   --easing-linear: cubic-bezier(0, 0, 1, 1);
 
   /* ─── shadcn Aliases ─── */
-  --background: var(--neutral-background-1);
+  --background: var(--neutral-background-canvas);
   --foreground: var(--neutral-foreground-1);
-  --card: var(--neutral-background-1);
+  --card: var(--neutral-background-surface);
   --card-foreground: var(--neutral-foreground-1);
-  --popover: var(--neutral-background-1);
+  --popover: var(--neutral-background-surface);
   --popover-foreground: var(--neutral-foreground-1);
   --primary: var(--brand-background-1);
   --primary-foreground: var(--neutral-foreground-on-brand);
   --secondary: var(--neutral-background-3);
   --secondary-foreground: var(--neutral-foreground-1);
-  --muted: var(--neutral-background-2);
+  --muted: var(--neutral-background-3);
   --muted-foreground: var(--neutral-foreground-2);
   --accent: var(--neutral-background-subtle);
   --accent-foreground: var(--neutral-foreground-1);

@@ -5,7 +5,7 @@ import { byName, bySection, contrast, tokens, utilityClasses, type Token } from 
 
 function Table({ head, children }: { head: string[]; children: React.ReactNode }) {
   return (
-    <div className="not-prose my-6 overflow-x-auto rounded-lg border">
+    <div className="not-prose my-6 overflow-x-auto rounded-lg border bg-card">
       <table className="w-full text-left">
         <thead className="bg-muted text-caption-1 text-muted-foreground">
           <tr>{head.map((h) => <th key={h} scope="col" className="px-3 py-2 font-semibold">{h}</th>)}</tr>
@@ -130,7 +130,7 @@ export function RadiusScale() {
   return (
     <div className="not-prose my-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
       {bySection("Corner Radius").map((t) => (
-        <div key={t.name} className="flex flex-col gap-2 rounded-lg border p-4">
+        <div key={t.name} className="flex flex-col gap-2 rounded-lg border bg-card p-4">
           <div className="h-16 border-2 border-primary bg-brand-background-inverted" style={{ borderRadius: t.light.literal }} />
           <VarName name={t.name} />
           <span className="font-mono text-caption-1 text-muted-foreground">{t.light.literal} · {utilityClasses(t).join(", ")}</span>

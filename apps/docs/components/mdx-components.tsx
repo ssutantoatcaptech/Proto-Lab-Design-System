@@ -35,7 +35,7 @@ export const mdxComponents: MDXComponents = {
   hr: () => <hr className="my-8" />,
   blockquote: ({ className, ...props }) => <blockquote className={cn("my-6 border-l-2 pl-4 text-muted-foreground", className)} {...props} />,
   table: ({ className, ...props }) => (
-    <div className="my-6 overflow-x-auto rounded-lg border">
+    <div className="my-6 overflow-x-auto rounded-lg border bg-card">
       <table className={cn("w-full text-left text-sm", className)} {...props} />
     </div>
   ),

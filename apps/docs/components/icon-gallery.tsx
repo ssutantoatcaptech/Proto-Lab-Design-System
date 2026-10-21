@@ -113,7 +113,7 @@ function Gallery() {
               <button
                 type="button"
                 onClick={() => copy(name, cat)}
-                className="focus-ring group flex h-full w-full flex-col items-center gap-3 rounded-lg border p-4 text-center transition-colors hover:bg-accent"
+                className="focus-ring group flex h-full w-full flex-col items-center gap-3 rounded-lg border bg-card p-4 text-center transition-colors hover:bg-muted"
                 aria-label={`Copy import for ${words(slug)}`}
               >
                 <span className="grid h-16 place-items-center"><Component size={size} /></span>
@@ -125,7 +125,7 @@ function Gallery() {
           ))}
         </ul>
       ) : (
-        <div className="flex flex-col items-center gap-3 rounded-lg border p-10 text-center">
+        <div className="flex flex-col items-center gap-3 rounded-lg border bg-card p-10 text-center">
           <p className="font-semibold">No icons match &ldquo;{query}&rdquo;{category !== "all" && " in this category"}.</p>
           <p className="text-muted-foreground">Try a broader word like &ldquo;people&rdquo; or &ldquo;data&rdquo;, or search all categories.</p>
           <Button variant="outline" onClick={() => update({ q: null, category: null })}>Clear filters</Button>

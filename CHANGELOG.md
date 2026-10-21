@@ -87,6 +87,14 @@ what a project last applied.
   adopted.
 
 ### Changed
+- **Light grey page background.** New role tokens
+  `neutral.background-canvas` (page: grey-2 in light, grey-20 in dark) and
+  `neutral.background-surface` (cards, popovers: white in light, one step
+  lighter than the canvas in dark). shadcn `--background` now maps to canvas,
+  `--card` and `--popover` to surface, and `--muted` to background-3 so muted
+  fills stay visible on the grey page. Matches APPLY.md's existing role
+  mapping (page = background-2, card = background-1). The docs app re-applies
+  the theme on every `registry:build`, so it can't fall behind the tokens.
 - **Primary font is Gibson** (Canada Type) via Adobe Fonts, CSS family
   `canada-type-gibson`, falling back to the system sans serif. This reverses
   the switch to Inter in `20588e0`; the Figma file still says Inter and needs

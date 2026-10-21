@@ -3,9 +3,9 @@
   "alias": {
     "shadcn": {
       "background": {
-        "$value": "{color.semantic.neutral.background-1}",
+        "$value": "{color.semantic.neutral.background-canvas}",
         "$type": "color",
-        "$description": "Page and default surface"
+        "$description": "Page background. Light grey, so white cards stand apart"
       },
       "foreground": {
         "$value": "{color.semantic.neutral.foreground-1}",
@@ -13,9 +13,9 @@
         "$description": "Default text"
       },
       "card": {
-        "$value": "{color.semantic.neutral.background-1}",
+        "$value": "{color.semantic.neutral.background-surface}",
         "$type": "color",
-        "$description": "Card surface; separation comes from border and shadow"
+        "$description": "Card surface, raised from the canvas"
       },
       "card-foreground": {
         "$value": "{color.semantic.neutral.foreground-1}",
@@ -23,7 +23,7 @@
         "$description": "Text on cards"
       },
       "popover": {
-        "$value": "{color.semantic.neutral.background-1}",
+        "$value": "{color.semantic.neutral.background-surface}",
         "$type": "color",
         "$description": "Popover, menu and dropdown surface"
       },
@@ -53,9 +53,9 @@
         "$description": "Text on secondary"
       },
       "muted": {
-        "$value": "{color.semantic.neutral.background-2}",
+        "$value": "{color.semantic.neutral.background-3}",
         "$type": "color",
-        "$description": "Muted surface"
+        "$description": "Muted fill. One step darker than the canvas so it stays visible"
       },
       "muted-foreground": {
         "$value": "{color.semantic.neutral.foreground-2}",

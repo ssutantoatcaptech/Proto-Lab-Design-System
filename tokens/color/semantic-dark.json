@@ -2,13 +2,15 @@
   "color": {
     "semantic": {
       "neutral": {
-        "background-1": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "Primary page background (dark)" },
-        "background-2": { "$value": "#1f2d36", "$type": "color", "$description": "Secondary/card background (dark)" },
+        "background-1": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "White surface for cards and panels. Prefer background-surface for the role (dark)" },
+        "background-2": { "$value": "#1f2d36", "$type": "color", "$description": "Light grey. The page canvas in light mode; prefer background-canvas for the role (dark)" },
         "background-3": { "$value": "#243640", "$type": "color", "$description": "Tertiary background (dark)" },
         "background-subtle": { "$value": "rgba(255, 255, 255, 0.04)", "$type": "color", "$description": "Subtle background tint (dark)" },
         "background-inverted": { "$value": "{color.primitive.neutral.white}", "$type": "color", "$description": "Inverted background (dark mode)" },
         "background-disabled": { "$value": "#243640", "$type": "color", "$description": "Disabled element background (dark)" },
         "background-overlay": { "$value": "rgba(0, 0, 0, 0.6)", "$type": "color", "$description": "Modal/drawer overlay (dark)" },
+        "background-canvas": { "$value": "{color.primitive.neutral.grey-20}", "$type": "color", "$description": "Page background behind cards and panels (dark)" },
+        "background-surface": { "$value": "{color.semantic.neutral.background-2}", "$type": "color", "$description": "Cards, popovers and panels that sit on the canvas (dark)" },
         "foreground-1": { "$value": "{color.primitive.neutral.white}", "$type": "color", "$description": "Primary text (dark)" },
         "foreground-2": { "$value": "#adadad", "$type": "color", "$description": "Secondary text (dark)" },
         "foreground-3": { "$value": "#8a8a8a", "$type": "color", "$description": "Tertiary/placeholder text (dark)" },

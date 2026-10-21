@@ -190,6 +190,8 @@
   --color-neutral-background-inverted: var(--neutral-background-inverted);
   --color-neutral-background-disabled: var(--neutral-background-disabled);
   --color-neutral-background-overlay: var(--neutral-background-overlay);
+  --color-neutral-background-canvas: var(--neutral-background-canvas);
+  --color-neutral-background-surface: var(--neutral-background-surface);
   --color-neutral-foreground-1: var(--neutral-foreground-1);
   --color-neutral-foreground-2: var(--neutral-foreground-2);
   --color-neutral-foreground-3: var(--neutral-foreground-3);
