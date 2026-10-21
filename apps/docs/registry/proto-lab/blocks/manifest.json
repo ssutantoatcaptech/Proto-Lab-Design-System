@@ -1,0 +1,341 @@
+{
+  "blocks": {
+    "dashboard-01": {
+      "category": "dashboard",
+      "description": "A dashboard with sidebar, charts and data table.",
+      "iframeHeight": "1000px",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "@tanstack/react-table",
+        "next-themes",
+        "recharts",
+        "sonner",
+        "zod"
+      ],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/chart-area-interactive.tsx",
+        "components/data-table.tsx",
+        "components/nav-documents.tsx",
+        "components/nav-main.tsx",
+        "components/nav-secondary.tsx",
+        "components/nav-user.tsx",
+        "components/section-cards.tsx",
+        "components/site-header.tsx",
+        "data.json",
+        "page.tsx"
+      ]
+    },
+    "login-01": {
+      "category": "login",
+      "description": "A simple login form.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/login-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "login-02": {
+      "category": "login",
+      "description": "A two column login page with a cover image.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/login-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "login-03": {
+      "category": "login",
+      "description": "A login page with a muted background color.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/login-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "login-04": {
+      "category": "login",
+      "description": "A login page with form and image.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/login-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "login-05": {
+      "category": "login",
+      "description": "A simple email-only login page.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/login-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-01": {
+      "category": "sidebar",
+      "description": "A simple sidebar with navigation grouped by section.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/search-form.tsx",
+        "components/version-switcher.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-02": {
+      "category": "sidebar",
+      "description": "A sidebar with collapsible sections.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/search-form.tsx",
+        "components/version-switcher.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-03": {
+      "category": "sidebar",
+      "description": "A sidebar with submenus.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-04": {
+      "category": "sidebar",
+      "description": "A floating sidebar with submenus.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-05": {
+      "category": "sidebar",
+      "description": "A sidebar with collapsible submenus.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/search-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-06": {
+      "category": "sidebar",
+      "description": "A sidebar with submenus as dropdowns.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/nav-main.tsx",
+        "components/sidebar-opt-in-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-07": {
+      "category": "sidebar",
+      "description": "A sidebar that collapses to icons.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/nav-main.tsx",
+        "components/nav-projects.tsx",
+        "components/nav-user.tsx",
+        "components/team-switcher.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-08": {
+      "category": "sidebar",
+      "description": "An inset sidebar with secondary navigation.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/nav-main.tsx",
+        "components/nav-projects.tsx",
+        "components/nav-secondary.tsx",
+        "components/nav-user.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-09": {
+      "category": "sidebar",
+      "description": "Collapsible nested sidebars.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/nav-user.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-10": {
+      "category": "sidebar",
+      "description": "A sidebar in a popover.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/nav-actions.tsx",
+        "components/nav-favorites.tsx",
+        "components/nav-main.tsx",
+        "components/nav-secondary.tsx",
+        "components/nav-workspaces.tsx",
+        "components/team-switcher.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-11": {
+      "category": "sidebar",
+      "description": "A sidebar with a collapsible file tree.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-12": {
+      "category": "sidebar",
+      "description": "A sidebar with a calendar.",
+      "iframeHeight": null,
+      "dependencies": [
+        "date-fns",
+        "react-day-picker"
+      ],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/calendars.tsx",
+        "components/date-picker.tsx",
+        "components/nav-user.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-13": {
+      "category": "sidebar",
+      "description": "A sidebar in a dialog.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/settings-dialog.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-14": {
+      "category": "sidebar",
+      "description": "A sidebar on the right.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-15": {
+      "category": "sidebar",
+      "description": "A left and right sidebar.",
+      "iframeHeight": null,
+      "dependencies": [
+        "date-fns",
+        "react-day-picker"
+      ],
+      "files": [
+        "components/calendars.tsx",
+        "components/date-picker.tsx",
+        "components/nav-favorites.tsx",
+        "components/nav-main.tsx",
+        "components/nav-secondary.tsx",
+        "components/nav-user.tsx",
+        "components/nav-workspaces.tsx",
+        "components/sidebar-left.tsx",
+        "components/sidebar-right.tsx",
+        "components/team-switcher.tsx",
+        "page.tsx"
+      ]
+    },
+    "sidebar-16": {
+      "category": "sidebar",
+      "description": "A sidebar with a sticky site header.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/app-sidebar.tsx",
+        "components/nav-main.tsx",
+        "components/nav-projects.tsx",
+        "components/nav-secondary.tsx",
+        "components/nav-user.tsx",
+        "components/search-form.tsx",
+        "components/site-header.tsx",
+        "page.tsx"
+      ]
+    },
+    "signup-01": {
+      "category": "signup",
+      "description": "A simple signup form.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/signup-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "signup-02": {
+      "category": "signup",
+      "description": "A two column signup page with a cover image.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/signup-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "signup-03": {
+      "category": "signup",
+      "description": "A signup page with a muted background color.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/signup-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "signup-04": {
+      "category": "signup",
+      "description": "A signup page with form and image.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/signup-form.tsx",
+        "page.tsx"
+      ]
+    },
+    "signup-05": {
+      "category": "signup",
+      "description": "A simple signup form with social providers.",
+      "iframeHeight": null,
+      "dependencies": [],
+      "files": [
+        "components/signup-form.tsx",
+        "page.tsx"
+      ]
+    }
+  },
+  "$comment": "GENERATED by scripts/sync-blocks.js. Upstream shadcn/ui blocks installed with shadcn@4.22.1.",
+  "style": "base-nova"
+}

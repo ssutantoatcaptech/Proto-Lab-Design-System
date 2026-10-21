@@ -32,12 +32,23 @@ function Logo() {
   )
 }
 
-export function SiteHeader({ tree, search }: { tree: PageTree.Root; search: SearchEntry[] }) {
+// Header plus the search provider around the whole page, so any search
+// trigger on the page (like the 404's) opens the palette.
+export function SiteShell({ tree, search, children }: { tree: PageTree.Root; search: SearchEntry[]; children: React.ReactNode }) {
+  return (
+    <SearchProvider index={search}>
+      <SiteHeader tree={tree} />
+      {children}
+    </SearchProvider>
+  )
+}
+
+function SiteHeader({ tree }: { tree: PageTree.Root }) {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <SearchProvider index={search}>
+    <>
       <header className="sticky top-0 z-40 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
         <div className="flex h-14 items-center gap-2 px-4 md:gap-4 md:px-6">
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -82,6 +93,6 @@ export function SiteHeader({ tree, search }: { tree: PageTree.Root; search: Sear
           </div>
         </div>
       </header>
-    </SearchProvider>
+    </>
   )
 }

@@ -3,8 +3,6 @@ import Script from "next/script"
 import "./globals.css"
 import "./docs.css"
 import { ThemeProvider, themeScript } from "@/components/theme-provider"
-import { SiteHeader } from "@/components/site-header"
-import { searchIndex, source } from "@/lib/source"
 import { site } from "@/lib/site"
 
 // Gibson is served by Adobe Fonts. Set ADOBE_FONTS_KIT to the web project ID
@@ -30,13 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body className="min-h-svh antialiased">
-        <ThemeProvider>
-          <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-background focus:px-3 focus:py-2 focus:shadow-md">
-            Skip to content
-          </a>
-          <SiteHeader tree={source.getPageTree()} search={searchIndex()} />
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )

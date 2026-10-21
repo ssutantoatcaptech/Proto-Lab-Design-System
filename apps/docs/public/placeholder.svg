@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice">
+  <!-- Stand-in for the image side of the login and signup blocks. Replace with your own photography. -->
+  <rect width="1200" height="1200" fill="#ebebea"/>
+  <g fill="none" stroke="#c1c1c0" stroke-width="16" stroke-linejoin="round" transform="translate(480 500)">
+    <rect x="0" y="0" width="240" height="200" rx="16"/>
+    <circle cx="70" cy="64" r="22"/>
+    <path d="M0 160 L80 96 L150 150 L190 116 L240 156"/>
+  </g>
+</svg>

@@ -7,6 +7,10 @@ Proto-Lab components come from [shadcn/ui](https://github.com/shadcn-ui/ui). Pro
 
 <UpstreamAlignment />
 
+## Blocks and charts
+
+[Blocks](/blocks) and [Charts](/charts) follow upstream the same way. `npm run blocks:sync` installs each upstream block with the pinned CLI into its own folder, and `npm run charts:sync` ports the 76 chart examples, which upstream only publishes for an older style. Both run in the weekly upstream pull request. The few changes Proto-Lab makes to upstream charts are listed in `scripts/sync-charts.js` and fail the sync if upstream changes those lines.
+
 ## How alignment works
 
 1. **A snapshot of upstream.** `npm run upstream:sync` installs every upstream component (Base UI, nova style) with the pinned shadcn CLI into a scratch app, exactly as a CapTech project would receive them. The result is committed in `tooling/shadcn-sync/vendor/ui/`.

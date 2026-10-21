@@ -1,0 +1,1902 @@
+[
+  {
+    "name": "chart-area-axes",
+    "type": "registry:block",
+    "title": "Area: Axes",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-axes chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-axes.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-axes.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-default",
+    "type": "registry:block",
+    "title": "Area: Default",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-default chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-default.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-default.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-gradient",
+    "type": "registry:block",
+    "title": "Area: Gradient",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-gradient chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-gradient.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-gradient.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-icons",
+    "type": "registry:block",
+    "title": "Area: Icons",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-icons chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-icons.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-icons.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-interactive",
+    "type": "registry:block",
+    "title": "Area: Interactive",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-interactive chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-interactive.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-interactive.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-legend",
+    "type": "registry:block",
+    "title": "Area: Legend",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-legend chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-legend.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-legend.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-linear",
+    "type": "registry:block",
+    "title": "Area: Linear",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-linear chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-linear.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-linear.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-stacked-expand",
+    "type": "registry:block",
+    "title": "Area: Stacked expand",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-stacked-expand chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-stacked-expand.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-stacked-expand.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-stacked",
+    "type": "registry:block",
+    "title": "Area: Stacked",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-stacked chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-stacked.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-stacked.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-area-step",
+    "type": "registry:block",
+    "title": "Area: Step",
+    "description": "Proto-Lab port of the shadcn/ui chart-area-step chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-area"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-area-step.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-area-step.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-active",
+    "type": "registry:block",
+    "title": "Bar: Active",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-active chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-active.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-active.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-default",
+    "type": "registry:block",
+    "title": "Bar: Default",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-default chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-default.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-default.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-horizontal",
+    "type": "registry:block",
+    "title": "Bar: Horizontal",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-horizontal chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-horizontal.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-horizontal.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-interactive",
+    "type": "registry:block",
+    "title": "Bar: Interactive",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-interactive chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-interactive.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-interactive.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-label-custom",
+    "type": "registry:block",
+    "title": "Bar: Label custom",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-label-custom chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-label-custom.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-label-custom.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-label",
+    "type": "registry:block",
+    "title": "Bar: Label",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-label chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-label.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-label.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-mixed",
+    "type": "registry:block",
+    "title": "Bar: Mixed",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-mixed chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-mixed.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-mixed.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-multiple",
+    "type": "registry:block",
+    "title": "Bar: Multiple",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-multiple chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-multiple.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-multiple.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-negative",
+    "type": "registry:block",
+    "title": "Bar: Negative",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-negative chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-negative.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-negative.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-stacked",
+    "type": "registry:block",
+    "title": "Bar: Stacked",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-stacked chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-stacked.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-stacked.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-demo",
+    "type": "registry:block",
+    "title": "Bar: Demo",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-demo chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-demo.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-demo.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-demo-grid",
+    "type": "registry:block",
+    "title": "Bar: Demo grid",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-demo-grid chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-demo-grid.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-demo-grid.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-demo-axis",
+    "type": "registry:block",
+    "title": "Bar: Demo axis",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-demo-axis chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-demo-axis.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-demo-axis.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-demo-tooltip",
+    "type": "registry:block",
+    "title": "Bar: Demo tooltip",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-demo-tooltip chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-demo-tooltip.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-demo-tooltip.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-bar-demo-legend",
+    "type": "registry:block",
+    "title": "Bar: Demo legend",
+    "description": "Proto-Lab port of the shadcn/ui chart-bar-demo-legend chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-bar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-bar-demo-legend.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-bar-demo-legend.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-default",
+    "type": "registry:block",
+    "title": "Line: Default",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-default chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-default.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-default.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-dots-colors",
+    "type": "registry:block",
+    "title": "Line: Dots colors",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-dots-colors chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-dots-colors.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-dots-colors.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-dots-custom",
+    "type": "registry:block",
+    "title": "Line: Dots custom",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-dots-custom chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-dots-custom.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-dots-custom.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-dots",
+    "type": "registry:block",
+    "title": "Line: Dots",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-dots chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-dots.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-dots.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-interactive",
+    "type": "registry:block",
+    "title": "Line: Interactive",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-interactive chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-interactive.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-interactive.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-label-custom",
+    "type": "registry:block",
+    "title": "Line: Label custom",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-label-custom chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-label-custom.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-label-custom.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-label",
+    "type": "registry:block",
+    "title": "Line: Label",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-label chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-label.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-label.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-linear",
+    "type": "registry:block",
+    "title": "Line: Linear",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-linear chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-linear.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-linear.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-multiple",
+    "type": "registry:block",
+    "title": "Line: Multiple",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-multiple chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-multiple.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-multiple.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-line-step",
+    "type": "registry:block",
+    "title": "Line: Step",
+    "description": "Proto-Lab port of the shadcn/ui chart-line-step chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-line"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-line-step.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-line-step.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-donut-active",
+    "type": "registry:block",
+    "title": "Pie: Donut active",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-donut-active chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-donut-active.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-donut-active.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-donut-text",
+    "type": "registry:block",
+    "title": "Pie: Donut text",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-donut-text chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-donut-text.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-donut-text.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-donut",
+    "type": "registry:block",
+    "title": "Pie: Donut",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-donut chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-donut.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-donut.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-interactive",
+    "type": "registry:block",
+    "title": "Pie: Interactive",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-interactive chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-interactive.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-interactive.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-label-custom",
+    "type": "registry:block",
+    "title": "Pie: Label custom",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-label-custom chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-label-custom.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-label-custom.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-label-list",
+    "type": "registry:block",
+    "title": "Pie: Label list",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-label-list chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-label-list.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-label-list.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-label",
+    "type": "registry:block",
+    "title": "Pie: Label",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-label chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-label.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-label.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-legend",
+    "type": "registry:block",
+    "title": "Pie: Legend",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-legend chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-legend.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-legend.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-separator-none",
+    "type": "registry:block",
+    "title": "Pie: Separator none",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-separator-none chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-separator-none.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-separator-none.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-simple",
+    "type": "registry:block",
+    "title": "Pie: Simple",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-simple chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-simple.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-simple.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-pie-stacked",
+    "type": "registry:block",
+    "title": "Pie: Stacked",
+    "description": "Proto-Lab port of the shadcn/ui chart-pie-stacked chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-pie"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-pie-stacked.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-pie-stacked.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-default",
+    "type": "registry:block",
+    "title": "Radar: Default",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-default chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-default.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-default.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-dots",
+    "type": "registry:block",
+    "title": "Radar: Dots",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-dots chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-dots.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-dots.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-grid-circle-fill",
+    "type": "registry:block",
+    "title": "Radar: Grid circle fill",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-grid-circle-fill chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-grid-circle-fill.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-grid-circle-fill.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-grid-circle-no-lines",
+    "type": "registry:block",
+    "title": "Radar: Grid circle no lines",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-grid-circle-no-lines chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-grid-circle-no-lines.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-grid-circle-no-lines.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-grid-circle",
+    "type": "registry:block",
+    "title": "Radar: Grid circle",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-grid-circle chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-grid-circle.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-grid-circle.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-grid-custom",
+    "type": "registry:block",
+    "title": "Radar: Grid custom",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-grid-custom chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-grid-custom.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-grid-custom.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-grid-fill",
+    "type": "registry:block",
+    "title": "Radar: Grid fill",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-grid-fill chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-grid-fill.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-grid-fill.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-grid-none",
+    "type": "registry:block",
+    "title": "Radar: Grid none",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-grid-none chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-grid-none.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-grid-none.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-icons",
+    "type": "registry:block",
+    "title": "Radar: Icons",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-icons chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-icons.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-icons.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-label-custom",
+    "type": "registry:block",
+    "title": "Radar: Label custom",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-label-custom chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-label-custom.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-label-custom.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-legend",
+    "type": "registry:block",
+    "title": "Radar: Legend",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-legend chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-legend.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-legend.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-lines-only",
+    "type": "registry:block",
+    "title": "Radar: Lines only",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-lines-only chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-lines-only.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-lines-only.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-multiple",
+    "type": "registry:block",
+    "title": "Radar: Multiple",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-multiple chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-multiple.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-multiple.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radar-radius",
+    "type": "registry:block",
+    "title": "Radar: Radius",
+    "description": "Proto-Lab port of the shadcn/ui chart-radar-radius chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radar"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radar-radius.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radar-radius.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radial-grid",
+    "type": "registry:block",
+    "title": "Radial: Grid",
+    "description": "Proto-Lab port of the shadcn/ui chart-radial-grid chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radial"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radial-grid.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radial-grid.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radial-label",
+    "type": "registry:block",
+    "title": "Radial: Label",
+    "description": "Proto-Lab port of the shadcn/ui chart-radial-label chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radial"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radial-label.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radial-label.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radial-shape",
+    "type": "registry:block",
+    "title": "Radial: Shape",
+    "description": "Proto-Lab port of the shadcn/ui chart-radial-shape chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radial"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radial-shape.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radial-shape.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radial-simple",
+    "type": "registry:block",
+    "title": "Radial: Simple",
+    "description": "Proto-Lab port of the shadcn/ui chart-radial-simple chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radial"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radial-simple.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radial-simple.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radial-stacked",
+    "type": "registry:block",
+    "title": "Radial: Stacked",
+    "description": "Proto-Lab port of the shadcn/ui chart-radial-stacked chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radial"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radial-stacked.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radial-stacked.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-radial-text",
+    "type": "registry:block",
+    "title": "Radial: Text",
+    "description": "Proto-Lab port of the shadcn/ui chart-radial-text chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-radial"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-radial-text.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-radial-text.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-default",
+    "type": "registry:block",
+    "title": "Tooltip: Default",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-default chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-default.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-default.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-indicator-line",
+    "type": "registry:block",
+    "title": "Tooltip: Indicator line",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-indicator-line chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-indicator-line.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-indicator-line.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-indicator-none",
+    "type": "registry:block",
+    "title": "Tooltip: Indicator none",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-indicator-none chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-indicator-none.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-indicator-none.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-label-none",
+    "type": "registry:block",
+    "title": "Tooltip: Label none",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-label-none chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-label-none.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-label-none.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-label-custom",
+    "type": "registry:block",
+    "title": "Tooltip: Label custom",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-label-custom chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-label-custom.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-label-custom.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-label-formatter",
+    "type": "registry:block",
+    "title": "Tooltip: Label formatter",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-label-formatter chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-label-formatter.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-label-formatter.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-formatter",
+    "type": "registry:block",
+    "title": "Tooltip: Formatter",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-formatter chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-formatter.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-formatter.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-icons",
+    "type": "registry:block",
+    "title": "Tooltip: Icons",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-icons chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-icons.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-icons.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-advanced",
+    "type": "registry:block",
+    "title": "Tooltip: Advanced",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-advanced chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-advanced.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-advanced.tsx"
+      }
+    ]
+  },
+  {
+    "name": "chart-tooltip-demo",
+    "type": "registry:block",
+    "title": "Tooltip: Demo",
+    "description": "Proto-Lab port of the shadcn/ui chart-tooltip-demo chart.",
+    "registryDependencies": [
+      "card",
+      "chart"
+    ],
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "categories": [
+      "charts",
+      "charts-tooltip"
+    ],
+    "files": [
+      {
+        "path": "registry/proto-lab/charts/chart-tooltip-demo.tsx",
+        "type": "registry:component",
+        "target": "components/charts/chart-tooltip-demo.tsx"
+      }
+    ]
+  }
+]

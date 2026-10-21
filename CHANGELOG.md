@@ -86,6 +86,20 @@ what a project last applied.
   overview page lists them all, like ui.shadcn.com/docs/components. The
   examples index is generated from the example files. Every adopted component
   matches upstream exactly.
+- **Blocks** (`/blocks`): the 27 upstream blocks (dashboard, 16 sidebars,
+  5 logins, 5 signups) installed per block by `scripts/sync-blocks.js` into
+  `registry/proto-lab/blocks/<name>/`. Each renders full page through a bare
+  `/view/<name>` route inside a frame with Preview/Code, desktop, tablet and
+  mobile widths, reload, open in new tab and the install command. Code shows
+  files at their install paths. Framed blocks follow the site theme.
+- **Charts** (`/charts`): the 76 shadcn chart examples (area, bar, line,
+  pie, radar, radial, tooltip), ported by `scripts/sync-charts.js` from the
+  new-york-v4 registry (upstream doesn't publish them for Base UI) with three
+  asserted patches. Published as `@proto-lab/chart-*` registry items; the
+  e2e test installs one into a fresh app.
+- `upstream:sync` now also runs the block and chart syncs, so the weekly
+  pull request covers them. shadcn Create is linked from Installation with
+  why Proto-Lab starts from `@proto-lab/base` instead.
 - **Color grid view.** Color and Theming pages show tokens as cards by
   default: a light | dark swatch, readable name, variable with copy, both
   values and the token's purpose (or, for shadcn variables, the Proto-Lab

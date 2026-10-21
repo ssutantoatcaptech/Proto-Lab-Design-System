@@ -36,6 +36,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setResolved(document.documentElement.classList.contains("dark") ? "dark" : "light")
   }, [])
 
+  // A framed block (/view) follows the theme chosen in the page around it.
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== KEY) return
+      const t = (e.newValue as Theme) || "system"
+      setThemeState(t)
+      setResolved(apply(t))
+    }
+    window.addEventListener("storage", onStorage)
+    return () => window.removeEventListener("storage", onStorage)
+  }, [])
+
   useEffect(() => {
     if (theme !== "system") return
     const mq = query()

@@ -73,7 +73,9 @@ async function main() {
 
   step('shadcn init from @proto-lab/base, add button input card and practice area icons');
   run('npx', ['-y', SHADCN, 'init', path.join(DOCS, 'public', 'r', 'base.json'), '-y'], app);
-  run('npx', ['-y', SHADCN, 'add', 'button', 'input', 'card', path.join(DOCS, 'public', 'r', 'captech-icons-practice-areas.json'), '-y'], app);
+  run('npx', ['-y', SHADCN, 'add', 'button', 'input', 'card', path.join(DOCS, 'public', 'r', 'captech-icons-practice-areas.json'), path.join(DOCS, 'public', 'r', 'chart-area-default.json'), '-y'], app);
+  const chartSrc = fs.readFileSync(path.join(app, 'src', 'components', 'charts', 'chart-area-default.tsx'), 'utf8');
+  check(chartSrc.includes('@/components/ui/card') && !chartSrc.includes('registry/proto-lab'), 'chart item installs with the project\'s own import paths', chartSrc.match(/from "[^"]*card"/)?.[0]);
 
   step('Typecheck and build');
   run('npm', ['run', 'build'], app);
