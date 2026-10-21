@@ -48,7 +48,7 @@ export const mdxComponents: MDXComponents = {
   ),
   pre: (props) => <CodeBlock {...props} />,
   section: ({ className, ...props }) => (
-    <section className={cn("rounded-xl border bg-card px-4 py-6 shadow-xs md:px-8 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0", className)} {...props} />
+    <section className={cn("rounded-md bg-card px-4 py-6 md:px-8 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0", className)} {...props} />
   ),
   Callout,
   ComponentPreview,

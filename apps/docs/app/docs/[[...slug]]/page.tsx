@@ -26,7 +26,7 @@ export default async function DocPage({ params }: Props) {
   return (
     <div className="flex gap-6 p-3 md:p-6 xl:gap-10">
       <main id="content" className="mx-auto flex w-full min-w-0 max-w-3xl flex-1 flex-col gap-4">
-        <header className="flex flex-col gap-2 rounded-xl border bg-card px-4 py-6 shadow-xs md:px-8">
+        <header className="flex flex-col gap-2 rounded-md bg-card px-4 py-6 md:px-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
             <h1 className="text-title-1">{page.data.title}</h1>
             <PageActions
@@ -62,7 +62,7 @@ export default async function DocPage({ params }: Props) {
 function PageFooterNav({ previous, next }: { previous?: { name: React.ReactNode; url: string }; next?: { name: React.ReactNode; url: string } }) {
   if (!previous && !next) return null
   return (
-    <nav aria-label="Pagination" className="flex justify-between gap-4 rounded-xl border bg-card p-3 shadow-xs">
+    <nav aria-label="Pagination" className="flex justify-between gap-4 rounded-md bg-card p-3">
       {previous ? (
         <a href={previous.url} className="focus-ring flex flex-col gap-1 rounded-md p-2 hover:bg-accent">
           <span className="text-caption-1 text-muted-foreground">Previous</span>

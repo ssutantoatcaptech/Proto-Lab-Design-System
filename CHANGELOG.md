@@ -76,7 +76,8 @@ what a project last applied.
 
 - **Docs layout: white sidebar and section cards.** The sidebar sits on the
   white surface; the page title and each `##` section render as their own
-  card on the grey canvas (a small rehype plugin wraps sections). Scrollbars
+  flat card (4px corners, no border or shadow) on the grey canvas (a small
+  rehype plugin wraps sections). Scrollbars
   are thin and border colored until hovered.
 - **Upstream alignment with shadcn/ui** (`scripts/sync-upstream.js`).
   `npm run upstream:sync` installs every upstream Base UI nova component with
