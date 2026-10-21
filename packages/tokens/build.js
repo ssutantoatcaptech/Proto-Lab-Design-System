@@ -222,6 +222,16 @@ ${themeBlock(true)}
 }
 `;
 
+// Recharts 3.8 renamed its axis label classes, so shadcn's chart rule
+// ([&_.recharts-cartesian-axis-tick_text]) no longer matches and labels keep
+// Recharts' #666, unreadable in dark mode. These unlayered rules fix every
+// chart without editing the upstream component, and give the grid full
+// border strength so it stays visible on Dark Grey.
+const chartCss = {
+  '.recharts-cartesian-axis-tick-value': { fill: 'var(--muted-foreground)' },
+  ".recharts-cartesian-grid line[stroke='#ccc']": { stroke: 'var(--border)' },
+};
+
 // ─── proto-lab.css ───────────────────────────────────────────────────────────
 
 const entryCss = HEADER('Tailwind entry') + `
@@ -249,6 +259,9 @@ const entryCss = HEADER('Tailwind entry') + `
     outline-offset: var(--stroke-thin);
   }
 }
+
+/* Charts: see chartCss in packages/tokens/build.js. */
+${Object.entries(chartCss).map(([sel, decl]) => `${sel} {\n${Object.entries(decl).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}`).join('\n')}
 
 @layer base {
   * {
@@ -361,6 +374,7 @@ function registryTheme(strict) {
 }
 
 const registryCss = {
+  ...chartCss,
   '@utility focus-ring': {
     '&:focus-visible': {
       outline: `${lit('light', '--stroke-thick')} solid var(--ring)`,

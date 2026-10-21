@@ -434,6 +434,12 @@
         }
       },
       "css": {
+        ".recharts-cartesian-axis-tick-value": {
+          "fill": "var(--muted-foreground)"
+        },
+        ".recharts-cartesian-grid line[stroke='#ccc']": {
+          "stroke": "var(--border)"
+        },
         "@utility focus-ring": {
           "&:focus-visible": {
             "outline": "2px solid var(--ring)",
@@ -861,6 +867,12 @@
         }
       },
       "css": {
+        ".recharts-cartesian-axis-tick-value": {
+          "fill": "var(--muted-foreground)"
+        },
+        ".recharts-cartesian-grid line[stroke='#ccc']": {
+          "stroke": "var(--border)"
+        },
         "@utility focus-ring": {
           "&:focus-visible": {
             "outline": "2px solid var(--ring)",

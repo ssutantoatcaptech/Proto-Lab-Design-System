@@ -31,6 +31,14 @@
   }
 }
 
+/* Charts: see chartCss in packages/tokens/build.js. */
+.recharts-cartesian-axis-tick-value {
+  fill: var(--muted-foreground);
+}
+.recharts-cartesian-grid line[stroke='#ccc'] {
+  stroke: var(--border);
+}
+
 @layer base {
   * {
     border-color: var(--border);

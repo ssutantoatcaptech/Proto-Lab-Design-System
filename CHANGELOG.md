@@ -138,6 +138,11 @@ what a project last applied.
   before, so no consumer is affected.
 
 ### Fixed
+- **Chart axis labels were unreadable in dark mode.** Recharts 3.8 renamed
+  its axis label classes, so shadcn's chart rule stopped matching and labels
+  kept Recharts' `#666`. The theme now sets labels to `--muted-foreground`
+  and grid lines to full `--border`, for every chart, without changing the
+  upstream chart component.
 - `font-heading` now reads `var(--font-sans)`. It named `'Inter Variable'`,
   which only exists when Inter loads through fontsource, so Next.js projects
   using `next/font` fell back to the default face.

@@ -448,3 +448,9 @@
     outline-offset: 1px;
     }
 }
+  .recharts-cartesian-axis-tick-value {
+    fill: var(--muted-foreground);
+}
+  .recharts-cartesian-grid line[stroke='#ccc'] {
+    stroke: var(--border);
+}
