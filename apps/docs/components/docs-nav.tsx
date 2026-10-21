@@ -81,11 +81,12 @@ export function DocsNav({ tree, onNavigate }: { tree: PageTree.Root; onNavigate?
                         onClick={onNavigate}
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "focus-ring flex h-8 items-center rounded-md px-2 transition-colors hover:bg-accent",
-                          active && "bg-accent font-semibold text-foreground"
+                          "focus-ring flex h-8 items-center gap-2 rounded-md px-2 transition-colors hover:bg-accent [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-muted-foreground",
+                          active && "bg-accent font-semibold text-foreground [&_svg]:text-foreground"
                         )}
                       >
-                        {item.name}
+                        {item.icon}
+                        <span className="truncate">{item.name}</span>
                       </Link>
                     </li>
                   )

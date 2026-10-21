@@ -1,11 +1,14 @@
 import { docs } from "fumadocs-mdx:collections/server"
 import { loader } from "fumadocs-core/source"
+import { lucideIconsPlugin } from "fumadocs-core/source/plugins/lucide-icons"
 import { allBlocks, categories } from "@/lib/blocks"
 import { chartManifest, chartTypes } from "@/lib/charts"
 
 export const source = loader({
   baseUrl: "/docs",
   source: docs.toFumadocsSource(),
+  // `icon: Palette` in a page's frontmatter becomes its sidebar icon.
+  plugins: [lucideIconsPlugin()],
 })
 
 export type SearchEntry = {
