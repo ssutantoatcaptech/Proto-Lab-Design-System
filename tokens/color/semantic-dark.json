@@ -62,7 +62,7 @@
         "5": { "$value": "{color.primitive.blue-scale.200}", "$type": "color", "$description": "Chart series 5 (dark)" }
       },
       "illustration": {
-        "primary": { "$value": "{color.primitive.brand-ramp.100}", "$type": "color", "$description": "Primary fill of CapTech illustrative icons (dark)" },
+        "primary": { "$value": "{color.primitive.brand-ramp.120}", "$type": "color", "$description": "Primary fill of CapTech illustrative icons (dark): the light brand blue used by dark primary fills" },
         "accent": { "$value": "{color.primitive.accent.yellow}", "$type": "color", "$description": "Accent fill of CapTech illustrative icons (dark)" }
       },
       "shadow": {

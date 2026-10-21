@@ -67,7 +67,7 @@
   --chart-5: var(--color-blue-200);
 
   /* ─── Semantic: Illustration ─── */
-  --illustration-primary: var(--color-brand-100);
+  --illustration-primary: var(--color-brand-120);
 
   /* ─── Shadow ─── */
   --shadow-2: 0 1px 2px var(--shadow-ambient), 0 1px 2px var(--shadow-key);

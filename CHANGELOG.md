@@ -68,6 +68,12 @@ what a project last applied.
   `--illustration-accent` (with brand hex fallbacks), so icons follow dark
   mode. The build fails on any color other than CapTech Blue and Yellow.
   Verified pixel identical to the source SVGs.
+- **Icon tones.** Every CapTech icon takes `tone`: `duotone` (default),
+  `monotone`, `greyscale` or `inverse` (white and white 50%, for dark and
+  brand colored backgrounds). Values come from `tokens/iconography.json`
+  color modes. In dark mode duotone's blue is now brand 120, matching dark
+  primary fills, so icons read clearly on Dark Grey. The gallery has a Tone
+  switch and previews each tone on the background it is made for.
 - **Registry items** `captech-icons` and one per category
   (`captech-icons-general`, `-practice-areas`, `-core-values`,
   `-core-competencies`, `-ergs`), installed to `components/captech-icons/`.

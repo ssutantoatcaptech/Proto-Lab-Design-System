@@ -7,9 +7,16 @@ import { cn } from "cn"
 import { Button } from "@/registry/proto-lab/ui/button"
 import { Input } from "@/registry/proto-lab/ui/input"
 import { categories, icons } from "@/registry/proto-lab/icons"
-import type { IllustrationSize } from "@/registry/proto-lab/icons/illustration"
+import type { IllustrationSize, IllustrationTone } from "@/registry/proto-lab/icons/illustration"
 
 const SIZES: IllustrationSize[] = [32, 48, 64]
+// Each tone previews on the background it is meant for.
+const TONES: { value: IllustrationTone; label: string; tile: string }[] = [
+  { value: "duotone", label: "Duotone", tile: "bg-card" },
+  { value: "monotone", label: "Monotone", tile: "bg-white text-black" },
+  { value: "greyscale", label: "Greyscale", tile: "bg-white text-black" },
+  { value: "inverse", label: "Inverse", tile: "dark bg-background text-foreground" },
+]
 const words = (s: string) => s.replace(/-/g, " ")
 
 export function IconGallery() {
@@ -28,6 +35,7 @@ function Gallery() {
   const [query, setQuery] = useState(() => params.get("q") ?? "")
   const [category, setCategory] = useState(() => params.get("category") ?? "all")
   const [size, setSize] = useState<IllustrationSize>(() => (Number(params.get("size")) || 48) as IllustrationSize)
+  const [tone, setTone] = useState<IllustrationTone>(() => (TONES.find((t) => t.value === params.get("tone"))?.value ?? "duotone"))
   const [copied, setCopied] = useState<string | null>(null)
 
   useEffect(() => {
@@ -36,9 +44,10 @@ function Gallery() {
     set("q", query || null)
     set("category", category === "all" ? null : category)
     set("size", size === 48 ? null : String(size))
+    set("tone", tone === "duotone" ? null : tone)
     const qs = p.toString()
     window.history.replaceState(null, "", `${window.location.pathname}${qs ? `?${qs}` : ""}${window.location.hash}`)
-  }, [query, category, size])
+  }, [query, category, size, tone])
 
   const update = (next: { q?: string | null; category?: string | null; size?: string | null }) => {
     if ("q" in next) setQuery(next.q ?? "")
@@ -54,7 +63,8 @@ function Gallery() {
   const count = (slug: string) => matches.filter((i) => slug === "all" || i.category === slug).length
 
   const copy = async (name: string, cat: string) => {
-    await navigator.clipboard.writeText(`import { ${name} } from "@/components/captech-icons/${cat}"`)
+    const use = tone === "duotone" ? "" : `\n\n<${name} tone="${tone}" />`
+    await navigator.clipboard.writeText(`import { ${name} } from "@/components/captech-icons/${cat}"${use}`)
     setCopied(name)
     setTimeout(() => setCopied((c) => (c === name ? null : c)), 2000)
   }
@@ -87,6 +97,15 @@ function Gallery() {
         </div>
       </div>
 
+      <div role="radiogroup" aria-label="Color mode" className="flex flex-wrap items-center gap-1.5">
+        <span className="mr-1 text-caption-1 text-muted-foreground">Tone</span>
+        {TONES.map((t) => (
+          <Button key={t.value} size="sm" variant={tone === t.value ? "secondary" : "ghost"} role="radio" aria-checked={tone === t.value} onClick={() => setTone(t.value)}>
+            {t.label}
+          </Button>
+        ))}
+      </div>
+
       <div role="radiogroup" aria-label="Category" className="flex flex-wrap gap-1.5">
         {[{ slug: "all", title: "All" }, ...categories].map((c) => (
           <Button
@@ -113,10 +132,10 @@ function Gallery() {
               <button
                 type="button"
                 onClick={() => copy(name, cat)}
-                className="focus-ring group flex h-full w-full flex-col items-center gap-3 rounded-lg border bg-card p-4 text-center transition-colors hover:bg-muted"
+                className={cn("focus-ring group flex h-full w-full flex-col items-center gap-3 rounded-lg border p-4 text-center transition-opacity hover:opacity-80", TONES.find((t) => t.value === tone)?.tile)}
                 aria-label={`Copy import for ${words(slug)}`}
               >
-                <span className="grid h-16 place-items-center"><Component size={size} /></span>
+                <span className="grid h-16 place-items-center"><Component size={size} tone={tone} /></span>
                 <span className="flex items-center gap-1 text-caption-1">
                   {copied === name ? <><CheckIcon className="size-3" /> Copied</> : words(slug)}
                 </span>

@@ -146,7 +146,7 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### Semantic: Illustration
 | Variable | Light | Dark |
 |---|---|---|
-| `--illustration-primary` | #005eb8 | #479ef5 |
+| `--illustration-primary` | #005eb8 | #77b7f7 |
 | `--illustration-accent` | #fdda24 | same |
 
 ### Shadow

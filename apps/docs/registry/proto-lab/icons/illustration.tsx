@@ -5,9 +5,29 @@ import { useId } from "react"
 
 export type IllustrationSize = 32 | 40 | 48 | 64 | 96
 
+/**
+ * Brand color modes, from tokens/iconography.json:
+ *   duotone: Primary brand style — CapTech Blue (#005eb8) + Yellow (#fdda24)
+ *   monotone: Single-hue — CapTech Blue (#005eb8) + CapTech Blue 30%
+ *   greyscale: Neutral — Dark Grey (#333f48) + Dark Grey 30%
+ *   inverse: For dark backgrounds — White (#ffffff) + White 50%
+ */
+export type IllustrationTone = "duotone" | "monotone" | "greyscale" | "inverse"
+
+// Duotone reads the theme tokens (so it follows dark mode); the other tones
+// override them with the fixed brand values.
+const TONES: Record<IllustrationTone, React.CSSProperties | undefined> = {
+  duotone: undefined,
+  monotone: { "--illustration-primary": "#005eb8", "--illustration-accent": "rgba(0, 94, 184, 0.3)" } as React.CSSProperties,
+  greyscale: { "--illustration-primary": "#333f48", "--illustration-accent": "rgba(51, 63, 72, 0.3)" } as React.CSSProperties,
+  inverse: { "--illustration-primary": "#ffffff", "--illustration-accent": "rgba(255, 255, 255, 0.5)" } as React.CSSProperties,
+}
+
 export type IllustrationProps = Omit<React.ComponentProps<"svg">, "children"> & {
   /** Rendered size in px. CapTech icons are illustrations: 32px is the minimum. */
   size?: IllustrationSize
+  /** Brand color mode. Use "inverse" on dark or brand colored backgrounds. Default "duotone". */
+  tone?: IllustrationTone
   /** Accessible name. Without one the illustration is decorative and hidden from assistive tech. */
   title?: string
 }
@@ -21,8 +41,10 @@ export const SA = { stroke: "var(--illustration-accent, #fdda24)" }
 
 export function Illustration({
   size = 48,
+  tone = "duotone",
   title,
   children,
+  style,
   ...props
 }: IllustrationProps & { children: (id: string) => React.ReactNode }) {
   const id = useId().replace(/:/g, "")
@@ -38,6 +60,8 @@ export function Illustration({
       aria-hidden={title ? undefined : true}
       focusable="false"
       data-slot="illustration"
+      data-tone={tone}
+      style={{ ...TONES[tone], ...style }}
       {...props}
     >
       {title && <title>{title}</title>}

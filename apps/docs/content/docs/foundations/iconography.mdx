@@ -55,12 +55,30 @@ import { RocketLaunchIllustration } from "@/components/captech-icons/general"
 | Prop | Default | Notes |
 |---|---|---|
 | `size` | `48` | `32`, `40`, `48`, `64` or `96`. Never smaller than 32. |
+| `tone` | `"duotone"` | `duotone`, `monotone`, `greyscale` or `inverse`. See below. |
 | `title` | none | Gives the icon an accessible name. Leave it out when the icon is decoration next to text that says the same thing. |
 
 Every icon name ends in `Illustration`, so it reads as one in code review.
 
+### Tones
+
+Four brand color modes, defined in `tokens/iconography.json`. Use the gallery's Tone switch to preview each one on the background it is made for.
+
+| Tone | Colors | Use on |
+|---|---|---|
+| `duotone` | CapTech Blue and Yellow | Light and dark pages. The default. |
+| `monotone` | CapTech Blue and Blue 30% | Light backgrounds where Yellow would compete |
+| `greyscale` | Dark Grey and Dark Grey 30% | Light, neutral contexts |
+| `inverse` | White and White 50% | Dark Grey, CapTech Blue and photography |
+
+```tsx
+<section className="bg-primary p-8">
+  <CxCustomerExperienceIllustration tone="inverse" size={64} />
+</section>
+```
+
 ### Color and dark mode
 
-Icons use `--illustration-primary` (CapTech Blue) and `--illustration-accent` (Yellow). In dark mode the blue lightens so it reads on dark surfaces. Without the Proto-Lab theme, icons fall back to the brand hex values.
+Duotone reads `--illustration-primary` and `--illustration-accent`, so it follows the theme. In dark mode the blue lightens to brand 120, the same light blue as dark mode buttons, so icons read clearly on Dark Grey. The other tones are fixed brand colors and don't change with the theme. Without the Proto-Lab theme, duotone falls back to the brand hex values.
 
 The SVGs in `icons/` stay the source. `npm run icons:build` regenerates the components, and fails if an SVG uses any color other than CapTech Blue or Yellow.

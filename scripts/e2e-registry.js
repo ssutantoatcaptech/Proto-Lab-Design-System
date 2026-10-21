@@ -114,7 +114,7 @@ async function main() {
   check(out.darkCard.bg === 'rgb(60, 74, 85)', 'dark card is raised above the Dark Grey canvas', out.darkCard.bg);
   check(out.darkCard.color === WHITE, 'dark card text is white', out.darkCard.color);
   check(out.icon === 'rgb(0, 94, 184)', 'CapTech icon uses CapTech Blue', out.icon);
-  check(out.darkIcon === 'rgb(71, 158, 245)', 'CapTech icon lightens in dark mode', out.darkIcon);
+  check(out.darkIcon === 'rgb(119, 183, 247)', 'CapTech icon lightens in dark mode (brand 120)', out.darkIcon);
   console.log(`\n  radii (codemod target, not asserted yet): button ${out.button.radius}, input ${out.input.radius}, card ${out.card.radius}`);
 }
 
