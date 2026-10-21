@@ -18,12 +18,20 @@ export type ContrastResult = {
 }
 
 const file = path.join(process.cwd(), "..", "..", "tokens", "dist", "tokens.json")
-const data = JSON.parse(fs.readFileSync(file, "utf8")) as { tokens: Token[]; contrast: ContrastResult[] }
 
-export const tokens = data.tokens
-export const contrast = data.contrast
-export const bySection = (section: string) => tokens.filter((t) => t.section === section)
-export const byName = (name: string) => tokens.find((t) => t.name === name)
+// Reread whenever the file changes, so a token rebuild shows up in the dev
+// server without a restart (Next doesn't watch files outside the app).
+let cache: { mtime: number; data: { tokens: Token[]; contrast: ContrastResult[] } } | null = null
+function load() {
+  const mtime = fs.statSync(file).mtimeMs
+  if (!cache || cache.mtime !== mtime) cache = { mtime, data: JSON.parse(fs.readFileSync(file, "utf8")) }
+  return cache.data
+}
+
+export const allTokens = () => load().tokens
+export const contrastResults = () => load().contrast
+export const bySection = (section: string) => load().tokens.filter((t) => t.section === section)
+export const byName = (name: string) => load().tokens.find((t) => t.name === name)
 
 // "color-primary" -> "bg-primary", "radius-md" -> "rounded-md", ...
 const PREFIX: [string, string][] = [

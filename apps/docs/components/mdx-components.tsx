@@ -13,6 +13,7 @@ import { IconGallery } from "@/components/icon-gallery"
 import { FontStatus } from "@/components/font-status"
 import { UpstreamAlignment } from "@/components/upstream-alignment"
 import { ComponentsIndex } from "@/components/components-index"
+import { ViewToggle } from "@/components/color-token-view"
 
 const heading = (Tag: "h2" | "h3" | "h4", cls: string) =>
   function Heading({ className, ...props }: React.ComponentProps<"h2">) {
@@ -68,4 +69,5 @@ export const mdxComponents: MDXComponents = {
   FontStatus,
   UpstreamAlignment,
   ComponentsIndex,
+  ViewToggle,
 }

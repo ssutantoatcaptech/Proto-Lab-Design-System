@@ -1,7 +1,8 @@
 import { cn } from "cn"
 import { Badge } from "@/registry/proto-lab/ui/badge"
 import { CopyButton } from "@/components/copy-button"
-import { byName, bySection, contrast, tokens, utilityClasses, type Token } from "@/lib/tokens"
+import { ColorTokenView, type ColorRow } from "@/components/color-token-view"
+import { allTokens, byName, bySection, contrastResults, utilityClasses, type Token } from "@/lib/tokens"
 
 function Table({ head, children }: { head: string[]; children: React.ReactNode }) {
   return (
@@ -30,54 +31,36 @@ function Classes({ t }: { t: Token }) {
   return cls.length ? <code className="font-mono text-caption-1">{cls.join(", ")}</code> : <span className="text-muted-foreground">none</span>
 }
 
-function Swatch({ value, label }: { value: string; label: string }) {
-  return (
-    <span
-      aria-label={`${label}: ${value}`}
-      role="img"
-      className="inline-block size-6 rounded-sm border"
-      style={{ background: value }}
-    />
-  )
-}
 
-// Swatches render the literal value, so a row looks right whichever theme the site is in.
+// Rows for the color grid and table views (components/color-token-view.tsx).
+const canvas = (mode: "light" | "dark") => byName("--background")![mode].literal
+const PREFIX_DROP = /^--(neutral|brand|status|color)-/
+const humanize = (name: string) => {
+  const s = name.replace(PREFIX_DROP, "").replace(/^--/, "").replace(/-/g, " ")
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+const toRow = (t: Token): ColorRow => ({
+  name: t.name,
+  label: humanize(t.name),
+  light: t.light.literal,
+  dark: t.dark.literal,
+  canvasLight: canvas("light"),
+  canvasDark: canvas("dark"),
+  note: t.description,
+  utility: utilityClasses(t)[0] ?? null,
+})
+
 export function ColorTokens({ section }: { section: string }) {
-  const list = bySection(section)
-  return (
-    <Table head={["Light", "Dark", "Variable", "Utility", "Value (light / dark)", "Use"]}>
-      {list.map((t) => (
-        <tr key={t.name} className="align-middle">
-          <td className="px-3 py-2"><Swatch value={t.light.literal} label="Light" /></td>
-          <td className="px-3 py-2"><Swatch value={t.dark.literal} label="Dark" /></td>
-          <td className="px-3 py-2"><VarName name={t.name} /></td>
-          <td className="px-3 py-2"><Classes t={t} /></td>
-          <td className="px-3 py-2 font-mono text-caption-1 text-muted-foreground">
-            {t.light.literal}{t.dark.literal !== t.light.literal && <> / {t.dark.literal}</>}
-          </td>
-          <td className="px-3 py-2 text-caption-1 text-muted-foreground">{t.description}</td>
-        </tr>
-      ))}
-    </Table>
-  )
+  return <ColorTokenView rows={bySection(section).map(toRow)} />
 }
 
 // Which Proto-Lab token each shadcn variable points at.
 export function AliasTable() {
-  const list = bySection("shadcn Aliases").filter((t) => t.type === "color")
-  const pretty = (p: string) => p.replace("color.semantic.", "")
-  return (
-    <Table head={["Preview", "shadcn variable", "Proto-Lab token", "Utility"]}>
-      {list.map((t) => (
-        <tr key={t.name}>
-          <td className="px-3 py-2"><span className="flex gap-1"><Swatch value={t.light.literal} label="Light" /><Swatch value={t.dark.literal} label="Dark" /></span></td>
-          <td className="px-3 py-2"><VarName name={t.name} /></td>
-          <td className="px-3 py-2 font-mono text-caption-1">{pretty(t.light.chain[1] ?? "")}</td>
-          <td className="px-3 py-2"><Classes t={t} /></td>
-        </tr>
-      ))}
-    </Table>
-  )
+  const rows = bySection("shadcn Aliases").filter((t) => t.type === "color").map((t) => ({
+    ...toRow(t),
+    source: (t.light.chain[1] ?? "").replace("color.semantic.", ""),
+  }))
+  return <ColorTokenView rows={rows} alias />
 }
 
 const STYLE_ORDER = ["display", "large-title", "title-1", "title-2", "title-3", "subtitle-1", "subtitle-2", "body-2", "body-1", "body-1-stronger", "caption-1", "caption-1-strong", "caption-1-stronger", "caption-2", "caption-2-strong"]
@@ -141,7 +124,7 @@ export function RadiusScale() {
 }
 
 export function ElevationScale() {
-  const list = tokens.filter((t) => /^shadow\.\d+$/.test(t.path))
+  const list = allTokens().filter((t) => /^shadow\.\d+$/.test(t.path))
   return (
     <div className="not-prose my-6 grid grid-cols-2 gap-6 sm:grid-cols-3">
       {list.map((t) => (
@@ -174,7 +157,7 @@ export function MotionTokens() {
 export function ContrastTable() {
   return (
     <Table head={["Mode", "Text or mark", "On", "Ratio", "Needs", "Result"]}>
-      {contrast.map((c) => (
+      {contrastResults().map((c) => (
         <tr key={`${c.mode}${c.fg}${c.bg}`} className="align-middle">
           <td className="px-3 py-2 capitalize">{c.mode}</td>
           <td className="px-3 py-2 font-mono text-caption-1">{c.fg}</td>

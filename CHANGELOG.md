@@ -86,6 +86,12 @@ what a project last applied.
   overview page lists them all, like ui.shadcn.com/docs/components. The
   examples index is generated from the example files. Every adopted component
   matches upstream exactly.
+- **Color grid view.** Color and Theming pages show tokens as cards by
+  default: a light | dark swatch, readable name, variable with copy, both
+  values and the token's purpose (or, for shadcn variables, the Proto-Lab
+  token it maps to). A Grid / Table switch is kept in the URL and
+  remembered. Docs reread `tokens.json` when it changes, so token rebuilds
+  show up without restarting the dev server.
 - **Docs layout: white sidebar and section cards.** The sidebar sits on the
   white surface; the page title and each `##` section render as their own
   flat card (4px corners, no border or shadow) on the grey canvas (a small
