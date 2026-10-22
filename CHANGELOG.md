@@ -1,3 +1,9 @@
+> **Sync Rule:** This repo is mirrored to two remotes. Always commit and push to both:
+> - `origin` — https://github.com/ssutantoatcaptech/Proto-Lab-Design-System.git
+> - `new-origin` — https://github.com/captechconsulting/ProtoLab-Design-Guidelines.git
+>
+> After committing, run: `git push origin && git push new-origin`
+
 # Changelog
 
 All notable changes to the Proto-Lab Design System are recorded here. The

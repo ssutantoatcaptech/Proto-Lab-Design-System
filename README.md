@@ -1,3 +1,9 @@
+> **Sync Rule:** This repo is mirrored to two remotes. Always commit and push to both:
+> - `origin` — https://github.com/ssutantoatcaptech/Proto-Lab-Design-System.git
+> - `new-origin` — https://github.com/captechconsulting/ProtoLab-Design-Guidelines.git
+>
+> After committing, run: `git push origin && git push new-origin`
+
 # Proto-Lab Design System
 
 Design tokens and component registry extracted from the [Proto-Lab Design System](https://www.figma.com/design/ADyu4GaQPThxZXCkuABH98/Proto-Lab-Design-System) Figma file.

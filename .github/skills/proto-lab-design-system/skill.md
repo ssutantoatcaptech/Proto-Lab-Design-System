@@ -3,6 +3,12 @@ name: proto-lab-design-system
 description: "Apply and build with the Proto-Lab Design System (CapTech Brand + Fluent 2 Web). USE WHEN creating UI, styling, choosing colors/spacing/typography, adding icons, setting up dark mode, or migrating an existing app to the design system. ALSO USE WHEN you encounter hardcoded hex colors, pixel spacing, or raw font sizes that should be token references."
 ---
 
+> **Sync Rule:** This repo is mirrored to two remotes. Always commit and push to both:
+> - `origin` — https://github.com/ssutantoatcaptech/Proto-Lab-Design-System.git
+> - `new-origin` — https://github.com/captechconsulting/ProtoLab-Design-Guidelines.git
+>
+> After committing, run: `git push origin && git push new-origin`
+
 # Proto-Lab Design System
 
 CapTech Brand identity on Microsoft Fluent 2 Web. Light and dark mode. Primary font Gibson (Adobe Fonts, `canada-type-gibson`), brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`. 46 components, 162 brand icons. **This system is authoritative:** it replaces conflicting project values.
