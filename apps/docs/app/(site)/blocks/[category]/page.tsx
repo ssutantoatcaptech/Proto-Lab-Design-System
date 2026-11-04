@@ -20,7 +20,7 @@ export default async function BlocksPage({ params }: Props) {
       <header className="flex flex-col gap-3">
         <h1 className="text-title-1">Blocks</h1>
         <p className="max-w-2xl text-base text-muted-foreground">
-          Complete screens to start from. Preview them at any width, read the code, and install one with a single command. These are the stock shadcn/ui blocks, shown with the Proto-Lab theme; in a project with the theme installed they look the same. CapTech blocks, taken from real CapTech prototypes, will be listed ahead of them as they're added.
+          Sections and screens to start from. Preview them at any width, read the code, and install one with a single command. CapTech blocks come from real CapTech prototypes, rebuilt on Proto-Lab. The rest are the stock shadcn/ui blocks, shown with the Proto-Lab theme.
         </p>
       </header>
 

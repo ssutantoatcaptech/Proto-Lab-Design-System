@@ -1,0 +1,24 @@
+[
+  {
+    "name": "signal-feed",
+    "type": "registry:block",
+    "title": "Signal feed",
+    "description": "A ranked feed of signals with filter, sort, group and show more. Harvested from the Huntington Capital Markets POC.",
+    "registryDependencies": ["badge", "button", "card", "empty", "select"],
+    "dependencies": ["lucide-react", "cn"],
+    "categories": ["captech"],
+    "meta": { "iframeHeight": "1100px", "harvestedFrom": "huntington-capital-markets" },
+    "files": [
+      {
+        "path": "registry/proto-lab/captech/signal-feed/signal-feed.tsx",
+        "type": "registry:component",
+        "target": "components/signal-feed/signal-feed.tsx"
+      },
+      {
+        "path": "registry/proto-lab/captech/signal-feed/signal-feed-data.ts",
+        "type": "registry:component",
+        "target": "components/signal-feed/signal-feed-data.ts"
+      }
+    ]
+  }
+]

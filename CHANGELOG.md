@@ -25,6 +25,14 @@ what a project last applied.
 
 ## [Unreleased]
 
+### Added
+- **First CapTech block: `signal-feed`.** A ranked feed with filter, sort,
+  group, show more, an empty state and three card actions, harvested from the
+  Huntington Capital Markets POC and rebuilt with Proto-Lab components only.
+  Sample data is fictional. Lives in `apps/docs/registry/proto-lab/captech/`
+  (hand-built, untouched by the upstream sync), ships as a `registry:block`,
+  and leads the Blocks page under a new CapTech category.
+
 ### Changed
 - **Agent guidance matches what ships.** The skill
   (`.github/skills/proto-lab-design-system/skill.md`) and `APPLY.md` now
