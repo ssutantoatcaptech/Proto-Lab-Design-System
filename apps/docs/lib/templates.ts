@@ -18,12 +18,15 @@ export type Template = {
   inside: { title: string; description: string }[]
   run: string
   repo: string
+  /** Deployed copy, if there is one (Showcase apps sit behind CapTech SSO). */
+  demo?: string
   note: string
   source: { label: string; href: string; ref: string }
   intake: {
     contributors: string
     clientBrand: string | null
-    harvest: string[]
+    /** Patterns worth turning into Proto-Lab blocks; `block` once one exists. */
+    harvest: { label: string; block?: string }[]
   }
 }
 
@@ -35,7 +38,8 @@ export const templates: Template[] = [
     description:
       "A banker's daily workspace for sponsor coverage: ranked deal signals, briefings, sponsor matching and an AI assistant, built for a client offsite demo.",
     image: "/templates/huntington-capital-markets.jpg",
-    stack: ["Python", "Flask", "Claude on Bedrock", "Docker", "Showcase ready"],
+    stack: ["Python", "Flask", "Claude on Bedrock", "Docker"],
+    demo: "https://huntington-cm-ai-v2.showcase.captechventures.com",
     inside: [
       { title: "Sponsor briefing", description: "Call prep packs assembled from CRM, filings and market data." },
       { title: "Bolt-on scout", description: "Matches founder owned clients to private equity add-on themes." },
@@ -53,7 +57,12 @@ export const templates: Template[] = [
     intake: {
       contributors: "Steve Sutanto, Nathan Jewell, Paul Given, Genie Donnelly and others",
       clientBrand: "Huntington (own green palette, DM Sans and Source Serif)",
-      harvest: ["Greeting hero with KPI strip", "Ranked signal cards with filter, sort and group", "AI briefing with sources", "Docked AI assistant"],
+      harvest: [
+        { label: "Ranked signal cards with filter, sort and group", block: "signal-feed" },
+        { label: "Greeting hero with KPI strip" },
+        { label: "AI briefing with sources" },
+        { label: "Docked AI assistant" },
+      ],
     },
   },
 ]
