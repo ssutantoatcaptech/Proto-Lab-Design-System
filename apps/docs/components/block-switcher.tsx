@@ -39,11 +39,11 @@ export function BlockSwitcher({ blocks }: { blocks: Block[] }) {
   if (!block) return null
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="overflow-hidden rounded-xl border bg-card">
       {blocks.length > 1 && (
         <Tabs value={block.name} onValueChange={(v) => pick(String(v))}>
-          <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
-            <TabsList variant="line" aria-label="Blocks in this category" className="w-max gap-1">
+          <div className="overflow-x-auto border-b px-4 pt-2 md:px-6">
+            <TabsList variant="line" aria-label="Blocks in this category" className="h-10 w-max gap-1">
               {blocks.map((b) => (
                 <TabsTrigger key={b.name} value={b.name} className="flex-none px-2">
                   {b.title ?? b.name}
@@ -53,7 +53,7 @@ export function BlockSwitcher({ blocks }: { blocks: Block[] }) {
           </div>
         </Tabs>
       )}
-      <BlockFrame key={block.name} name={block.name} source={block.source} description={block.description} height={block.height} files={block.files} />
+      <BlockFrame key={block.name} name={block.name} title={block.title} source={block.source} description={block.description} height={block.height} files={block.files} />
     </div>
   )
 }

@@ -55,8 +55,9 @@ function Segmented<T extends string>({ label, value, options, onChange }: {
 
 // One block: a framed live preview (the bare /view route) with a toolbar,
 // or its files at the paths a project receives them.
-export function BlockFrame({ name, description, height, files, source = "upstream" }: {
+export function BlockFrame({ name, title, description, height, files, source = "upstream" }: {
   name: string
+  title?: string
   source?: BlockSource
   description: string | null
   height: number
@@ -70,11 +71,11 @@ export function BlockFrame({ name, description, height, files, source = "upstrea
   const file = files[active]
 
   return (
-    <section id={name} aria-label={name} className="scroll-mt-20 flex flex-col gap-3">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex min-w-0 flex-col gap-0.5">
+    <section id={name} aria-label={title ?? name} className="scroll-mt-20 flex flex-col">
+      <div className="flex flex-col gap-4 border-b p-4 md:px-6 xl:flex-row xl:items-center xl:justify-between">
+        <div className="flex min-w-0 flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
-            <a href={`#${name}`} className="focus-ring w-fit rounded-sm font-semibold hover:underline">{name}</a>
+            <h2 className="text-subtitle-1">{title ?? name}</h2>
             {source === "upstream" ? (
               <Tooltip>
                 <TooltipTrigger render={<Badge variant="outline" tabIndex={0} />}>Upstream shadcn</TooltipTrigger>
@@ -83,8 +84,9 @@ export function BlockFrame({ name, description, height, files, source = "upstrea
             ) : (
               <Badge>CapTech</Badge>
             )}
+            {title && <code className="font-mono text-caption-1 text-muted-foreground">{name}</code>}
           </div>
-          {description && <p className="text-caption-1 text-muted-foreground">{description}</p>}
+          {description && <p className="max-w-2xl text-caption-1 text-muted-foreground">{description}</p>}
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <Segmented label="View" value={tab} onChange={setTab} options={[{ value: "preview", label: "Preview" }, { value: "code", label: "Code" }]} />
@@ -113,6 +115,7 @@ export function BlockFrame({ name, description, height, files, source = "upstrea
         </div>
       </div>
 
+      <div className="bg-muted/60 p-3 md:p-4">
       {tab === "preview" ? (
         <div className="overflow-hidden rounded-md border border-neutral-stroke-accessible/40 bg-muted">
           <div className="mx-auto transition-[width] duration-200" style={{ width: WIDTHS.find((w) => w.value === width)!.width, maxWidth: "100%" }}>
@@ -155,6 +158,7 @@ export function BlockFrame({ name, description, height, files, source = "upstrea
           </div>
         </div>
       )}
+      </div>
     </section>
   )
 }
