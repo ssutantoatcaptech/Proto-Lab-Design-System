@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
-import { ArrowUpRightIcon, FolderOpenIcon } from "lucide-react"
+import { ArrowUpRightIcon } from "lucide-react"
 
 import { CodeBlock } from "@/components/code-block"
-import { site } from "@/lib/site"
+import { GitHubIcon } from "@/components/site-header"
 import { templates } from "@/lib/templates"
 import { Badge } from "@/registry/proto-lab/ui/badge"
 import { Button } from "@/registry/proto-lab/ui/button"
@@ -71,9 +71,9 @@ export default function TemplatesPage() {
               </section>
 
               <div className="flex flex-wrap items-center gap-2">
-                <Button nativeButton={false} render={<a href={`${site.github}/tree/shadcn-foundation/templates/${t.slug}`} target="_blank" rel="noreferrer" />}>
-                  <FolderOpenIcon data-icon="inline-start" />
-                  Open template folder
+                <Button nativeButton={false} render={<a href={t.repo} target="_blank" rel="noreferrer" />}>
+                  <GitHubIcon data-icon="inline-start" className="size-4" />
+                  View on GitHub
                 </Button>
                 <Button variant="outline" nativeButton={false} render={<a href={t.source.href} target="_blank" rel="noreferrer" />}>
                   Source repo

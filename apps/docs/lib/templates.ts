@@ -6,6 +6,7 @@ export type Template = {
   stack: string[]
   inside: { title: string; description: string }[]
   run: string
+  repo: string
   note: string
   source: { label: string; href: string; ref: string }
 }
@@ -24,6 +25,7 @@ export const templates: Template[] = [
       { title: "Opportunity scanner", description: "Ranked deal signals with fee estimates and confidence." },
       { title: "Leadership view", description: "Pipeline and coverage roll-up for the division head." },
     ],
+    repo: "https://github.com/captechconsulting/Proto-Lab-Design-System/tree/shadcn-foundation/templates/huntington-capital-markets",
     run: "cd templates/huntington-capital-markets\npython3 -m venv .venv\n.venv/bin/pip install -r requirements.txt\n./start.sh",
     note: "Runs at localhost:5000. AI sections need the bedrock-claude AWS profile or an ANTHROPIC_API_KEY; without them the page loads with fallback content.",
     source: {
