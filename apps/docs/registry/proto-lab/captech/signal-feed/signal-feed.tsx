@@ -1,13 +1,15 @@
 "use client"
 
 import * as React from "react"
-import { ArrowRightIcon, FileTextIcon, InfoIcon, SearchXIcon, SparklesIcon } from "lucide-react"
+import { ArrowRightIcon, FileTextIcon, InfoIcon, Rows2Icon, Rows3Icon, Rows4Icon, SearchXIcon, SparklesIcon } from "lucide-react"
 
 import { Badge } from "@/registry/proto-lab/ui/badge"
 import { Button } from "@/registry/proto-lab/ui/button"
 import { Card } from "@/registry/proto-lab/ui/card"
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/registry/proto-lab/ui/empty"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/proto-lab/ui/select"
+import { ToggleGroup, ToggleGroupItem } from "@/registry/proto-lab/ui/toggle-group"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/registry/proto-lab/ui/tooltip"
 import { cn } from "cn"
 
 // A ranked feed of signals: things that need someone's attention, each from a
@@ -60,6 +62,27 @@ const GROUPS = [
 type Sort = (typeof SORTS)[number]["value"]
 type Group = (typeof GROUPS)[number]["value"]
 
+// Three densities scale the cards together: padding, gaps, type and buttons.
+// Comfortable for reading, Dense (the default) for daily use, Compact to scan
+// many signals at once.
+export type SignalDensity = "comfortable" | "dense" | "compact"
+
+const DENSITY: Record<SignalDensity, {
+  label: string
+  icon: React.ComponentType
+  list: string
+  card: string
+  cardSize: "default" | "sm"
+  title: string
+  detail: string
+  amount: string
+  button: "default" | "sm" | "xs"
+}> = {
+  comfortable: { label: "Comfortable", icon: Rows2Icon, list: "gap-4", card: "px-6 [--card-spacing:--spacing(5)]", cardSize: "default", title: "text-subtitle-1", detail: "text-base", amount: "text-title-2", button: "default" },
+  dense: { label: "Dense", icon: Rows3Icon, list: "gap-3", card: "px-4", cardSize: "default", title: "text-subtitle-2", detail: "text-sm", amount: "text-title-3", button: "sm" },
+  compact: { label: "Compact", icon: Rows4Icon, list: "gap-2", card: "px-3", cardSize: "sm", title: "text-sm font-semibold", detail: "truncate text-caption-1", amount: "text-subtitle-2", button: "xs" },
+}
+
 const dateFormat = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" })
 
 export function SignalFeed({
@@ -69,6 +92,10 @@ export function SignalFeed({
   pageSize = 5,
   viewAll,
   onAction,
+  density: densityProp,
+  defaultDensity = "dense",
+  onDensityChange,
+  showDensity = true,
   className,
 }: {
   signals: Signal[]
@@ -77,8 +104,18 @@ export function SignalFeed({
   pageSize?: number
   viewAll?: { label: string; href: string }
   onAction?: (action: SignalAction, signal: Signal) => void
+  /** Controlled density. Leave unset to let the toolbar manage it. */
+  density?: SignalDensity
+  defaultDensity?: SignalDensity
+  onDensityChange?: (density: SignalDensity) => void
+  /** Show the density switch in the toolbar. */
+  showDensity?: boolean
   className?: string
 }) {
+  const [ownDensity, setOwnDensity] = React.useState<SignalDensity>(defaultDensity)
+  const density = densityProp ?? ownDensity
+  const setDensity = (d: SignalDensity) => { setOwnDensity(d); onDensityChange?.(d) }
+  const d = DENSITY[density]
   const [filter, setFilter] = React.useState("all")
   const [sort, setSort] = React.useState<Sort>("priority")
   const [group, setGroup] = React.useState<Group>("none")
@@ -143,6 +180,28 @@ export function SignalFeed({
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <Picker label="Sort" value={sort} onChange={(v) => setSort(v as Sort)} options={SORTS} className="sm:w-40" />
           <Picker label="Group" value={group} onChange={(v) => setGroup(v as Group)} options={GROUPS} className="sm:w-40" />
+          {showDensity && (
+            <ToggleGroup
+              variant="outline"
+              spacing={0}
+              value={[density]}
+              onValueChange={(v) => v[0] && setDensity(v[0] as SignalDensity)}
+              aria-label="Density"
+              className="self-start sm:self-auto"
+            >
+              {(Object.keys(DENSITY) as SignalDensity[]).map((k) => {
+                const Icon = DENSITY[k].icon
+                return (
+                  <Tooltip key={k}>
+                    <TooltipTrigger render={<ToggleGroupItem value={k} aria-label={DENSITY[k].label} />}>
+                      <Icon />
+                    </TooltipTrigger>
+                    <TooltipContent>{DENSITY[k].label}</TooltipContent>
+                  </Tooltip>
+                )
+              })}
+            </ToggleGroup>
+          )}
         </div>
       </div>
 
@@ -162,19 +221,19 @@ export function SignalFeed({
           </EmptyContent>
         </Empty>
       ) : (
-        <div className="flex flex-col gap-6">
+        <div className={cn("flex flex-col", density === "compact" ? "gap-4" : "gap-6")}>
           {groups.map((g) => (
-            <div key={g.key || "all"} className="flex flex-col gap-3">
+            <div key={g.key || "all"} className={cn("flex flex-col", d.list)}>
               {g.key && (
                 <h3 className="flex items-center gap-2 text-subtitle-2">
                   {g.key}
                   <Badge variant="outline">{counts?.get(g.key) ?? g.items.length}</Badge>
                 </h3>
               )}
-              <ul className="flex flex-col gap-3">
+              <ul className={cn("flex flex-col", d.list)}>
                 {g.items.map((s) => (
                   <li key={s.id}>
-                    <SignalCard signal={s} onAction={onAction} />
+                    <SignalCard signal={s} density={density} onAction={onAction} />
                   </li>
                 ))}
               </ul>
@@ -192,10 +251,16 @@ export function SignalFeed({
   )
 }
 
-export function SignalCard({ signal: s, onAction }: { signal: Signal; onAction?: (action: SignalAction, signal: Signal) => void }) {
+export function SignalCard({ signal: s, density = "dense", onAction }: {
+  signal: Signal
+  density?: SignalDensity
+  onAction?: (action: SignalAction, signal: Signal) => void
+}) {
   const p = PRIORITY[s.priority]
+  const d = DENSITY[density]
+  const compact = density === "compact"
   return (
-    <Card className={cn("gap-3 px-4", s.priority === "urgent" && "ring-destructive/40")}>
+    <Card size={d.cardSize} className={cn(d.card, s.priority === "urgent" && "ring-destructive/40")}>
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-caption-1">
         <Badge variant={p.variant}>{p.label}</Badge>
         <span className="font-semibold text-foreground">{s.entity}</span>
@@ -204,14 +269,14 @@ export function SignalCard({ signal: s, onAction }: { signal: Signal; onAction?:
         <time dateTime={s.date} className="ml-auto text-muted-foreground">{dateFormat.format(new Date(s.date))}</time>
       </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-        <div className="flex min-w-0 flex-col gap-1">
-          <h4 className="text-subtitle-2">{s.title}</h4>
-          <p className="text-muted-foreground">{s.detail}</p>
+      <div className={cn("flex flex-col sm:flex-row sm:items-start sm:justify-between", compact ? "gap-2 sm:gap-4" : "gap-3 sm:gap-6")}>
+        <div className={cn("flex min-w-0 flex-col", compact ? "gap-0.5" : "gap-1")}>
+          <h4 className={d.title}>{s.title}</h4>
+          <p className={cn("text-muted-foreground", d.detail)}>{s.detail}</p>
         </div>
         {s.value && (
           <div className="flex shrink-0 flex-col sm:items-end">
-            <span className="text-title-3">{s.value.amount}</span>
+            <span className={d.amount}>{s.value.amount}</span>
             <span className="text-caption-1 text-muted-foreground">
               {s.value.label}
               {s.confidence != null && ` · ${Math.round(s.confidence * 100)}% confidence`}
@@ -221,15 +286,15 @@ export function SignalCard({ signal: s, onAction }: { signal: Signal; onAction?:
       </div>
 
       {onAction && (
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" onClick={() => onAction("details", s)}>
+        <div className={cn("flex flex-wrap", compact ? "gap-1.5" : "gap-2")}>
+          <Button variant="outline" size={d.button} onClick={() => onAction("details", s)}>
             View details
           </Button>
-          <Button variant="outline" size="sm" onClick={() => onAction("briefing", s)}>
+          <Button variant="outline" size={d.button} onClick={() => onAction("briefing", s)}>
             <FileTextIcon data-icon="inline-start" />
             Generate briefing
           </Button>
-          <Button variant="outline" size="sm" onClick={() => onAction("ask", s)}>
+          <Button variant="outline" size={d.button} onClick={() => onAction("ask", s)}>
             <SparklesIcon data-icon="inline-start" />
             Ask AI
           </Button>

@@ -39,6 +39,9 @@ what a project last applied.
   `ai-agent` docks beside a page (a sheet on narrow screens) with suggested
   prompts, page context, attachments and cited replies; `onSend` supplies the
   reply. Both ship fictional demo data.
+- **`signal-feed` densities:** Comfortable, Dense (default) and Compact,
+  switched from the toolbar or set with `density` / `defaultDensity`. Each
+  scales card padding, gaps, type and button size together.
 
 ### Changed
 - **Agent guidance matches what ships.** The skill

@@ -3,13 +3,15 @@
     "name": "signal-feed",
     "type": "registry:block",
     "title": "Signal feed",
-    "description": "A ranked feed of signals with filter, sort, group and show more. Harvested from the Huntington Capital Markets POC.",
+    "description": "A ranked feed of signals with filter, sort, group, show more and three densities (comfortable, dense, compact). Harvested from the Huntington Capital Markets POC.",
     "registryDependencies": [
       "badge",
       "button",
       "card",
       "empty",
-      "select"
+      "select",
+      "toggle-group",
+      "tooltip"
     ],
     "dependencies": [
       "lucide-react",
