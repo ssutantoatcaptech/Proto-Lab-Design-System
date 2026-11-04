@@ -143,7 +143,7 @@ function TemplateDetails({ t }: { t: Template }) {
         </ul>
       </Section>
 
-      <Section title="Worth harvesting" note="Patterns to rebuild as Proto-Lab blocks.">
+      <Section title="Worth harvesting" note="Parts worth rebuilding as Proto-Lab patterns.">
         <ul className="flex flex-col gap-3">
           {t.intake.harvest.map((h) => (
             <li key={h.label} className="flex items-start gap-2 text-sm">
@@ -156,7 +156,7 @@ function TemplateDetails({ t }: { t: Template }) {
                 <span>{h.label}</span>
                 {h.block ? (
                   <Link href={`/blocks/captech#${h.block}`} className="focus-ring inline-flex w-fit items-center gap-1 rounded-sm text-caption-1 font-semibold text-link hover:underline">
-                    {h.block} block
+                    {h.block} pattern
                     <ArrowRightIcon aria-hidden="true" className="size-3" />
                   </Link>
                 ) : (

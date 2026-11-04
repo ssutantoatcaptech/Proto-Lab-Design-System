@@ -44,7 +44,7 @@ function readCollapsed(): string[] {
 export function DocsNav({ tree, onNavigate }: { tree: PageTree.Root; onNavigate?: () => void }) {
   const pathname = usePathname()
   const all = groups(tree)
-  const activeGroup = all.find((g) => g.items.some((i) => i.url === pathname))?.title
+  const activeGroup = all.find((g) => g.title && g.items.some((i) => i.url === pathname))?.title
   const [collapsed, setCollapsed] = useState<string[]>([])
 
   const save = (next: string[]) => {
@@ -65,7 +65,8 @@ export function DocsNav({ tree, onNavigate }: { tree: PageTree.Root; onNavigate?
     save(open ? collapsed.filter((t) => t !== title) : [...new Set([...collapsed, title])])
 
   const renderItem = (item: PageTree.Item, topLevel = false) => {
-    const active = pathname === item.url
+    // Top level links cover a whole area (Patterns covers /blocks/login).
+    const active = pathname === item.url || (topLevel && pathname.startsWith(`${item.url}/`))
     return (
       <li key={item.url}>
         <Link
@@ -90,7 +91,12 @@ export function DocsNav({ tree, onNavigate }: { tree: PageTree.Root; onNavigate?
     <nav aria-label="Documentation" className="flex flex-col gap-3">
       {all.map((group) => {
         if (!group.title) {
-          return <ul key="pinned" className="flex flex-col gap-0.5">{group.items.map((i) => renderItem(i, true))}</ul>
+          return (
+            <div key="pinned" className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-0.5">{group.items.map((i) => renderItem(i, true))}</ul>
+              <div role="separator" className="mx-2 border-t" />
+            </div>
+          )
         }
         const open = isOpen(group.title)
         return (

@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { MenuIcon } from "lucide-react"
 import type * as PageTree from "fumadocs-core/page-tree"
 import { cn } from "cn"
@@ -35,42 +34,32 @@ function Logo() {
 // Header plus the search provider around the whole page, so any search
 // trigger on the page (like the 404's) opens the palette.
 //
-// Docs pages: the sidebar runs the full height with the logo at its top, and
-// the header sits beside it over the content. Gallery pages (Charts, Blocks,
-// Showcase, Templates) have no sidebar, so the header spans the page and
-// carries the logo.
+// Every page shares one layout: at 1024px and up the sidebar runs the full
+// height with the logo at its top and holds all navigation; the header sits
+// beside it with search, GitHub and the theme. Below 1024px the sidebar opens
+// from the menu button and the header carries the logo.
 export function SiteShell({ tree, search, children }: { tree: PageTree.Root; search: SearchEntry[]; children: React.ReactNode }) {
-  const pathname = usePathname()
-  const docs = pathname === "/docs" || pathname.startsWith("/docs/")
   return (
     <SearchProvider index={search}>
-      {docs ? (
-        <div className="lg:flex">
-          <aside aria-label="Docs sidebar" className="sticky top-0 hidden h-svh w-60 shrink-0 flex-col border-r bg-card lg:flex">
-            <div className="flex h-14 shrink-0 items-center px-6">
-              <Logo />
-            </div>
-            <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-6 pt-2">
-              <DocsNav tree={tree} />
-            </div>
-          </aside>
-          <div className="min-w-0 flex-1">
-            <SiteHeader tree={tree} logoInSidebar />
-            {children}
+      <div className="lg:flex">
+        <aside aria-label="Site navigation" className="sticky top-0 hidden h-svh w-60 shrink-0 flex-col border-r bg-card lg:flex">
+          <div className="flex h-14 shrink-0 items-center px-6">
+            <Logo />
           </div>
-        </div>
-      ) : (
-        <>
+          <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-6 pt-2">
+            <DocsNav tree={tree} />
+          </div>
+        </aside>
+        <div className="min-w-0 flex-1">
           <SiteHeader tree={tree} />
           {children}
-        </>
-      )}
+        </div>
+      </div>
     </SearchProvider>
   )
 }
 
-function SiteHeader({ tree, logoInSidebar = false }: { tree: PageTree.Root; logoInSidebar?: boolean }) {
-  const pathname = usePathname()
+function SiteHeader({ tree }: { tree: PageTree.Root }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -78,7 +67,7 @@ function SiteHeader({ tree, logoInSidebar = false }: { tree: PageTree.Root; logo
       <header className="sticky top-0 z-40 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
         <div className="flex h-14 items-center gap-2 px-4 md:gap-4 md:px-6">
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-            <SheetTrigger render={<Button variant="ghost" size="icon" className={logoInSidebar ? "lg:hidden" : "md:hidden"} aria-label="Open menu" />}>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu" />}>
               <MenuIcon />
             </SheetTrigger>
             <SheetContent side="left" className="w-72 overflow-y-auto p-4">
@@ -87,31 +76,12 @@ function SiteHeader({ tree, logoInSidebar = false }: { tree: PageTree.Root; logo
             </SheetContent>
           </Sheet>
 
-          <div className={cn(logoInSidebar && "lg:hidden")}><Logo /></div>
-
-          <nav aria-label="Main" className={cn("ml-2 hidden items-center md:flex lg:gap-1", logoInSidebar && "lg:ml-0")}>
-            {site.nav.map((item) => {
-              const active = item.match(pathname)
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "focus-ring rounded-md px-1 py-1 text-muted-foreground lg:px-2 transition-colors hover:text-foreground",
-                    active && "font-semibold text-foreground"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              )
-            })}
-          </nav>
+          <div className="lg:hidden"><Logo /></div>
 
           <div className="ml-auto flex items-center gap-1 md:gap-2">
-            <div className="hidden lg:block"><SearchTrigger /></div>
-            <div className="lg:hidden"><SearchTrigger variant="icon" /></div>
-            <Separator orientation="vertical" className="mx-1 hidden h-4 lg:block" />
+            <div className="hidden sm:block"><SearchTrigger /></div>
+            <div className="sm:hidden"><SearchTrigger variant="icon" /></div>
+            <Separator orientation="vertical" className="mx-1 hidden h-4 sm:block" />
             <Button variant="ghost" size="icon" nativeButton={false} render={<a href={site.github} target="_blank" rel="noreferrer" aria-label="GitHub repository" />}>
               <GitHubIcon className="size-4" />
             </Button>

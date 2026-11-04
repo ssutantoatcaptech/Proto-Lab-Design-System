@@ -24,7 +24,7 @@ type CaptechItem = {
 }
 
 export const categories = [
-  { slug: "captech", title: "CapTech", description: "Built from real CapTech prototypes and rebuilt on Proto-Lab. The @proto-lab command works once the registry is hosted; until then, add the built file from apps/docs/public/r." },
+  { slug: "captech", title: "CapTech", description: "Built from real CapTech prototypes and rebuilt on Proto-Lab. The @proto-lab install command works once the registry is hosted; until then, add the built file from apps/docs/public/r." },
   { slug: "dashboard", title: "Dashboard", description: "A full application page: sidebar, header, KPI cards, a chart and a data table." },
   { slug: "sidebar", title: "Sidebar", description: "Application shells with collapsible, inset, floating and nested sidebars." },
   { slug: "login", title: "Login", description: "Sign in pages, from a centered card to a two column layout with an image." },

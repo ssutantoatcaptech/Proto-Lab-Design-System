@@ -28,9 +28,9 @@ const SECTIONS: Record<string, string> = {
 // block categories and the blocks in them.
 export function searchIndex(): SearchEntry[] {
   const blocks: SearchEntry[] = categories.map((c) => ({
-    title: `${c.title} blocks`,
+    title: `${c.title} patterns`,
     url: `/blocks/${c.slug}`,
-    section: "Blocks",
+    section: "Patterns",
     description: c.description,
     headings: allBlocks().filter((b) => b.category === c.slug).map((b) => ({ title: b.name, url: `/blocks/${c.slug}#${b.name}` })),
   }))

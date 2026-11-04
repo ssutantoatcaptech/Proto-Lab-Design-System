@@ -2,6 +2,10 @@
   "title": "Docs",
   "pages": [
     "[LayoutGrid][All components](/docs/components)",
+    "[ChartColumn][Charts](/charts)",
+    "[Blocks][Patterns](/blocks)",
+    "[AppWindow][Examples](/showcase)",
+    "[LayoutTemplate][Templates](/templates)",
     "---[Rocket]Get Started---",
     "index",
     "installation",

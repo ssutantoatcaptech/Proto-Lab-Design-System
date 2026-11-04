@@ -43,7 +43,7 @@ export function BlockSwitcher({ blocks }: { blocks: Block[] }) {
       {blocks.length > 1 && (
         <Tabs value={block.name} onValueChange={(v) => pick(String(v))}>
           <div className="overflow-x-auto border-b px-4 pt-2 md:px-6">
-            <TabsList variant="line" aria-label="Blocks in this category" className="h-10 w-max gap-1">
+            <TabsList variant="line" aria-label="Patterns in this category" className="h-10 w-max gap-1">
               {blocks.map((b) => (
                 <TabsTrigger key={b.name} value={b.name} className="flex-none px-2">
                   {b.title ?? b.name}
