@@ -9,7 +9,7 @@
 | Contributors | Steve Sutanto, Nathan Jewell, Paul Given, Genie Donnelly and others |
 | Source | `njewell2/huntington-capital-markets-demo`, branch `Pauls_POC`, commit `8b48fe8` |
 | Client brand | Yes. Huntington green palette, DM Sans and Source Serif, no Proto-Lab |
-| Worth harvesting | Greeting hero with KPI strip, ranked signal cards with filter, sort and group, AI briefing with sources, docked AI assistant |
+| Worth harvesting | Ranked signal cards (built: `signal-feed`), two-way match with explainable scores (built: `match-finder`), docked AI assistant (built: `ai-agent`), greeting hero with KPI strip, AI briefing with sources |
 
 Snapshot of [`njewell2/huntington-capital-markets-demo`](https://github.com/njewell2/huntington-capital-markets-demo),
 branch `Pauls_POC`, commit `8b48fe8` ("Plainer Portfolio Alerts copy and layout"), taken 2026-11-04.

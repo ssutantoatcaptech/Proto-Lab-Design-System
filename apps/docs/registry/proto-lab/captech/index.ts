@@ -5,4 +5,6 @@ import type { ComponentType } from "react"
 
 export const captechLoaders: Record<string, () => Promise<{ default: ComponentType }>> = {
   "signal-feed": () => import("./signal-feed/page"),
+  "match-finder": () => import("./match-finder/page"),
+  "ai-agent": () => import("./ai-agent/page"),
 }

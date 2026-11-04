@@ -2962,6 +2962,86 @@
           "target": "components/signal-feed/signal-feed-data.ts"
         }
       ]
+    },
+    {
+      "name": "match-finder",
+      "type": "registry:block",
+      "title": "Match finder",
+      "description": "Pick a subject, run a match, read ranked matches with a score breakdown and the reasons behind it. Works in more than one direction. Harvested from the Huntington Capital Markets POC (Sponsor Match).",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "collapsible",
+        "empty",
+        "input-group",
+        "progress",
+        "spinner",
+        "tabs"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "cn"
+      ],
+      "categories": [
+        "captech"
+      ],
+      "meta": {
+        "iframeHeight": "1180px",
+        "harvestedFrom": "huntington-capital-markets"
+      },
+      "files": [
+        {
+          "path": "registry/proto-lab/captech/match-finder/match-finder.tsx",
+          "type": "registry:component",
+          "target": "components/match-finder/match-finder.tsx"
+        },
+        {
+          "path": "registry/proto-lab/captech/match-finder/match-finder-data.ts",
+          "type": "registry:component",
+          "target": "components/match-finder/match-finder-data.ts"
+        }
+      ]
+    },
+    {
+      "name": "ai-agent",
+      "type": "registry:block",
+      "title": "AI agent",
+      "description": "An AI agent that docks beside any page, with suggested prompts, page context, attachments and cited replies. Harvested from the Huntington Capital Markets POC (AI Assistant).",
+      "registryDependencies": [
+        "attachment",
+        "badge",
+        "bubble",
+        "button",
+        "input-group",
+        "message",
+        "message-scroller",
+        "sheet",
+        "spinner"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "cn"
+      ],
+      "categories": [
+        "captech"
+      ],
+      "meta": {
+        "iframeHeight": "820px",
+        "harvestedFrom": "huntington-capital-markets"
+      },
+      "files": [
+        {
+          "path": "registry/proto-lab/captech/ai-agent/ai-agent.tsx",
+          "type": "registry:component",
+          "target": "components/ai-agent/ai-agent.tsx"
+        },
+        {
+          "path": "registry/proto-lab/captech/ai-agent/ai-agent-data.ts",
+          "type": "registry:component",
+          "target": "components/ai-agent/ai-agent-data.ts"
+        }
+      ]
     }
   ]
 }

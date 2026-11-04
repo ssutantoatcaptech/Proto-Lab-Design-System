@@ -32,6 +32,13 @@ what a project last applied.
   Sample data is fictional. Lives in `apps/docs/registry/proto-lab/captech/`
   (hand-built, untouched by the upstream sync), ships as a `registry:block`,
   and leads the Blocks page under a new CapTech category.
+- **CapTech blocks `match-finder` and `ai-agent`,** also harvested from the
+  Huntington POC. `match-finder` runs in two directions (company to sponsors,
+  sponsor to clients) and shows ranked matches with a five part score
+  breakdown, reasons, pitch and deal economics; `onRun` supplies the result.
+  `ai-agent` docks beside a page (a sheet on narrow screens) with suggested
+  prompts, page context, attachments and cited replies; `onSend` supplies the
+  reply. Both ship fictional demo data.
 
 ### Changed
 - **Agent guidance matches what ships.** The skill

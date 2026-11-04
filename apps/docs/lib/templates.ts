@@ -59,9 +59,10 @@ export const templates: Template[] = [
       clientBrand: "Huntington (own green palette, DM Sans and Source Serif)",
       harvest: [
         { label: "Ranked signal cards with filter, sort and group", block: "signal-feed" },
+        { label: "Two-way match with explainable scores", block: "match-finder" },
+        { label: "Docked AI assistant", block: "ai-agent" },
         { label: "Greeting hero with KPI strip" },
         { label: "AI briefing with sources" },
-        { label: "Docked AI assistant" },
       ],
     },
   },
