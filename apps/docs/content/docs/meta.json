@@ -2,14 +2,14 @@
   "title": "Docs",
   "pages": [
     "[LayoutGrid][All components](/docs/components)",
-    "---Get Started---",
+    "---[Rocket]Get Started---",
     "index",
     "installation",
     "theming",
     "dark-mode",
     "registry",
     "upstream",
-    "---Foundations---",
+    "---[SwatchBook]Foundations---",
     "...foundations",
     "...components"
   ]
