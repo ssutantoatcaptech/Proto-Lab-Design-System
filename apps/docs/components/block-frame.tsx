@@ -114,20 +114,20 @@ export function BlockFrame({ name, description, height, files, source = "upstrea
       </div>
 
       {tab === "preview" ? (
-        <div className="overflow-hidden rounded-md border bg-muted">
+        <div className="overflow-hidden rounded-md border border-neutral-stroke-accessible/40 bg-muted">
           <div className="mx-auto transition-[width] duration-200" style={{ width: WIDTHS.find((w) => w.value === width)!.width, maxWidth: "100%" }}>
             <iframe
               key={reload}
               src={`/view/${name}`}
               title={`${name} preview`}
               loading="lazy"
-              className="block w-full border-x bg-background first:border-x-0"
+              className={cn("block w-full bg-background", width !== "desktop" && "border-x border-neutral-stroke-accessible/40")}
               style={{ height }}
             />
           </div>
         </div>
       ) : (
-        <div className="grid overflow-hidden rounded-md border bg-card md:grid-cols-[14rem_minmax(0,1fr)]" style={{ height }}>
+        <div className="grid overflow-hidden rounded-md border border-neutral-stroke-accessible/40 bg-card md:grid-cols-[14rem_minmax(0,1fr)]" style={{ height }}>
           <ul aria-label="Files" className="flex gap-1 overflow-x-auto border-b p-2 md:flex-col md:overflow-y-auto md:border-b-0 md:border-r">
             {files.map((f, i) => (
               <li key={f.path} className="shrink-0">
