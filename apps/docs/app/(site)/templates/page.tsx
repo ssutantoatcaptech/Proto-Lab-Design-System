@@ -3,7 +3,7 @@ import { ArrowUpRightIcon } from "lucide-react"
 
 import { CodeBlock } from "@/components/code-block"
 import { GitHubIcon } from "@/components/site-header"
-import { templates } from "@/lib/templates"
+import { KINDS, templates } from "@/lib/templates"
 import { Badge } from "@/registry/proto-lab/ui/badge"
 import { Button } from "@/registry/proto-lab/ui/button"
 
@@ -18,8 +18,9 @@ export default function TemplatesPage() {
       <header className="flex flex-col gap-3">
         <h1 className="text-title-1">Templates</h1>
         <p className="max-w-2xl text-base text-muted-foreground">
-          Working prototypes from CapTech engagements, kept in this repo as starting points. Copy a folder from{" "}
-          <code className="font-mono text-sm">templates/</code>, run it, then restyle it with Proto-Lab.
+          Whole prototypes from CapTech work. <strong className="font-semibold text-foreground">{KINDS.starter.label}</strong> templates are
+          built on Proto-Lab: clone one and build on it. <strong className="font-semibold text-foreground">{KINDS.reference.label}</strong> templates
+          are past work with their own styling: read them for patterns worth turning into CapTech blocks, and don't copy their CSS.
         </p>
       </header>
 
@@ -43,7 +44,13 @@ export default function TemplatesPage() {
 
             <div className="flex min-w-0 flex-col gap-6">
               <div className="flex flex-col gap-3">
-                <h2 className="text-title-2">{t.title}</h2>
+                <div className="flex flex-col gap-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h2 className="text-title-2">{t.title}</h2>
+                    <Badge variant={t.kind === "starter" ? "default" : "secondary"}>{KINDS[t.kind].label}</Badge>
+                  </div>
+                  <p className="text-caption-1 text-muted-foreground">{KINDS[t.kind].meaning}</p>
+                </div>
                 <p className="text-base text-muted-foreground">{t.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {t.stack.map((s) => (
@@ -62,6 +69,24 @@ export default function TemplatesPage() {
                     </li>
                   ))}
                 </ul>
+              </section>
+
+              <section className="flex flex-col gap-3">
+                <h3 className="text-subtitle-2">Intake</h3>
+                <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-6 gap-y-2 text-sm">
+                  <dt className="text-muted-foreground">Contributors</dt>
+                  <dd>{t.intake.contributors}</dd>
+                  <dt className="text-muted-foreground">Client brand</dt>
+                  <dd>{t.intake.clientBrand ?? "None, CapTech only"}</dd>
+                  <dt className="text-muted-foreground">Worth harvesting</dt>
+                  <dd>
+                    <ul className="flex flex-wrap gap-1.5">
+                      {t.intake.harvest.map((h) => (
+                        <li key={h}><Badge variant="outline">{h}</Badge></li>
+                      ))}
+                    </ul>
+                  </dd>
+                </dl>
               </section>
 
               <section className="flex flex-col gap-3 [&>figure]:my-0">

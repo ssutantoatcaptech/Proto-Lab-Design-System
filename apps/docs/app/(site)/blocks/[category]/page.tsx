@@ -20,7 +20,7 @@ export default async function BlocksPage({ params }: Props) {
       <header className="flex flex-col gap-3">
         <h1 className="text-title-1">Blocks</h1>
         <p className="max-w-2xl text-base text-muted-foreground">
-          Complete screens built from Proto-Lab components. Preview them at any width, read the code, and install one with a single command. They come from shadcn/ui and render with the Proto-Lab theme.
+          Complete screens to start from. Preview them at any width, read the code, and install one with a single command. These are the stock shadcn/ui blocks, shown with the Proto-Lab theme; in a project with the theme installed they look the same. CapTech blocks, taken from real CapTech prototypes, will be listed ahead of them as they're added.
         </p>
       </header>
 
@@ -48,7 +48,7 @@ export default async function BlocksPage({ params }: Props) {
 
       <div className="flex flex-col gap-14">
         {blocks.map((b) => (
-          <BlockFrame key={b.name} name={b.name} description={b.description} height={b.height} files={b.files} />
+          <BlockFrame key={b.name} name={b.name} source={b.source} description={b.description} height={b.height} files={b.files} />
         ))}
       </div>
     </main>

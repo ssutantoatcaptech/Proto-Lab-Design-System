@@ -3,9 +3,11 @@
 import { useState } from "react"
 import { ExternalLinkIcon, FileIcon, MonitorIcon, RotateCwIcon, SmartphoneIcon, TabletIcon, TerminalIcon } from "lucide-react"
 import { cn } from "cn"
+import { Badge } from "@/registry/proto-lab/ui/badge"
 import { Button } from "@/registry/proto-lab/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/registry/proto-lab/ui/tooltip"
 import { CopyButton } from "@/components/copy-button"
+import { installCommand, type BlockSource } from "@/lib/block-source"
 
 type File = { path: string; raw: string; code: React.ReactNode }
 
@@ -53,8 +55,9 @@ function Segmented<T extends string>({ label, value, options, onChange }: {
 
 // One block: a framed live preview (the bare /view route) with a toolbar,
 // or its files at the paths a project receives them.
-export function BlockFrame({ name, description, height, files }: {
+export function BlockFrame({ name, description, height, files, source = "upstream" }: {
   name: string
+  source?: BlockSource
   description: string | null
   height: number
   files: File[]
@@ -63,14 +66,24 @@ export function BlockFrame({ name, description, height, files }: {
   const [width, setWidth] = useState<(typeof WIDTHS)[number]["value"]>("desktop")
   const [reload, setReload] = useState(0)
   const [active, setActive] = useState(0)
-  const command = `npx shadcn@latest add ${name}`
+  const command = installCommand(name, source)
   const file = files[active]
 
   return (
     <section id={name} aria-label={name} className="scroll-mt-20 flex flex-col gap-3">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 flex-col gap-0.5">
-          <a href={`#${name}`} className="focus-ring w-fit rounded-sm font-semibold hover:underline">{name}</a>
+          <div className="flex flex-wrap items-center gap-2">
+            <a href={`#${name}`} className="focus-ring w-fit rounded-sm font-semibold hover:underline">{name}</a>
+            {source === "upstream" ? (
+              <Tooltip>
+                <TooltipTrigger render={<Badge variant="outline" tabIndex={0} />}>Upstream shadcn</TooltipTrigger>
+                <TooltipContent className="max-w-64">Installs the stock shadcn/ui block. The Proto-Lab theme in your project styles it.</TooltipContent>
+              </Tooltip>
+            ) : (
+              <Badge>CapTech</Badge>
+            )}
+          </div>
           {description && <p className="text-caption-1 text-muted-foreground">{description}</p>}
         </div>
         <div className="flex flex-wrap items-center gap-2">

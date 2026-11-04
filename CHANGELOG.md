@@ -25,6 +25,18 @@ what a project last applied.
 
 ## [Unreleased]
 
+### Changed
+- **Agent guidance matches what ships.** The skill
+  (`.github/skills/proto-lab-design-system/skill.md`) and `APPLY.md` now
+  describe the layers (theme and icons are Proto-Lab, the 64 components are
+  stock shadcn/ui), the shadcn registry route for React projects, and the build
+  order: Starter template, CapTech block, components, tokens. `tokens/components.json`
+  is labelled a Figma reference, not code.
+- **Docs: honest labels.** Upstream blocks say they are upstream and show the
+  command that installs them from shadcn. Templates are marked Starter (built
+  on Proto-Lab) or Reference (past work with its own styling), each with an
+  intake: owner, source, client brand and patterns to harvest.
+
 ### Added
 - **Generated token pipeline** (`packages/tokens/`). `npm run tokens:build`
   writes every CSS file and `tokens/dist/tokens.json` from the DTCG JSON, and

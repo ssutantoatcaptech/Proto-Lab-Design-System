@@ -1,6 +1,6 @@
 ---
 name: proto-lab-design-system
-description: "Apply and build with the Proto-Lab Design System (CapTech Brand + Fluent 2 Web). USE WHEN creating UI, styling, choosing colors/spacing/typography, adding icons, setting up dark mode, or migrating an existing app to the design system. ALSO USE WHEN you encounter hardcoded hex colors, pixel spacing, or raw font sizes that should be token references."
+description: "Apply and build with the Proto-Lab Design System (CapTech Brand + Fluent 2 Web on shadcn/ui). USE WHEN starting a new CapTech prototype or demo, creating UI, styling, choosing colors/spacing/typography, adding icons, setting up dark mode, or migrating an existing app to the design system. ALSO USE WHEN you encounter hardcoded hex colors, pixel spacing, or raw font sizes that should be token references."
 ---
 
 > **Sync Rule:** This repo is mirrored to two remotes. Always commit and push to both:
@@ -11,7 +11,36 @@ description: "Apply and build with the Proto-Lab Design System (CapTech Brand + 
 
 # Proto-Lab Design System
 
-CapTech Brand identity on Microsoft Fluent 2 Web. Light and dark mode. Primary font Gibson (Adobe Fonts, `canada-type-gibson`), brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`. 46 components, 162 brand icons. **This system is authoritative:** it replaces conflicting project values.
+CapTech Brand identity on Microsoft Fluent 2 Web. Light and dark mode. Primary font Gibson (Adobe Fonts, `canada-type-gibson`), brand color CapTech Blue `#005eb8`, accent Yellow `#fdda24`. **This system is authoritative:** it replaces conflicting project values.
+
+## What Proto-Lab is
+
+| Layer | What it is | Where |
+|---|---|---|
+| Theme and tokens | **The brand.** CapTech colors on Fluent semantics, Gibson type ramp, radii, shadows, dark mode | `tokens/`, registry items `base` and `theme` |
+| CapTech icons | 162 duotone brand icons as React components or SVGs | registry items `captech-icons*`, `icons/` |
+| Components | The 64 stock [shadcn/ui](https://ui.shadcn.com) components (Base UI). Kept identical to upstream; the theme restyles them. Don't fork or restyle them per project | shadcn CLI |
+| Charts | 76 shadcn charts on the Proto-Lab theme | registry items `chart-*` |
+| Blocks | Page sections. CapTech blocks are listed first on the docs site's Blocks page; the rest are upstream shadcn blocks | docs site `/blocks` |
+| Templates | Whole prototypes. **Starter** templates are built on Proto-Lab, clone them. **Reference** templates are snapshots of past work with their own styling, read them for patterns, never copy their CSS | `templates/`, docs site `/templates` |
+
+`tokens/components.json` is a Figma reference (46 components with variants and node IDs), not runnable code.
+
+## Pick your route
+
+- **React with Tailwind v4 (new prototypes, the default):** use the shadcn registry. Until the registry is hosted, build it from the design system checkout (`npm install && npm run registry:build` in `design-system/`), then:
+  - New project: `npx shadcn init design-system/apps/docs/public/r/base.json`
+  - Existing shadcn project: `npx shadcn add design-system/apps/docs/public/r/theme.json`
+  - Components: `npx shadcn add button card input` (stock shadcn, the theme styles them)
+  - Icons and charts: `npx shadcn add design-system/apps/docs/public/r/captech-icons-general.json` (or `chart-area-default.json` and so on)
+- **Anything else (plain HTML, Flask or Django templates, other frameworks):** wire the CSS variables, as in the Apply phase below.
+
+## Build a screen in this order
+
+1. A **Starter** template, if one fits.
+2. A **CapTech block** for each section, then an upstream block.
+3. Stock **components** composed on the page.
+4. Tokens and Tailwind theme classes for anything left. Never hex, never one-off pixel values.
 
 ## Token file paths
 
@@ -28,7 +57,7 @@ CapTech Brand identity on Microsoft Fluent 2 Web. Light and dark mode. Primary f
 
 Paths are relative to the design-system root. In consuming projects the DS is typically at `design-system/` or the path noted in `AGENTS.md`.
 
-**Full token vocabulary and component variants:** see `references/tokens.md` in this skill directory for every CSS variable, its value, and all 46 components with their variant options.
+**Full token vocabulary:** see `references/tokens.md` in this skill directory for every CSS variable and its value, plus the Figma component variants.
 
 ## Apply phase
 
@@ -61,7 +90,7 @@ Follow these rules for all ongoing UI work:
 - **Typography:** Font Gibson, loaded from the project's Adobe Fonts web project (`use.typekit.net/<id>.css`); never download or self-host it. Weights 300/400/600/700 only. Use type styles from `typography.json`.
 - **Radii:** Use `--radius-none` (0), `--radius-small` (2px), `--radius-medium` (4px), `--radius-large` (6px), `--radius-x-large` (8px), `--radius-circular` (9999px).
 - **Shadows:** Use elevation tokens by context: `--shadow-2` (cards at rest), `--shadow-8` (hover), `--shadow-16` (dropdowns), `--shadow-28` (floating panels).
-- **Components:** Read `tokens/components.json` for available variants before building. Match variant names exactly.
+- **Components:** In React projects use the shadcn/ui components with their own variants (`variant="outline"`, `size="sm"`). Style through the theme, not by editing the component files. Outside React, `tokens/components.json` lists the Figma variants to match.
 - **Icons:** Brand icons are 48px duotone illustrative marks. Use as hero accents, category tiles, empty states. Never replace functional glyphs (status, close, chevron) with brand icons.
 
 ## Quick reference

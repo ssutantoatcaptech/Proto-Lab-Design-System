@@ -1,6 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 import { highlight } from "fumadocs-core/highlight"
+import type { BlockSource } from "@/lib/block-source"
 
 // Blocks synced from upstream by scripts/sync-blocks.js. The manifest lists
 // each block's category, files and preview height.
@@ -30,7 +31,7 @@ function manifest(): Manifest {
 export function blocksIn(category: Category) {
   return Object.entries(manifest().blocks)
     .filter(([, b]) => b.category === category)
-    .map(([name, b]) => ({ name, ...b, height: Number.parseInt(b.iframeHeight ?? "", 10) || HEIGHT[category] }))
+    .map(([name, b]) => ({ name, ...b, source: "upstream" as BlockSource, height: Number.parseInt(b.iframeHeight ?? "", 10) || HEIGHT[category] }))
 }
 
 export const allBlocks = () => Object.entries(manifest().blocks).map(([name, b]) => ({ name, category: b.category as Category }))

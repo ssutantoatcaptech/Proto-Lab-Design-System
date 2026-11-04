@@ -1,5 +1,16 @@
 # Huntington Capital Markets AI (template)
 
+**Kind: Reference.** Past work with its own styling. Read it for patterns worth turning into CapTech blocks; don't copy its CSS.
+
+## Intake
+
+| | |
+|---|---|
+| Contributors | Steve Sutanto, Nathan Jewell, Paul Given, Genie Donnelly and others |
+| Source | `njewell2/huntington-capital-markets-demo`, branch `Pauls_POC`, commit `8b48fe8` |
+| Client brand | Yes. Huntington green palette, DM Sans and Source Serif, no Proto-Lab |
+| Worth harvesting | Greeting hero with KPI strip, ranked signal cards with filter, sort and group, AI briefing with sources, docked AI assistant |
+
 Snapshot of [`njewell2/huntington-capital-markets-demo`](https://github.com/njewell2/huntington-capital-markets-demo),
 branch `Pauls_POC`, commit `8b48fe8` ("Plainer Portfolio Alerts copy and layout"), taken 2026-11-04.
 

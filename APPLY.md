@@ -60,6 +60,17 @@ a design-system token.
 
 ## 3. Pick the scenario
 
+**React with Tailwind v4 (most new prototypes):** use the shadcn registry
+instead of wiring CSS by hand. Build it once in the design system checkout
+(`npm install && npm run registry:build` in `design-system/`), then run
+`npx shadcn init design-system/apps/docs/public/r/base.json` for a new project,
+or `npx shadcn add design-system/apps/docs/public/r/theme.json` for an existing
+shadcn project. Components are stock shadcn/ui (`npx shadcn add button card`)
+and the theme styles them. Start from a Starter template in `templates/` when
+one fits, and use CapTech blocks before writing new page sections. Templates
+marked Reference are past work with their own styling: read them for
+patterns, don't copy their CSS. Then skip to section 5.
+
 **Greenfield (no UI built yet):**
 1. Import `tokens/css/variables-light.css` into the project's entry stylesheet.
 2. Build all new UI directly on the tokens. Done. Skip to section 6.
