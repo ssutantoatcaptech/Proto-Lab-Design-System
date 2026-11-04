@@ -78,6 +78,9 @@ function SiteHeader({ tree }: { tree: PageTree.Root }) {
 
           <div className="lg:hidden"><Logo /></div>
 
+          {/* Pages put their own section links here (docs: On This Page). */}
+          <div id="page-nav" className="hidden min-w-0 flex-1 md:flex" />
+
           <div className="ml-auto flex items-center gap-1 md:gap-2">
             <div className="hidden sm:block"><SearchTrigger /></div>
             <div className="sm:hidden"><SearchTrigger variant="icon" /></div>

@@ -52,9 +52,7 @@ export default async function DocPage({ params }: Props) {
         </article>
         <PageFooterNav previous={previous} next={next} />
       </main>
-      <aside className="sticky top-20 hidden max-h-[calc(100svh-6rem)] w-52 shrink-0 self-start overflow-y-auto pt-6 xl:block">
-        <DocsToc items={toc} />
-      </aside>
+      <DocsToc items={toc} variant="header" />
     </div>
   )
 }

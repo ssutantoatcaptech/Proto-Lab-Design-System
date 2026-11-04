@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 import { cn } from "cn"
 
 export type TocItem = { title: string; url: string; depth: number }
@@ -9,7 +10,12 @@ const OFFSET = 80 // matches the headings' scroll-mt-20
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2)
 
 // Highlights the heading currently in view, like ui.shadcn.com's "On This Page".
-export function DocsToc({ items }: { items: TocItem[] }) {
+// "header" puts the page's top level sections in the site header's page-nav
+// slot as a row of links; "rail" is the vertical list.
+export function DocsToc({ items, variant = "rail" }: { items: TocItem[]; variant?: "rail" | "header" }) {
+  const [slot, setSlot] = useState<HTMLElement | null>(null)
+  const listRef = useRef<HTMLUListElement>(null)
+  useEffect(() => { if (variant === "header") setSlot(document.getElementById("page-nav")) }, [variant])
   const [active, setActive] = useState<string | null>(items[0]?.url ?? null)
   // While a click scroll runs, the observer would light up every section it
   // passes, so it's ignored until the scroll lands or the reader takes over.
@@ -82,7 +88,39 @@ export function DocsToc({ items }: { items: TocItem[] }) {
     frame.current = requestAnimationFrame(step)
   }
 
+  // Keep the active link visible when the header row scrolls sideways.
+  useEffect(() => {
+    if (variant !== "header" || !active) return
+    listRef.current?.querySelector(`a[href="${CSS.escape(active)}"]`)?.scrollIntoView({ block: "nearest", inline: "nearest" })
+  }, [active, variant])
+
   if (!items.length) return null
+  if (variant === "header") {
+    if (!slot) return null
+    const top = items.filter((i) => i.depth <= 2)
+    return createPortal(
+      <nav aria-label="On this page" className="flex min-w-0 flex-1 items-center">
+        <ul ref={listRef} className="flex min-w-0 items-center gap-1 overflow-x-auto [scrollbar-width:none]">
+          {top.map((item) => (
+            <li key={item.url} className="shrink-0">
+              <a
+                href={item.url}
+                onClick={(e) => go(e, item.url)}
+                aria-current={active === item.url ? "location" : undefined}
+                className={cn(
+                  "focus-ring flex h-8 items-center rounded-md px-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                  active === item.url && "bg-muted font-semibold text-foreground"
+                )}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>,
+      slot
+    )
+  }
   return (
     <nav aria-label="On this page" className="flex flex-col gap-2">
       <h4 className="text-caption-1 text-muted-foreground">On This Page</h4>
