@@ -1,0 +1,11 @@
+{
+    "appName": "huntington-cm-ai-v2",
+    "displayName": "Huntington Capital Markets AI v2",
+    "description": "Multi-agent briefing pipeline with MD review loop, live agent timeline, and section refinement for capital markets bankers",
+    "visibility": "unlisted",
+    "runtime": "python",
+    "version": "3.12",
+    "assetsDir": ".",
+    "startCommand": "pip install -r requirements.txt -q && python web/app.py",
+    "internalPort": 5000
+}

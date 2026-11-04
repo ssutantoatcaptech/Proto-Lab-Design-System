@@ -1,0 +1,109 @@
+
+######################################################################
+#                     HUNTINGTON CAPITAL MARKETS                     #
+#                        LEADERSHIP DASHBOARD                        #
+#                    AI-Generated Weekly Briefing                    #
+#                           April 23, 2026                           #
+######################################################################
+
+  EXECUTIVE SNAPSHOT
+  ──────────────────────────────────────────────────
+  Total Pipeline:          19 deals
+  Total Fee Opportunity:   $71.9M
+  Probability-Weighted:    $37.8M
+  Active Deals:            6 deals ($21.7M fees, $17.4M weighted)
+
+  TOP 3 DEALS BY FEE OPPORTUNITY:
+    1. Worldpay Dividend Recap — $8.5M (Pitched, 40%)
+    2. CD&R Industrial Carve-out — $7.2M (Pipeline, 45%)
+    3. AssuredPartners Refi — $6.2M (Active, 85%)
+
+======================================================================
+  PIPELINE COMPOSITION BY PRODUCT LINE
+  As of 2026-04-23
+======================================================================
+
+  Product          Deals   Deal Value      Fees   Wtd Fees    Mix  Bar
+  ──────────────── ─────  ───────────  ────────  ─────────  ─────  ──────────────────────────────
+  LevFin              11  $   21,550M  $  49.3M  $   27.2M    69%  ██████████████████████████████
+  M&A Advisory         3  $    3,300M  $  12.2M  $    5.8M    17%  ███████░░░░░░░░░░░░░░░░░░░░░░░
+  IG DCM               3  $    1,650M  $   3.9M  $    3.2M     5%  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+  ECM                  2  $      500M  $   6.5M  $    1.5M     9%  ███░░░░░░░░░░░░░░░░░░░░░░░░░░░
+  ──────────────── ─────  ───────────  ────────  ─────────  ─────
+  TOTAL               19  $   27,000M  $  71.9M  $   37.8M  100%
+
+  KEY INSIGHT: LevFin represents 69% of fee pipeline.
+======================================================================
+  SECTOR CONCENTRATION ANALYSIS
+======================================================================
+
+  Sector               Deals      Fees       Wtd  Conc.  Heatmap
+  ──────────────────── ─────  ────────  ────────  ─────  ─────────────────────────
+  FinTech                  4  $  17.1M  $   7.5M    24%  █████████████████████████
+  Industrials              3  $  16.5M  $  10.3M    23%  ████████████████████████░
+  Insurance                3  $  10.9M  $   8.5M    15%  ███████████████░░░░░░░░░░
+  Healthcare IT            2  $   7.7M  $   3.2M    11%  ███████████░░░░░░░░░░░░░░
+  TMT                      1  $   5.0M  $   1.8M     7%  ███████░░░░░░░░░░░░░░░░░░
+  Technology               1  $   4.5M  $   1.1M     6%  ██████░░░░░░░░░░░░░░░░░░░
+  Distribution             1  $   3.5M  $   1.1M     5%  █████░░░░░░░░░░░░░░░░░░░░
+  Financial Services       1  $   2.8M  $   1.1M     4%  ████░░░░░░░░░░░░░░░░░░░░░
+  Utilities                1  $   1.8M  $   1.5M     3%  ██░░░░░░░░░░░░░░░░░░░░░░░
+  Healthcare               1  $   1.2M  $   1.1M     2%  █░░░░░░░░░░░░░░░░░░░░░░░░
+  Public Finance           1  $   0.9M  $   0.6M     1%  █░░░░░░░░░░░░░░░░░░░░░░░░
+
+  Top sector: FinTech (24% of fee pipeline)
+  Insurance vertical: $10.9M in fees — leverage Huntington's vertical expertise
+======================================================================
+  SPONSOR COVERAGE ACTIVITY
+======================================================================
+
+  Sponsor                      Deals      Fees  Active Pitched Pipeline  Activity
+  ──────────────────────────── ─────  ────────  ────── ─────── ────────  ────────────────────
+  Non-Sponsor                      7  $  19.1M       3       1        3  ████████████████████
+  GTCR                             3  $  16.5M       1       1        1  █████████████████░░░
+  Clayton, Dubilier & Rice         3  $  16.5M       1       0        2  █████████████████░░░
+  Madison Dearborn Partners        3  $  12.3M       0       1        2  ████████████░░░░░░░░
+  Stone Point Capital              3  $   7.5M       1       0        2  ███████░░░░░░░░░░░░░
+
+  COVERAGE GAPS:
+  Sponsor-originated: 73% of fee pipeline
+  Non-sponsor (IG DCM, ECM, direct M&A): 27%
+======================================================================
+  PIPELINE BY STAGE
+======================================================================
+
+  ACTIVE (6 deals, $21.7M fees, $17.4M weighted)
+  ────────────────────────────────────────────────────────────
+    AssuredPartners Refi           $  6.2M   85%  Eric Welsh
+    Cornerstone Bldg Refi          $  5.8M   80%  Jeff Tuckle
+    MM Industrials Sell-Side       $  3.5M   70%  Mike Torres
+    AmeriLife DDTL                 $  3.2M   75%  Eric Welsh
+    Midwest Utility Rev Bond       $  1.8M   85%  Dave Kessler
+    Regional Health System Bond    $  1.2M   90%  Sarah Chen
+
+  PITCHED (3 deals, $18.5M fees, $8.4M weighted)
+  ────────────────────────────────────────────────────────────
+    Worldpay Dividend Recap        $  8.5M   40%  Eric Welsh
+    Healthcare IT Platform Sale    $  5.2M   45%  Sarah Chen
+    Nuvei Repricing                $  4.8M   55%  Jeff Tuckle
+
+  PIPELINE (7 deals, $23.7M fees, $9.8M weighted)
+  ────────────────────────────────────────────────────────────
+    CD&R Industrial Carve-out      $  7.2M   45%  Jeff Tuckle
+    MDP Fund IX Platform           $  5.0M   35%  Jeff Tuckle
+    Tech IPO Advisory              $  4.5M   25%  Anna Wright
+    Trident IX Platform            $  2.8M   40%  Eric Welsh
+    Optimal Blue Add-On            $  1.8M   60%  Eric Welsh
+    Foundation Risk Refi           $  1.5M   55%  Eric Welsh
+    State Pension Refunding        $  0.9M   70%  Dave Kessler
+
+  MONITORING (3 deals, $8.0M fees, $2.3M weighted)
+  ────────────────────────────────────────────────────────────
+    Veritiv Exit / Take-Out        $  3.5M   30%  Jeff Tuckle
+    GHX Recap II                   $  2.5M   35%  Jeff Tuckle
+    SPAC De-SPAC Advisory          $  2.0M   20%  Anna Wright
+
+======================================================================
+  Generated by Huntington Capital Markets AI | Leadership View v1.0
+  2026-04-23 | Internal Use Only
+======================================================================

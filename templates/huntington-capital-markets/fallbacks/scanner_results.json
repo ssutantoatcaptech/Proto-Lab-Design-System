@@ -1,0 +1,151 @@
+{
+  "scan_date": "2026-04-23",
+  "sponsors_scanned": 4,
+  "opportunities": [
+    {
+      "opportunity_id": "OPP-2026-0147",
+      "signal_type": "FUND LIFECYCLE",
+      "urgency": "HIGH",
+      "sponsor": "GTCR",
+      "signal": "Fund XIV ($7.5B, 2024 vintage) \u2014 18% deployed. Actively seeking platforms in financial services and healthcare.",
+      "recommended_product": "Leveraged Buyout Financing (Term Loan B + Revolver)",
+      "estimated_fee_mm": 4.5,
+      "action": "Schedule meeting with Collin Roche to discuss healthcare platform pipeline",
+      "confidence": 0.87
+    },
+    {
+      "opportunity_id": "OPP-2026-0148",
+      "signal_type": "MATURITY WALL",
+      "urgency": "HIGH",
+      "sponsor": "GTCR",
+      "signal": "AssuredPartners \u2014 $4.2B TLB maturing Q4 2027. Current spread SOFR+375; market now at SOFR+300-325 for comparable credits.",
+      "recommended_product": "Refinancing (Repricing + Extension)",
+      "estimated_fee_mm": 6.2,
+      "action": "Pitch repricing to save ~50-75bps; Huntington for co-lead left role",
+      "confidence": 0.92
+    },
+    {
+      "opportunity_id": "OPP-2026-0149",
+      "signal_type": "PORTFOLIO ACTIVITY",
+      "urgency": "MEDIUM",
+      "sponsor": "GTCR",
+      "signal": "Optimal Blue \u2014 bolt-on pipeline active. 3 targets in mortgage tech space identified by sponsor.",
+      "recommended_product": "Incremental Term Loan (Add-on Financing)",
+      "estimated_fee_mm": 1.8,
+      "action": "Offer staple financing for Optimal Blue bolt-on acquisitions",
+      "confidence": 0.78
+    },
+    {
+      "opportunity_id": "OPP-2026-0150",
+      "signal_type": "DIVIDEND RECAP",
+      "urgency": "MEDIUM",
+      "sponsor": "GTCR",
+      "signal": "Worldpay post-carve-out stabilizing. EBITDA margins expanding. Fund I investors seeking DPI.",
+      "recommended_product": "Dividend Recapitalization",
+      "estimated_fee_mm": 8.5,
+      "action": "Propose dividend recap structure \u2014 market receptive to payment company leverage",
+      "confidence": 0.71
+    },
+    {
+      "opportunity_id": "OPP-2026-0151",
+      "signal_type": "MATURITY WALL",
+      "urgency": "HIGH",
+      "sponsor": "Clayton, Dubilier & Rice",
+      "signal": "Cornerstone Building Brands \u2014 $3.2B TLB maturing 2027-2028. Spread compression opportunity ~40bps.",
+      "recommended_product": "Refinancing (Extension + Repricing)",
+      "estimated_fee_mm": 5.8,
+      "action": "Jeff Tuckle to present refi proposal at next coverage meeting",
+      "confidence": 0.91
+    },
+    {
+      "opportunity_id": "OPP-2026-0152",
+      "signal_type": "FUND LIFECYCLE",
+      "urgency": "HIGH",
+      "sponsor": "Clayton, Dubilier & Rice",
+      "signal": "Fund XII ($16B, 2023) \u2014 35% deployed. Actively seeking industrial carve-outs. 2 LOIs in market.",
+      "recommended_product": "Acquisition Financing (TLB + Revolver + ABL)",
+      "estimated_fee_mm": 7.2,
+      "action": "Present Huntington's industrial ABL capabilities; propose co-underwrite on next carve-out",
+      "confidence": 0.84
+    },
+    {
+      "opportunity_id": "OPP-2026-0153",
+      "signal_type": "EXIT SIGNAL",
+      "urgency": "MEDIUM",
+      "sponsor": "Clayton, Dubilier & Rice",
+      "signal": "Veritiv \u2014 operational restructuring ahead of plan. CD&R evaluating 2027 exit (IPO or sponsor-to-sponsor).",
+      "recommended_product": "Sell-Side Advisory / Take-out Financing",
+      "estimated_fee_mm": 3.5,
+      "action": "Position for sell-side mandate or take-out financing with acquiring sponsor",
+      "confidence": 0.68
+    },
+    {
+      "opportunity_id": "OPP-2026-0154",
+      "signal_type": "PORTFOLIO ACTIVITY",
+      "urgency": "HIGH",
+      "sponsor": "Stone Point Capital",
+      "signal": "AmeriLife \u2014 8 bolt-on acquisitions in pipeline for H2 2026. Total add-on financing need ~$800M.",
+      "recommended_product": "Incremental Term Loan (Multiple Draws)",
+      "estimated_fee_mm": 3.2,
+      "action": "Propose delayed-draw facility to streamline AmeriLife's M&A execution",
+      "confidence": 0.89
+    },
+    {
+      "opportunity_id": "OPP-2026-0155",
+      "signal_type": "FUND LIFECYCLE",
+      "urgency": "MEDIUM",
+      "sponsor": "Stone Point Capital",
+      "signal": "Trident IX ($4.0B, 2023) \u2014 40% deployed. Seeking insurance and specialty finance platforms.",
+      "recommended_product": "Platform Acquisition Financing",
+      "estimated_fee_mm": 2.8,
+      "action": "Eric Welsh to share Huntington insurance distribution deal flow",
+      "confidence": 0.82
+    },
+    {
+      "opportunity_id": "OPP-2026-0156",
+      "signal_type": "MATURITY WALL",
+      "urgency": "MEDIUM",
+      "sponsor": "Stone Point Capital",
+      "signal": "Foundation Risk Partners \u2014 $500M TL maturing Q2 2027. Growing into larger capital structure.",
+      "recommended_product": "Refinancing + Upsizing",
+      "estimated_fee_mm": 1.5,
+      "action": "Propose upsized facility to support continued bolt-on strategy",
+      "confidence": 0.76
+    },
+    {
+      "opportunity_id": "OPP-2026-0157",
+      "signal_type": "MATURITY WALL",
+      "urgency": "HIGH",
+      "sponsor": "Madison Dearborn Partners",
+      "signal": "Nuvei \u2014 post-take-private financing ($4.2B) matures 2028. Repricing opportunity as payments sector tightens.",
+      "recommended_product": "Repricing / Amendment",
+      "estimated_fee_mm": 4.8,
+      "action": "Present repricing proposal \u2014 30-50bps savings vs. existing spread",
+      "confidence": 0.86
+    },
+    {
+      "opportunity_id": "OPP-2026-0158",
+      "signal_type": "DIVIDEND RECAP",
+      "urgency": "MEDIUM",
+      "sponsor": "Madison Dearborn Partners",
+      "signal": "GHX \u2014 completed $500M recap in Q2 2025. Strong cash flow supports second recap within 12-18 months.",
+      "recommended_product": "Incremental Dividend Recap",
+      "estimated_fee_mm": 2.5,
+      "action": "Monitor GHX leverage trajectory; propose recap when leverage back below 5.0x",
+      "confidence": 0.72
+    },
+    {
+      "opportunity_id": "OPP-2026-0159",
+      "signal_type": "FUND LIFECYCLE",
+      "urgency": "MEDIUM",
+      "sponsor": "Madison Dearborn Partners",
+      "signal": "Fund VIII (2021) \u2014 fully deployed. Fund IX raising expected H2 2026. Chicago overlap = relationship deepening window.",
+      "recommended_product": "Fund IX Platform Financing",
+      "estimated_fee_mm": 5.0,
+      "action": "Jeff Tuckle to attend MDP annual meeting; pitch relationship for new fund deployment",
+      "confidence": 0.77
+    }
+  ],
+  "total_opportunities": 13,
+  "total_fee_pipeline_mm": 57.3
+}

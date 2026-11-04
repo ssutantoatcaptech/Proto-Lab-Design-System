@@ -1,0 +1,14 @@
+# Local dev data and DB
+data/
+*.db
+
+# Docs and strategy files not needed at runtime
+strategy/
+python3.11_troubleshooting_log.md
+
+# Local scripts
+start.sh
+update-creds.sh
+
+# IDE / editor
+.vscode/

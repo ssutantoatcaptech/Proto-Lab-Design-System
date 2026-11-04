@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40">
+  <path d="M6 8 L6 32 L16 32 C24 32 30 26 30 20 C30 14 24 8 16 8 Z M10 12 L16 12 C22 12 26 15.5 26 20 C26 24.5 22 28 16 28 L10 28 Z" fill="#1C305D"/>
+  <path d="M6 8 L6 32 L16 32 C24 32 30 26 30 20 C30 14 24 8 16 8 Z" fill="none"/>
+  <path d="M10 20 L10 28 L16 28 C22 28 26 24.5 26 20" fill="#88ADDB"/>
+  <text x="36" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#1C305D">DealCloud</text>
+</svg>
