@@ -11,12 +11,14 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/registry/
 type Group = { title: string; items: PageTree.Item[] }
 
 // Separators in meta.json ("---Foundations---") start a new sidebar group.
+// Pages listed before the first separator are pinned above every group,
+// with no heading.
 function groups(tree: PageTree.Root): Group[] {
   const out: Group[] = []
   const add = (node: PageTree.Node) => {
     if (node.type === "separator") out.push({ title: String(node.name ?? ""), items: [] })
     else if (node.type === "page") {
-      if (!out.length) out.push({ title: "Get Started", items: [] })
+      if (!out.length) out.push({ title: "", items: [] })
       out.at(-1)!.items.push(node)
     } else if (node.type === "folder") {
       if (node.index) add(node.index)
@@ -58,9 +60,32 @@ export function DocsNav({ tree, onNavigate }: { tree: PageTree.Root; onNavigate?
   const toggle = (title: string, open: boolean) =>
     save(open ? collapsed.filter((t) => t !== title) : [...new Set([...collapsed, title])])
 
+  const renderItem = (item: PageTree.Item) => {
+    const active = pathname === item.url
+    return (
+      <li key={item.url}>
+        <Link
+          href={item.url}
+          onClick={onNavigate}
+          aria-current={active ? "page" : undefined}
+          className={cn(
+            "focus-ring flex h-8 items-center gap-2 rounded-md px-2 transition-colors hover:bg-accent [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-muted-foreground",
+            active && "bg-accent font-semibold text-foreground [&_svg]:text-foreground"
+          )}
+        >
+          {item.icon}
+          <span className="truncate">{item.name}</span>
+        </Link>
+      </li>
+    )
+  }
+
   return (
     <nav aria-label="Documentation" className="flex flex-col gap-3">
       {all.map((group) => {
+        if (!group.title) {
+          return <ul key="pinned" className="flex flex-col gap-0.5">{group.items.map(renderItem)}</ul>
+        }
         const open = isOpen(group.title)
         return (
           <Collapsible key={group.title} open={open} onOpenChange={(o) => toggle(group.title, o)}>
@@ -72,25 +97,7 @@ export function DocsNav({ tree, onNavigate }: { tree: PageTree.Root; onNavigate?
             </CollapsibleTrigger>
             <CollapsibleContent className="h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-150 ease-easy-ease data-[ending-style]:h-0 data-[starting-style]:h-0">
               <ul className="flex flex-col gap-0.5 pb-2 pt-1">
-                {group.items.map((item) => {
-                  const active = pathname === item.url
-                  return (
-                    <li key={item.url}>
-                      <Link
-                        href={item.url}
-                        onClick={onNavigate}
-                        aria-current={active ? "page" : undefined}
-                        className={cn(
-                          "focus-ring flex h-8 items-center gap-2 rounded-md px-2 transition-colors hover:bg-accent [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-muted-foreground",
-                          active && "bg-accent font-semibold text-foreground [&_svg]:text-foreground"
-                        )}
-                      >
-                        {item.icon}
-                        <span className="truncate">{item.name}</span>
-                      </Link>
-                    </li>
-                  )
-                })}
+                {group.items.map(renderItem)}
               </ul>
             </CollapsibleContent>
           </Collapsible>

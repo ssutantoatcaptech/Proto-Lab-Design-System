@@ -1,6 +1,7 @@
 {
   "title": "Docs",
   "pages": [
+    "[LayoutGrid][All components](/docs/components)",
     "---Get Started---",
     "index",
     "installation",

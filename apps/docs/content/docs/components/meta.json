@@ -1,8 +1,6 @@
 {
   "title": "Components",
   "pages": [
-    "---Components---",
-    "index",
     "---Actions---",
     "button",
     "button-group",
