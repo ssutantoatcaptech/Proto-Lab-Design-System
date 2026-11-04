@@ -25,7 +25,7 @@ function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
 
 function Logo() {
   return (
-    <Link href="/docs" className="focus-ring flex items-center gap-2 rounded-md">
+    <Link href="/docs" className="focus-ring flex shrink-0 items-center gap-2 whitespace-nowrap rounded-md">
       <span aria-hidden="true" className="grid size-6 place-items-center rounded-md bg-primary text-caption-1 font-bold text-primary-foreground">P</span>
       <span className="font-semibold">{site.name}</span>
     </Link>
@@ -63,7 +63,7 @@ function SiteHeader({ tree }: { tree: PageTree.Root }) {
 
           <Logo />
 
-          <nav aria-label="Main" className="ml-2 hidden items-center gap-1 md:flex">
+          <nav aria-label="Main" className="ml-2 hidden items-center lg:gap-1 md:flex">
             {site.nav.map((item) => {
               const active = item.match(pathname)
               return (
@@ -72,7 +72,7 @@ function SiteHeader({ tree }: { tree: PageTree.Root }) {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "focus-ring rounded-md px-2 py-1 text-muted-foreground transition-colors hover:text-foreground",
+                    "focus-ring rounded-md px-1 py-1 text-muted-foreground lg:px-2 transition-colors hover:text-foreground",
                     active && "font-semibold text-foreground"
                   )}
                 >
@@ -83,9 +83,9 @@ function SiteHeader({ tree }: { tree: PageTree.Root }) {
           </nav>
 
           <div className="ml-auto flex items-center gap-1 md:gap-2">
-            <div className="hidden sm:block"><SearchTrigger /></div>
-            <div className="sm:hidden"><SearchTrigger variant="icon" /></div>
-            <Separator orientation="vertical" className="mx-1 hidden h-4 sm:block" />
+            <div className="hidden lg:block"><SearchTrigger /></div>
+            <div className="lg:hidden"><SearchTrigger variant="icon" /></div>
+            <Separator orientation="vertical" className="mx-1 hidden h-4 lg:block" />
             <Button variant="ghost" size="icon" nativeButton={false} render={<a href={site.github} target="_blank" rel="noreferrer" aria-label="GitHub repository" />}>
               <GitHubIcon className="size-4" />
             </Button>

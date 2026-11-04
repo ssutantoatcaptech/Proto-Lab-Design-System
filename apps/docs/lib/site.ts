@@ -9,5 +9,6 @@ export const site = {
     { title: "Charts", href: "/charts", match: (p: string) => p.startsWith("/charts") },
     { title: "Blocks", href: "/blocks", match: (p: string) => p.startsWith("/blocks") },
     { title: "Showcase", href: "/showcase", match: (p: string) => p.startsWith("/showcase") },
+    { title: "Templates", href: "/templates", match: (p: string) => p.startsWith("/templates") },
   ],
 }
