@@ -24,8 +24,8 @@ export default async function DocPage({ params }: Props) {
   }))
 
   return (
-    <div className="flex gap-6 p-3 md:p-6 xl:gap-10">
-      <main id="content" className="mx-auto flex w-full min-w-0 max-w-3xl flex-1 flex-col gap-4">
+    <div className="px-4 py-10 md:px-8">
+      <main id="content" className="mx-auto flex w-full min-w-0 max-w-screen-2xl flex-col gap-4">
         <header className="flex flex-col gap-2 rounded-md bg-card px-4 py-6 md:px-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
             <h1 className="text-title-1">{page.data.title}</h1>

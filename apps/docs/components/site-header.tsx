@@ -6,7 +6,6 @@ import { MenuIcon } from "lucide-react"
 import type * as PageTree from "fumadocs-core/page-tree"
 import { cn } from "cn"
 import { Button } from "@/registry/proto-lab/ui/button"
-import { Separator } from "@/registry/proto-lab/ui/separator"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/registry/proto-lab/ui/sheet"
 import { DocsNav } from "@/components/docs-nav"
 import { SearchProvider, SearchTrigger } from "@/components/search-command"
@@ -78,13 +77,13 @@ function SiteHeader({ tree }: { tree: PageTree.Root }) {
 
           <div className="lg:hidden"><Logo /></div>
 
+          <div className="hidden shrink-0 sm:block"><SearchTrigger /></div>
+          <div className="sm:hidden"><SearchTrigger variant="icon" /></div>
+
           {/* Pages put their own section links here (docs: On This Page). */}
-          <div id="page-nav" className="hidden min-w-0 flex-1 md:flex" />
+          <div id="page-nav" className="hidden min-w-0 flex-1 md:flex md:border-l md:pl-4" />
 
           <div className="ml-auto flex items-center gap-1 md:gap-2">
-            <div className="hidden sm:block"><SearchTrigger /></div>
-            <div className="sm:hidden"><SearchTrigger variant="icon" /></div>
-            <Separator orientation="vertical" className="mx-1 hidden h-4 sm:block" />
             <Button variant="ghost" size="icon" nativeButton={false} render={<a href={site.github} target="_blank" rel="noreferrer" aria-label="GitHub repository" />}>
               <GitHubIcon className="size-4" />
             </Button>
