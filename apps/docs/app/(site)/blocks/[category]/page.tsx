@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { cn } from "cn"
-import { BlockFrame } from "@/components/block-frame"
+import { BlockSwitcher } from "@/components/block-switcher"
 import { blockFiles, blocksIn, categories, type Category } from "@/lib/blocks"
 
 type Props = { params: Promise<{ category: string }> }
@@ -46,11 +46,7 @@ export default async function BlocksPage({ params }: Props) {
 
       <p className="-mt-4 text-sm text-muted-foreground">{current.description}</p>
 
-      <div className="flex flex-col gap-14">
-        {blocks.map((b) => (
-          <BlockFrame key={b.name} name={b.name} source={b.source} description={b.description} height={b.height} files={b.files} />
-        ))}
-      </div>
+      <BlockSwitcher blocks={blocks} />
     </main>
   )
 }

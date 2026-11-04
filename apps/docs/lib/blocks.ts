@@ -49,6 +49,7 @@ export function blocksIn(category: Category) {
   if (category === "captech") {
     return captechItems().map((b) => ({
       name: b.name,
+      title: b.title as string | undefined,
       description: b.description,
       source: "captech" as BlockSource,
       height: Number.parseInt(b.meta?.iframeHeight ?? "", 10) || HEIGHT.captech,
