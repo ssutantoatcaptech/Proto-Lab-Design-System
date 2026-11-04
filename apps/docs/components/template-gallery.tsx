@@ -38,32 +38,41 @@ export function TemplateGallery({ templates }: { templates: Template[] }) {
       <ul className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {templates.map((t) => (
           <li key={t.slug} id={t.slug} className={cn("scroll-mt-24", templates.length === 1 && "md:col-span-2")}>
-            <button
-              type="button"
-              onClick={() => setOpen(t.slug)}
-              aria-haspopup="dialog"
-              className="focus-ring group flex w-full flex-col overflow-hidden rounded-xl border bg-card text-left transition-shadow hover:shadow-md"
-            >
-              <span className="block border-b bg-muted p-3 md:p-4">
+            <article aria-label={t.title} className="flex flex-col overflow-hidden rounded-xl border bg-card transition-shadow hover:shadow-md">
+              <button
+                type="button"
+                onClick={() => setOpen(t.slug)}
+                aria-haspopup="dialog"
+                aria-label={`${t.title}: open details`}
+                className="focus-ring block border-b bg-muted p-3 md:p-4"
+              >
                 <img
                   src={t.image}
-                  alt={`${t.title} home screen`}
+                  alt=""
                   width={1600}
                   height={1000}
                   className="aspect-[16/10] w-full rounded-md border object-cover object-top"
                 />
-              </span>
-              <span className="flex items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
-                <span className="flex min-w-0 flex-wrap items-center gap-2">
-                  <span className="text-subtitle-2">{t.title}</span>
+              </button>
+              <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 md:px-6 md:py-4">
+                <div className="flex min-w-0 flex-wrap items-center gap-2">
+                  <h2 className="text-subtitle-2">{t.title}</h2>
                   <KindBadge kind={t.kind} />
-                </span>
-                <span className="flex shrink-0 items-center gap-1.5 text-sm font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
-                  Details
-                  <PanelRightOpenIcon aria-hidden="true" className="size-4" />
-                </span>
-              </span>
-            </button>
+                </div>
+                <div className="flex items-center gap-2">
+                  {t.demo && (
+                    <Button size="sm" nativeButton={false} render={<a href={t.demo} target="_blank" rel="noreferrer" />}>
+                      Open live demo
+                      <ArrowUpRightIcon data-icon="inline-end" />
+                    </Button>
+                  )}
+                  <Button variant="outline" size="sm" aria-haspopup="dialog" onClick={() => setOpen(t.slug)}>
+                    <PanelRightOpenIcon data-icon="inline-start" />
+                    Details
+                  </Button>
+                </div>
+              </div>
+            </article>
           </li>
         ))}
       </ul>
@@ -105,8 +114,8 @@ function TemplateDetails({ t }: { t: Template }) {
         </div>
       </SheetHeader>
 
-      <Section title="About">
-        <p className="text-caption-1 text-muted-foreground">{KINDS[t.kind].meaning}</p>
+      <div className="flex flex-1 flex-col gap-4 border-t bg-muted p-4 md:p-6">
+      <Section title="About" note={KINDS[t.kind].meaning}>
         <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-6 gap-y-2 text-sm">
           <dt className="text-muted-foreground">Stack</dt>
           <dd>{t.stack.join(" · ")}</dd>
@@ -164,13 +173,14 @@ function TemplateDetails({ t }: { t: Template }) {
           <CodeBlock title="Terminal">{t.run}</CodeBlock>
         </div>
       </Section>
+      </div>
     </>
   )
 }
 
 function Section({ title, note, children }: { title: string; note?: string; children: React.ReactNode }) {
   return (
-    <section className="flex flex-col gap-4 border-t p-6">
+    <section className="flex flex-col gap-4 rounded-lg border bg-card p-5">
       <div className="flex flex-col gap-1">
         <h3 className="text-subtitle-2">{title}</h3>
         {note && <p className="text-caption-1 text-muted-foreground">{note}</p>}
