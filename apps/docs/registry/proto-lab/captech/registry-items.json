@@ -9,9 +9,7 @@
       "button",
       "card",
       "empty",
-      "select",
-      "toggle-group",
-      "tooltip"
+      "select"
     ],
     "dependencies": [
       "lucide-react",

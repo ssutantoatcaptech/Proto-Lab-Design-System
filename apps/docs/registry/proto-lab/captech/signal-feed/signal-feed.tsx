@@ -1,15 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { ArrowRightIcon, FileTextIcon, InfoIcon, Rows2Icon, Rows3Icon, Rows4Icon, SearchXIcon, SparklesIcon } from "lucide-react"
+import { ArrowRightIcon, FileTextIcon, InfoIcon, SearchXIcon, SparklesIcon } from "lucide-react"
 
 import { Badge } from "@/registry/proto-lab/ui/badge"
 import { Button } from "@/registry/proto-lab/ui/button"
 import { Card } from "@/registry/proto-lab/ui/card"
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/registry/proto-lab/ui/empty"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/proto-lab/ui/select"
-import { ToggleGroup, ToggleGroupItem } from "@/registry/proto-lab/ui/toggle-group"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/registry/proto-lab/ui/tooltip"
 import { cn } from "cn"
 
 // A ranked feed of signals: things that need someone's attention, each from a
@@ -62,26 +60,60 @@ const GROUPS = [
 type Sort = (typeof SORTS)[number]["value"]
 type Group = (typeof GROUPS)[number]["value"]
 
-// Three densities scale the cards together: padding, gaps, type and buttons.
-// Comfortable for reading, Dense (the default) for daily use, Compact to scan
-// many signals at once.
+// Three densities scale the whole feed together: spacing between parts
+// (vertical and horizontal), padding, control size and every text size.
+// Comfortable for reading, Dense (the default) for daily use, Compact to
+// scan many signals at once.
 export type SignalDensity = "comfortable" | "dense" | "compact"
 
-const DENSITY: Record<SignalDensity, {
+type DensitySpec = {
   label: string
-  icon: React.ComponentType
-  list: string
-  card: string
+  section: string     // gap between header, note, toolbar and list
+  heading: string     // feed title
+  banner: string      // the note: padding, gap, text
+  toolbar: string     // toolbar padding and gaps
+  control: "default" | "sm"
+  groups: string      // gap between groups
+  groupTitle: string
+  list: string        // gap between cards
+  card: string        // card padding
   cardSize: "default" | "sm"
+  eyebrow: string     // priority, firm, source row: gaps and text
+  body: string        // gap between the text and the amount
+  stack: string       // gap between title and detail
   title: string
   detail: string
   amount: string
+  meta: string        // "est. fee · 84% confidence"
+  actions: string     // gap between buttons
   button: "default" | "sm" | "xs"
-}> = {
-  comfortable: { label: "Comfortable", icon: Rows2Icon, list: "gap-4", card: "px-6 [--card-spacing:--spacing(5)]", cardSize: "default", title: "text-subtitle-1", detail: "text-base", amount: "text-title-2", button: "default" },
-  dense: { label: "Dense", icon: Rows3Icon, list: "gap-3", card: "px-4", cardSize: "default", title: "text-subtitle-2", detail: "text-sm", amount: "text-title-3", button: "sm" },
-  compact: { label: "Compact", icon: Rows4Icon, list: "gap-2", card: "px-3", cardSize: "sm", title: "text-sm font-semibold", detail: "truncate text-caption-1", amount: "text-subtitle-2", button: "xs" },
 }
+
+const DENSITY: Record<SignalDensity, DensitySpec> = {
+  comfortable: {
+    label: "Comfortable", section: "gap-6", heading: "text-title-2", banner: "gap-3 px-4 py-3 text-base",
+    toolbar: "gap-4 p-4", control: "default", groups: "gap-8", groupTitle: "text-subtitle-1", list: "gap-4",
+    card: "px-6 [--card-spacing:--spacing(5)]", cardSize: "default", eyebrow: "gap-x-3 gap-y-1.5 text-sm",
+    body: "gap-4 sm:gap-8", stack: "gap-1.5", title: "text-subtitle-1", detail: "text-base", amount: "text-title-2",
+    meta: "text-sm", actions: "gap-2", button: "default",
+  },
+  dense: {
+    label: "Dense", section: "gap-4", heading: "text-title-3", banner: "gap-2 px-3 py-2 text-sm",
+    toolbar: "gap-3 p-3", control: "default", groups: "gap-6", groupTitle: "text-subtitle-2", list: "gap-3",
+    card: "px-4", cardSize: "default", eyebrow: "gap-x-2 gap-y-1 text-caption-1",
+    body: "gap-3 sm:gap-6", stack: "gap-1", title: "text-subtitle-2", detail: "text-sm", amount: "text-title-3",
+    meta: "text-caption-1", actions: "gap-2", button: "sm",
+  },
+  compact: {
+    label: "Compact", section: "gap-3", heading: "text-subtitle-1", banner: "gap-2 px-2.5 py-1.5 text-caption-1",
+    toolbar: "gap-2 p-2", control: "sm", groups: "gap-4", groupTitle: "text-sm font-semibold", list: "gap-2",
+    card: "px-3", cardSize: "sm", eyebrow: "gap-x-1.5 gap-y-0.5 text-caption-1",
+    body: "gap-2 sm:gap-4", stack: "gap-0.5", title: "text-sm font-semibold", detail: "truncate text-caption-1", amount: "text-subtitle-2",
+    meta: "text-caption-1", actions: "gap-1.5", button: "xs",
+  },
+}
+
+const DENSITIES = (Object.keys(DENSITY) as SignalDensity[]).map((k) => ({ value: k, label: DENSITY[k].label }))
 
 const dateFormat = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" })
 
@@ -156,52 +188,35 @@ export function SignalFeed({
   const counts = group === "none" ? null : countBy(ordered, group)
 
   return (
-    <section aria-labelledby="signal-feed-title" className={cn("flex flex-col gap-4", className)}>
-      <header className="flex flex-wrap items-end justify-between gap-2">
+    <section aria-labelledby="signal-feed-title" data-density={density} className={cn("flex flex-col", d.section, className)}>
+      <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <h2 id="signal-feed-title" className="text-title-3">{title}</h2>
+          <h2 id="signal-feed-title" className={d.heading}>{title}</h2>
           <Badge variant="secondary">{signals.length}</Badge>
         </div>
-        {viewAll && (
-          <Button variant="link" className="px-0" nativeButton={false} render={<a href={viewAll.href} />}>
-            {viewAll.label}
-            <ArrowRightIcon data-icon="inline-end" />
-          </Button>
-        )}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          {showDensity && (
+            <Picker label="Density" value={density} onChange={(v) => setDensity(v as SignalDensity)} options={DENSITIES} size={d.control} className="w-36" />
+          )}
+          {viewAll && (
+            <Button variant="link" className="px-0" nativeButton={false} render={<a href={viewAll.href} />}>
+              {viewAll.label}
+              <ArrowRightIcon data-icon="inline-end" />
+            </Button>
+          )}
+        </div>
       </header>
 
-      <p className="flex items-start gap-2 rounded-lg border border-brand-stroke-2 bg-brand-background-inverted px-3 py-2 text-sm">
+      <p className={cn("flex items-start rounded-lg border border-brand-stroke-2 bg-brand-background-inverted", d.banner)}>
         <InfoIcon aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brand-foreground-1" />
         {description}
       </p>
 
-      <div className="flex flex-col gap-3 rounded-lg border bg-card p-3 sm:flex-row sm:items-center sm:justify-between">
-        <Picker label="Filter" value={filter} onChange={setFilter} options={filters} className="sm:w-56" />
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Picker label="Sort" value={sort} onChange={(v) => setSort(v as Sort)} options={SORTS} className="sm:w-40" />
-          <Picker label="Group" value={group} onChange={(v) => setGroup(v as Group)} options={GROUPS} className="sm:w-40" />
-          {showDensity && (
-            <ToggleGroup
-              variant="outline"
-              spacing={0}
-              value={[density]}
-              onValueChange={(v) => v[0] && setDensity(v[0] as SignalDensity)}
-              aria-label="Density"
-              className="self-start sm:self-auto"
-            >
-              {(Object.keys(DENSITY) as SignalDensity[]).map((k) => {
-                const Icon = DENSITY[k].icon
-                return (
-                  <Tooltip key={k}>
-                    <TooltipTrigger render={<ToggleGroupItem value={k} aria-label={DENSITY[k].label} />}>
-                      <Icon />
-                    </TooltipTrigger>
-                    <TooltipContent>{DENSITY[k].label}</TooltipContent>
-                  </Tooltip>
-                )
-              })}
-            </ToggleGroup>
-          )}
+      <div className={cn("flex flex-col rounded-lg border bg-card sm:flex-row sm:flex-wrap sm:items-center sm:justify-between", d.toolbar)}>
+        <Picker label="Filter" value={filter} onChange={setFilter} options={filters} size={d.control} className="sm:w-56" />
+        <div className={cn("flex flex-col sm:flex-row sm:flex-wrap sm:items-center", d.toolbar.split(" ")[0])}>
+          <Picker label="Sort" value={sort} onChange={(v) => setSort(v as Sort)} options={SORTS} size={d.control} className="sm:w-40" />
+          <Picker label="Group" value={group} onChange={(v) => setGroup(v as Group)} options={GROUPS} size={d.control} className="sm:w-40" />
         </div>
       </div>
 
@@ -221,11 +236,11 @@ export function SignalFeed({
           </EmptyContent>
         </Empty>
       ) : (
-        <div className={cn("flex flex-col", density === "compact" ? "gap-4" : "gap-6")}>
+        <div className={cn("flex flex-col", d.groups)}>
           {groups.map((g) => (
             <div key={g.key || "all"} className={cn("flex flex-col", d.list)}>
               {g.key && (
-                <h3 className="flex items-center gap-2 text-subtitle-2">
+                <h3 className={cn("flex items-center gap-2", d.groupTitle)}>
                   {g.key}
                   <Badge variant="outline">{counts?.get(g.key) ?? g.items.length}</Badge>
                 </h3>
@@ -240,7 +255,7 @@ export function SignalFeed({
             </div>
           ))}
           {remaining > 0 && (
-            <Button variant="outline" className="self-center" onClick={() => setShown((n) => n + pageSize)}>
+            <Button variant="outline" size={d.control} className="self-center" onClick={() => setShown((n) => n + pageSize)}>
               Show {Math.min(remaining, pageSize)} more
               <span className="text-muted-foreground">({remaining} left)</span>
             </Button>
@@ -258,10 +273,9 @@ export function SignalCard({ signal: s, density = "dense", onAction }: {
 }) {
   const p = PRIORITY[s.priority]
   const d = DENSITY[density]
-  const compact = density === "compact"
   return (
     <Card size={d.cardSize} className={cn(d.card, s.priority === "urgent" && "ring-destructive/40")}>
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-caption-1">
+      <div className={cn("flex flex-wrap items-center", d.eyebrow)}>
         <Badge variant={p.variant}>{p.label}</Badge>
         <span className="font-semibold text-foreground">{s.entity}</span>
         <Badge variant="outline">{s.source}</Badge>
@@ -269,15 +283,15 @@ export function SignalCard({ signal: s, density = "dense", onAction }: {
         <time dateTime={s.date} className="ml-auto text-muted-foreground">{dateFormat.format(new Date(s.date))}</time>
       </div>
 
-      <div className={cn("flex flex-col sm:flex-row sm:items-start sm:justify-between", compact ? "gap-2 sm:gap-4" : "gap-3 sm:gap-6")}>
-        <div className={cn("flex min-w-0 flex-col", compact ? "gap-0.5" : "gap-1")}>
+      <div className={cn("flex flex-col sm:flex-row sm:items-start sm:justify-between", d.body)}>
+        <div className={cn("flex min-w-0 flex-col", d.stack)}>
           <h4 className={d.title}>{s.title}</h4>
           <p className={cn("text-muted-foreground", d.detail)}>{s.detail}</p>
         </div>
         {s.value && (
           <div className="flex shrink-0 flex-col sm:items-end">
             <span className={d.amount}>{s.value.amount}</span>
-            <span className="text-caption-1 text-muted-foreground">
+            <span className={cn("text-muted-foreground", d.meta)}>
               {s.value.label}
               {s.confidence != null && ` · ${Math.round(s.confidence * 100)}% confidence`}
             </span>
@@ -286,7 +300,7 @@ export function SignalCard({ signal: s, density = "dense", onAction }: {
       </div>
 
       {onAction && (
-        <div className={cn("flex flex-wrap", compact ? "gap-1.5" : "gap-2")}>
+        <div className={cn("flex flex-wrap", d.actions)}>
           <Button variant="outline" size={d.button} onClick={() => onAction("details", s)}>
             View details
           </Button>
@@ -304,8 +318,9 @@ export function SignalCard({ signal: s, density = "dense", onAction }: {
   )
 }
 
-function Picker({ label, value, onChange, options, className }: {
+function Picker({ label, value, onChange, options, size = "default", className }: {
   label: string
+  size?: "default" | "sm"
   value: string
   onChange: (value: string) => void
   options: readonly { value: string; label: string }[]
@@ -316,7 +331,7 @@ function Picker({ label, value, onChange, options, className }: {
     <div className="flex items-center gap-2">
       <span id={id} className="text-caption-1 text-muted-foreground">{label}</span>
       <Select items={options} value={value} onValueChange={(v) => v != null && onChange(String(v))}>
-        <SelectTrigger aria-labelledby={id} className={cn("w-full", className)}>
+        <SelectTrigger size={size} aria-labelledby={id} className={cn("w-full", className)}>
           <SelectValue />
         </SelectTrigger>
         <SelectContent>

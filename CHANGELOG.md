@@ -40,8 +40,9 @@ what a project last applied.
   prompts, page context, attachments and cited replies; `onSend` supplies the
   reply. Both ship fictional demo data.
 - **`signal-feed` densities:** Comfortable, Dense (default) and Compact,
-  switched from the toolbar or set with `density` / `defaultDensity`. Each
-  scales card padding, gaps, type and button size together.
+  picked from a Density dropdown in the feed header or set with `density` /
+  `defaultDensity`. Each scales the whole feed: vertical and horizontal
+  spacing, padding, control and button size, and every text size.
 
 ### Changed
 - **Docs theme: Auto is the default.** Light from 7 AM to 7 PM and dark
