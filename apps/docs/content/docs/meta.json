@@ -3,8 +3,7 @@
   "pages": [
     "[LayoutGrid][All components](/docs/components)",
     "[ChartColumn][Charts](/charts)",
-    "[Blocks][Patterns](/blocks)",
-    "[AppWindow][Examples](/showcase)",
+    "[Blocks][Patterns](/patterns)",
     "[LayoutTemplate][Templates](/templates)",
     "---[Rocket]Get Started---",
     "index",

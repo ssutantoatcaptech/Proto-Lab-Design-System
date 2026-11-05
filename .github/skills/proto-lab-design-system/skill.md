@@ -21,7 +21,7 @@ CapTech Brand identity on Microsoft Fluent 2 Web. Light and dark mode. Primary f
 | CapTech icons | 162 duotone brand icons as React components or SVGs | registry items `captech-icons*`, `icons/` |
 | Components | The 64 stock [shadcn/ui](https://ui.shadcn.com) components (Base UI). Kept identical to upstream; the theme restyles them. Don't fork or restyle them per project | shadcn CLI |
 | Charts | 76 shadcn charts on the Proto-Lab theme | registry items `chart-*` |
-| Patterns (blocks) | Page sections, installed as shadcn blocks. CapTech patterns are listed first on the docs site's Patterns page; the rest are upstream shadcn blocks | docs site `/blocks` |
+| Patterns (blocks) | Page sections, installed as shadcn blocks. Proto-Lab patterns (screens and sections from CapTech work) come first on the docs site's Patterns page; the rest are upstream shadcn blocks | docs site `/patterns` |
 | Templates | Whole prototypes. **Starter** templates are built on Proto-Lab, clone them. **Reference** templates are snapshots of past work with their own styling, read them for patterns, never copy their CSS | `templates/`, docs site `/templates` |
 
 `tokens/components.json` is a Figma reference (46 components with variants and node IDs), not runnable code.

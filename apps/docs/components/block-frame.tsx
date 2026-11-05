@@ -55,8 +55,12 @@ function Segmented<T extends string>({ label, value, options, onChange }: {
 
 // One block: a framed live preview (the bare /view route) with a toolbar,
 // or its files at the paths a project receives them.
-export function BlockFrame({ name, title, group, description, height, files, source = "upstream" }: {
+export function BlockFrame({ name, title, group, description, height, files, source = "upstream", install, heading = true }: {
   name: string
+  /** Overrides the install command; null hides it (not in the registry yet). */
+  install?: string | null
+  /** Show the title, badges and description. Off when the page has its own header. */
+  heading?: boolean
   title?: string
   group?: string
   source?: BlockSource
@@ -68,13 +72,13 @@ export function BlockFrame({ name, title, group, description, height, files, sou
   const [width, setWidth] = useState<(typeof WIDTHS)[number]["value"]>("desktop")
   const [reload, setReload] = useState(0)
   const [active, setActive] = useState(0)
-  const command = installCommand(name, source)
+  const command = install === undefined ? installCommand(name, source) : install
   const file = files[active]
 
   return (
     <section id={name} aria-label={title ?? name} className="scroll-mt-20 flex flex-col">
-      <div className="flex flex-col gap-4 border-b p-4 md:px-6 xl:flex-row xl:items-center xl:justify-between">
-        <div className="flex min-w-0 flex-col gap-1">
+      <div className={cn("flex flex-col gap-4 border-b p-4 md:px-6 xl:flex-row xl:items-center", heading ? "xl:justify-between" : "xl:justify-end")}>
+        {heading && <div className="flex min-w-0 flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
             <h2 className="text-subtitle-1">{title ?? name}</h2>
             {source === "upstream" ? (
@@ -89,7 +93,7 @@ export function BlockFrame({ name, title, group, description, height, files, sou
             {title && <code className="font-mono text-caption-1 text-muted-foreground">{name}</code>}
           </div>
           {description && <p className="max-w-2xl text-caption-1 text-muted-foreground">{description}</p>}
-        </div>
+        </div>}
         <div className="flex flex-wrap items-center gap-2">
           <Segmented label="View" value={tab} onChange={setTab} options={[{ value: "preview", label: "Preview" }, { value: "code", label: "Code" }]} />
           {tab === "preview" && (
@@ -109,11 +113,13 @@ export function BlockFrame({ name, title, group, description, height, files, sou
               </Tooltip>
             </>
           )}
-          <div className="flex h-8 items-center gap-2 rounded-md border bg-card pl-2.5 pr-1 font-mono text-caption-1">
+          {command && (
+            <div className="flex h-8 items-center gap-2 rounded-md border bg-card pl-2.5 pr-1 font-mono text-caption-1">
             <TerminalIcon aria-hidden="true" className="size-3.5 text-muted-foreground" />
             <span className="hidden sm:inline">{command}</span>
             <CopyButton value={command} label="Copy install command" className="size-7" />
           </div>
+          )}
         </div>
       </div>
 

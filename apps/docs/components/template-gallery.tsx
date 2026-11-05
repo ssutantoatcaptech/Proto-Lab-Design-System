@@ -155,7 +155,7 @@ function TemplateDetails({ t }: { t: Template }) {
               <span className="flex flex-col gap-0.5">
                 <span>{h.label}</span>
                 {h.block ? (
-                  <Link href={`/blocks/captech#${h.block}`} className="focus-ring inline-flex w-fit items-center gap-1 rounded-sm text-caption-1 font-semibold text-link hover:underline">
+                  <Link href={`/patterns/${h.block}`} className="focus-ring inline-flex w-fit items-center gap-1 rounded-sm text-caption-1 font-semibold text-link hover:underline">
                     {h.block} pattern
                     <ArrowRightIcon aria-hidden="true" className="size-3" />
                   </Link>

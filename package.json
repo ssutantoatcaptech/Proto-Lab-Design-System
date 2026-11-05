@@ -25,6 +25,7 @@
     "docs:build": "npm run build -w @proto-lab/docs",
     "upstream:sync": "npm run registry:build && node scripts/sync-upstream.js && node scripts/sync-blocks.js && node scripts/sync-charts.js && npm run registry:build",
     "upstream:compare": "node scripts/sync-upstream.js --compare",
+    "patterns:shots": "node scripts/pattern-shots.mjs",
     "upstream:check": "node scripts/sync-upstream.js --check",
     "blocks:sync": "node scripts/sync-blocks.js",
     "charts:sync": "node scripts/sync-charts.js"

@@ -48,12 +48,16 @@ function apply(theme: Theme) {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("auto")
   const [resolvedTheme, setResolved] = useState<"light" | "dark">("light")
+  // The saved choice is only known after mount. Until then the auto and
+  // system watchers must not run, or they'd overwrite a saved Light or Dark.
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     let stored: Theme = "auto"
     try { stored = (localStorage.getItem(KEY) as Theme) || "auto" } catch {}
     setThemeState(stored)
     setResolved(apply(stored))
+    setLoaded(true)
   }, [])
 
   // A framed block (/view) follows the theme chosen in the page around it.
@@ -70,17 +74,17 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // System: follow the device setting as it changes.
   useEffect(() => {
-    if (theme !== "system") return
+    if (!loaded || theme !== "system") return
     const mq = query()
     const onChange = () => setResolved(apply("system"))
     mq.addEventListener("change", onChange)
     return () => mq.removeEventListener("change", onChange)
-  }, [theme])
+  }, [theme, loaded])
 
   // Auto: switch at 7 AM and 7 PM even if the tab stays open, and check again
   // when the tab comes back (timers sleep in background tabs and on sleep).
   useEffect(() => {
-    if (theme !== "auto") return
+    if (!loaded || theme !== "auto") return
     let timer: ReturnType<typeof setTimeout>
     const tick = () => {
       setResolved(apply("auto"))
@@ -96,7 +100,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       document.removeEventListener("visibilitychange", onVisible)
       window.removeEventListener("focus", tick)
     }
-  }, [theme])
+  }, [theme, loaded])
 
   const setTheme = useCallback((t: Theme) => {
     try { localStorage.setItem(KEY, t) } catch {}

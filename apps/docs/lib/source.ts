@@ -1,7 +1,7 @@
 import { docs } from "fumadocs-mdx:collections/server"
 import { loader } from "fumadocs-core/source"
 import { lucideIconsPlugin } from "fumadocs-core/source/plugins/lucide-icons"
-import { allBlocks, categories } from "@/lib/blocks"
+import { allPatterns, KINDS, topicLabel } from "@/lib/patterns"
 import { chartManifest, chartTypes } from "@/lib/charts"
 
 export const source = loader({
@@ -25,14 +25,14 @@ const SECTIONS: Record<string, string> = {
 }
 
 // Everything the Cmd+K palette can find: every page and its headings, plus
-// block categories and the blocks in them.
+// every pattern and every chart.
 export function searchIndex(): SearchEntry[] {
-  const blocks: SearchEntry[] = categories.map((c) => ({
-    title: `${c.title} patterns`,
-    url: `/blocks/${c.slug}`,
+  const blocks: SearchEntry[] = allPatterns().map((p) => ({
+    title: p.title,
+    url: `/patterns/${p.slug}`,
     section: "Patterns",
-    description: c.description,
-    headings: allBlocks().filter((b) => b.category === c.slug).map((b) => ({ title: b.name, url: `/blocks/${c.slug}#${b.name}` })),
+    description: `${KINDS[p.kind].label} · ${topicLabel(p.topic)}. ${p.description}`,
+    headings: [],
   }))
   const { charts } = chartManifest()
   const chartPages: SearchEntry[] = chartTypes.map((t) => ({

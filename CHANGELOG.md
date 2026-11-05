@@ -52,6 +52,17 @@ what a project last applied.
   spacing, padding, control and button size, and every text size.
 
 ### Changed
+- **Patterns and Examples are one library at `/patterns`.** Every pattern is
+  a Screen or a Section, with a topic (Agentic AI, Insights, Engagement,
+  Settings, Dashboards, App shells, Auth) and a source (Proto-Lab or
+  Upstream). The gallery has kind tabs, topic chips, a source switch,
+  search and sort, all kept in the URL, with live counts and an empty state.
+  Each pattern has a detail page with breadcrumb, preview and code, install
+  (when it's in the registry), previous and next, and more in its topic.
+  Thumbnails come from `npm run patterns:shots` in light and dark. The two
+  Examples screens are now patterns. `/blocks/...` and `/showcase` redirect.
+- **Fix: a saved Light or Dark theme no longer flips to Auto's choice on
+  page load.**
 - **Dark mode reads as layers, darkest at the back.** The canvas is now
   `#11171c`, cards and the sidebar `#182027`, popovers a new
   `background-raised` `#212b33`, and muted fills CapTech Dark Grey

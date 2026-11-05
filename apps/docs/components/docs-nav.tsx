@@ -65,7 +65,7 @@ export function DocsNav({ tree, onNavigate }: { tree: PageTree.Root; onNavigate?
     save(open ? collapsed.filter((t) => t !== title) : [...new Set([...collapsed, title])])
 
   const renderItem = (item: PageTree.Item, topLevel = false) => {
-    // Top level links cover a whole area (Patterns covers /blocks/login).
+    // Top level links cover a whole area (Patterns covers /patterns/login-01).
     // Docs links (All components) only match their own page.
     const active = pathname === item.url || (topLevel && !item.url.startsWith("/docs") && pathname.startsWith(`${item.url}/`))
     return (
