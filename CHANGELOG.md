@@ -44,6 +44,10 @@ what a project last applied.
   scales card padding, gaps, type and button size together.
 
 ### Changed
+- **Docs theme: Auto is the default.** Light from 7 AM to 7 PM and dark
+  otherwise, by the device clock, switching on time in an open tab and
+  rechecking when the tab returns. System (the device setting), Light and
+  Dark remain. The theme menu says what's on screen and until when.
 - **Agent guidance matches what ships.** The skill
   (`.github/skills/proto-lab-design-system/skill.md`) and `APPLY.md` now
   describe the layers (theme and icons are Proto-Lab, the 64 components are
