@@ -7,9 +7,11 @@
   color: var(--shiki-light);
   background-color: transparent !important;
 }
+/* Runtime highlighting (patterns, charts, previews) writes the light colors
+   inline, so the dark rule has to win over inline styles. */
 .dark .shiki,
 .dark .shiki span {
-  color: var(--shiki-dark);
+  color: var(--shiki-dark) !important;
 }
 .shiki .line {
   display: inline;
