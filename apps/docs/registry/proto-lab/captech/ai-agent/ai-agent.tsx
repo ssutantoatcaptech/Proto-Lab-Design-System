@@ -30,8 +30,11 @@ export type AgentFile = { name: string; size: number }
 export type AgentMessage = { id: string; role: "user" | "assistant"; content: string; sources?: string[]; files?: AgentFile[] }
 export type AgentReply = { content: string; sources?: string[] }
 export type AgentContext = { label: string; detail: string }
+/** Ask the agent something from elsewhere on the page. A new `id` sends it. */
+export type AgentRequest = { id: string | number; prompt: string }
 
 type PanelProps = {
+  request?: AgentRequest | null
   title?: string
   subtitle?: string
   prompts?: AgentPrompt[]
@@ -54,7 +57,11 @@ export function AgentPanel({
   onClose,
   className,
   conversation,
+  request,
+  handledRef,
 }: PanelProps & {
+  /** Remembers which request was sent, across the panel closing (AgentDock passes it). */
+  handledRef?: React.MutableRefObject<string | number | null>
   onClose?: () => void
   className?: string
   /** Pass to keep the conversation when the panel closes (AgentDock does). */
@@ -89,6 +96,16 @@ export function AgentPanel({
       setPending(false)
     }
   }
+
+  // Another part of the page asked something (for example a match's Ask AI).
+  const ownHandled = React.useRef<string | number | null>(null)
+  const handled = handledRef ?? ownHandled
+  React.useEffect(() => {
+    if (!request || handled.current === request.id) return
+    handled.current = request.id
+    send(request.prompt)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [request])
 
   const retry = () => {
     const last = [...messages].reverse().find((m) => m.role === "user")
@@ -289,11 +306,23 @@ function useWide(query = "(min-width: 1024px)") {
 export function AgentDock({
   children,
   defaultOpen = false,
+  open: openProp,
+  onOpenChange,
   launcherLabel = "AI agent",
   ...panel
-}: PanelProps & { children: React.ReactNode; defaultOpen?: boolean; launcherLabel?: string }) {
-  const [open, setOpen] = React.useState(defaultOpen)
+}: PanelProps & {
+  children: React.ReactNode
+  defaultOpen?: boolean
+  /** Control whether the agent is open (pair with onOpenChange). */
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+  launcherLabel?: string
+}) {
+  const [ownOpen, setOwnOpen] = React.useState(defaultOpen)
+  const open = openProp ?? ownOpen
+  const setOpen = (o: boolean) => { setOwnOpen(o); onOpenChange?.(o) }
   const conversation = React.useState<AgentMessage[]>([])
+  const handledRef = React.useRef<string | number | null>(null)
   const wide = useWide()
 
   return (
@@ -302,7 +331,7 @@ export function AgentDock({
 
       {wide && open && (
         <aside className="sticky top-0 h-svh w-[26rem] shrink-0 border-l">
-          <AgentPanel {...panel} conversation={conversation} onClose={() => setOpen(false)} />
+          <AgentPanel {...panel} conversation={conversation} handledRef={handledRef} onClose={() => setOpen(false)} />
         </aside>
       )}
 
@@ -310,7 +339,7 @@ export function AgentDock({
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetContent side="right" showCloseButton={false} className="w-full p-0 data-[side=right]:sm:max-w-md">
             <SheetTitle className="sr-only">{panel.title ?? "AI agent"}</SheetTitle>
-            <AgentPanel {...panel} conversation={conversation} onClose={() => setOpen(false)} />
+            <AgentPanel {...panel} conversation={conversation} handledRef={handledRef} onClose={() => setOpen(false)} />
           </SheetContent>
         </Sheet>
       )}

@@ -39,6 +39,13 @@ what a project last applied.
   `ai-agent` docks beside a page (a sheet on narrow screens) with suggested
   prompts, page context, attachments and cited replies; `onSend` supplies the
   reply. Both ship fictional demo data.
+- **Agentic AI group and a wired match finder.** CapTech patterns are
+  grouped: Agentic AI (`match-finder`, `ai-agent`) and Insights
+  (`signal-feed`), shown on the tabs and as a badge. `ai-agent` can now be
+  opened and asked from elsewhere on the page (`open`, `onOpenChange`,
+  `request`). The match finder demo docks the agent: Ask AI explains a
+  match from its score breakdown, Draft introduction writes the intro, and
+  the agent runs matches itself ("Find sponsors for ...").
 - **`signal-feed` densities:** Comfortable, Dense (default) and Compact,
   picked from a Density dropdown in the feed header or set with `density` /
   `defaultDensity`. Each scales the whole feed: vertical and horizontal

@@ -55,9 +55,10 @@ function Segmented<T extends string>({ label, value, options, onChange }: {
 
 // One block: a framed live preview (the bare /view route) with a toolbar,
 // or its files at the paths a project receives them.
-export function BlockFrame({ name, title, description, height, files, source = "upstream" }: {
+export function BlockFrame({ name, title, group, description, height, files, source = "upstream" }: {
   name: string
   title?: string
+  group?: string
   source?: BlockSource
   description: string | null
   height: number
@@ -84,6 +85,7 @@ export function BlockFrame({ name, title, description, height, files, source = "
             ) : (
               <Badge>CapTech</Badge>
             )}
+            {group && <Badge variant="secondary">{group}</Badge>}
             {title && <code className="font-mono text-caption-1 text-muted-foreground">{name}</code>}
           </div>
           {description && <p className="max-w-2xl text-caption-1 text-muted-foreground">{description}</p>}

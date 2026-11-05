@@ -4,10 +4,12 @@ import { useEffect, useState } from "react"
 import type { BlockSource } from "@/lib/block-source"
 import { BlockFrame } from "@/components/block-frame"
 import { Tabs, TabsList, TabsTrigger } from "@/registry/proto-lab/ui/tabs"
+import { cn } from "cn"
 
 type Block = {
   name: string
   title?: string
+  group?: string
   description: string | null
   source: BlockSource
   height: number
@@ -44,16 +46,23 @@ export function BlockSwitcher({ blocks }: { blocks: Block[] }) {
         <Tabs value={block.name} onValueChange={(v) => pick(String(v))}>
           <div className="overflow-x-auto border-b px-4 pt-2 md:px-6">
             <TabsList variant="line" aria-label="Patterns in this category" className="h-10 w-max gap-1">
-              {blocks.map((b) => (
-                <TabsTrigger key={b.name} value={b.name} className="flex-none px-2">
-                  {b.title ?? b.name}
-                </TabsTrigger>
+              {blocks.map((b, i) => (
+                <span key={b.name} className="flex items-center gap-1">
+                  {b.group && b.group !== blocks[i - 1]?.group && (
+                    <span aria-hidden="true" className={cn("text-caption-1-strong uppercase tracking-wide text-muted-foreground", i > 0 && "ml-4 border-l pl-4")}>
+                      {b.group}
+                    </span>
+                  )}
+                  <TabsTrigger value={b.name} className="flex-none px-2" aria-label={b.group ? `${b.title ?? b.name}, ${b.group}` : undefined}>
+                    {b.title ?? b.name}
+                  </TabsTrigger>
+                </span>
               ))}
             </TabsList>
           </div>
         </Tabs>
       )}
-      <BlockFrame key={block.name} name={block.name} title={block.title} source={block.source} description={block.description} height={block.height} files={block.files} />
+      <BlockFrame key={block.name} name={block.name} title={block.title} group={block.group} source={block.source} description={block.description} height={block.height} files={block.files} />
     </div>
   )
 }

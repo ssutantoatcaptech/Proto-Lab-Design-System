@@ -19,7 +19,7 @@ type CaptechItem = {
   name: string
   title: string
   description: string
-  meta?: { iframeHeight?: string }
+  meta?: { iframeHeight?: string; group?: string }
   files: { path: string; target: string }[]
 }
 
@@ -50,6 +50,7 @@ export function blocksIn(category: Category) {
     return captechItems().map((b) => ({
       name: b.name,
       title: b.title as string | undefined,
+      group: b.meta?.group,
       description: b.description,
       source: "captech" as BlockSource,
       height: Number.parseInt(b.meta?.iframeHeight ?? "", 10) || HEIGHT.captech,
@@ -71,6 +72,7 @@ function toConsumer(src: string) {
     .replaceAll("@/registry/proto-lab/ui/", "@/components/ui/")
     .replaceAll("@/registry/proto-lab/hooks/", "@/hooks/")
     .replaceAll("@/registry/proto-lab/lib/utils", "@/lib/utils")
+    .replace(/@\/registry\/proto-lab\/captech\/([^/"']+)\//g, "@/components/$1/")
     .replace(/(["'])(?:\.\.?\/)+components\/([^"']+)\1/g, "$1@/components/$2$1")
 }
 

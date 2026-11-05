@@ -1,45 +1,9 @@
 [
   {
-    "name": "signal-feed",
-    "type": "registry:block",
-    "title": "Signal feed",
-    "description": "A ranked feed of signals with filter, sort, group, show more and three densities (comfortable, dense, compact). Harvested from the Huntington Capital Markets POC.",
-    "registryDependencies": [
-      "badge",
-      "button",
-      "card",
-      "empty",
-      "select"
-    ],
-    "dependencies": [
-      "lucide-react",
-      "cn"
-    ],
-    "categories": [
-      "captech"
-    ],
-    "meta": {
-      "iframeHeight": "1100px",
-      "harvestedFrom": "huntington-capital-markets"
-    },
-    "files": [
-      {
-        "path": "registry/proto-lab/captech/signal-feed/signal-feed.tsx",
-        "type": "registry:component",
-        "target": "components/signal-feed/signal-feed.tsx"
-      },
-      {
-        "path": "registry/proto-lab/captech/signal-feed/signal-feed-data.ts",
-        "type": "registry:component",
-        "target": "components/signal-feed/signal-feed-data.ts"
-      }
-    ]
-  },
-  {
     "name": "match-finder",
     "type": "registry:block",
     "title": "Match finder",
-    "description": "Pick a subject, run a match, read ranked matches with a score breakdown and the reasons behind it. Works in more than one direction. Harvested from the Huntington Capital Markets POC (Sponsor Match).",
+    "description": "Pick a subject, run a match, read ranked matches with a score breakdown and the reasons behind it. Works in more than one direction, and hands matches to the AI agent. Harvested from the Huntington Capital Markets POC (Sponsor Match).",
     "registryDependencies": [
       "badge",
       "button",
@@ -60,7 +24,8 @@
     ],
     "meta": {
       "iframeHeight": "1180px",
-      "harvestedFrom": "huntington-capital-markets"
+      "harvestedFrom": "huntington-capital-markets",
+      "group": "Agentic AI"
     },
     "files": [
       {
@@ -100,7 +65,8 @@
     ],
     "meta": {
       "iframeHeight": "820px",
-      "harvestedFrom": "huntington-capital-markets"
+      "harvestedFrom": "huntington-capital-markets",
+      "group": "Agentic AI"
     },
     "files": [
       {
@@ -112,6 +78,43 @@
         "path": "registry/proto-lab/captech/ai-agent/ai-agent-data.ts",
         "type": "registry:component",
         "target": "components/ai-agent/ai-agent-data.ts"
+      }
+    ]
+  },
+  {
+    "name": "signal-feed",
+    "type": "registry:block",
+    "title": "Signal feed",
+    "description": "A ranked feed of signals with filter, sort, group, show more and three densities (comfortable, dense, compact). Harvested from the Huntington Capital Markets POC.",
+    "registryDependencies": [
+      "badge",
+      "button",
+      "card",
+      "empty",
+      "select"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "cn"
+    ],
+    "categories": [
+      "captech"
+    ],
+    "meta": {
+      "iframeHeight": "1100px",
+      "harvestedFrom": "huntington-capital-markets",
+      "group": "Insights"
+    },
+    "files": [
+      {
+        "path": "registry/proto-lab/captech/signal-feed/signal-feed.tsx",
+        "type": "registry:component",
+        "target": "components/signal-feed/signal-feed.tsx"
+      },
+      {
+        "path": "registry/proto-lab/captech/signal-feed/signal-feed-data.ts",
+        "type": "registry:component",
+        "target": "components/signal-feed/signal-feed-data.ts"
       }
     ]
   }
