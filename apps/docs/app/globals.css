@@ -220,6 +220,7 @@
     --color-color-white: var(--color-white);
     --color-neutral-background-canvas: var(--neutral-background-canvas);
     --color-neutral-background-surface: var(--neutral-background-surface);
+    --color-neutral-background-raised: var(--neutral-background-raised);
 }
 
 :root {
@@ -323,39 +324,40 @@
     --illustration-accent: #fdda24;
     --neutral-background-canvas: #f5f5f4;
     --neutral-background-surface: #ffffff;
+    --neutral-background-raised: #ffffff;
 }
 
 .dark {
-    --background: #333f48;
-    --foreground: #ffffff;
-    --card: #1a2730;
-    --card-foreground: #ffffff;
-    --popover: #1a2730;
-    --popover-foreground: #ffffff;
+    --background: #11171c;
+    --foreground: #eef2f5;
+    --card: #182027;
+    --card-foreground: #eef2f5;
+    --popover: #212b33;
+    --popover-foreground: #eef2f5;
     --primary: #77b7f7;
     --primary-foreground: #1a2730;
-    --secondary: #465663;
-    --secondary-foreground: #ffffff;
-    --muted: #465663;
-    --muted-foreground: #c3cdd5;
+    --secondary: #333f48;
+    --secondary-foreground: #eef2f5;
+    --muted: #333f48;
+    --muted-foreground: #b4c0ca;
     --accent: rgba(255, 255, 255, 0.06);
-    --accent-foreground: #ffffff;
+    --accent-foreground: #eef2f5;
     --destructive: #eba7ad;
-    --border: #4e616e;
-    --input: #5f7686;
+    --border: #2a353f;
+    --input: #56687a;
     --ring: #ffffff;
     --chart-1: #77b7f7;
     --chart-2: #00a5df;
     --chart-3: #68d2df;
     --chart-4: #fdda24;
     --chart-5: #a5cfff;
-    --sidebar: #1a2730;
-    --sidebar-foreground: #ffffff;
+    --sidebar: #182027;
+    --sidebar-foreground: #eef2f5;
     --sidebar-primary: #77b7f7;
     --sidebar-primary-foreground: #1a2730;
-    --sidebar-accent: #465663;
-    --sidebar-accent-foreground: #ffffff;
-    --sidebar-border: #4e616e;
+    --sidebar-accent: #333f48;
+    --sidebar-accent-foreground: #eef2f5;
+    --sidebar-border: #2a353f;
     --sidebar-ring: #ffffff;
     --shadow-2: 0 1px 2px rgba(15, 18, 21, 0.32), 0 1px 2px rgba(15, 18, 21, 0.40);
     --shadow-4: 0 0 2px rgba(15, 18, 21, 0.32), 0 2px 4px rgba(15, 18, 21, 0.40);
@@ -374,28 +376,28 @@
     --warning-foreground: #1a2730;
     --warning-subtle: #52433b;
     --warning-stroke: #faa471;
-    --overlay: rgba(15, 18, 21, 0.6);
+    --overlay: rgba(8, 11, 14, 0.7);
     --link: #96c6fa;
     --radius: 4px;
-    --neutral-background-1: #333f48;
-    --neutral-background-2: #3c4a55;
-    --neutral-background-3: #465663;
+    --neutral-background-1: #182027;
+    --neutral-background-2: #212b33;
+    --neutral-background-3: #333f48;
     --neutral-background-subtle: rgba(255, 255, 255, 0.06);
     --neutral-background-inverted: #ffffff;
-    --neutral-background-disabled: #465663;
-    --neutral-background-overlay: rgba(15, 18, 21, 0.6);
-    --neutral-foreground-1: #ffffff;
-    --neutral-foreground-2: #c3cdd5;
-    --neutral-foreground-3: #99aab7;
-    --neutral-foreground-disabled: #708899;
+    --neutral-background-disabled: #2a353f;
+    --neutral-background-overlay: rgba(8, 11, 14, 0.7);
+    --neutral-foreground-1: #eef2f5;
+    --neutral-foreground-2: #b4c0ca;
+    --neutral-foreground-3: #8796a3;
+    --neutral-foreground-disabled: #5f6f7c;
     --neutral-foreground-inverted: #333f48;
     --neutral-foreground-on-brand: #1a2730;
     --neutral-foreground-link: #96c6fa;
-    --neutral-stroke-1: #5f7686;
-    --neutral-stroke-2: #4e616e;
+    --neutral-stroke-1: #56687a;
+    --neutral-stroke-2: #2a353f;
     --neutral-stroke-accessible: #c3cdd5;
     --neutral-stroke-focus: #ffffff;
-    --neutral-stroke-disabled: #4e616e;
+    --neutral-stroke-disabled: #2a353f;
     --brand-background-1: #77b7f7;
     --brand-background-2: #62abf5;
     --brand-background-inverted: #0a2e4a;
@@ -424,8 +426,9 @@
     --status-warning-on-fill: #1a2730;
     --illustration-primary: #77b7f7;
     --illustration-accent: #fdda24;
-    --neutral-background-canvas: #333f48;
-    --neutral-background-surface: #1a2730;
+    --neutral-background-canvas: #11171c;
+    --neutral-background-surface: #182027;
+    --neutral-background-raised: #212b33;
 }
 
 @layer base {

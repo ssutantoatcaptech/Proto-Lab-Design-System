@@ -71,6 +71,7 @@
   --neutral-background-overlay: rgba(0, 0, 0, 0.5);
   --neutral-background-canvas: var(--color-grey-2);
   --neutral-background-surface: var(--color-white);
+  --neutral-background-raised: var(--color-white);
   --neutral-foreground-1: var(--color-dark-grey);
   --neutral-foreground-2: var(--color-medium-grey);
   --neutral-foreground-3: var(--color-grey-12);
@@ -239,7 +240,7 @@
   --foreground: var(--neutral-foreground-1);
   --card: var(--neutral-background-surface);
   --card-foreground: var(--neutral-foreground-1);
-  --popover: var(--neutral-background-surface);
+  --popover: var(--neutral-background-raised);
   --popover-foreground: var(--neutral-foreground-1);
   --primary: var(--brand-background-1);
   --primary-foreground: var(--neutral-foreground-on-brand);

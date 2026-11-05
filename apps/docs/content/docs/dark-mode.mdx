@@ -32,9 +32,17 @@ Apply the saved choice with a small script in `<head>`, before the page paints, 
 
 ## What changes in dark
 
-Dark mode is built on CapTech Dark Grey, `#333f48`, the same color as light mode body text. Every neutral comes from its blue grey hue.
+Every dark neutral comes from the blue grey hue of CapTech Dark Grey (`#333f48`), and surfaces step up in even lightness, the way Chrome and Spotify do in dark mode: the page is the darkest layer, and anything that sits on it is a little lighter.
 
-- **The page is Dark Grey.** Cards, popovers, the header and the sidebar use the deepest CapTech blue grey (`#1a2730`), so content panels read as solid, quiet surfaces on the page. Muted fills and inputs inside them step lighter (`#465663`).
+| Layer | Value | Used for |
+|---|---|---|
+| Canvas | `#11171c` | The page |
+| Surface | `#182027` | Cards, the sidebar and the header |
+| Raised | `#212b33` | Popovers, menus and dialogs |
+| Muted | `#333f48` | Muted and secondary fills, CapTech Dark Grey |
+
+- **Text is a soft white** (`#eef2f5`), with secondary text at `#b4c0ca`. Pure white glares on dark surfaces.
+- **Borders stay quiet** (`#2a353f`) so edges come from the step between layers; inputs get a stronger edge (`#56687a`) that passes 3:1.
 - **Primary actions use a light CapTech blue** (`#77b7f7`) with dark text. A dark blue fill would sink into a mid tone page.
 - **Links, status text and chart colors are lighter**, so every text color stays above 4.5:1 on cards and on the page.
 - **Shadows use a deep tone of the same hue** instead of black, a little stronger than in light mode, so layers stay visible.

@@ -10,27 +10,28 @@
 .dark,
 [data-theme="dark"] {
   /* ─── Semantic: Neutral ─── */
-  --neutral-background-1: var(--color-dark-grey);
-  --neutral-background-2: #3c4a55;
-  --neutral-background-3: #465663;
+  --neutral-background-1: #182027;
+  --neutral-background-2: #212b33;
+  --neutral-background-3: var(--color-dark-grey);
   --neutral-background-subtle: rgba(255, 255, 255, 0.06);
   --neutral-background-inverted: var(--color-white);
-  --neutral-background-disabled: #465663;
-  --neutral-background-overlay: rgba(15, 18, 21, 0.6);
-  --neutral-background-canvas: var(--color-dark-grey);
-  --neutral-background-surface: var(--color-grey-20);
-  --neutral-foreground-1: var(--color-white);
-  --neutral-foreground-2: #c3cdd5;
-  --neutral-foreground-3: #99aab7;
-  --neutral-foreground-disabled: #708899;
+  --neutral-background-disabled: #2a353f;
+  --neutral-background-overlay: rgba(8, 11, 14, 0.7);
+  --neutral-background-canvas: #11171c;
+  --neutral-background-surface: #182027;
+  --neutral-background-raised: #212b33;
+  --neutral-foreground-1: #eef2f5;
+  --neutral-foreground-2: #b4c0ca;
+  --neutral-foreground-3: #8796a3;
+  --neutral-foreground-disabled: #5f6f7c;
   --neutral-foreground-inverted: var(--color-dark-grey);
   --neutral-foreground-on-brand: var(--color-grey-20);
   --neutral-foreground-link: var(--color-brand-130);
-  --neutral-stroke-1: #5f7686;
-  --neutral-stroke-2: #4e616e;
+  --neutral-stroke-1: #56687a;
+  --neutral-stroke-2: #2a353f;
   --neutral-stroke-accessible: #c3cdd5;
   --neutral-stroke-focus: var(--color-white);
-  --neutral-stroke-disabled: #4e616e;
+  --neutral-stroke-disabled: #2a353f;
 
   /* ─── Semantic: Brand ─── */
   --brand-background-1: var(--color-brand-120);
@@ -84,7 +85,7 @@
   --foreground: var(--neutral-foreground-1);
   --card: var(--neutral-background-surface);
   --card-foreground: var(--neutral-foreground-1);
-  --popover: var(--neutral-background-surface);
+  --popover: var(--neutral-background-raised);
   --popover-foreground: var(--neutral-foreground-1);
   --primary: var(--brand-background-1);
   --primary-foreground: var(--neutral-foreground-on-brand);

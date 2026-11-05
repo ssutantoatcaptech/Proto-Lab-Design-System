@@ -84,27 +84,28 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### Semantic: Neutral
 | Variable | Light | Dark |
 |---|---|---|
-| `--neutral-background-1` | #ffffff | #333f48 |
-| `--neutral-background-2` | #f5f5f4 | #3c4a55 |
-| `--neutral-background-3` | #ebebea | #465663 |
+| `--neutral-background-1` | #ffffff | #182027 |
+| `--neutral-background-2` | #f5f5f4 | #212b33 |
+| `--neutral-background-3` | #ebebea | #333f48 |
 | `--neutral-background-subtle` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.06) |
 | `--neutral-background-inverted` | #333f48 | #ffffff |
-| `--neutral-background-disabled` | #ebebea | #465663 |
-| `--neutral-background-overlay` | rgba(0, 0, 0, 0.5) | rgba(15, 18, 21, 0.6) |
-| `--neutral-background-canvas` | #f5f5f4 | #333f48 |
-| `--neutral-background-surface` | #ffffff | #1a2730 |
-| `--neutral-foreground-1` | #333f48 | #ffffff |
-| `--neutral-foreground-2` | #888b8d | #c3cdd5 |
-| `--neutral-foreground-3` | #c1c1c0 | #99aab7 |
-| `--neutral-foreground-disabled` | #d6d6d5 | #708899 |
+| `--neutral-background-disabled` | #ebebea | #2a353f |
+| `--neutral-background-overlay` | rgba(0, 0, 0, 0.5) | rgba(8, 11, 14, 0.7) |
+| `--neutral-background-canvas` | #f5f5f4 | #11171c |
+| `--neutral-background-surface` | #ffffff | #182027 |
+| `--neutral-background-raised` | #ffffff | #212b33 |
+| `--neutral-foreground-1` | #333f48 | #eef2f5 |
+| `--neutral-foreground-2` | #888b8d | #b4c0ca |
+| `--neutral-foreground-3` | #c1c1c0 | #8796a3 |
+| `--neutral-foreground-disabled` | #d6d6d5 | #5f6f7c |
 | `--neutral-foreground-inverted` | #ffffff | #333f48 |
 | `--neutral-foreground-on-brand` | #ffffff | #1a2730 |
 | `--neutral-foreground-link` | #005eb8 | #96c6fa |
-| `--neutral-stroke-1` | #e0e0df | #5f7686 |
-| `--neutral-stroke-2` | #ebebea | #4e616e |
+| `--neutral-stroke-1` | #e0e0df | #56687a |
+| `--neutral-stroke-2` | #ebebea | #2a353f |
 | `--neutral-stroke-accessible` | #333f48 | #c3cdd5 |
 | `--neutral-stroke-focus` | #333f48 | #ffffff |
-| `--neutral-stroke-disabled` | #e0e0df | #4e616e |
+| `--neutral-stroke-disabled` | #e0e0df | #2a353f |
 
 ### Semantic: Brand
 | Variable | Light | Dark |
@@ -279,20 +280,20 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 ### shadcn Aliases
 | Variable | Light | Dark |
 |---|---|---|
-| `--background` | #f5f5f4 | #333f48 |
-| `--foreground` | #333f48 | #ffffff |
-| `--card` | #ffffff | #1a2730 |
-| `--card-foreground` | #333f48 | #ffffff |
-| `--popover` | #ffffff | #1a2730 |
-| `--popover-foreground` | #333f48 | #ffffff |
+| `--background` | #f5f5f4 | #11171c |
+| `--foreground` | #333f48 | #eef2f5 |
+| `--card` | #ffffff | #182027 |
+| `--card-foreground` | #333f48 | #eef2f5 |
+| `--popover` | #ffffff | #212b33 |
+| `--popover-foreground` | #333f48 | #eef2f5 |
 | `--primary` | #005eb8 | #77b7f7 |
 | `--primary-foreground` | #ffffff | #1a2730 |
-| `--secondary` | #ebebea | #465663 |
-| `--secondary-foreground` | #333f48 | #ffffff |
-| `--muted` | #ebebea | #465663 |
-| `--muted-foreground` | #888b8d | #c3cdd5 |
+| `--secondary` | #ebebea | #333f48 |
+| `--secondary-foreground` | #333f48 | #eef2f5 |
+| `--muted` | #ebebea | #333f48 |
+| `--muted-foreground` | #888b8d | #b4c0ca |
 | `--accent` | rgba(51, 63, 72, 0.05) | rgba(255, 255, 255, 0.06) |
-| `--accent-foreground` | #333f48 | #ffffff |
+| `--accent-foreground` | #333f48 | #eef2f5 |
 | `--destructive` | #c4314b | #eba7ad |
 | `--destructive-foreground` | #ffffff | #000000 |
 | `--destructive-subtle` | #fdf3f4 | #4c3c43 |
@@ -305,18 +306,18 @@ dark overrides in `tokens/css/variables-dark.css` (apply with `class="dark"` or
 | `--warning-foreground` | #1a2730 | same |
 | `--warning-subtle` | #fff9f5 | #52433b |
 | `--warning-stroke` | #f7630c | #faa471 |
-| `--border` | #ebebea | #4e616e |
-| `--input` | #e0e0df | #5f7686 |
+| `--border` | #ebebea | #2a353f |
+| `--input` | #e0e0df | #56687a |
 | `--ring` | #333f48 | #ffffff |
-| `--overlay` | rgba(0, 0, 0, 0.5) | rgba(15, 18, 21, 0.6) |
+| `--overlay` | rgba(0, 0, 0, 0.5) | rgba(8, 11, 14, 0.7) |
 | `--link` | #005eb8 | #96c6fa |
-| `--sidebar` | #ffffff | #1a2730 |
-| `--sidebar-foreground` | #333f48 | #ffffff |
+| `--sidebar` | #ffffff | #182027 |
+| `--sidebar-foreground` | #333f48 | #eef2f5 |
 | `--sidebar-primary` | #005eb8 | #77b7f7 |
 | `--sidebar-primary-foreground` | #ffffff | #1a2730 |
-| `--sidebar-accent` | #ebebea | #465663 |
-| `--sidebar-accent-foreground` | #333f48 | #ffffff |
-| `--sidebar-border` | #ebebea | #4e616e |
+| `--sidebar-accent` | #ebebea | #333f48 |
+| `--sidebar-accent-foreground` | #333f48 | #eef2f5 |
+| `--sidebar-border` | #ebebea | #2a353f |
 | `--sidebar-ring` | #333f48 | #ffffff |
 | `--radius` | 4px | same |
 <!-- generated:css-variables:end -->

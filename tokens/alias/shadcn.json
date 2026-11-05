@@ -23,7 +23,7 @@
         "$description": "Text on cards"
       },
       "popover": {
-        "$value": "{color.semantic.neutral.background-surface}",
+        "$value": "{color.semantic.neutral.background-raised}",
         "$type": "color",
         "$description": "Popover, menu and dropdown surface"
       },

@@ -52,6 +52,13 @@ what a project last applied.
   spacing, padding, control and button size, and every text size.
 
 ### Changed
+- **Dark mode reads as layers, darkest at the back.** The canvas is now
+  `#11171c`, cards and the sidebar `#182027`, popovers a new
+  `background-raised` `#212b33`, and muted fills CapTech Dark Grey
+  `#333f48`, all in the Dark Grey hue. Before, the page was Dark Grey and
+  cards were darker than it, so surfaces looked sunk and shades jumped.
+  Text is a soft white (`#eef2f5`), borders are quieter, and inputs now pass
+  3:1. Light mode is unchanged (`background-raised` is white).
 - **Docs theme: Auto is the default.** Light from 7 AM to 7 PM and dark
   otherwise, by the device clock, switching on time in an open tab and
   rechecking when the tab returns. System (the device setting), Light and
